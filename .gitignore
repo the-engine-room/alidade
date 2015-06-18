@@ -1,0 +1,8 @@
+/vendor
+/node_modules
+/config/database.php
+/assets
+/public/uploads
+.env
+/craft
+readme.md

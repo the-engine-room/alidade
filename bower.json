@@ -1,0 +1,21 @@
+{
+  "name": "ToolSelectionAssistant",
+  "version": "0.0.0",
+  "homepage": "https://github.com/the-engine-room/tool-selection-assistant",
+  "authors": [
+    "the engine room"
+  ],
+  "description": "Offering guidance in tool selection",
+  "license": "CC0-1.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/components/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5"
+  }
+}
