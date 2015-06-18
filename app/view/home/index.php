@@ -64,13 +64,11 @@
                     <li>to show potential donors or partners that you've really thought through your project</li>
                 </ul>
                 <p class="text-center">
-                    <button class="btn btn-primary btn-lg">Start planning now!</button>
+                    <br />
+                    <button class="btn btn-primary btn-lg"><i class="fa fa-hand-o-right"></i> Start planning now!</button>
+                    <br />
                 </p>
             </div>
         </section>
     </div>
     
-    <footer>
-        
-    </footer>
-
