@@ -183,7 +183,7 @@
         echo '<div class="'.$repClass.'">' . $text . '</div>';
     }
     
-    function injectAnswerField($string){
-        return str_replace('[--answer--]', '<textarea id="answer" name="answer" class="form-control" rows="8"></textarea>', $string);
+    function injectAnswerField($string, $name = 'answer'){
+        return str_replace('[--answer--]', '<textarea id="answer" name="'.$name.'" class="form-control" rows="8"></textarea>', $string);
         
     }

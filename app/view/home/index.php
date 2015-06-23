@@ -65,7 +65,7 @@
                 </ul>
                 <p class="text-center">
                     <br />
-                    <button class="btn btn-primary btn-lg"><i class="fa fa-hand-o-right"></i> Start planning now!</button>
+                    <a class="btn btn-primary btn-lg" href="/project/slide/1.1"><i class="fa fa-hand-o-right"></i> Start planning now!</a>
                     <br />
                 </p>
             </div>

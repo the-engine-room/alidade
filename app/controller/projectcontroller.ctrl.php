@@ -15,7 +15,11 @@
         /** urls are in the form of /project/slide/1.2 **/
         
         public function slide($cur){
-        
+            
+            if(!isset($_SESSION['plan']) || $cur === '1.1'){
+                $_SESSION['plan'] = array();
+            }
+            
             $position = explode('.', $cur);
             
             $step_no    = (int)$position[0];
@@ -41,12 +45,24 @@
                                         'step'      =>  $step_no
                                         ));
             
+            $nextSlide = $slideIndex['fullIndex'][array_search($cur, $slideIndex['fullIndex'], true) + 1];
             
-            $nextSlide = $slideIndex['fullIndex'][array_search($cur, $slideIndex['fullIndex']) + 1];
+            /*
+            echo $cur; 
+            echo array_search($cur, $slideIndex['fullIndex']) + 1;
+            dbga($slideIndex);
+            */
+            
             $this->set('nextSlide', $nextSlide);
             $this->set('currentSlide', $cur);
             
             $this->set('slide', $slide[0]);
+            
+            if(isset($_POST) && !empty($_POST)){
+                $_SESSION['plan'][$_POST['current_slide']] = $_POST;
+            }
+            
+            dbga($_SESSION);
         }
         
     }

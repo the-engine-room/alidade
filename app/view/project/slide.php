@@ -20,10 +20,12 @@
                         break;
                 }
                 ?>
+                <?php if($currentSlide !== '1.6') { ?> 
                 <div class="text-center">
                     <input type="hidden" name="current_slide"  value="<?php echo $currentSlide; ?>">
                     <button type="submit" class="btn btn-primary btn-lg">go ahead!</button>
                 </div>
+                <?php } ?>
             </form>   
         </div>
         
