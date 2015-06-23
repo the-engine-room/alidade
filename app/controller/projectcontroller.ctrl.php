@@ -62,7 +62,7 @@
                 $_SESSION['plan'][$_POST['current_slide']] = $_POST;
             }
             
-            dbga($_SESSION);
+           // dbga($_SESSION);
         }
         
     }
