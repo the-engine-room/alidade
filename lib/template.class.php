@@ -7,14 +7,21 @@
         protected $_action;
         
         /** array to exclude certain routes (like csv exports or AJAX urls) **/
-        private $exclude = array(
-                            'restarters_in_group',
-                            'group_locations',                        
-                            );
+        private $exclude = array(); 
         
         function __construct($controller,$action) {
             $this->_controller = $controller;
             $this->_action = $action;
+            
+            // load ajax methods into exclude array
+            $ajax = get_class_methods('AjaxController');
+            $excludes = array();
+            foreach($ajax as $i => $method){
+                if(!in_array($method, array('__construct', 'index', 'set', '__destruct'))){
+                    $excludes[] = $method;
+                }
+            }
+            $this->exclude = $excludes;
         }
     
         /** Set Variables **/
@@ -24,6 +31,8 @@
     
         /** Display Template **/
         function render() {
+            
+            
             extract($this->variables);
             if(!in_array($this->_action, $this->exclude) && $this->_controller !== 'rss'){
                 /* Include Base Head @ view/head.php */

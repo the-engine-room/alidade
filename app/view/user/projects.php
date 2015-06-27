@@ -19,18 +19,21 @@
     
     <div class="row project">
         <div class="col-md-2">
-            <?php if(empty($p->name)){ ?>
-            <form class="form-inline ajx" method="post">
-                <input name="project" id="project" type="hidden" value="<?php echo $p->idprojects; ?>">
+            <?php if(empty($p['title'])){ ?>
+            <form class="form-inline ajx project-name" method="get" action="/ajax/save_project_name">
+                
+                <input name="project" id="project" type="hidden" value="<?php echo $p['idprojects']; ?>">
+                
                 <div class="form-group">
-                    <input name="name" class="form-control input-sm" placeholder="Add a project name...">
+                    <input name="title" class="form-control input-sm" id="title" placeholder="Add a project name...">
                 </div>
+                
                 <div class="form-group">
                     <button class="btn btn-primary btn-sm" type="submit"><i class="fa fa-floppy-o"></i> save</button>
                 </div>
             </form>
             <?php } else { ?>
-            <h3><?php echo $p->name; ?></h3>
+            <h4><?php echo $p['title']; ?></h4>
             <?php } ?>
         </div>
         <div class="col-md-9">

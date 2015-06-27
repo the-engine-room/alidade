@@ -16,7 +16,32 @@ $(document).ready(function(){
         $('textarea[name="answer"]').each(function(i) {
                 $(this).attr('name', 'answer[' + i + ']');
         }); 
-        
-        //alert('HEyyyyyyy');
     }
+    
+    
+    $('.ajx.project-name').submit(function(e){
+        e.preventDefault();
+        var theForm = $(this);
+        var vals = {
+            project: $(this).children('#project').val(),
+            title:   $(this).children().children('#title').val()
+        }
+        console.log(vals);
+        
+        $.getJSON(
+                  $(this).attr('action'),
+                  vals,
+                  function(data){
+                    if(data.code === 'danger') {
+                        theForm.prepend(data.message);
+                    }
+                    else{
+                        theForm.parent('div').append('<h4>' + data.message + '</h4>');
+                        theForm.remove();
+                    }
+                  }
+                  );
+        
+        return false;    
+    });
 });

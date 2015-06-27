@@ -71,7 +71,7 @@
                     $_SESSION['plan'][$_POST['current_slide']] = $_POST;
                     
                     // Save Slide to Slide content - Look for a Project Hash and, if Step == 1
-                    if(!isset($_SESSION[APPNAME]['PRJ']) && $_POST['current_slide'] == '1.1'){
+                    if($_POST['current_slide'] == '1.1'){
                         
                         $ProjectHash = md5( $_SESSION[APPNAME]['USR'] . time() . $_SESSION[APPNAME][SESSIONKEY]);
                         
@@ -86,8 +86,10 @@
                         $_SESSION['project'] = $idproject;
                         
                     }
-                    
-                    
+                    else {
+                        // find project starting from Hash    
+                        
+                    }
                     
                    // dbga($_SESSION);
                     
