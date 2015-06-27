@@ -156,33 +156,7 @@
         return implode('-', array_reverse($d)); 
     }
     
-    /**
-     * make things look pretty.
-     * 1 = Fixed
-     * 2 = Repairable
-     * 3 = End of Lifecycle
-     * */
-    function parseRepairStatus($status){
-        $repClass = 'repair-status ';
-        switch($status){
-            case 1:
-                $repClass .= 'fixed';
-                $text = 'f';
-                break;
-            case 2:
-                $repClass .= 'repairable';
-                $text = 'r';
-                break;
-            case 3:
-                $repClass .= 'end-of-life';
-                $text = 'x';
-                break;
-            default:
-                break;
-        }
-        echo '<div class="'.$repClass.'">' . $text . '</div>';
-    }
-    
+    /** inject textarea **/
     function injectAnswerField($string, $name = 'answer'){
         return str_replace('[--answer--]', '<textarea id="answer" name="'.$name.'" class="form-control" rows="8"></textarea>', $string);
         

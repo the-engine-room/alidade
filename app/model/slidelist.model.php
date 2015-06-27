@@ -14,5 +14,17 @@
             
             return $stmt->fetchAll(PDO::FETCH_OBJ);
         }
+        
+        public function listed(){
+            $slidelist = self::getList();
+            $slideIndex = array();
+            foreach($slidelist as $s){
+                $slideIndex[$s->step][] = $s->position;
+                $slideIndex['fullIndex'][] = $s->step . '.' . $s->position;
+            }
+            return $slideIndex;
+            
+        }
+                
     }
     

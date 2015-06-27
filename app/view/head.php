@@ -24,3 +24,43 @@
 
     </head>
     <body>
+        
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-offset-7 col-md-5">
+                <?php if(isset($_SESSION[APPNAME][SESSIONKEY]) && !empty($_SESSION[APPNAME][SESSIONKEY])) { ?>
+                    <div class="pull-right">
+                        Hello, <strong><?php echo $_SESSION[APPNAME]['USR']; ?></strong>!
+                        <div class="btn-group" role="group" aria-label="User Options and Actions">
+                            <a href="/user/projects" title="All your Projects" class="btn btn-primary btn-sm"><i class="fa fa-user"></i><span class="sr-only">Your Profile</span></a>
+                            <a href="/user/logout" title="Logout" class="btn btn-primary btn-sm"><i class="fa fa-sign-out"></i><span class="sr-only">Logout</span></a>
+                        </div>
+                    </div>
+                
+                <?php    
+                }
+                else {
+                ?>
+                <form class="form-inline pull-right" action="/user/login" method="post">
+                    
+                    <div class="form-group">
+                        <label for="email" class="sr-only">Email</label>
+                        <input type="email" class="form-control input-sm" name="email" id="email" placeholder="Your email is...">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password" class="sr-only">>Password</label>
+                        <input type="password" class="form-control input-sm" name="password" id="password" placeholder="And your password is...">
+                    </div>
+                    
+                    <div class="form-group">
+                        <button type="submit" class="form-control btn btn-primary btn-sm" name="submit" id="submit"><i class="fa fa-sign-in"></i> Login</button>
+                    </div>
+                    
+                </form>
+                <?php
+                }
+                ?>
+                </div>
+            </div>
+        </div>
