@@ -66,7 +66,7 @@
                 $this->set('currentSlide', $cur);
                 
                 $this->set('slide', $slide[0]);
-                dbga($_SESSION);
+                //dbga($_SESSION);
                 if(isset($_POST) && !empty($_POST)){
                     $_SESSION['plan'][$_POST['current_slide']] = $_POST;
                     
@@ -86,10 +86,7 @@
                         $_SESSION['project'] = $idproject;
                         
                     }
-                    else {
-                        // find project starting from Hash    
-                        
-                    }
+                    
                     
                    // dbga($_SESSION);
                     
