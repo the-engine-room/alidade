@@ -21,7 +21,10 @@
                 header('Location: /user/login');
             }
             
-            else {                
+            else {
+                
+               
+                
                 $user = $Auth->getProfile();
                 $this->set('user', $user);
               
@@ -66,29 +69,34 @@
                 $this->set('currentSlide', $cur);
                 
                 $this->set('slide', $slide[0]);
-                //dbga($_SESSION);
+               
+                //check if we have a hash for a project
+                
+                
+                if($_GET['p']){
+                    $hash = $_GET['p'];
+                    $project = $this->Project->find(array('hash' => $_GET['p']));
+                    
+                    if(!empty($project) && is_object($project[0])) {
+                        $_SESSION['project'] = $project[0]->idprojects;
+                    }
+                }
+               
                 if(isset($_POST) && !empty($_POST)){
                     $_SESSION['plan'][$_POST['current_slide']] = $_POST;
                     
                     // Save Slide to Slide content - Look for a Project Hash and, if Step == 1
-                    if($_POST['current_slide'] == '1.1'){
+                    
+                    if($_POST['current_slide'] == '1.1' && !isset($_POST['project'])){
                         
                         $ProjectHash = md5( $_SESSION[APPNAME]['USR'] . time() . $_SESSION[APPNAME][SESSIONKEY]);
                         
-                        // create Project Data Array
-                        //$this->Project->create($data);
-                        
-                        $_SESSION[APPNAME]['PRJ'] = $ProjectHash;
                         $data['user'] = $user->id;
                         $data['hash'] = $ProjectHash;
                         
                         $idproject = $this->Project->create($data);
                         $_SESSION['project'] = $idproject;
-                        
                     }
-                    
-                    
-                   // dbga($_SESSION);
                     
                     $slide_position = explode('.', $_POST['current_slide']);
                     $Slide = new Slide;
@@ -112,8 +120,6 @@
                     $slide['answer'] = $answer;                    
                     $Slide->create($slide);
                 }
-                
-               // dbga($_SESSION);
             }
         }
     }

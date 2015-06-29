@@ -27,7 +27,8 @@
         
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-offset-7 col-md-5">
+                <div class="col-md-1"><a href="/home" class="brand">TSA</a></div>
+                <div class="col-md-offset-6 col-md-5">
                 <?php if(isset($_SESSION[APPNAME][SESSIONKEY]) && !empty($_SESSION[APPNAME][SESSIONKEY])) { ?>
                     <div class="pull-right">
                         Hello, <strong><?php echo $_SESSION[APPNAME]['USR']; ?></strong>!

@@ -4,6 +4,7 @@
         <div class="col-md-12">
             <form action="/project/slide/<?php echo $nextSlide; ?>" method="post">
                 <input type="hidden" name="current_slide"  value="<?php echo $currentSlide; ?>">
+                <input type="hidden" name="current_project" value="<?php echo $_SESSION['project']; ?>">
                 <h2><?php echo $slide->title; ?></h2>
                 <?php
                 switch($slide->slide_type){

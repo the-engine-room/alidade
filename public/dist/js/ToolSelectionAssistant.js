@@ -26,7 +26,6 @@ $(document).ready(function(){
             project: $(this).children('#project').val(),
             title:   $(this).children().children('#title').val()
         }
-        console.log(vals);
         
         $.getJSON(
                   $(this).attr('action'),
@@ -43,5 +42,39 @@ $(document).ready(function(){
                   );
         
         return false;    
+    });
+    
+    $('.ajx.tsa-tooltip').click(function(e){
+        e.preventDefault();
+        $('.tsa-tooltip-wrap').remove();
+        
+        var theUrlPieces = $(this).attr('href').split('/');
+        var Slide = theUrlPieces[theUrlPieces.length - 1];
+        var Holder = $(this).parent();
+        
+        $.getJSON(
+                    '/ajax/getprojectslide',
+                    {
+                        project: $('input[name="current_project"]').val(),
+                        slide: Slide
+                    },
+                    function(response){
+                        
+                        if (response.code == 'danger') {
+                            Holder.append('NOT FOUND.');
+                        }
+                        
+                        else { 
+                            Holder.append(
+                                "<div class=\"tsa-tooltip-wrap\">" +
+                                "<p>" + response.answer + "</p>" +
+                                "<p><em>" + response.extra + "</em></p>" +
+                                "</div>"
+                            );
+                        }
+                    }
+                );
+        
+        return false;
     });
 });

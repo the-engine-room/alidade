@@ -35,5 +35,46 @@
             }
         }
         
+        public function getprojectslide(){
+            $Auth = new Auth($url);
+            if(!$Auth->isLoggedIn()){
+                header('Location: /home');
+            }
+            else {
+                
+                $user = $Auth->getProfile();
+                $this->user = $user;
+                $this->set('user', $user);
+                
+                if(isset($_GET['project']) && is_numeric($_GET['project']) && isset($_GET['slide']) && !empty($_GET['slide']) ) {
+                    $expl = explode('.', $_GET['slide']);
+                    $project = (integer)$_GET['project'];
+                    $slide = (integer)$expl[1];
+                    $step = (integer)$expl[0];
+                    
+                    $params = array(
+                                'project' => $project,
+                                'slide' => $slide,
+                                'step' => $step
+                                );
+                    
+                    $Slide = new Slide;
+                    $response = $Slide->find($params);
+                    
+                    if(!empty($response)){
+                        $response = $response[0];
+                        $ret = array('code' => 'success',
+                                     'answer' =>$response->answer,
+                                     'extra'=> (is_null($response->extra) ? 'n.a.' : $response->extra));
+                        
+                        echo json_encode($ret);
+                    }
+                    else {
+                        echo json_encode(array('code' => 'danger'));
+                    }
+                }
+            }
+        }
+        
         
     }
