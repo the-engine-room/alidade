@@ -130,10 +130,14 @@
         </div>
         
         <div class="col-md-1">
-            <a href="/project/slide/<?php echo end($p['slideindex']); ?>?p=<?php echo $p['hash']; ?>" class="btn btn-primary"><i class="fa fa-hand-o-right"></i> Continue</a>
+            <a href="/project/slide/<?php
+                $i = array_search(end($p['slideindex']), $slideindex['fullIndex'], true);
+                echo $slideindex['fullIndex'][$i + 1]; 
+                ?>?p=<?php echo $p['hash']; ?>" class="btn btn-primary"><i class="fa fa-hand-o-right"></i> Continue</a>
         </div>
         
     </div>
+    
     
     
     
