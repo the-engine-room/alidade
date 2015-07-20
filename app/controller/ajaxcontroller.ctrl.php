@@ -64,8 +64,9 @@
                     if(!empty($response)){
                         $response = $response[0];
                         $ret = array('code' => 'success',
-                                     'answer' =>$response->answer,
-                                     'extra'=> (is_null($response->extra) ? 'n.a.' : $response->extra));
+                                     'answer' => nl2br($response->answer),
+                                     'choice' => (is_null($response->choice) ? '' : $response->choice),
+                                     'extra'=> (is_null($response->extra) ? '' : nl2br($response->extra)));
                         
                         echo json_encode($ret);
                     }

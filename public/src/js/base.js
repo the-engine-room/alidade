@@ -3,12 +3,8 @@ $(document).ready(function(){
 
     $('.choice').click(function(){
         $('.choice-text').hide();
-        
-        
         var $target = $('#' + $(this).attr('id') + '-text');    
-        
-        $target.show('fast');
-        
+        $target.show('fast');        
     });    
     
     
@@ -44,9 +40,9 @@ $(document).ready(function(){
         return false;    
     });
     
-    $('.ajx.tsa-tooltip').click(function(e){
-        e.preventDefault();
-        $('.tsa-tooltip-wrap').remove();
+    $('.ajx.tsa-tooltip').each(function(index){
+        //e.preventDefault();
+        //$('.tsa-tooltip-wrap').remove();
         
         var theUrlPieces = $(this).attr('href').split('/');
         var Slide = theUrlPieces[theUrlPieces.length - 1];
@@ -61,13 +57,13 @@ $(document).ready(function(){
                     function(response){
                         
                         if (response.code == 'danger') {
-                            Holder.append('NOT FOUND.');
+                            Holder.append('No data found.');
                         }
                         
                         else { 
                             Holder.append(
                                 "<div class=\"tsa-tooltip-wrap\">" +
-                                "<p>" + response.answer + "</p>" +
+                                "<p>" + response.answer + " " + response.choice + "</p>" +
                                 "<p><em>" + response.extra + "</em></p>" +
                                 "</div>"
                             );
@@ -75,6 +71,6 @@ $(document).ready(function(){
                     }
                 );
         
-        return false;
+        //return false;
     });
 });

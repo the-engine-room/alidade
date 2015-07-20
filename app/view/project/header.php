@@ -7,16 +7,16 @@
     <div class="row">
         <div class="col-md-12">
             <div class="step">
-                STEP 1
+                STEP 1: UNDERSTAND YOUR NEEDS
             </div>
             <div class="step">
-                STEP 2
+                STEP 2: UNDERSTAND THE TECH
             </div>
             <div class="step">
-                STEP 3
+                STEP 3: TRY IT OUT
             </div>
             <div class="step">
-                STEP 4
+                STEP 4: FIND A PARTNER
             </div>
         
             <div class="step">
@@ -52,9 +52,11 @@
                     elseif( ((array_search((string)'2.' . $i, $slideindex['fullIndex'], true) < array_search((string)$currentSlide, $slideindex['fullIndex'], true)) && ($i < $slide_number)) || ($step_number > 2) ) {
                         $status = '2';
                     }
+                    /*
                     elseif($i == 1 && $slide_number > 1){
                         $status = '2';
                     }
+                    */
                     else {
                         $status = '0';    
                     }
@@ -67,15 +69,17 @@
             </div>
             <div class="step">
                 <?php
-                for($i = 1; $i< count($slideindex[3]) + 1; $i++) {
+                for($i = 1; $i < count($slideindex[3]) + 1; $i++) {
                     if($currentSlide === '3.' . $i) {
                         $status = '1'; }
                     elseif( ((array_search((string)'3.' . $i, $slideindex['fullIndex'], true) < array_search((string)$currentSlide, $slideindex['fullIndex'], true)) && ($i < $slide_number)) || ($step_number > 3) ) {
                         $status = '2';
                     }
+                    /*
                     elseif($i == 1 && $slide_number > 1){
                         $status = '2';
                     }
+                    */
                     else {
                         $status = '0';    
                     }
@@ -94,9 +98,11 @@
                     elseif( (array_search((string)'4.' . $i, $slideindex['fullIndex'], true) < array_search((string)$currentSlide, $slideindex['fullIndex'], true)) && ($i < $slide_number) ) {
                         $status = '2';
                     }
+                    /*
                     elseif($i == 1 && $slide_number > 1){
                         $status = '2';
                     }
+                    */
                     else {
                         $status = '0';    
                     }

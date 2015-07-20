@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <h1>The Tool Selection Assistant</h1>
-                    <p>As more and more voice and accountability organisations use digital tools in their work, choosing the right tool from the range available has become increasingly important. </p>
+                    <p>As more and more voice and accountability organisations rely on technology in their work, choosing the right technology tool has become critical. </p>
                 </div>
             </div>
         </div>
@@ -15,7 +15,7 @@
             <div class="col-md-12">            
                 <h2>Why we created the Tool Selection Assistant</h2>
                 <p>From research conducted in Kenya and South Africa, we found that many of the organisations had significant problems choosing the right digital tool – problems that often only became clear after it was chosen or built. </p>
-                <p>So how should you choose? It’s not so different from picking the right tool to repair something at home. You need to understand the task you want to do (‘bang a nail into a wall’); you need to know the conditions you’re working in (‘is the wall brick, stone or wood? What kind of nails are available?’), and you need to know what tools exist that could do the job (‘a wooden mallet could work, but metal hammers work much better with iron nails’). </p>
+                <p>So how should you choose? It's not so different from picking the right tool to repair something at home. You need to understand the task you want to do (‘bang a nail into a wall’); you need to know the conditions you’re working in (‘is the wall brick, stone or wood? What kind of nails are available?’), and you need to know what tools exist that could do the job (‘a wooden mallet could work, but metal hammers work much better with iron nails’). </p>
                 <p>We looked at how these 40 organisations chose their tools and identified key points where they could have adapted their process a little to make a decision that met their needs. </p>
                 <p>The Tool Selection Assistant is a guide that can help you make the right digital tool selection by improving how you go about your decision.</p>
             </div>        
@@ -49,13 +49,13 @@
             </div>
             <div class="col-md-12">
                 <p>The organisations that made successful selections picked a tool that matched the time, resources and technical capacity they had available: they kept things as simple as they could.</p>
-                <p>So this [guide], based on real-life examples of where things went right, walks you through some steps to select a digital tool for a project. It focuses on our key finding – that if you avoid hard questions at the start, you will probably face bigger headaches later on. </p>
+                <p>So this [guide], based on real-life examples, walks you through some steps to select a digital tool for a project. It focuses on our key finding – that if you avoid hard questions at the start, you will probably face bigger headaches later on. </p>
             </div>
         </section>
         <section class="row">
             <div class="col-md-12">
                 <h2>How The Tool Selection Assistant Works</h2>
-                <p>Our research found that organizations often forgot to ask important questions or missed out key stages when choosing a tool. The Tool Selection Assistant is designed to help you avoid this problem. </p>
+                <p>Our research found that organizations often forgot to ask important questions when choosing a tool. The Tool Selection Assistant is designed to help you avoid this problem. </p>
                 <p>It collects your most important decisions about the tool as you complete each step. You can print or save the results when you have completed each section, using them:</p>
                 <ul>
                     <li>as a planning document to remind you of what to prioritise</li>
@@ -64,9 +64,15 @@
                     <li>to show potential donors or partners that you've really thought through your project</li>
                 </ul>
                 <p class="text-center">
-                    <br />
+                    If you want to return to your answers and change them as you go through the process, log in <a href="/user/login">here</a>
+                    <br /><br />
+                    
                     <a class="btn btn-primary btn-lg" href="/project/slide/1.1"><i class="fa fa-hand-o-right"></i> Start planning now!</a>
+                    
                     <br />
+                    <br />
+                    If you don’t have time to go through the full framework, read <a href="/home/choosing_the_right_technology_tool">this</a> instead.
+
                 </p>
             </div>
         </section>

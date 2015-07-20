@@ -30,6 +30,7 @@
               
                 if(!isset($_SESSION['plan']) || $cur === '1.1'){
                     $_SESSION['plan'] = array();
+                    $_SESSION['project'] = null;
                 }
                 
                 $position = explode('.', $cur);
@@ -37,6 +38,7 @@
                 $step_no    = (int)$position[0];
                 $slide_no   = (int)$position[1];
                 
+                $Slide = new Slide;
                 $Slidelist = new Slidelist;
                 $slidelist = $Slidelist->getList();
                 
@@ -75,10 +77,20 @@
                 
                 if($_GET['p']){
                     $hash = $_GET['p'];
-                    $project = $this->Project->find(array('hash' => $_GET['p']));
+                    $project = $this->Project->find(array('hash' => $hash));
                     
                     if(!empty($project) && is_object($project[0])) {
                         $_SESSION['project'] = $project[0]->idprojects;
+                    }
+                    
+                    $slidecontent = $Slide->find(array(
+                                                       'project'    => $project[0]->idprojects,
+                                                       'step'       => $step_no,
+                                                       'slide'      => $slide_no,
+                                                       ));
+                    //$slidecontent[0]->full_project = $project[0];
+                    if($slidecontent){ 
+                        $this->set('original', $slidecontent);
                     }
                 }
                
@@ -87,7 +99,7 @@
                     
                     // Save Slide to Slide content - Look for a Project Hash and, if Step == 1
                     
-                    if($_POST['current_slide'] == '1.1' && !isset($_POST['project'])){
+                    if($_POST['current_slide'] === '1.1' && !isset($_POST['project'])){
                         
                         $ProjectHash = md5( $_SESSION[APPNAME]['USR'] . time() . $_SESSION[APPNAME][SESSIONKEY]);
                         
@@ -99,7 +111,7 @@
                     }
                     
                     $slide_position = explode('.', $_POST['current_slide']);
-                    $Slide = new Slide;
+                    
                     
                     $slide = array();
                     $slide['project'] = $_SESSION['project'];
@@ -117,8 +129,24 @@
                     else {
                         $answer = $_POST['answer'];
                     }
-                    $slide['answer'] = $answer;                    
-                    $Slide->create($slide);
+                    $slide['answer'] = $answer;
+                    
+                    // creating or updating ?
+                    if(isset($_POST['slide_update']) && !empty($_POST['slide_update'])){
+                        $toUpdate = $Slide->find(array('step'   => $slide['step'],
+                                                       'slide'  => $slide['slide'],
+                                                       'project'=> $slide['project']
+                                                       ));
+                        
+                        
+                        
+                        $Slide->update($slide, $toUpdate[0]->idslides);
+                        header('Location: /user/projects/?cd=2');
+                    }
+                    else { 
+                        $r = $Slide->create($slide);
+                    }
+                    
                 }
             }
         }

@@ -18,6 +18,9 @@
     <?php foreach($projects as $p){  ?>
     
     <div class="row project">
+    <div class="col-md-12">
+        
+    </div>
         <div class="col-md-2">
             <?php if(empty($p['title'])){ ?>
             <form class="form-inline ajx project-name" method="get" action="/ajax/save_project_name">
@@ -39,33 +42,36 @@
         <div class="col-md-9">
             
             <div class="step">
-                STEP 1
+                STEP 1: UNDERSTAND YOUR NEEDS
             </div>
             <div class="step">
-                STEP 2
+                STEP 2: UNDERSTAND THE TECH
             </div>
             <div class="step">
-                STEP 3
+                STEP 3: TRY IT OUT
             </div>
             <div class="step">
-                STEP 4
+                STEP 4: FIND A PARTNER
             </div>
             
             
              <div class="step">
                 <?php
-                for($i = 1; $i< count($slideindex[1]) + 1; $i++) {
+                for($i = 1; $i < count($slideindex[1]) + 1; $i++) {
                     
                     if(in_array('1.' . $i ,  $p['slideindex'], true)){
                         $status = 2;
-                        
                     }
                     else {
                         $status = 0;
                     }
                     
                 ?>    
-                <div class="slide-position slide-position-<?php echo $status; ?> step-1" style="width: <?php echo round( (100/count($slideindex[1])) , 4); ?>%;"></div>
+                <div class="slide-position slide-position-<?php echo $status; ?> step-1" style="width: <?php echo round( (100/count($slideindex[1])) , 4); ?>%;">
+                    <?php if($status == 2){ ?>
+                    <a href="/project/slide/<?php echo '1.' . $i . '?p=' . $p['hash']; ?>" class="go-back-button"></a>
+                    <?php } ?>
+                </div>
                 <?php    
                 }
                 ?>
@@ -73,18 +79,20 @@
             
             <div class="step">
                 <?php
-                for($i = 1; $i< count($slideindex[2]) + 1; $i++) {
-                    
+                for($i = 1; $i < count($slideindex[2]) + 1; $i++) {
                     if(in_array('2.' . $i ,  $p['slideindex'], true)){
                         $status = 2;
-                        
                     }
                     else {
                         $status = 0;
                     }
                     
                 ?>    
-                <div class="slide-position slide-position-<?php echo $status; ?> step-2" style="width: <?php echo round( (100/count($slideindex[2])) , 4); ?>%;"></div>
+                <div class="slide-position slide-position-<?php echo $status; ?> step-2" style="width: <?php echo round( (100/count($slideindex[2])) , 4); ?>%;">
+                    <?php if($status == 2){ ?>
+                    <a href="/project/slide/<?php echo '2.' . $i . '?p=' . $p['hash']; ?>" class="go-back-button"></a>
+                    <?php } ?>
+                </div>
                 <?php    
                 }
                 ?>
@@ -102,7 +110,11 @@
                     }
                     
                 ?>    
-                <div class="slide-position slide-position-<?php echo $status; ?> step-3" style="width: <?php echo round( (100/count($slideindex[3])) , 4); ?>%;"></div>
+                <div class="slide-position slide-position-<?php echo $status; ?> step-3" style="width: <?php echo round( (100/count($slideindex[3])) , 4); ?>%;">
+                    <?php if($status == 2){ ?>
+                    <a href="/project/slide/<?php echo '3.' . $i . '?p=' . $p['hash']; ?>" class="go-back-button"></a>
+                    <?php } ?>
+                </div>
                 <?php    
                 }
                 ?>
@@ -120,7 +132,11 @@
                     }
                     
                 ?>    
-                <div class="slide-position slide-position-<?php echo $status; ?> step-2" style="width: <?php echo round( (100/count($slideindex[4])) , 4); ?>%;"></div>
+                <div class="slide-position slide-position-<?php echo $status; ?> step-2" style="width: <?php echo round( (100/count($slideindex[4])) , 4); ?>%;">
+                    <?php if($status == 2){ ?>
+                    <a href="/project/slide/<?php echo '4.' . $i . '?p=' . $p['hash']; ?>" class="go-back-button"></a>
+                    <?php } ?>
+                </div>
                 <?php    
                 }
                 ?>
