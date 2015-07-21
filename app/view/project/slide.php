@@ -2,8 +2,6 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h3><?php echo "PROJECT:" . $_SESSION['project'] ; ?></h3>
-            <h3><?php echo "CURRENT:" . $currentSlide; ?></h3>
             <form action="/project/slide/<?php echo $nextSlide; ?>" method="post">
                 <input type="hidden" name="current_slide"  value="<?php echo $currentSlide; ?>">
                 <input type="hidden" name="current_project" value="<?php echo $_SESSION['project']; ?>">
