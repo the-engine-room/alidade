@@ -124,7 +124,14 @@
                     //Parse Answers
                     if(is_array($_POST['answer'])){
                         $answer = array_filter($_POST['answer']);
-                        $answer = $answer[0];
+                        
+                        // implode checkboxes in step 4.2
+                        if($slide['step'] == 4 && $slide['slide'] == 2){
+                            $answer = implode(', ', $answer);
+                        }
+                        else {
+                            $answer = $answer[0];
+                        }
                     }
                     else {
                         $answer = $_POST['answer'];
@@ -143,7 +150,12 @@
                         $Slide->update($slide, $toUpdate[0]->idslides);
                         header('Location: /user/projects/?cd=2');
                     }
-                    else { 
+                    else {
+                        // check if we are skipping stuff
+                        /*if($slide['step'] == 1 && $slide['position'] == 11 && (isset($_GET['skipped']))){
+                            $slide['answer'] == 
+                        }*/
+                        
                         $r = $Slide->create($slide);
                     }
                     

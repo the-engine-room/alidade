@@ -25,7 +25,9 @@
                         echo injectAnswerField($slide->description, 'answer', $origin);
                         break;
                     default:
-                        echo $slide->description;
+                        $text = injectParam($slide->description, 'project', $_SESSION['project']);
+                        $text = injectParam($text, 'step', $step_number);
+                        echo $text;
                         break;
                 }
                 ?>

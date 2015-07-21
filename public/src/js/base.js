@@ -73,4 +73,43 @@ $(document).ready(function(){
         
         //return false;
     });
+    
+    
+    
+        
+    $('a[href="/ajax/print_recap/"]').click(function(e){
+        e.preventDefault();        
+        alert('clicked!');
+        //$('.tsa-tooltip-wrap').remove();
+        /*
+        var theUrlPieces = $(this).attr('href').split('/');
+        var Slide = theUrlPieces[theUrlPieces.length - 1];
+        var Holder = $(this).parent();
+        
+        $.getJSON(
+                    '/ajax/getprojectslide',
+                    {
+                        project: $('input[name="current_project"]').val(),
+                        slide: Slide
+                    },
+                    function(response){
+                        
+                        if (response.code == 'danger') {
+                            Holder.append('No data found.');
+                        }
+                        
+                        else { 
+                            Holder.append(
+                                "<div class=\"tsa-tooltip-wrap\">" +
+                                "<p>" + response.answer + " " + response.choice + "</p>" +
+                                "<p><em>" + response.extra + "</em></p>" +
+                                "</div>"
+                            );
+                        }
+                    }
+                );
+        */
+        return false;
+    });
+    
 });

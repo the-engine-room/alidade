@@ -29,6 +29,26 @@
             }
         }
         
+        public function findProject($id){
+            $sql .= 'SELECT * FROM `' . $this->table . '` AS `p`
+                        WHERE `p`.`idprojects` = :id';
+            $stmt = $this->database->prepare($sql);
+            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+            $q = $stmt->execute();
+            
+            if(!$q){
+                new Error(601, 'Could not execute query. (project.model.php, 19)');
+                return false;
+            }
+            else {
+                $project = $stmt->fetch(PDO::FETCH_ASSOC);
+                $Slides = new Slide;
+                $project['slides'] = $Slides->findProjectSlides($project['idprojects']);
+                
+                return $project;
+            }
+        }
+        
         
     }
     
