@@ -157,6 +157,13 @@
                         }*/
                         
                         $r = $Slide->create($slide);
+                        // Check values in the choice @ the end of Step 3
+                        if($slide['step'] == 3 && $slide['slide'] == 7 ) {
+                            $choice = $_POST['choice'];
+                            if(!in_array('no', $choice)){
+                                header('Location: /project/slide/4.10');
+                            }
+                        }
                     }
                     
                 }
