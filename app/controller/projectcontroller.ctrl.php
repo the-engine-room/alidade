@@ -23,7 +23,7 @@
             
             else {
                 
-               
+                $this->set('inProcess', true);
                 
                 $user = $Auth->getProfile();
                 $this->set('user', $user);
@@ -40,6 +40,8 @@
                 
                 $Slide = new Slide;
                 $Slidelist = new Slidelist;
+                $Project = new Project;
+                
                 $slidelist = $Slidelist->getList();
                 
                 $slideIndex = array();
@@ -54,13 +56,18 @@
                 $this->set('slidelist', $slidelist);
                 $this->set('slideindex', $slideIndex);
                 
+                if(!empty($_SESSION['project'])) {
+                    $loaded_project = $Project->findOne($_SESSION['project']);
+                    $this->set('projecthash', $loaded_project->hash);
+                }
+                
                 $slide = $Slidelist->find(array(
                                             'position'  =>  $slide_no,
                                             'step'      =>  $step_no
                                             ));
                 
                 $nextSlide = $slideIndex['fullIndex'][array_search($cur, $slideIndex['fullIndex'], true) + 1];
-                
+                $prevSlide = $slideIndex['fullIndex'][array_search($cur, $slideIndex['fullIndex'], true) - 1];                
                 /*
                 echo $cur; 
                 echo array_search($cur, $slideIndex['fullIndex']) + 1;
@@ -68,6 +75,7 @@
                 */
                 
                 $this->set('nextSlide', $nextSlide);
+                $this->set('prevSlide', $prevSlide);
                 $this->set('currentSlide', $cur);
                 
                 $this->set('slide', $slide[0]);

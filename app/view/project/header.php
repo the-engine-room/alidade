@@ -1,8 +1,11 @@
 <div class="container-fluid">
     <div class="row">
+        
         <div class="col-md-12">
-            <h1>Tool Selection Assistant <small><?php echo $currentSlide; ?></small></h1>           
+            <h1><?php printTitle($currentSlide, $slide->title); ?></h1>
         </div>
+        
+        
     </div>
     <div class="row">
         <div class="col-md-12">

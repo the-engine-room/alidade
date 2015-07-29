@@ -27,12 +27,29 @@
         
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-1"><a href="/home" class="brand">TSA</a></div>
-                <div class="col-md-offset-6 col-md-5">
+                
+                <div class="col-md-2">
+                    <?php
+                    if(isset($inProcess) && $inProcess == true){
+                    ?>
+                     <div class="">
+                        <a href="/project/slide/<?php echo $prevSlide; ?>?p=<?php echo $projecthash; ?>" class="btn btn-default btn-sm pull-left"><i class="fa fa-chevron-left"></i> Back</a>
+                        <h5 id="pos">Tool Selection Assistant / <small><?php echo $currentSlide; ?></small></h5>
+                    </div>
+                    
+                    <?php    
+                    }
+                    else {
+                    ?>
+                    <a href="/home" class="brand">TSA</a>
+                    <?php } ?>
+                </div>
+                <div class="col-md-offset-4 col-md-6">
                 <?php if(isset($_SESSION[APPNAME][SESSIONKEY]) && !empty($_SESSION[APPNAME][SESSIONKEY])) { ?>
                     <div class="pull-right">
                         Hello, <strong><?php echo $_SESSION[APPNAME]['USR']; ?></strong>!
                         <div class="btn-group" role="group" aria-label="User Options and Actions">
+                            <a href="/" title="All your Projects" class="btn btn-primary btn-sm"><i class="fa fa-home"></i><span class="sr-only">Homepage</span></a>
                             <a href="/user/projects" title="All your Projects" class="btn btn-primary btn-sm"><i class="fa fa-user"></i><span class="sr-only">Your Profile</span></a>
                             <a href="/user/logout" title="Logout" class="btn btn-primary btn-sm"><i class="fa fa-sign-out"></i><span class="sr-only">Logout</span></a>
                         </div>

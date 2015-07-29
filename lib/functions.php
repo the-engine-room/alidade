@@ -165,3 +165,28 @@
         
     }
     
+    // title printing, parsing position
+    function printTitle($slide, $slideTitle){
+        $cur = explode('.', $slide);
+        switch($cur[0]){
+            case 1:
+                $title .= 'Understanding your needs';
+                break;
+            case 2:
+                $title .= 'Understanding the tech';
+                break;
+            case 3:
+                $title .= 'Trying tools out';
+                break;
+            case 4:
+                $title .= 'Finding help';
+                break;
+            default:
+                $title .= 'Quick tips';
+                break;
+        }
+        
+        echo $title . ' - ' . $slideTitle;
+        
+    }
+    
