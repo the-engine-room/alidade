@@ -36,6 +36,13 @@
             </div>
             <div class="col-md-2 slidemap">
                 <h5>Try it out</h5>
+                <ul>
+                    <li><a href="/project/slide/3.2">About this step</a></li>
+                    <li><a href="/project/slide/3.3">Planning a trial</a></li>
+                    <li><a href="/project/slide/3.5">Documenting your learnings</a></li>
+                    <li><a href="/project/slide/3.6">Applying your learnings</a></li>
+                    <li><a href="/project/slide/3.7">Checklist</a></li>
+                </ul>
             </div>
             
             <div class="col-md-2 slidemap">
