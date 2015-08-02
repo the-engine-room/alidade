@@ -28,7 +28,7 @@
         <div class="container-fluid">
             <div class="row">
                 
-                <div class="col-md-2">
+                <div class="col-md-6">
                     <?php
                     if(isset($inProcess) && $inProcess == true){
                     ?>
@@ -44,7 +44,7 @@
                     <a href="/home" class="brand">TSA</a>
                     <?php } ?>
                 </div>
-                <div class="col-md-offset-4 col-md-6">
+                <div class="col-md-6">
                 <?php if(isset($_SESSION[APPNAME][SESSIONKEY]) && !empty($_SESSION[APPNAME][SESSIONKEY])) { ?>
                     <div class="pull-right">
                         Hello, <strong><?php echo $_SESSION[APPNAME]['USR']; ?></strong>!
