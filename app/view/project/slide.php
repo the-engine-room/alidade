@@ -11,6 +11,9 @@
                 if(!is_null($original)) { ?>
                 <input type="hidden" name="slide_update" value="<?php echo $_SESSION['project']; ?>">
                 <?php }
+                if(isset($edit) && $edit == true ) { ?>
+                <input type="hidden" name="edit" value="true">
+                <?php }
                 
                 switch($slide->slide_type){
                     case 1:

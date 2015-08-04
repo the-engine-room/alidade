@@ -33,7 +33,7 @@
                     if(isset($inProcess) && $inProcess == true){
                     ?>
                      <div class="">
-                        <a href="/project/slide/<?php echo $prevSlide; ?>?p=<?php echo $projecthash; ?>" class="btn btn-default btn-sm pull-left"><i class="fa fa-chevron-left"></i> Back</a>
+                        <a href="/project/slide/<?php echo $prevSlide; ?>?p=<?php echo $projecthash; ?>&back" class="btn btn-default btn-sm pull-left"><i class="fa fa-chevron-left"></i> Back</a>
                         <h5 id="pos">Tool Selection Assistant / <small><?php echo $currentSlide; ?></small></h5>
                     </div>
                     

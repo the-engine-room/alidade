@@ -69,7 +69,7 @@
                 ?>    
                 <div class="slide-position slide-position-<?php echo $status; ?> step-1" style="width: <?php echo round( (100/count($slideindex[1])) , 4); ?>%;">
                     <?php if($status == 2){ ?>
-                    <a href="/project/slide/<?php echo '1.' . $i . '?p=' . $p['hash']; ?>" class="go-back-button"></a>
+                    <a href="/project/slide/<?php echo '1.' . $i . '?p=' . $p['hash'] . '&edit'; ?>" class="go-back-button"></a>
                     <?php } ?>
                 </div>
                 <?php    
@@ -90,7 +90,7 @@
                 ?>    
                 <div class="slide-position slide-position-<?php echo $status; ?> step-2" style="width: <?php echo round( (100/count($slideindex[2])) , 4); ?>%;">
                     <?php if($status == 2){ ?>
-                    <a href="/project/slide/<?php echo '2.' . $i . '?p=' . $p['hash']; ?>" class="go-back-button"></a>
+                    <a href="/project/slide/<?php echo '2.' . $i . '?p=' . $p['hash'] . '&edit'; ?>" class="go-back-button"></a>
                     <?php } ?>
                 </div>
                 <?php    
@@ -112,7 +112,7 @@
                 ?>    
                 <div class="slide-position slide-position-<?php echo $status; ?> step-3" style="width: <?php echo round( (100/count($slideindex[3])) , 4); ?>%;">
                     <?php if($status == 2){ ?>
-                    <a href="/project/slide/<?php echo '3.' . $i . '?p=' . $p['hash']; ?>" class="go-back-button"></a>
+                    <a href="/project/slide/<?php echo '3.' . $i . '?p=' . $p['hash'] . '&edit'; ?>" class="go-back-button"></a>
                     <?php } ?>
                 </div>
                 <?php    
@@ -134,7 +134,7 @@
                 ?>    
                 <div class="slide-position slide-position-<?php echo $status; ?> step-2" style="width: <?php echo round( (100/count($slideindex[4])) , 4); ?>%;">
                     <?php if($status == 2){ ?>
-                    <a href="/project/slide/<?php echo '4.' . $i . '?p=' . $p['hash']; ?>" class="go-back-button"></a>
+                    <a href="/project/slide/<?php echo '4.' . $i . '?p=' . $p['hash'] . '&edit'; ?>" class="go-back-button"></a>
                     <?php } ?>
                 </div>
                 <?php    

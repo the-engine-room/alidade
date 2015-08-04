@@ -100,6 +100,12 @@
                     if($slidecontent){ 
                         $this->set('original', $slidecontent);
                     }
+                    if(isset($_GET['edit'])){
+                        $this->set('edit', true);
+                    }
+                    if(isset($_GET['back'])){
+                        $this->set('back', true);
+                    }
                 }
                
                 if(isset($_POST) && !empty($_POST)){
@@ -156,7 +162,12 @@
                         
                         
                         $Slide->update($slide, $toUpdate[0]->idslides);
-                        header('Location: /user/projects/?cd=2');
+                        
+                        /** add a filter to sort out exiting pages **/
+                        if(isset($_POST['edit']) && $_POST['edit'] === 'true'){
+                            header('Location: /user/projects/?cd=2');    
+                        }
+                        
                     }
                     else {
                         // check if we are skipping stuff
@@ -173,7 +184,6 @@
                             }
                         }
                     }
-                    
                 }
             }
         }
