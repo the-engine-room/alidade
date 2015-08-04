@@ -14,7 +14,7 @@
         public function __construct() {
             if(!$this->database){
                 
-                $dns = DBTYPE . ':dbname=' . DBNAME . ';host=' . DBHOST;
+                $dns = DBTYPE . ':dbname=' . DBNAME . ';host=' . DBHOST . ';charset=utf8';
                 
                 $this->database = new PDO($dns, DBUSER, DBPASS);
                 if (is_object($this->database)) {
