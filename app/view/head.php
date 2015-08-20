@@ -72,7 +72,9 @@
                     </div>
                     
                     <div class="form-group">
-                        <button type="submit" class="form-control btn btn-primary btn-sm" name="submit" id="submit"><i class="fa fa-sign-in"></i> Login</button>
+                        <button type="submit" class="btn btn-primary btn-sm" name="submit" id="submit"><i class="fa fa-sign-in"></i> Login</button>
+                        or
+                        <a href="/user/create" class="btn btn-default btn-sm"><i class="fa fa-pencil"></i> Register</a>
                     </div>
                     
                 </form>

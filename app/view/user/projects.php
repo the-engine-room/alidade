@@ -197,5 +197,15 @@
         </div>
     </div>
     */ ?>
-    <?php } ?>    
+    <?php } ?>
+    
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="text-center">
+                <br /><br />
+                <a class="btn btn-primary btn-lg" href="/project/slide/1.1"><i class="fa fa-hand-o-right"></i> Start a New Project</a>
+                <br /><br />
+            </div>
+        </div>
+    </div>
 </div>
