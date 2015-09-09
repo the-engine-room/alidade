@@ -42,7 +42,7 @@
                         }
                         
                         if($pass == true){
-                            header('Location: /home');
+                            header('Location: /user/projects');
                         }
                     }
                     else {

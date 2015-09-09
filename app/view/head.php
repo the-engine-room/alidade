@@ -33,7 +33,9 @@
                     if(isset($inProcess) && $inProcess == true){
                     ?>
                      <div class="">
+                        <?php if(!is_null($prevSlide) && !empty($prevSlide)) { ?>
                         <a href="/project/slide/<?php echo $prevSlide; ?>?p=<?php echo $projecthash; ?>&back" class="btn btn-default btn-sm pull-left"><i class="fa fa-chevron-left"></i> Back</a>
+                        <?php } ?>
                         <h5 id="pos">Tool Selection Assistant / <small><?php echo $currentSlide; ?></small></h5>
                     </div>
                     

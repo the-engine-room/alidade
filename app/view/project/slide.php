@@ -2,7 +2,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <form action="/project/slide/<?php echo $nextSlide; ?>" method="post">
+            <form action="/project/slide/<?php echo $nextSlide; ?><?php echo (!is_null($original) ? '/?p=' . $projecthash : ''); ?> " method="post">
                 <input type="hidden" name="current_slide"  value="<?php echo $currentSlide; ?>">
                 <input type="hidden" name="current_project" value="<?php echo $_SESSION['project']; ?>">
                 <h2><?php echo $slide->title; ?></h2>

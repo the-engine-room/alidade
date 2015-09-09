@@ -2,6 +2,10 @@
     <div class="row">
         <div class="col-md-12">
             <h1>All your projects...</h1>
+                    <p>To save your progress and return to it later, name your project and save it below.</p>
+                    <p>To keep working on an existing project, click the “Continue” button on the right.</p>
+                
+            
         </div>
     </div>
     <?php if(empty($projects))  { ?>
@@ -18,10 +22,8 @@
     <?php foreach($projects as $p){  ?>
     
     <div class="row project">
-    <div class="col-md-12">
-        
-    </div>
-        <div class="col-md-2">
+    
+        <div class="col-md-2 col-sm-12 col-xs-12">
             <?php if(empty($p['title'])){ ?>
             <form class="form-inline ajx project-name" method="get" action="/ajax/save_project_name">
                 
@@ -39,21 +41,22 @@
             <h4><?php echo $p['title']; ?></h4>
             <?php } ?>
         </div>
-        <div class="col-md-9">
+        <div class="col-md-9 col-sm-12 col-xs-12">
             
-            <div class="step">
-                STEP 1: UNDERSTAND YOUR NEEDS
+            <div class="step-wrap" style="display: inline-block; clear: both;">
+                <div class="step">
+                    STEP 1: UNDERSTAND YOUR NEEDS
+                </div>
+                <div class="step">
+                    STEP 2: UNDERSTAND THE TECH
+                </div>
+                <div class="step">
+                    STEP 3: TRY IT OUT
+                </div>
+                <div class="step">
+                    STEP 4: FIND A PARTNER
+                </div>
             </div>
-            <div class="step">
-                STEP 2: UNDERSTAND THE TECH
-            </div>
-            <div class="step">
-                STEP 3: TRY IT OUT
-            </div>
-            <div class="step">
-                STEP 4: FIND A PARTNER
-            </div>
-            
             
              <div class="step">
                 <?php
@@ -145,7 +148,7 @@
             
         </div>
         
-        <div class="col-md-1">
+        <div class="col-md-1 col-sm-12 col-xs-12">
             <a href="/project/slide/<?php
                 $i = array_search(end($p['slideindex']), $slideindex['fullIndex'], true);
                 echo $slideindex['fullIndex'][$i + 1]; 
