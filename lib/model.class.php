@@ -1,7 +1,7 @@
 <?php
 
     /** Main Model Class
-     * exposes the $database var (PDO OBject)
+     * exposes the $database var (PDO Object)
      * to model classes that extend it
      * */
 
