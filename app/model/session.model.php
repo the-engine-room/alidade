@@ -64,7 +64,7 @@
             $session = $_SESSION[APPNAME][SESSIONKEY];
             
             
-            $sql = 'SELECT users.idusers AS id, users.name, users.email FROM users
+            $sql = 'SELECT users.idusers AS id, users.name, users.email, users.role FROM users
                         INNER JOIN sessions ON sessions.user = users.idusers
                         WHERE sessions.session = :session';
             

@@ -79,5 +79,29 @@ $(document).ready(function(){
         }
     });    
     
+    if ($('.wysiwyg').length > 0) {
+        $('.wysiwyg').wysiwyg();     
+    }
     
+    
+    $('#save-form').click(function(e){
+        var theForm = $($(this).data('form'));
+        var data = {
+            'title'         : theForm.children().children('#title').val(),
+            'description'   : theForm.children().children('#slide').html(),
+            'step'          : theForm.children('#step').val(),
+            'position'      : theForm.children('#position').val()
+        }
+        $.post(
+                '/ajax/save_slide',
+                data,
+                function(response){
+                    theForm.prepend('<div class="alert alert-' + response.code + '"><i class="fa fa-' + response.icon + '"></i> ' + response.message + '</div>'); 
+                },
+                'json'
+        );
+        
+        e.preventDefault();
+        return false;    
+    });
 });

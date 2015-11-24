@@ -190,3 +190,13 @@
         
     }
     
+    function print_scripts($js){
+        if(is_array($js)){
+            foreach($js as $path){
+                echo '<script src="' . $path . '"></script>';
+            }
+        }
+        else {
+            echo '<script src="' . $js . '"></script>';
+        }
+    }

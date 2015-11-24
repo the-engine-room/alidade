@@ -3,9 +3,13 @@
     <div class="jumbotron">
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
-                    <h1>The Tool Selection Assistant</h1>
+                <div class="col-md-4">
+                    <h1>The Tool<br />Selection<br />Assistant</h1>
                     <p>As more and more voice and accountability organisations rely on technology in their work, choosing the right technology tool has become critical. </p>
+                    
+                        <button class="btn btn-main btn-lg" type="button">Get Help!</button><br />
+                        <a href="/user/register">register</a>
+                
                 </div>
             </div>
         </div>

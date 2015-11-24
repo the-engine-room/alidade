@@ -52,39 +52,9 @@
             }
         }
         
-        public function getUserGroups($user){
-            $sql = 'SELECT * FROM `' . $this->table . '` AS `u` 
-                    INNER JOIN `users_groups` AS `ug` ON `ug`.`user` = `u`.`idusers`
-                    INNER JOIN `groups` AS `g` ON `ug`.`group` = `g`.`idgroups` 
-                    WHERE `u`.`idusers` = :id';
-            $stmt = $this->database->prepare($sql);
-            $stmt->bindParam(':id', $user, PDO::PARAM_INT);
-            
-            $stmt->execute();
-            
-            return $stmt->fetchAll(PDO::FETCH_OBJ);        
-            
-            
-        }
-        
-        public function getRolePermissions($role){
-            $sql = 'SELECT p.idpermissions, p.permission, r.idroles, r.role FROM permissions AS p 
-                    INNER JOIN roles_permissions AS rp ON rp.permission = p.idpermissions
-                    INNER JOIN roles AS r ON rp.role= r.idroles 
-                    WHERE r.role = :role';
-                    
-            $stmt = $this->database->prepare($sql);
-            $stmt->bindParam(':role', $role, PDO::PARAM_STR);
-            
-            $stmt->execute();
-            
-            return $stmt->fetchAll(PDO::FETCH_OBJ);
-        }
-        
         public function getUserList () {
             
-            $sql = 'SELECT users.idusers AS id, users.name, users.email, roles.role, UNIX_TIMESTAMP(sessions.modified_at) AS modified_at FROM users
-                    INNER JOIN roles ON roles.idroles = users.role
+            $sql = 'SELECT users.idusers AS id, users.name, users.email, UNIX_TIMESTAMP(sessions.modified_at) AS modified_at FROM users
                     INNER JOIN sessions ON sessions.user = users.idusers 
                     ORDER BY users.role ASC';
             $stmt = $this->database->prepare($sql);
@@ -103,40 +73,6 @@
             return $Users;
         }
         
-        public function partyEligible(){
-            $sql = 'SELECT
-                        users.idusers AS id,
-                        users.name,
-                        users.email,
-                        roles.role
-                    FROM ' . $this->table . '
-                    INNER JOIN roles ON roles.idroles = users.role
-                    WHERE users.role > 1 
-                    ORDER BY users.name ASC';
-            $stmt = $this->database->prepare($sql);
-            $stmt->execute();
-            return $stmt->fetchAll(PDO::FETCH_OBJ);
-            
-        }
-        
-        public function inGroup($group){
-            $sql = 'SELECT
-                        users.idusers AS id,
-                        users.name,
-                        users.email,
-                        roles.role
-                    FROM ' . $this->table . '
-                    INNER JOIN roles ON roles.idroles = users.role
-                    WHERE users.role > 1
-                        AND users.idusers IN
-                            (SELECT `user` FROM users_groups WHERE `group` = :group) 
-                    ORDER BY users.name ASC';
-            $stmt = $this->database->prepare($sql);
-            $stmt->bindParam(':group', $group, PDO::PARAM_INT);
-            $stmt->execute();
-            return $stmt->fetchAll(PDO::FETCH_OBJ);
-            
-        }
         
         public function create($data){
             $sql = 'INSERT INTO `' . $this->table . '` (`created_at`, `name`, `email`, `password`)
