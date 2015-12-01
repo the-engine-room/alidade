@@ -22,9 +22,21 @@ footer {
     min-height: 80px;
     background: lighten(gainsboro, 5%);
 }
+
+/** style all links **/
+a {
+    -webkit-transition: all 0.5s ease 0s;
+    -moz-transition: all 0.5s ease 0s;
+    transition: all 0.5s ease 0s; 
+    color: @sea; text-decoration: none;
+    &:hover { color: lighten(@sea, 10%); text-decoration: underline; }
+    &.alt { color: @oil; text-decoration: underline;
+        &:hover { color: @sky; text-decoration: none; }
+    }
+}
 /** top dark bar **/
 #top {
-    background: @oil; color: @sea; font-size: 12px;
+    background: @oil; color: @cream; font-size: 12px;
     .steps {
         display: block; float: left; clear: both; width:100%; 
         .step { width: 25%; display: block; float: left; clear: none; height: 3px;
@@ -35,11 +47,42 @@ footer {
         }
     }
 }
-
-
+/** user navigation/panel **/
+.user-panel {
+    height: 30px;
+    display: block;
+    span.user-name {
+        line-height: 30px;
+        display: inline-block;
+        padding: 0px 10px; 
+    }
+    .user-actions {
+        list-style: none;
+        display: inline-block;
+        padding: 0px;
+        margin: 0px;
+        li {
+            display: inline-block;
+            height: 30px;
+            width: 30px;
+            line-height: 30px;
+            text-align: center;
+            background: @oil;
+            &:not(:last-child) { border-right: 1px solid lighten(@oil, 30%); }
+            a { display: block; color: @cream; 
+                &:hover {
+                    color: @oil; background: white;  
+                }
+            }
+        }
+    }
+}
+#login-panel {
+    background: fade(@oil, 20%);
+}
 /** landing page **/
 .jumbotron {
-    padding-top: 120px; padding-bottom: 120px; background: url('/assets/images/screw.jpg') no-repeat center top; background-size: cover;
+    padding-top: 120px; padding-bottom: 120px; background: url('/assets/images/screw.jpg') no-repeat center -200px; background-size: cover;
     h1 { color: @cream; text-shadow: 1px 1px 0px @oil;
         & ~ p { color: @cream; }
     }

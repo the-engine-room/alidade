@@ -1,6 +1,6 @@
 <?php
     session_start();
-    $url =  (isset($_GET['url']) ? $_GET['url'] : '');
+    $url =  (isset($_GET['url']) ? $_GET['url'] : null);
     
     require_once($_SERVER['DOCUMENT_ROOT'] . '/config/config.php');
     require_once(ROOT . DS . 'config' . DS . 'local.php');

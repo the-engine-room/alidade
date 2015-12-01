@@ -42,7 +42,14 @@
                         }
                         
                         if($pass == true){
-                            header('Location: /user/projects');
+                            if($_COOKIE['TSA-First-Time'] == 'no'){
+                                header('Location: /user/projects');    
+                            }
+                            else {
+                                setcookie('TSA-First-Time', 'no', 60*60*24*365*5, '/', true);
+                                header('Location: /project/start');
+                            }
+                            
                         }
                     }
                     else {

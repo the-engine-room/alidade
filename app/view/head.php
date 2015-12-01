@@ -35,13 +35,13 @@
             </div>
             <div class="row">
                 <?php if(isset($_SESSION[APPNAME][SESSIONKEY]) && !empty($_SESSION[APPNAME][SESSIONKEY])) { ?>
-                    <div class="pull-right">
-                        Hello, <strong><?php echo $_SESSION[APPNAME]['USR']; ?></strong>!
-                        <div class="btn-group" role="group" aria-label="User Options and Actions">
-                            <a href="/" title="All your Projects" class="mininav"><i class="fa fa-home"></i><span class="sr-only">Homepage</span></a>
-                            <a href="/user/projects" title="All your Projects" class="mininav"><i class="fa fa-user"></i><span class="sr-only">Your Profile</span></a>
-                            <a href="/user/logout" title="Logout" class="mininav"><i class="fa fa-sign-out"></i><span class="sr-only">Logout</span></a>
-                        </div>
+                    <div class="pull-right user-panel">
+                        <span class="user-name">Hello, <strong><?php echo $_SESSION[APPNAME]['USR']; ?></strong>.</span>
+                        <ul class="user-actions">
+                            <li><a href="/" title="All your Projects" class="mininav"><i class="fa fa-home fa-fw"></i><span class="sr-only">Homepage</span></a></li><!-- 
+                            --><li><a href="/user/projects" title="All your Projects" class="mininav"><i class="fa fa-user fa-fw"></i><span class="sr-only">Your Projects</span></a></li><!--
+                            --><li><a href="/user/logout" title="Logout" class="mininav"><i class="fa fa-sign-out fa-fw"></i><span class="sr-only">Logout</span></a></li><!-- --> 
+                        </ul>
                     </div>
                 
                 <?php    

@@ -1,4 +1,6 @@
-<div class="container-fluid">
+<?php
+if(!isset($page) || $page !== 'start') { 
+?><div class="container-fluid">
     <div class="row">
         
         <div class="col-md-12">
@@ -121,4 +123,4 @@
         </div>
     </div>
 </div>
-
+<?php } ?>

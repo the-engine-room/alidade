@@ -2,10 +2,7 @@
     <div class="row">
         <div class="col-md-12">
             <h1>All your projects...</h1>
-                    <p>To save your progress and return to it later, name your project and save it below.</p>
-                    <p>To keep working on an existing project, click the “Continue” button on the right.</p>
-                
-            
+                <p>Choose a project and click <strong>Continue</strong></p>
         </div>
     </div>
     
@@ -196,7 +193,7 @@
     <div class="row">
         <div class="col-md-12">
                 <br /><br />
-                <a class="btn btn-primary" href="/project/slide/1.1"><i class="fa fa-hand-o-right"></i> Start a New Project</a>
+                <a class="btn btn-primary" href="/project/start"><i class="fa fa-hand-o-right"></i> Start a New Project</a>
                 <br /><br />
             
         </div>

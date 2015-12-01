@@ -3,12 +3,34 @@
     class Projectcontroller extends Controller {
         
         public function start(){
+            $Auth = new Auth($url);
+            if(!$Auth->isLoggedIn()){
+                header('Location: /user/login');
+            }
             
-            $Step = new Step;
+            else {
+                
+                if(isset($_POST['title'])){
+                    $user = $Auth->getProfile();
+                    $ProjectHash = md5( $_SESSION[APPNAME]['USR'] . time() . $_SESSION[APPNAME][SESSIONKEY]);
+                            
+                    $data['user'] = $user->id;
+                    $data['hash'] = $ProjectHash;
+                    $data['title'] = $_POST['title'];
+                    
+                    $idproject = $this->Project->create($data);
+                    $_SESSION['project'] = $idproject;
+                    
+                    header('Location: /project/slide/1.1');
+                
+                }
+                else {
+                    $this->set('title', 'Start a new project');
+                    $this->set('page', 'start');
+                }
+            }
             
-            $step = $Step->find(array('position' => 1));
-            
-            $this->set('step', $step[0]);
+
             
         }
         
@@ -30,7 +52,7 @@
               
                 if(!isset($_SESSION['plan']) || $cur === '1.1'){
                     $_SESSION['plan'] = array();
-                    $_SESSION['project'] = null;
+                    //$_SESSION['project'] = null;
                 }
                 
                 $position = explode('.', $cur);
