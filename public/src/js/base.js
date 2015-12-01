@@ -1,6 +1,9 @@
 $(document).ready(function(){
     
-
+    $(window).scroll(function(){
+        parallax('.jumbotron', 8);     
+    });    
+    
     $('.choice').click(function(){
         $('.choice-text').hide();
         var $target = $('#' + $(this).attr('id') + '-text');    

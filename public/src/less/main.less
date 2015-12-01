@@ -22,11 +22,24 @@ footer {
     min-height: 80px;
     background: lighten(gainsboro, 5%);
 }
+/** top dark bar **/
+#top {
+    background: @oil; color: @sea; font-size: 12px;
+    .steps {
+        display: block; float: left; clear: both; width:100%; 
+        .step { width: 25%; display: block; float: left; clear: none; height: 3px;
+            &.step-1 { background: @oil; }
+            &.step-2 { background: lighten(@oil, 10%); }
+            &.step-3 { background: lighten(@oil, 20%); }
+            &.step-4 { background: lighten(@oil, 30%); }
+        }
+    }
+}
 
 
 /** landing page **/
 .jumbotron {
-    padding-top: 120px; padding-bottom: 120px; background: url('/assets/images/screw.jpg') no-repeat left center; background-size: cover;
+    padding-top: 120px; padding-bottom: 120px; background: url('/assets/images/screw.jpg') no-repeat center top; background-size: cover;
     h1 { color: @cream; text-shadow: 1px 1px 0px @oil;
         & ~ p { color: @cream; }
     }
@@ -35,18 +48,46 @@ footer {
 /** custom buttons **/
 .btn {
     -webkit-transition: all 0.6s ease 0s;
+    transition: all 0.6s ease 0s;
+    border-radius: 0px;
 }
-.btn-main { color: @oil; background: @cream;
+.btn-main { color: @sky; background: @cream;
     &:hover, &:active, &:focus {
-        background: white; color: @sky;
+        background: @gold; color: @oil;
     }
 }
-
-
+.btn-alt {  background: @gold; color: @oil;
+    &:hover, &:active, &:focus {
+        background: @cream; color: @sky; 
+    }
+}
+.btn-addon {
+    border: 1px solid #CCC;
+    background: @gold;
+    color: @oil;
+}
 /** WYSIWYG **/
 .wysiwyg {
     overflow-y: scroll;
     height: 350px; 
+}
+
+/** forms **/
+input, select, textarea, .form-control {
+    border-radius: 0px;
+    box-shadow: none;
+    &:focus, &:active, &:hover {
+        box-shadow: none;
+        border: 1px solid transparent; 
+        border-bottom: 1px solid @sky;
+    }
+}
+.form-box {
+    padding: 25px;
+    margin: 30px 0px;
+    background: @cream;
+    border-bottom: 4px solid @sky;
+    h3 { margin-top: 0px; color: @oil;  font-weight: normal; }
 }
 /** progress bar **/
 .step {
@@ -94,7 +135,16 @@ footer {
 
 h5#pos { padding-top: 8px; text-indent: 5px; }
 
-footer .slidemap ul {
-    padding: 0px; margin: 0px; list-style: none;
-    li a { font-size: 12px; }
+footer {
+    background: @oil;
+    color: @cream;
+    font-size: 12px; 
+    .slidemap ul {
+        padding: 0px; margin: 0px; list-style: none;
+        li {}
+    }
+    a {
+        font-size: 12px; color: @sea;
+        &:hover { color: @cream; }
+    }
 }

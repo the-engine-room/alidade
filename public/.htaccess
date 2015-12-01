@@ -2,6 +2,6 @@
     RewriteEngine   On    
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteCond %{REQUEST_URI} !\.(png|css|jpg|jpeg|js|less|eot|svg|ttf|otf|woff)$
+    RewriteCond %{REQUEST_URI} !\.(png|css|jpg|jpeg|gif|js|less|scss|eot|svg|ttf|otf|woff|ico)$
     RewriteRule ^(.*)$ index.php?url=$1 [PT,QSA,L]
 </IfModule>

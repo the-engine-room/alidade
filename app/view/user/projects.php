@@ -8,16 +8,7 @@
             
         </div>
     </div>
-    <?php if(empty($projects))  { ?>
-     <div class="row">
-        <div class="col-md-12">
-            <div class="text-center">
-                <a href="/project/slide/1.1" class="btn btn-primary btn-lg"><i class="fa fa-hand-o-right"></i> Start a New Project!</a>
-            </div>
-        </div>
-    </div>
     
-    <?php  } ?>
     
     <?php foreach($projects as $p){  ?>
     
@@ -203,12 +194,11 @@
     <?php } ?>
     
     <div class="row">
-        <div class="col-md-4 col-md-offset-4">
-            <div class="text-center">
+        <div class="col-md-12">
                 <br /><br />
-                <a class="btn btn-primary btn-lg" href="/project/slide/1.1"><i class="fa fa-hand-o-right"></i> Start a New Project</a>
+                <a class="btn btn-primary" href="/project/slide/1.1"><i class="fa fa-hand-o-right"></i> Start a New Project</a>
                 <br /><br />
-            </div>
+            
         </div>
     </div>
 </div>

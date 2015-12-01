@@ -25,7 +25,6 @@
                     return false;
                 }
             }
-            
         }
         
         public function find($params){
@@ -202,10 +201,10 @@
             }
             else {
                 return count(self::find($params));
-        
             }
-
         }
+        
+       
         
     }
     

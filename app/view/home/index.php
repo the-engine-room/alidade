@@ -24,7 +24,7 @@
                     If you want to return to your answers and change them as you go through the process, log in <a href="/user/login">here</a>
                     <br /><br />
                     
-                    <a class="btn btn-primary btn-lg" href="/project/slide/1.1"><i class="fa fa-hand-o-right"></i> Start planning now!</a>
+                    <a class="btn btn-alt btn-lg" href="/project/slide/1.1"><i class="fa fa-hand-o-right"></i> Start planning now!</a>
                     
                     <br />
                     <br />

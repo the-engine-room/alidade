@@ -24,6 +24,35 @@
 
     </head>
     <body>
+        <div class="container-fluid" id="top">
+            <div class="row">
+                <div class="steps">
+                    <div class="step step-1"></div>
+                    <div class="step step-2"></div>
+                    <div class="step step-3"></div>
+                    <div class="step step-4"></div>
+                </div>
+            </div>
+            <div class="row">
+                <?php if(isset($_SESSION[APPNAME][SESSIONKEY]) && !empty($_SESSION[APPNAME][SESSIONKEY])) { ?>
+                    <div class="pull-right">
+                        Hello, <strong><?php echo $_SESSION[APPNAME]['USR']; ?></strong>!
+                        <div class="btn-group" role="group" aria-label="User Options and Actions">
+                            <a href="/" title="All your Projects" class="mininav"><i class="fa fa-home"></i><span class="sr-only">Homepage</span></a>
+                            <a href="/user/projects" title="All your Projects" class="mininav"><i class="fa fa-user"></i><span class="sr-only">Your Profile</span></a>
+                            <a href="/user/logout" title="Logout" class="mininav"><i class="fa fa-sign-out"></i><span class="sr-only">Logout</span></a>
+                        </div>
+                    </div>
+                
+                <?php    
+                }
+                ?>
+            </div>
+            
+        </div>
+        
+        <?php /*
+        
         
         <div class="container-fluid">
             <div class="row">
@@ -86,3 +115,4 @@
                 </div>
             </div>
         </div>
+        */ ?>
