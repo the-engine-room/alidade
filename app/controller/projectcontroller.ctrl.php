@@ -131,20 +131,8 @@
                 }
                
                 if(isset($_POST) && !empty($_POST)){
+                    
                     $_SESSION['plan'][$_POST['current_slide']] = $_POST;
-                    
-                    // Save Slide to Slide content - Look for a Project Hash and, if Step == 1
-                    
-                    if($_POST['current_slide'] === '1.1' && !isset($_POST['project'])){
-                        
-                        $ProjectHash = md5( $_SESSION[APPNAME]['USR'] . time() . $_SESSION[APPNAME][SESSIONKEY]);
-                        
-                        $data['user'] = $user->id;
-                        $data['hash'] = $ProjectHash;
-                        
-                        $idproject = $this->Project->create($data);
-                        $_SESSION['project'] = $idproject;
-                    }
                     
                     $slide_position = explode('.', $_POST['current_slide']);
                     

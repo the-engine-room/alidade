@@ -3,6 +3,7 @@
         <div class="col-md-12">
             <h1>All your projects...</h1>
                 <p>Choose a project and click <strong>Continue</strong></p>
+                <p><small>or create a <a class="" href="/project/start">new project</a></small></p>
         </div>
     </div>
     
@@ -189,7 +190,7 @@
     </div>
     */ ?>
     <?php } ?>
-    
+    <!--  
     <div class="row">
         <div class="col-md-12">
                 <br /><br />
@@ -198,4 +199,5 @@
             
         </div>
     </div>
+    -->
 </div>

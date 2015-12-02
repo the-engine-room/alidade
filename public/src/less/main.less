@@ -11,8 +11,26 @@ h1, h2, h3 {
 }
 
 blockquote {
-    font-style: italic;
-    font-size: 16px; 
+    //font-style: italic;
+    font-size: 16px;
+    border: 0px;
+    padding: 10px 0px;
+    color: @oil; 
+    &:before {
+        content: '\f10d';
+        box-sizing: border-box;
+        font-family: 'FontAwesome';
+        font-style: normal;
+        color: @oil;
+        font-size: 48px;
+        padding: 12px; 
+        width: 100px;
+        text-align: center;
+        display: block; float: left; clear: left;
+        height: inherit;
+        margin-right: 20px; 
+    }
+    
 }
 
 footer {
@@ -28,10 +46,10 @@ a {
     -webkit-transition: all 0.5s ease 0s;
     -moz-transition: all 0.5s ease 0s;
     transition: all 0.5s ease 0s; 
-    color: @sea; text-decoration: none;
-    &:hover { color: lighten(@sea, 10%); text-decoration: underline; }
-    &.alt { color: @oil; text-decoration: underline;
-        &:hover { color: @sky; text-decoration: none; }
+    color: @sky; text-decoration: none;
+    &:hover { color: lighten(@sky, 10%); text-decoration: underline; }
+    &.alt { color: @sea; text-decoration: underline;
+        &:hover { color: @sea; text-decoration: none; }
     }
 }
 /** top dark bar **/
