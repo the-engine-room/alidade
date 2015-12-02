@@ -32,9 +32,30 @@
                         break;
                 }
                 ?>
-                <?php if($currentSlide !== '1.6') { ?> 
-                <div class="text-center">                    
-                    <button type="submit" class="btn btn-primary btn-lg">go ahead!</button>
+                <?php if($currentSlide !== '1.6') { ?>
+                <div class="row">
+                    <div class="text-center">
+                        
+                        <?php
+                        if(isset($inProcess) && $inProcess == true){
+                            if(!is_null($prevSlide) && !empty($prevSlide)) { ?>
+                            <div class="col-xs-6 col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-3">
+                                <a href="/project/slide/<?php echo $prevSlide; ?>?p=<?php echo $projecthash; ?>&back" class="btn btn-main btn-lg btn-block"><i class="fa fa-angle-left"></i> Back</a>
+                            </div>
+                            <?php
+                            }
+                            else {
+                            ?>
+                            
+                            
+                            <?php 
+                            }
+                        }
+                        ?>
+                        <div class="col-xs-6 col-sm-4 col-md-3">
+                            <button type="submit" class="btn btn-main btn-lg btn-block">Forward <i class="fa fa-angle-right"></i></button>
+                        </div>
+                    </div>
                 </div>
                 <?php } ?>
             </form>   

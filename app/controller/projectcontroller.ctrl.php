@@ -175,7 +175,9 @@
                         
                         /** add a filter to sort out exiting pages **/
                         if(isset($_POST['edit']) && $_POST['edit'] === 'true'){
-                            header('Location: /user/projects/?cd=2');    
+                        
+                            $this->set('edit', true);
+                            //header('Location: /user/projects/?cd=2');    
                         }
                         
                     }

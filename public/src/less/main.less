@@ -112,14 +112,19 @@ a {
     transition: all 0.6s ease 0s;
     border-radius: 0px;
 }
-.btn-main { color: @sky; background: @cream;
+.btn-main { color: @sea; background: @oil;
     &:hover, &:active, &:focus {
-        background: @gold; color: @oil;
+        background: @sky; color: @oil;
     }
 }
 .btn-alt {  background: @gold; color: @oil;
     &:hover, &:active, &:focus {
         background: @cream; color: @sky; 
+    }
+}
+.btn-default {  background: gainsboro; color: @oil;
+    &:hover, &:active, &:focus {
+        background: lighten(gainsboro, 10%); color: @sky; 
     }
 }
 .btn-addon {
