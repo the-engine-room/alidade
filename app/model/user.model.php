@@ -75,15 +75,18 @@
         
         
         public function create($data){
-            $sql = 'INSERT INTO `' . $this->table . '` (`created_at`, `name`, `email`, `password`)
-                    VALUES (:created_at, :name, :email, :password)';
+            $sql = 'INSERT INTO `' . $this->table . '` (`created_at`, `name`, `email`, `password`, `role`)
+                    VALUES (:created_at, :name, :email, :password, :role)';
             
             $data['created_at'] = date('Y-m-d H:i:s', time() );
+            $data['role'] = (empty($data['role']) || !isset($data['role']) ? 'user' : $data['role'] ); 
             
             $stmt = $this->database->prepare($sql);
+            
             $stmt->bindParam(':name', $data['name'], PDO::PARAM_STR);
             $stmt->bindParam(':email', $data['email'], PDO::PARAM_STR);
             $stmt->bindParam(':password', $data['password'], PDO::PARAM_STR);
+            $stmt->bindParam(':role', $data['role'], PDO::PARAM_STR);
             $stmt->bindParam(':created_at', $data['created_at']);
             
             $q = $stmt->execute();

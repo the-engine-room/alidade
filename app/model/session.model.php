@@ -65,8 +65,8 @@
             
             
             $sql = 'SELECT users.idusers AS id, users.name, users.email, users.role FROM users
-                        INNER JOIN sessions ON sessions.user = users.idusers
-                        WHERE sessions.session = :session';
+                    INNER JOIN sessions ON sessions.user = users.idusers
+                    WHERE sessions.session = :session';
             
             $stmt = $this->database->prepare($sql);
             $stmt->bindParam(':session', $session, PDO::PARAM_STR);

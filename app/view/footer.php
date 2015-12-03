@@ -4,14 +4,14 @@
             
             
             <?php if($inProcess) {?> 
-            <div class="col-md-2 slidemap">
+            <div class="col-xs-12 col-sm-6 col-md-2 slidemap">
                 <h5>Quick tips</h5>
                 <ul>
                     <li><a href="/home/choosing_the_right_technology_tool">Choosing the right technology tool</a></li>
                 </ul>
             </div>
             
-            <div class="col-md-2 slidemap">
+            <div class="col-xs-12 col-sm-6 col-md-2 slidemap">
                 <h5>Understanding your needs</h5>
                 <ul>
                     <li><a href="/project/slide/1.1">About this step</a></li>
@@ -22,7 +22,7 @@
                     <li><a href="/project/slide/1.11">Checklist</a></li>
                 </ul>
             </div>
-            <div class="col-md-2 slidemap">
+            <div class="col-xs-12 col-sm-6 col-md-2 slidemap">
                 <h5>Understanding the tech</h5>
                 <ul>
                     <li><a href="/project/slide/2.1">About this step</a></li>
@@ -34,7 +34,7 @@
                     <li><a href="/project/slide/2.7">Checklist</a></li>
                 </ul>
             </div>
-            <div class="col-md-2 slidemap">
+            <div class="col-xs-12 col-sm-6 col-md-2 slidemap">
                 <h5>Try it out</h5>
                 <ul>
                     <li><a href="/project/slide/3.2">About this step</a></li>
@@ -45,7 +45,7 @@
                 </ul>
             </div>
             
-            <div class="col-md-2 slidemap">
+            <div class="col-xs-12 col-sm-6 col-md-2 slidemap">
                 <h5>Finding help</h5>
                 <ul>
                     <li><a href="/project/slide/4.1">What kind of help?</a></li>
@@ -62,11 +62,12 @@
             
             
             
-            <div class="col-md-2">
+            <div class="col-xs-12 col-sm-6 col-md-2">
                 <small>
                 Built by <a href="http://www.pawa254.org">Pawa254</a>,
                 <br />the <a href="http://www.networksociety.co.za/">Network Society</a> at the University of the Witwatersrand<br />
-                and <a href="http://www.theengineroom.org">the engine room</a>
+                and <a href="http://www.theengineroom.org">the engine room</a><br /> <br />
+                <a href="mailto: research@theengineroom.org"><i class="fa fa-send"></i> Send us feedback on the tool</a>
                 </small>
             </div>
         </div>
