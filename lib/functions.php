@@ -6,7 +6,7 @@
      * */
     function hasRole($user, $role){
         
-        if($user->role == 'Root'){
+        if(ucfirst($user->role) == 'Root'){
             return true;
         }
         else {
@@ -190,13 +190,28 @@
         
     }
     
-    function print_scripts($js){
+    function print_scripts($js, $inject=false){
         if(is_array($js)){
             foreach($js as $path){
                 echo '<script src="' . $path . '"></script>';
             }
         }
         else {
-            echo '<script src="' . $js . '"></script>';
+            if($inject == true){
+                echo '<script>' . $js . '</script>';
+            }
+           else { 
+                echo '<script src="' . $js . '"></script>';
+           }
+        }
+    }
+    function print_styles($css){
+        if(is_array($css)){
+            foreach($css as $path){
+                echo '<link type="text/css" rel="stylesheet" href="' . $path . '">';
+            }
+        }
+        else {
+            echo '<link type="tex/css" rel="stylesheet" href="' . $css . '">';
         }
     }

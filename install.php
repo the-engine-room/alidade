@@ -98,10 +98,12 @@ if(( isset($_GET['config-check']) && $_GET['config-check'] == 1) || isset($_POST
                 DROP TABLE IF EXISTS `slides`;
                 DROP TABLE IF EXISTS `projects`;
                 DROP TABLE IF EXISTS `sessions`;
-                DROP TABLE IF EXISTS `users`;                
+                DROP TABLE IF EXISTS `users`;
+                DROP TABLE IF EXISTS `slide_contents`;
                 DROP TABLE IF EXISTS `slide_list`;
                 DROP TABLE IF EXISTS `steps`;
                 DROP TABLE IF EXISTS `slide_types`;
+                DROP TABLE IF EXISTS `pages`;
                 
                 CREATE TABLE `users` (
                   `idusers` int(11) NOT NULL AUTO_INCREMENT,
@@ -211,6 +213,22 @@ if(( isset($_GET['config-check']) && $_GET['config-check'] == 1) || isset($_POST
                   CONSTRAINT `fkSlideSlidelist` FOREIGN KEY (`slide`) REFERENCES `slide_list` (`idslide_list`) ON DELETE NO ACTION ON UPDATE NO ACTION,
                   CONSTRAINT `fkSlideStep` FOREIGN KEY (`step`) REFERENCES `steps` (`idsteps`) ON DELETE NO ACTION ON UPDATE NO ACTION
                 ) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
+                
+                CREATE TABLE `pages` (
+                    `idpages` int(11) NOT NULL AUTO_INCREMENT,
+                    `title` varchar(255) NOT NULL,
+                    `contents` text,
+                    `url` varchar(255) NOT NULL,
+                    `created_at` timestamp NULL DEFAULT NULL,
+                    `modified_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+                    PRIMARY KEY (`idpages`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+                
+                LOCK TABLES `pages` WRITE;
+                /*!40000 ALTER TABLE `pages` DISABLE KEYS */;
+                INSERT INTO `pages` VALUES (1,'Tool Selection Assistant','', 'homepage', NOW(), NOW()),(2,'Choosing the right tool','','choosing-the-right-tool', NOW(), NOW()),(3,'Get Help!','','get-help', NOW(), NOW()),(4,'Research Report','','research-report', NOW(), NOW());
+                /*!40000 ALTER TABLE `slide_list` ENABLE KEYS */;
+                UNLOCK TABLES;
             ";
             
             $dns = DBTYPE . ':dbname=' . DBNAME . ';host=' . DBHOST . ';charset=utf8';
@@ -232,6 +250,7 @@ if(( isset($_GET['config-check']) && $_GET['config-check'] == 1) || isset($_POST
                                 'password' => crypt($pass, '$1$'.SECRET),
                                 'role'     => 'root'
                             );
+                
                 $User = new User;
                 $Session = new Session;
                 

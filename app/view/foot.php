@@ -6,5 +6,6 @@
     <?php if(isset($js) && !empty($js)){ print_scripts($js); } ?>
     
     <script src="/dist/js/script.min.js"></script>
+    
     </body>
 </html>

@@ -12,6 +12,7 @@
                 
                 if(isset($_POST['title'])){
                     $user = $Auth->getProfile();
+                    $this->set('userRole', $user->role);
                     $ProjectHash = md5( $_SESSION[APPNAME]['USR'] . time() . $_SESSION[APPNAME][SESSIONKEY]);
                             
                     $data['user'] = $user->id;

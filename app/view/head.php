@@ -13,6 +13,9 @@
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <!-- Local Styles, if Any -->
+        <?php if(isset($css) && !empty($css)){ print_styles($css); } ?>
+        
         <link rel="stylesheet" href="/dist/css/main.css">
         
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -38,7 +41,10 @@
                     <div class="pull-right user-panel">
                         <span class="user-name">Hello, <strong><?php echo $_SESSION[APPNAME]['USR']; ?></strong>.</span>
                         <ul class="user-actions">
-                            <li><a href="/" title="All your Projects" class="mininav"><i class="fa fa-home fa-fw"></i><span class="sr-only">Homepage</span></a></li><!-- 
+                            <li><a href="/" title="All your Projects" class="mininav"><i class="fa fa-home fa-fw"></i><span class="sr-only">Homepage</span></a></li><!--
+                            <?php if(isset($userRole) && $userRole == 'root') { ?>
+                            --><li><a href="/manage/index" title="Manage Contents" class="mininav"><i class="fa fa-wrench fa-fw"></i><span class="sr-only">Manage Contents</span></a></li><!--
+                            <?php } ?>
                             --><li><a href="/user/projects" title="All your Projects" class="mininav"><i class="fa fa-user fa-fw"></i><span class="sr-only">Your Projects</span></a></li><!--
                             --><li><a href="/user/logout" title="Logout" class="mininav"><i class="fa fa-sign-out fa-fw"></i><span class="sr-only">Logout</span></a></li><!-- --> 
                         </ul>

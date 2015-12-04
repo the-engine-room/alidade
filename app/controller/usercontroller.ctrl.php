@@ -74,6 +74,7 @@
             }
             else {                
                 $user = $Auth->getProfile();
+                $this->set('userRole', $user->role);
                 $this->set('user', $user);
                 $this->set('header', true);
                 
@@ -91,7 +92,8 @@
             $this->set('title', 'New User');
             
             $Auth = new Auth($url);
-            
+                $user = $Auth->getProfile();
+                $this->set('userRole', $user->role);
                 $this->set('user', $user);
                 $this->set('header', true);
                 
@@ -173,6 +175,8 @@
             
             else {                
                 $user = $Auth->getProfile();
+                
+                $this->set('userRole', $user->role);
                 $this->set('user', $user);
                 $this->set('header', true);
                 
@@ -219,6 +223,7 @@
             
             else {                
                 $user = $Auth->getProfile();
+                $this->set('userRole', $user->role);
                 $this->set('user', $user);
                 $this->set('header', true);
                 $profile =  $this->User->profilePage($id);
@@ -238,6 +243,7 @@
             
             else {                
                 $user = $Auth->getProfile();
+                $this->set('userRole', $user->role);
                 $this->set('user', $user);
                 $Slidelist = new Slidelist;
                 $Project = new Project;                
@@ -266,7 +272,7 @@
             unset($_SESSION[APPNAME][SESSIONKEY]);
             session_destroy();
             
-            header('Location: /home');
+            header('Location: /');
             
         }
     }

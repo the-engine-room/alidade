@@ -27,7 +27,7 @@
             }
         }
         
-        public function find($params){
+        public function find( $params ){
             $sql = 'SELECT * FROM ' . $this->table . ' WHERE ';
             $clauses = array();
             if(!empty($params)){ 
@@ -139,7 +139,8 @@
                 $fields[$i] = '`' . $field . '` = :' . $field;
             }
             
-            $sql = 'UPDATE `' . $this->table . '` SET ' . implode(', ', $fields) . ' WHERE `id' . $this->table . '` = :id'; 
+            $sql = 'UPDATE `' . $this->table . '` SET ' . implode(', ', $fields) . ' WHERE `id' . $this->table . '` = :id';
+            
             $stmt = $this->database->prepare($sql);
             if(!$stmt && SYSTEM_STATUS == 'development'){
                 dsql($sql . ' (model.class.php, 142)');
