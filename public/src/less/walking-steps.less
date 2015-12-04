@@ -1,0 +1,47 @@
+.walking-steps {
+    display: block;
+    width: 100%;
+    .step {
+        width: 25%;
+        display: block;
+        float: left;
+        &.step1 { background: @oil;
+            .slides ul li  { width: 9.0909%; }
+        }
+        &.step2 { background: lighten(@oil, 10%);
+            .slides ul li  { width: 14.2857%;
+            &:last-child { margin-right: -1px; }
+            }
+        }
+        &.step3 { background: lighten(@oil, 20%);
+            .slides ul li  { width: 14.2857%; }
+        }
+        &.step4 { background: lighten(@oil, 30%);
+            .slides ul li  { width: 10%; }
+        }
+        .slides ul {
+            margin: 0px; padding: 0px; list-style: none;
+            li {
+                display: block; float: left; margin: 0px;
+                a {
+                    cursor: pointer; 
+                    display: block;
+                    min-height: 32px;
+                    background: gainsboro;
+                    &:hover { background: darken(gainsboro, 12%); }
+                    &.done {
+                        background: yellowgreen;
+                        &:hover { background: darken(yellowgreen, 8%); }
+                    }
+                    &.working { background: fade(yellowgreen, 50%);
+                        &:hover { background: fade(yellowgreen, 75%); }
+                    }
+                    .sr-only { display: none;}
+                }
+            }
+        }
+    }
+    span.title, span.percentage, span.overall {
+        font-size: 12px; text-transform: uppercase; color: @cream; padding: 4px; line-height: 20px;  display: block; float: left;
+    }
+}

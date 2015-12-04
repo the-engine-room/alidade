@@ -1,6 +1,98 @@
 <?php
 if(!isset($page) || $page !== 'start') { 
-?><div class="container-fluid">
+?>
+
+<div class="walking-steps">
+    <div class="step step1">
+        <div class="slides">
+            <?php ?>
+            <ul>
+                <li><a class="slide done"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide done"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide working"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide"><span class="sr-only">slide name</span></a></li>
+            </ul>
+        </div>
+        <span class="title">Understanding Your Needs:</span>
+        <span class="percentage">18%</span>
+    </div>
+    <div class="step step2">
+        <div class="slides">
+            <?php ?>
+            <ul>
+                <li><a class="slide"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide"><span class="sr-only">slide name</span></a></li>
+            </ul>
+        </div>
+        <span class="title">Understand the technology:</span>
+        <span class="percentage">0%</span>
+    </div>
+    <div class="step step3">
+        <div class="slides">
+            <?php ?>
+            <ul>
+                
+                <li><a class="slide"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide"><span class="sr-only">slide name</span></a></li>
+            </ul>
+        </div>
+        <span class="title">Try it out:</span>
+        <span class="percentage">0%</span>
+    </div>
+    <div class="step step4">
+        <div class="slides">
+            <?php ?>
+            <ul>
+                <li><a class="slide"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide"><span class="sr-only">slide name</span></a></li>
+            </ul>
+        </div>
+        <span class="title">Find a partner:</span>
+        <span class="percentage">0%</span>
+    </div>
+    
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?php } ?>
+<?php /*
+<div class="container-fluid">
     <div class="row">
         
         <div class="col-md-12">
@@ -62,6 +154,7 @@ if(!isset($page) || $page !== 'start') {
                         $status = '2';
                     }
                     */
+                    /*
                     else {
                         $status = '0';    
                     }
@@ -85,6 +178,8 @@ if(!isset($page) || $page !== 'start') {
                         $status = '2';
                     }
                     */
+                    
+                    /*
                     else {
                         $status = '0';    
                     }
@@ -108,6 +203,8 @@ if(!isset($page) || $page !== 'start') {
                         $status = '2';
                     }
                     */
+                    
+                    /*
                     else {
                         $status = '0';    
                     }
@@ -123,4 +220,4 @@ if(!isset($page) || $page !== 'start') {
         </div>
     </div>
 </div>
-<?php } ?>
+<?php }  */ ?>

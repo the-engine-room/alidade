@@ -9,10 +9,11 @@
             }
             
             else {
-                
+                $user = $Auth->getProfile();
+                $this->set('userRole', $user->role);
+                    
                 if(isset($_POST['title'])){
-                    $user = $Auth->getProfile();
-                    $this->set('userRole', $user->role);
+                    
                     $ProjectHash = md5( $_SESSION[APPNAME]['USR'] . time() . $_SESSION[APPNAME][SESSIONKEY]);
                             
                     $data['user'] = $user->id;
@@ -45,11 +46,15 @@
             }
             
             else {
+                $user = $Auth->getProfile();
+                $this->set('user', $user);
+                $this->set('userRole', $user->role);
+                
+                
                 
                 $this->set('inProcess', true);
                 
-                $user = $Auth->getProfile();
-                $this->set('user', $user);
+              
               
                 if(!isset($_SESSION['plan']) || $cur === '1.1'){
                     $_SESSION['plan'] = array();
