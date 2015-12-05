@@ -1,5 +1,6 @@
 <?php
-if(!isset($page) || $page !== 'start') { 
+if(!isset($page) || $page !== 'start') {
+$currs = explode('.', $currentSlide);     
 ?>
 
 <div class="walking-steps">
@@ -7,37 +8,37 @@ if(!isset($page) || $page !== 'start') {
         <div class="slides">
             <?php ?>
             <ul>
-                <li><a class="slide done"><span class="sr-only">slide name</span></a></li>
-                <li><a class="slide done"><span class="sr-only">slide name</span></a></li>
-                <li><a class="slide working"><span class="sr-only">slide name</span></a></li>
-                <li><a class="slide"><span class="sr-only">slide name</span></a></li>
-                <li><a class="slide"><span class="sr-only">slide name</span></a></li>
-                <li><a class="slide"><span class="sr-only">slide name</span></a></li>
-                <li><a class="slide"><span class="sr-only">slide name</span></a></li>
-                <li><a class="slide"><span class="sr-only">slide name</span></a></li>
-                <li><a class="slide"><span class="sr-only">slide name</span></a></li>
-                <li><a class="slide"><span class="sr-only">slide name</span></a></li>
-                <li><a class="slide"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 1, 1); ?>"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 1, 2); ?>"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 1, 3); ?>"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 1, 4); ?>"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 1, 5); ?>"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 1, 6); ?>"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 1, 7); ?>"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 1, 8); ?>"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 1, 9); ?>"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 1, 10); ?>"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 1, 11); ?>"><span class="sr-only">slide name</span></a></li>
             </ul>
         </div>
         <span class="title">Understanding Your Needs:</span>
-        <span class="percentage">18%</span>
+        <span class="percentage"><?php echo ( ($currs[0] ==1 ? $currs[1] : count($slideindex[1]) )  . '/' . count($slideindex[1])); ?></span>
     </div>
     <div class="step step2">
         <div class="slides">
             <?php ?>
             <ul>
-                <li><a class="slide"><span class="sr-only">slide name</span></a></li>
-                <li><a class="slide"><span class="sr-only">slide name</span></a></li>
-                <li><a class="slide"><span class="sr-only">slide name</span></a></li>
-                <li><a class="slide"><span class="sr-only">slide name</span></a></li>
-                <li><a class="slide"><span class="sr-only">slide name</span></a></li>
-                <li><a class="slide"><span class="sr-only">slide name</span></a></li>
-                <li><a class="slide"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 2, 1); ?>"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 2, 2); ?>"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 2, 3); ?>"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 2, 4); ?>"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 2, 5); ?>"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 2, 6); ?>"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 2, 7); ?>"><span class="sr-only">slide name</span></a></li>
             </ul>
         </div>
         <span class="title">Understand the technology:</span>
-        <span class="percentage">0%</span>
+        <span class="percentage"><?php echo (count($projectIndex[2]) . '/' . count($slideindex[2])); ?></span>
     </div>
     <div class="step step3">
         <div class="slides">
@@ -54,7 +55,7 @@ if(!isset($page) || $page !== 'start') {
             </ul>
         </div>
         <span class="title">Try it out:</span>
-        <span class="percentage">0%</span>
+        <span class="percentage"><?php echo (count($projectIndex[3]) . '/' . count($slideindex[3])); ?></span>
     </div>
     <div class="step step4">
         <div class="slides">
@@ -73,7 +74,7 @@ if(!isset($page) || $page !== 'start') {
             </ul>
         </div>
         <span class="title">Find a partner:</span>
-        <span class="percentage">0%</span>
+        <span class="percentage"><?php echo (count($projectIndex[4]) . '/' . count($slideindex[4])); ?></span>
     </div>
     
 </div>

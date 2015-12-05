@@ -89,12 +89,16 @@ $(document).ready(function(){
     
     $('#save-form').click(function(e){
         var theForm = $($(this).data('form'));
+        
         var data = {
             'title'         : theForm.children().children('#title').val(),
-            'description'   : theForm.children().children('#slide').html(),
+            'description'   : theForm.find('#description').val(),
             'step'          : theForm.children('#step').val(),
             'position'      : theForm.children('#position').val()
         }
+        
+        console.log(data);
+        
         $.post(
                 '/ajax/save_slide',
                 data,

@@ -37,7 +37,7 @@
             $q = $stmt->execute();
             
             if(!$q){
-                new Error(601, 'Could not execute query. (project.model.php, 19)');
+                new Error(601, 'Could not execute query. (project.model.php, 40)');
                 return false;
             }
             else {
@@ -49,6 +49,19 @@
             }
         }
         
-        
+        public function getIndex($p){
+            $sql = "SELECT DISTINCT(CONCAT_WS('.',  step, slide)) AS slide_step, step  FROM slides WHERE project = :id";
+            $stmt = $this->database->prepare($sql);
+            $stmt->bindParam(':id', $p, PDO::PARAM_INT);
+            $q = $stmt->execute();
+            
+            if(!$q){
+                new Error(601, 'Could not execute query. (project.model.php, 59)');
+                return false;
+            }
+            else {
+                return $stmt->fetchAll(PDO::FETCH_ASSOC);
+            }
+        }
     }
     

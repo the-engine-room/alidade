@@ -47,8 +47,21 @@
             }
             else {
                 return $stmt->fetch(PDO::FETCH_OBJ);
-            }
+            }        
+        }
         
+        public function getIndex(){
+            $sql = 'SELECT * FROM `view_slide_index`';
+            $stmt = $this->database->prepare($sql);
+            $q = $stmt->execute();
+            
+            if(!$q){
+                new Error(601, 'Could not execute query. (slidelist.model.php, 59)');
+                return false;
+            }
+            else {
+                return $stmt->fetchAll(PDO::FETCH_ASSOC);
+            }        
         }
         
     }

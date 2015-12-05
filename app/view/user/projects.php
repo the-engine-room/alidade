@@ -136,11 +136,12 @@
             
             
         </div>
-        
+        <?php dbga($p['slideindex']); ?>
         <div class="col-md-1 col-sm-12 col-xs-12">
             <a href="/project/slide/<?php
+            if(empty($p['slideindex'])) { echo "1.1"; } else { 
                 $i = array_search(end($p['slideindex']), $slideindex['fullIndex'], true);
-                echo $slideindex['fullIndex'][$i + 1]; 
+                echo $slideindex['fullIndex'][$i + 1];  } 
                 ?>?p=<?php echo $p['hash']; ?>" class="btn btn-primary"><i class="fa fa-hand-o-right"></i> Continue</a>
         </div>
         

@@ -31,10 +31,11 @@
                     $this->set('page', 'start');
                 }
             }
-            
-
-            
         }
+        
+        
+        
+        
         
         /** urls are in the form of /project/slide/1.2 **/
         
@@ -46,6 +47,10 @@
             }
             
             else {
+                
+                
+                
+                
                 $user = $Auth->getProfile();
                 $this->set('user', $user);
                 $this->set('userRole', $user->role);
@@ -68,7 +73,6 @@
                 
                 $Slide = new Slide;
                 $Slidelist = new Slidelist;
-                $Project = new Project;
                 
                 $slidelist = $Slidelist->getList();
                 
@@ -78,6 +82,7 @@
                     $slideIndex['fullIndex'][] = $s->step . '.' . $s->position;
                 }
                 
+                $projectSlides = $Slide->findProjectSlides($project);
                 
                 $this->set('step_number', $step_no);
                 $this->set('slide_number', $slide_no);
@@ -85,9 +90,11 @@
                 $this->set('slideindex', $slideIndex);
                 
                 if(!empty($_SESSION['project'])) {
-                    $loaded_project = $Project->findOne($_SESSION['project']);
+                    $loaded_project = $this->Project->findOne($_SESSION['project']);
                     $this->set('projecthash', $loaded_project->hash);
+                    $idProject=$loaded_project->idprojects;
                 }
+               
                 
                 $slide = $Slidelist->find(array(
                                             'position'  =>  $slide_no,
@@ -117,6 +124,7 @@
                     
                     if(!empty($project) && is_object($project[0])) {
                         $_SESSION['project'] = $project[0]->idprojects;
+                        $idProject = $project[0]->idprojects;
                     }
                     
                     $slidecontent = $Slide->find(array(
@@ -203,6 +211,15 @@
                         }
                     }
                 }
+                
+              
+                
+                $projectSlideIndex = $this->Project->getIndex($idProject);
+                // rearraange the index for our purposes
+                foreach($projectSlideIndex as $p){
+                    $projectIndex[$p['step']][] = $p['slideStep'];
+                }
+                $this->set('projectIndex', $projectIndex);
             }
         }
     }

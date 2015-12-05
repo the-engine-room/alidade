@@ -190,6 +190,23 @@
         
     }
     
+    function checkSlidePosition($currentStep, $currentSlide, $indexStep, $indexSlide){
+        $check = '';
+        
+        if($currentStep == $indexStep){
+            if($currentSlide == $indexSlide){
+                return 'working';
+            }
+            elseif($currentSlide > $indexSlide) {
+                return 'done';
+            }
+        }
+        elseif($currentStep > $indexStep) {
+            return 'done';
+        }
+        return null;
+    }
+    
     function print_scripts($js, $inject=false){
         if(is_array($js)){
             foreach($js as $path){

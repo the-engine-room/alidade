@@ -20,9 +20,11 @@
         
         public function index() {
             $Pages = new Page;
+            $SlideList = new Slidelist;
             
             $this->set('title', 'Manage contents of the TSA');
             $this->set('pages', $Pages->findAll());
+            $this->set('slides', $SlideList->getList());
         }
         
         public function page($page){
@@ -57,16 +59,22 @@
             
         }
         
-        /** list of slides **/
-        public function slides(){
-            $this->set('title', 'Manage Slides');
-            $SlideList = new Slidelist;
-            $this->set('slides', $SlideList->getList());
-        }
+        
         
         /** edit slide contents **/
         public function slide($step, $position){
-            $this->set('js', array('/components/bootstrap-wysiwyg/external/jquery.hotkeys.js', '/components/bootstrap-wysiwyg/bootstrap-wysiwyg.js'));
+            $this->set('mdEditor', true);
+            $css = array('/components/bootstrap-markdown/css/bootstrap-markdown.min.css');
+            $js = array('/components/bootstrap-markdown/js/bootstrap-markdown.js', '/components/markdown/lib/markdown.js');
+            $this->set('js', $js);
+            $this->set('css', $css);
+            
+            if(isset($_POST) && !empty($_POST)) {
+                $slide = $SlideList->getSlide($step, $position);
+                
+                $update = $SlideList->update($_POST, $slide->idslide_list);    
+            }
+            
             $SlideList = new Slidelist;
             $slide = $SlideList->getSlide($step, $position);
             
