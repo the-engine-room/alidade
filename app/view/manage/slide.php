@@ -21,12 +21,14 @@
         </div>
         <div class="col-md-3">
             <h3>Worth Noting</h3>
+            
             <p>Please take care while editing slide content. You might come across strange placeholders, or reference/pointers couples that are used to maintain some of the frontend functionalities. Here are some of them, so you know what's going on. </p>
+            
             <ul>
                 <li><strong>[--answer--]</strong> This is used as a placeholder for the textarea in the slide contents. </li>
-                <li><strong>[--tab(target)--][!--tab--]</strong> used to mark a selection as a trigger for displaying content (that needs to be in the round braces).</li>
-                <li><strong>[--(target)--][!--(target)--]</strong> target for tabbed behaviour</li>
             </ul>
+            <a href="/manage/" class="btn btn-sm btn-alt pull-right">back to management <i class="fa fa-angle-right"></i></a>
+            
         </div>
     </div>
     

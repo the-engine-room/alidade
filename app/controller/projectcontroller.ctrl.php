@@ -1,5 +1,9 @@
 <?php
-
+    
+    // require parsedown
+    require_once(ROOT . DS . 'lib' . DS . 'vendor' . DS . 'Parsedown.php');
+    require_once(ROOT . DS . 'lib' . DS . 'vendor' . DS . 'ParsedownExtra.php');
+    
     class Projectcontroller extends Controller {
         
         public function start(){
@@ -73,6 +77,7 @@
                 
                 $Slide = new Slide;
                 $Slidelist = new Slidelist;
+                $Parser = new ParsedownExtra;
                 
                 $slidelist = $Slidelist->getList();
                 
@@ -114,7 +119,7 @@
                 $this->set('currentSlide', $cur);
                 
                 $this->set('slide', $slide[0]);
-               
+                $this->set('contents', $Parser->text($slide[0]['description']));
                 //check if we have a hash for a project
                 
                 

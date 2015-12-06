@@ -21,8 +21,8 @@ $currs = explode('.', $currentSlide);
                 <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 1, 11); ?>"><span class="sr-only">slide name</span></a></li>
             </ul>
         </div>
-        <span class="title">Understanding Your Needs:</span>
-        <span class="percentage"><?php echo ( ($currs[0] ==1 ? $currs[1] : count($slideindex[1]) )  . '/' . count($slideindex[1])); ?></span>
+        <span class="title">1. Understanding Your Needs:</span>
+        <span class="percentage"><?php echo ( ($currs[0] == 1 ? $currs[1] : count($slideindex[1]) )  . '/' . count($slideindex[1])); ?></span>
     </div>
     <div class="step step2">
         <div class="slides">
@@ -37,8 +37,8 @@ $currs = explode('.', $currentSlide);
                 <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 2, 7); ?>"><span class="sr-only">slide name</span></a></li>
             </ul>
         </div>
-        <span class="title">Understand the technology:</span>
-        <span class="percentage"><?php echo (count($projectIndex[2]) . '/' . count($slideindex[2])); ?></span>
+        <span class="title">2. Understand the technology:</span>
+        <span class="percentage"><?php echo ( ( $currs[0] == 2 ? $currs[1] : count($slideindex[2]) ) . '/' . count($slideindex[2])); ?></span>
     </div>
     <div class="step step3">
         <div class="slides">
@@ -54,8 +54,8 @@ $currs = explode('.', $currentSlide);
                 <li><a class="slide"><span class="sr-only">slide name</span></a></li>
             </ul>
         </div>
-        <span class="title">Try it out:</span>
-        <span class="percentage"><?php echo (count($projectIndex[3]) . '/' . count($slideindex[3])); ?></span>
+        <span class="title">3. Try it out:</span>
+        <span class="percentage"><?php echo ( ($currs[0] == 3 ? $currs[1] : count($slideindex[3]) ) . '/' . count($slideindex[3])); ?></span>
     </div>
     <div class="step step4">
         <div class="slides">
@@ -73,8 +73,8 @@ $currs = explode('.', $currentSlide);
                 <li><a class="slide"><span class="sr-only">slide name</span></a></li>
             </ul>
         </div>
-        <span class="title">Find a partner:</span>
-        <span class="percentage"><?php echo (count($projectIndex[4]) . '/' . count($slideindex[4])); ?></span>
+        <span class="title">4. Find a partner:</span>
+        <span class="percentage"><?php echo (($currs[0] == 4 ? $currs[1] : count($slideindex[4]) ) . '/' . count($slideindex[4])); ?></span>
     </div>
     
 </div>

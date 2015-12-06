@@ -165,6 +165,7 @@
         
     }
     
+    
     // title printing, parsing position
     function printTitle($slide, $slideTitle){
         $cur = explode('.', $slide);

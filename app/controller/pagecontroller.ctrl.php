@@ -1,5 +1,6 @@
 <?php
     require_once(ROOT . DS . 'lib' . DS . 'vendor' . DS . 'Parsedown.php');
+    require_once(ROOT . DS . 'lib' . DS . 'vendor' . DS . 'ParsedownExtra.php');
     
     class PageController extends Controller {
         
@@ -16,7 +17,7 @@
         }
         
         public function index($url = null){
-            $Parser = new Parsedown;
+            $Parser = new ParsedownExtra;
             $url = (is_null($url) ? 'homepage' : $url);
             $url = filter_var($url, FILTER_SANITIZE_URL);
             
