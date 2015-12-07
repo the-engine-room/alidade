@@ -119,7 +119,7 @@
                 $this->set('currentSlide', $cur);
                 
                 $this->set('slide', $slide[0]);
-                $this->set('contents', $Parser->text($slide[0]['description']));
+                $this->set('contents', $Parser->text($slide[0]->description));
                 //check if we have a hash for a project
                 
                 

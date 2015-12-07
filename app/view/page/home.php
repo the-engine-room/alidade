@@ -40,8 +40,6 @@
             <div class="col-md-12">            
                 <?php echo $page; ?>
                 <p class="text-center">
-                If you want to return to your answers and change them as you go through the process, log in <a href="/user/login">here</a>
-                <br /><br />
                 <a class="btn btn-alt btn-lg" href="/project/start"><i class="fa fa-hand-o-right"></i> Start planning now!</a>
                 <br /><br />
                 If you don’t have time to go through the full framework, read <a href="/home/choosing_the_right_technology_tool">this</a> instead.
