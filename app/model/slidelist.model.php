@@ -7,7 +7,7 @@
         
         public function getList(){
             
-            $sql = 'SELECT * FROM `' . $this->table . '` ORDER BY `step` ASC, `position` ASC';
+            $sql = 'SELECT *, CONCAT_WS(".", `step`, `position`) AS `indexer` FROM `' . $this->table . '` ORDER BY `step` ASC, `position` ASC';
             $stmt = $this->database->prepare($sql);
             
             $stmt->execute();

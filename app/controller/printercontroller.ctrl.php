@@ -405,10 +405,7 @@
                                     nl2br($thisSlide->answer) .
                                     (is_null($thisSlide->choice) ? '' : '<br /> ' . $thisSlide->choice) . 
                                     (is_null($thisSlide->extra) ? '' : nl2br($thisSlide->extra)) . 
-                                    '</p>';                   
-                    
-                    
-                    
+                                    '</p>'; 
                     break;
             }
             

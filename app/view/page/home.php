@@ -40,9 +40,9 @@
             <div class="col-md-12">            
                 <?php echo $page; ?>
                 <p class="text-center">
-                <a class="btn btn-alt btn-lg" href="/project/start"><i class="fa fa-hand-o-right"></i> Start planning now!</a>
-                <br /><br />
-                If you don’t have time to go through the full framework, read <a href="/home/choosing_the_right_technology_tool">this</a> instead.
+                    <a class="btn btn-alt btn-lg" href="/user/projects"><i class="fa fa-hand-o-right"></i> Start planning now!</a>
+                    <br /><br />
+                    If you don’t have time to go through the full framework, read <a href="/home/choosing_the_right_technology_tool">this</a> instead.
                 </p>
             </div>
         </section>

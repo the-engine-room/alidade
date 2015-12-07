@@ -1,7 +1,7 @@
 $(document).ready(function(){
     
     $(window).scroll(function(){
-        parallax('.jumbotron', 8);     
+        parallax('.jumbotron', 0.5);     
     });    
     
     $('.choice').click(function(){
@@ -82,10 +82,6 @@ $(document).ready(function(){
         }
     });    
     
-    if ($('.wysiwyg').length > 0) {
-        $('.wysiwyg').wysiwyg();     
-    }
-    
     
     $('#save-form').click(function(e){
         var theForm = $($(this).data('form'));
@@ -96,8 +92,6 @@ $(document).ready(function(){
             'step'          : theForm.children('#step').val(),
             'position'      : theForm.children('#position').val()
         }
-        
-        console.log(data);
         
         $.post(
                 '/ajax/save_slide',
@@ -111,4 +105,7 @@ $(document).ready(function(){
         e.preventDefault();
         return false;    
     });
+    
+    // enable bootstrap tooltips
+    $('[data-toggle="tooltip"]').tooltip();
 });

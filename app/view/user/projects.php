@@ -7,7 +7,13 @@
         </div>
     </div>
     
-    
+    <!-- Generated markup by the plugin -->
+<div class="tooltip top" role="tooltip">
+  <div class="tooltip-arrow"></div>
+  <div class="tooltip-inner">
+    Some tooltip text!
+  </div>
+</div>
     <?php foreach($projects as $p){  ?>
     
     <div class="row project">
@@ -27,8 +33,9 @@
                 </div>
             </form>
             <?php } else { ?>
-            <h3><?php echo $p['title']; ?></h3>
+            <h3><?php echo $p['title']; ?> <small> [<?php echo round( (count($p['index']) / count($slideindex['fullIndex'])) * 100); ?>%] </small></h3>
             <?php } ?>
+           
         </div>
         
        
@@ -54,9 +61,13 @@
                                 
                             ?>    
                             <li>
-                            <?php if($status == 2){ ?>
-                                <a class="slide done" href="/project/slide/<?php echo '1.' . $i . '?p=' . $p['hash'] . '&edit'; ?>"></a>
-                            <?php } else { ?><a class="slide "  href="/project/slide/<?php echo '1.' . $i . '?p=' . $p['hash'] . '&edit'; ?>"></a><?php } ?>
+                                <a 
+                                data-toggle="tooltip"
+                                data-placement="top"
+                                title="<?php echo $slideMenu['1.' . $i]; ?>" 
+                                href="/project/slide/<?php echo '1.' . $i . '?p=' . $p['hash'] . '&edit'; ?>" 
+                                class="slide <?php echo ($status == 2 ? 'done' : '' ) ;?>" ></a> 
+                                
                             </li>
                             <?php } ?>
                         </ul>
@@ -81,10 +92,14 @@
                             
                         ?>    
                             <li>
-                                <?php if($status == 2){ ?>
-                                <a  class="slide <?php echo $status; ?>" href="/project/slide/<?php echo '2.' . $i . '?p=' . $p['hash'] . '&edit'; ?>"></a>
-                                <?php } else { ?><a class="slide "  href="/project/slide/<?php echo '2.' . $i . '?p=' . $p['hash'] . '&edit'; ?>"></a><?php } ?>
-                            </li>                        
+                                <a 
+                                data-toggle="tooltip"
+                                data-placement="top"
+                                title="<?php echo $slideMenu['2.' . $i]; ?>" 
+                                href="/project/slide/<?php echo '2.' . $i . '?p=' . $p['hash'] . '&edit'; ?>" 
+                                class="slide <?php echo ($status == 2 ? 'done' : '' ) ;?>" ></a> 
+                                
+                            </li>                     
                         <?php    
                         }
                         ?>
@@ -109,9 +124,13 @@
                             
                         ?>    
                             <li>
-                                <?php if($status == 2){ ?>
-                                <a  class="slide <?php echo $status; ?>" href="/project/slide/<?php echo '3.' . $i . '?p=' . $p['hash'] . '&edit'; ?>"></a>
-                                <?php } else { ?><a class="slide "  href="/project/slide/<?php echo '3.' . $i . '?p=' . $p['hash'] . '&edit'; ?>"></a><?php } ?>
+                                <a 
+                                data-toggle="tooltip"
+                                data-placement="top"
+                                title="<?php echo $slideMenu['3.' . $i]; ?>" 
+                                href="/project/slide/<?php echo '3.' . $i . '?p=' . $p['hash'] . '&edit'; ?>" 
+                                class="slide <?php echo ($status == 2 ? 'done' : '' ) ;?>" ></a> 
+                                
                             </li>                        
                         <?php    
                         }
@@ -137,10 +156,14 @@
                             
                         ?>    
                             <li>
-                                <?php if($status == 2){ ?>
-                                <a  class="slide <?php echo $status; ?>" href="/project/slide/<?php echo '4.' . $i . '?p=' . $p['hash'] . '&edit'; ?>"></a>
-                                <?php } else { ?><a class="slide "  href="/project/slide/<?php echo '4.' . $i . '?p=' . $p['hash'] . '&edit'; ?>"></a><?php } ?>
-                            </li>                        
+                                <a 
+                                data-toggle="tooltip"
+                                data-placement="top"
+                                title="<?php echo $slideMenu['4.' . $i]; ?>" 
+                                href="/project/slide/<?php echo '4.' . $i . '?p=' . $p['hash'] . '&edit'; ?>" 
+                                class="slide <?php echo ($status == 2 ? 'done' : '' ) ;?>" ></a> 
+                                
+                            </li>                     
                         <?php    
                         }
                         ?>
@@ -165,3 +188,4 @@
     </div>
     <?php } ?>
 </div>
+

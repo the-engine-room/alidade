@@ -160,9 +160,9 @@
     function injectAnswerField($string, $name = 'answer', $origin = null){
         return str_replace('[--answer--]', '<textarea id="answer" name="'.$name.'" class="form-control" rows="8">' . (!is_null($origin) ? $origin->answer : '' ) . '</textarea>', $string);
     }
+    
     function injectParam($string, $param, $value){
-        return str_replace('[--'.$param.'--]', $value, $string);
-        
+        return str_replace('[--'.$param.'--]', $value, $string);        
     }
     
     

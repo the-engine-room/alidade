@@ -50,7 +50,7 @@
         }
         
         public function getIndex($p){
-            $sql = "SELECT DISTINCT(CONCAT_WS('.',  step, slide)) AS slide_step, step  FROM slides WHERE project = :id";
+            $sql = "SELECT DISTINCT(CONCAT_WS('.',  step, slide)) AS slide_step, step FROM slides WHERE project = :id GROUP BY slide_step";
             $stmt = $this->database->prepare($sql);
             $stmt->bindParam(':id', $p, PDO::PARAM_INT);
             $q = $stmt->execute();

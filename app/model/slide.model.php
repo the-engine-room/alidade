@@ -51,6 +51,19 @@
             }
         }
         
-        
+        public function projectSlideIndex($project){
+            $sql = 'SELECT DISTINCT(CONCAT_WS(".", step, slide)) as indexer, step FROM ' . $this->table . ' WHERE project = :id ORDER BY step ASC, slide ASC';
+            $stmt = $this->database->prepare($sql);
+            $stmt->bindParam(':id', $project, PDO::PARAM_INT);
+            $q = $stmt->execute();
+            
+            if(!$q){
+                new Error(601, 'Could not execute query. (slide.model.php, 20)');
+                return false;
+            }
+            else {
+                return $stmt->fetchAll(PDO::FETCH_OBJ);
+            }
+        }
     }
     

@@ -2,7 +2,7 @@
     display: block;
     width: 100%;
     .step {
-        width: 25%;
+        width: 100%;
         display: block;
         float: left;
         position: relative;
@@ -28,9 +28,7 @@
         }
         
         &.step2 { background: lighten(@oil, 10%);
-            .slides ul li  { width: 14.2857%;
-                &:last-child { margin-right: -1px; }
-            }
+            .slides ul li  { width: 14.2857%; }
             &:before {
                 background: @oil url("/assets/arrow-heads.png") no-repeat scroll left center;
                 
@@ -72,13 +70,16 @@
                     }
                     .sr-only { display: none;}
                 }
+                .tooltip { font-size: 14px; }
             }
         }
     }
-    span.title { text-indent: 20px;
-      .step-1 & { text-indent: 4px; }
-    }
+    span.title { text-indent: 20px; }
     span.title, span.percentage, span.overall {
         font-size: 12px; text-transform: uppercase; color: @cream; padding: 4px; line-height: 20px;  display: block; float: left;
     }
+}
+
+@media screen and (min-width: 768px) {
+    .walking-steps .step { width: 25%; }
 }

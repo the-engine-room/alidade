@@ -247,20 +247,42 @@
                 $this->set('user', $user);
                 $Slidelist = new Slidelist;
                 $Project = new Project;                
+                $Slide = new Slide;
                 
                 $this->set('slideindex', $Slidelist->listed());
+                
+                
+                $menu = array();
+                $allSlides = $Slidelist->getList();
+                foreach($allSlides as $slide){
+                    $menu[$slide->indexer] = $slide->title;
+                }
+                $this->set('slideMenu', $menu);
+                
+                
                 $projects = $Project->findUserProjects($user->id);
                 
                 foreach($projects as $k => $p){
-                    
                     $projectslideindex = array();
                     foreach($p['slides'] as $slides) {
                         $projectslideindex[] = $slides->step . '.' . $slides->slide;
                     }
                     $projects[$k]['slideindex'] = $projectslideindex;
+                    
+                    
+                    $indexed = array();
+                    $theProjectIndex = $Slide->projectSlideIndex($p['idprojects']);
+                    
+                    foreach($theProjectIndex as $i){
+                        $indexed[] = $i->indexer;
+                    }
+                    
+                    $projects[$k]['index'] = $indexed;
                 }
                 
                 $this->set('projects', $projects);
+                
+                
                 
             }
             
