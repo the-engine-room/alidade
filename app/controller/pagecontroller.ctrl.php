@@ -27,7 +27,7 @@
         }
         
         public function home(){
-            $Parser = new Parsedown;
+            $Parser = new ParsedownExtra;
             $url = 'homepage';
             $page = $this->Page->find(array('url' => $url));
             $this->set('page', $Parser->text($page[0]->contents));
