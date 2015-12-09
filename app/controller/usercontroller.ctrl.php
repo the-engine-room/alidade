@@ -139,11 +139,34 @@
         /** password reset form **/
         public function reset($token){
             $this->set('title', 'Reset your password');
-            
+            $this->set('token', $token);
             /** validate this request **/
             if($this->User->validateToken($token)){ 
                 if(strtoupper($_SERVER['REQUEST_METHOD']) == 'POST'){
                     /** if we have post data, might as well save the request **/
+                    $pwd = $_POST['pwd'];
+                    $cpwd = $_POST['cpwd'];
+                    
+                    /** check for pwd corrispondence **/
+                    if(empty($pwd) || empty($cpwd) || !($pwd === $cpwd)){
+                        $response['danger'] = 'The password cannot be empty and must match with the confirmation field.';
+                    } else { 
+                    
+                        /** get the user profile **/
+                        $user = $this->User->find(array('token' => $token));
+                        /** prepare data **/
+                        $data = array(
+                                      'password' => crypt($pwd, '$1$'.SECRET)
+                                      );
+                        
+                        /** update user data **/ 
+                        if(!$this->User->update($data, $user[0]->idusers)) {
+                            $response['danger'] = 'Could not reset the password because of a technical issue.';
+                        } else {
+                            $response['success'] = 'Password correctly reset.<br /> Please <a href="/"><strong>click here</strong></a> and login.';
+                        }
+                    }
+                    $this->set('response', $response);
                 }
             } else {
                 /** Invalid token, nonetheless, this page does not exist. **/

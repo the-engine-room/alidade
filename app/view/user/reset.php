@@ -7,21 +7,20 @@
             <p>Please fill in this form to reset your password.</p>
             <?php if(isset($response)) { printResponse($response); } ?>
             
-            <form class="" method="post" action="/user/recover">
+            <form class="" method="post" action="/user/reset/<?php echo $token; ?>">
                 <div class="form-group">
-                    <label for="pwd">Password</label>
-                    <input type="password" class="form-control" name="password" id="pwd">
+                    <label for="pwd">New Password</label>
+                    <input type="password" class="form-control" name="pwd" id="pwd">
                     
                 </div>
                 <div class="form-group">
                     <label for="cpwd">Confirm Password</label>
-                    <input type="password" class="form-control" name="confirm_password" id="cpwd">
-                    
+                    <input type="password" class="form-control" name="cpwd" id="cpwd">
                 </div>
                 
                 
                 <div class="form-group">
-                    <button type="submit" class="form-control btn btn-main" name="submit" id="submit"><i class="fa fa-reset"></i> Reset Password</button>
+                    <button type="submit" class="form-control btn btn-main" name="submit" id="submit"><i class="fa fa-recycle"></i> Reset Password</button>
                 </div>
                 
                 
