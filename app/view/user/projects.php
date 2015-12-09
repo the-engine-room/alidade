@@ -178,7 +178,7 @@
         </div>
         
         
-         <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="col-md-12 col-sm-12 col-xs-12">
             <a href="/project/slide/<?php
             if(empty($p['slideindex'])) { echo "1.1"; } else { 
                 $i = array_search(end($p['slideindex']), $slideindex['fullIndex'], true);

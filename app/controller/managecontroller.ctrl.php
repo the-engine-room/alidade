@@ -27,6 +27,8 @@
             $this->set('slides', $SlideList->getList());
         }
         
+        
+        /** manage "static" pages **/
         public function page($page){
             /** load component css and js -> see /app/view/head.php & /app/view/foot.php **/
             $this->set('mdEditor', true);
@@ -81,8 +83,10 @@
             $this->set('slide', $slide);
         }
         
-        public function add(){}
         
-        
+        /** manage user profiles **/
+        public function user($user){
+            
+        }
     }
     
