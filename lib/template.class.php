@@ -26,6 +26,9 @@
             if($action == 'forbidden'){
                 header('HTTP/1.0 403 Forbidden');
             }
+            if($action == 'invalid'){
+                header('HTTP/1.0 404 Not Found');
+            }
         }
     
         /** Set Variables **/

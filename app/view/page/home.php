@@ -19,7 +19,7 @@
                         
                         <div class="form-group">
                             <button type="submit" class="form-control btn btn-alt" name="submit" id="submit"><i class="fa fa-sign-in"></i> Login</button>
-                            <a href="/user/create" class="alt">or register here</a>
+                            <a href="/user/create" class="alt">or register here</a> | <a class="alt" href="/user/recover">lost your password?</a>
                         </div>
                         
                         

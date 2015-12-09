@@ -65,29 +65,179 @@
         }
         
         
-        public function all() {
-            $this->set('title', 'Users');
+        
+        
+        /** password recovery **/
+        public function recover(){
+            $this->set('title', 'Lost Password');
+            $response = null;
+            if(strtoupper($_SERVER['REQUEST_METHOD']) == 'POST'){
+                /** Action of requesting a new password **/
+                
+                $email = trim(trim(trim($_POST['email'])));
+                
+                /** 1. Validate Email **/
+                $email = filter_var($email, FILTER_SANITIZE_EMAIL);
+                if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                    $valid = false;
+                    $response['danger'] = 'Invalid email address. Please input a valid email address.';
+                }
+                else {
+                    /** find email in user table **/
+                    $userAccount = $this->User->find(array('email' => $email));
+                    if($userAccount){
+                        $valid = true;
+                    }
+                    else {
+                        $valid = false;
+                        $response['danger'] = 'No user with that email address. Are you sure you used this email to register?';    
+                    }
+                }
+                
+                /** check for valid info **/
+                if($valid){
+                    /** 2. Generate 1-time token **/
+                    $token = bin2hex(openssl_random_pseudo_bytes(16));
+                    
+                    /** 2.1 Associate token to account **/
+                    $update = array('token' => $token);
+                    $updated = $this->User->update($update, $userAccount[0]->idusers);
+                    if(!$updated){
+                        $response['danger'] = 'Could not save the recovery token, something was just wrong here.';
+                    }
+                    else {
+                    /** 3. Send email with reset link (/user/reset?token=$token) **/
+                        
+                        $reset_link = '//'.$_SERVER['HTTP_HOST'].'/user/reset?token='.$token;
+                        
+                        // email headers
+                        $headers = "From: " . APPEMAIL . "\r\n";
+                        $headers .= "MIME-Version: 1.0\r\n";
+                        $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+                        
+                        $subject = APPNAME . ': Password recovery';
+                        $message = '<html><body><h1>' . APPNAME . ' </h1><p>Someone requested a new password for this account.</p><p><strong>If this wasn\'t you, then do nothing.</strong></p><p>Otherwise please click on this link: <a href="' . $reset_link . '">Password Reset</a>, Or copy and paste this URL: <span style="color: #339CE8">' . $reset_link . '</span></p><p>Thank you.</p></body></html>';
+                        
+                        $sender = mail($email, $subject, $message, $headers);
+                        
+                        if(!$sender){
+                            $response['danger'] = 'Could not send email with reset instructions.';
+                            // echo $message;
+                        }
+                        else {
+                            $response['success'] = 'Email Sent! Please check your inbox and follow instrutions.';
+                        }
+                    }
+                }
+                
+                /** 4. set feedback for user **/
+                $this->set('response', $response);
+            }
+        }
+        
+        
+        /** password reset form **/
+        public function reset($token){
+            $this->set('title', 'Reset your password');
             
+            /** validate this request **/
+            if($this->User->validateToken($token)){ 
+            
+            
+                if(strtoupper($_SERVER['REQUEST_METHOD']) == 'POST'){
+                    /** Action of requesting a new password
+                    
+                    /** 1. Validate Email **/
+                    
+                    /** 2. Generate 1-time token **/
+                    
+                    /** 3. Send email with reset link (/user/reset?token=$token) **/
+                    
+                    /** 4. set feedback for user **/                
+                }
+            } else {
+                /** Invalid token, nonetheless, this page does not exist. **/
+                header('Location: /user/invalid');
+            }
+        }
+        
+        /** redirect here if user has no permission to view content - header set in /lib/template.class.php **/
+        public function forbidden(){
+            $this->set('title',  'Nope.');
+        }
+
+        
+        /** redirect here if the request is invalid, basically a 404 - header set in /lib/template.class.php **/
+        public function invalid(){
+            $this->set('title', 'invalid');
+        }
+        /** User Projects Dashboard **/
+        public function projects(){
             $Auth = new Auth($url);
             if(!$Auth->isLoggedIn()){
                 header('Location: /user/login');
             }
+            
             else {                
                 $user = $Auth->getProfile();
                 $this->set('userRole', $user->role);
                 $this->set('user', $user);
-                $this->set('header', true);
+                $Slidelist = new Slidelist;
+                $Project = new Project;                
+                $Slide = new Slide;
                 
-                if(hasRole($user, 'Administrator')){
-                    $userlist = $this->User->getUserList();
-                    $this->set('userlist', $userlist);
+                $this->set('slideindex', $Slidelist->listed());
+                
+                
+                $menu = array();
+                $allSlides = $Slidelist->getList();
+                foreach($allSlides as $slide){
+                    $menu[$slide->indexer] = $slide->title;
                 }
-                else {
-                    header('Location: /user/forbidden');
+                $this->set('slideMenu', $menu);
+                
+                
+                $projects = $Project->findUserProjects($user->id);
+                
+                foreach($projects as $k => $p){
+                    $projectslideindex = array();
+                    foreach($p['slides'] as $slides) {
+                        $projectslideindex[] = $slides->step . '.' . $slides->slide;
+                    }
+                    $projects[$k]['slideindex'] = $projectslideindex;
+                    
+                    
+                    $indexed = array();
+                    $theProjectIndex = $Slide->projectSlideIndex($p['idprojects']);
+                    
+                    foreach($theProjectIndex as $i){
+                        $indexed[] = $i->indexer;
+                    }
+                    
+                    $projects[$k]['index'] = $indexed;
                 }
+                
+                $this->set('projects', $projects);
+                
+                
+                
             }
+            
         }
         
+        
+        
+        public function logout() {
+            
+            unset($_SESSION[APPNAME][SESSIONKEY]);
+            session_destroy();
+            
+            header('Location: /');
+            
+        }
+    
+    
+        /** new User Registration **/
         public function create() {
             $this->set('title', 'New User');
             
@@ -165,6 +315,9 @@
         }
         
     
+        
+        
+        /** editing user profiles -> shoud only be accessible to Root **/
         public function edit($id){
             $this->set('title', 'Edit User');
             
@@ -180,8 +333,8 @@
                 $this->set('user', $user);
                 $this->set('header', true);
                 
-                // Administrators can edit users.
-                if(hasRole($user, 'Administrator')){ 
+                // Roots can edit users.
+                if(hasRole($user, 'root')){ 
                     
                     if($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST)){
                         $data = $_POST;
@@ -196,25 +349,13 @@
                         
                         $this->set('response', $response);
                     }
-                    
-                   
                     $userdata = $this->User->findOne($id);
-                    
                     $this->set('data', $userdata);
-                    
-                    
                 }
             }
-            
-            
-            
         }
-        
-        public function forbidden(){
-            $this->set('title',  'Nope.');
-        }
-
-        
+    
+    
         public function profile($id = null){
             $Auth = new Auth($url);
             if(!$Auth->isLoggedIn()){
@@ -233,69 +374,6 @@
                 $this->set('title', $profile->name);
                 
             }
-        }
-        
-        public function projects(){
-            $Auth = new Auth($url);
-            if(!$Auth->isLoggedIn()){
-                header('Location: /user/login');
-            }
-            
-            else {                
-                $user = $Auth->getProfile();
-                $this->set('userRole', $user->role);
-                $this->set('user', $user);
-                $Slidelist = new Slidelist;
-                $Project = new Project;                
-                $Slide = new Slide;
-                
-                $this->set('slideindex', $Slidelist->listed());
-                
-                
-                $menu = array();
-                $allSlides = $Slidelist->getList();
-                foreach($allSlides as $slide){
-                    $menu[$slide->indexer] = $slide->title;
-                }
-                $this->set('slideMenu', $menu);
-                
-                
-                $projects = $Project->findUserProjects($user->id);
-                
-                foreach($projects as $k => $p){
-                    $projectslideindex = array();
-                    foreach($p['slides'] as $slides) {
-                        $projectslideindex[] = $slides->step . '.' . $slides->slide;
-                    }
-                    $projects[$k]['slideindex'] = $projectslideindex;
-                    
-                    
-                    $indexed = array();
-                    $theProjectIndex = $Slide->projectSlideIndex($p['idprojects']);
-                    
-                    foreach($theProjectIndex as $i){
-                        $indexed[] = $i->indexer;
-                    }
-                    
-                    $projects[$k]['index'] = $indexed;
-                }
-                
-                $this->set('projects', $projects);
-                
-                
-                
-            }
-            
-        }
-        
-        
-        public function logout() {
-            
-            unset($_SESSION[APPNAME][SESSIONKEY]);
-            session_destroy();
-            
-            header('Location: /');
-            
         }
     }
     
