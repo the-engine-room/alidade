@@ -11,6 +11,9 @@
     /** PLEASE NOTE that this is used for encryption. It is important that it is changed. **/
     define( 'APPKEY',   'It is very important that you change this.');        // should be a random string. 
     
+    /** Application Email **/
+    define( 'APPEMAIL', 'your@email');
+    
     /** Secret! **/
     define( 'SECRET',   strrev(md5(APPKEY)));
 

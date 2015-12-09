@@ -52,6 +52,22 @@
             }
         }
         
+        public function validateToken($token){
+            if(!is_null($token) && !empty($token) && $token!==false) { 
+                $user = self::find(array('token' => $token));
+                
+                if($user !== false && !empty($user) && $user[0]->token == $token ){
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            }
+            else {
+                return false;
+            }
+        }
+        
         public function getUserList () {
             
             $sql = 'SELECT users.idusers AS id, users.name, users.email, UNIX_TIMESTAMP(sessions.modified_at) AS modified_at FROM users

@@ -108,7 +108,7 @@
                     else {
                     /** 3. Send email with reset link (/user/reset?token=$token) **/
                         
-                        $reset_link = '//'.$_SERVER['HTTP_HOST'].'/user/reset?token='.$token;
+                        $reset_link = '//'.$_SERVER['HTTP_HOST'].'/user/reset/'.$token;
                         
                         // email headers
                         $headers = "From: " . APPEMAIL . "\r\n";
@@ -142,18 +142,8 @@
             
             /** validate this request **/
             if($this->User->validateToken($token)){ 
-            
-            
                 if(strtoupper($_SERVER['REQUEST_METHOD']) == 'POST'){
-                    /** Action of requesting a new password
-                    
-                    /** 1. Validate Email **/
-                    
-                    /** 2. Generate 1-time token **/
-                    
-                    /** 3. Send email with reset link (/user/reset?token=$token) **/
-                    
-                    /** 4. set feedback for user **/                
+                    /** if we have post data, might as well save the request **/
                 }
             } else {
                 /** Invalid token, nonetheless, this page does not exist. **/
@@ -294,6 +284,8 @@
                             }
                             if($idUser){ 
                                 $response['success'] = 'User created correctly.';
+                                // Login and proceed to project start! 
+                                
                             }
                             else {
                                 $response['danger'] = 'User could not be created';
