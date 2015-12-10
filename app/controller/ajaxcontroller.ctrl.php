@@ -259,6 +259,8 @@
         
         
     
+       
+        
         public function save_slide(){
             $status = false;
             
@@ -299,6 +301,43 @@
             
             return $status;
         }
-   
+        
+        public function save_page(){
+            $status = false;
+            
+            if(strtolower($_SERVER['REQUEST_METHOD']) == 'post') {
+                $Auth = new Auth($url);
+                $user = $Auth->getProfile();
+                if(!$Auth->isLoggedIn() || $user->role != 'root' ){
+                    header('Location: /home');
+                    
+                }
+                else {
+                    $Page = new Page;
+                    
+                    $title = $_POST['title'];
+                    $contents = $_POST['contents'];
+                    $url = $_POST['url'];
+                    $id = (integer)$_POST['id'];
+                    
+                    $update = $Page->update(array('title' => $title, 'contents' => $contents, 'url' => $url), $id );
+                    if($update){
+                        $response['code'] = 'success';
+                        $response['icon'] = 'tick';
+                        $response['message'] = '<strong>Awww yeah!</strong> The page has been correctly updated.';
+                    }
+                    else {
+                        $response['code'] = 'danger';
+                        $response['icon'] = 'times';
+                        $response['message'] = '<strong>Whooops!</strong> Something went wrong and your changes have not been saved.';
+                    }
+                    $status = $response;
+                    echo json_encode($status);
+                }
+            }
+            
+            return $status;
+        }
+    
    
     }

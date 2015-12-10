@@ -2,7 +2,7 @@
     
     <div class="col-md-8 col-md-offset-2">
         <h1 class="h2">Edit Page</h1>
-        <form class="" action="/manage/page/<?php echo $page->idpages; ?>" method="post">
+        <form class="" action="/manage/page/<?php echo $page->idpages; ?>" method="post" id="page-form">
             <?php
             if(isset($response) && !empty($response)) {
                 printResponse($response);     
@@ -20,10 +20,10 @@
             <div class="form-group">
                 <label for="contents">Contents</label>
                 <?php /* <textarea rows="12" name="contents" id="contents" class="form-control" data-provide="markdown" data-iconlibrary="fa"><?php echo $page->contents; ?></textarea> */ ?>
-                <div class="textarea" name="content" id="contents"><?php echo $page->contents; ?></div>
+                <div class="textarea" name="contents" id="contents"><?php echo $page->contents; ?></div>
             </div>
             
-            <button class="btn btn-main" type="submit"><i class="fa fa-save"></i> SAVE</button>
+            <button class="btn btn-main" type="submit" id="save-page-form"  data-form="#page-form"><i class="fa fa-save"></i> SAVE</button>
             
         </form>
         

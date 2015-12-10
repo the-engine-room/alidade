@@ -4,5 +4,7 @@
         
         protected $table = 'pages';
         
+        
+        
     }
     

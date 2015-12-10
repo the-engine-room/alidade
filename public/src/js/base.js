@@ -88,7 +88,7 @@ $(document).ready(function(){
         
         var data = {
             'title'         : theForm.children().children('#title').val(),
-            'description'   : theForm.find('#description').val(),
+            'description'   : $('.textarea').summernote('code'),
             'step'          : theForm.children('#step').val(),
             'position'      : theForm.children('#position').val()
         }
@@ -106,8 +106,45 @@ $(document).ready(function(){
         return false;    
     });
     
+    
+    // Save slide contents (manager)
+    $('#save-page-form').click(function(e){
+        var theForm = $($(this).data('form'));
+        
+        var data = {
+            'title'         : theForm.children().children('#title').val(),
+            'contents'      : $('.textarea').summernote('code'),
+            'url'           : theForm.children().children('#url').val(),
+            'id'            : theForm.find('#page').val()
+        }
+        
+        $.post(
+                '/ajax/save_page',
+                data,
+                function(response){
+                    theForm.prepend('<div class="alert alert-' + response.code + '"><i class="fa fa-' + response.icon + '"></i> ' + response.message + '</div>'); 
+                },
+                'json'
+        );
+        
+        e.preventDefault();
+        return false;    
+    });
+        
     // launch WYSIWYG editor
-    $('div.textarea').summernote();
+    if ($('.textarea').length > 0 ) {
+        $('.textarea').summernote();        
+    }
+    
+    // affix nav for report
+    $('.toc').affix({
+        offset: {
+            top: 100,
+            bottom: function () {
+                return (this.bottom = $('footer').outerHeight(true))
+            }
+        }
+    });
     
     // enable bootstrap tooltips
     $('[data-toggle="tooltip"]').tooltip();
