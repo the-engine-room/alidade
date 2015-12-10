@@ -12,7 +12,8 @@
                     <input type="text" id="title" name="title" class="form-control" value="<?php echo $slide->title; ?>">
                 </div>
                 <div class="form-group">
-                    <textarea rows="25" name="description" id="description" class="form-control" data-provide="markdown" data-iconlibrary="fa"><?php echo $slide->description; ?></textarea>
+                    <div class="textarea form-control" name="description" id="description"><?php echo $slide->description; ?></div>
+                    <?php /* <textarea rows="25" name="description" id="description" class="form-control" data-provide="markdown" data-iconlibrary="fa"><?php echo $slide->description; ?></textarea> */ ?>
                 </div>
                 <div class="form-group">
                     <button type="submit" id="save-form" data-form="#slide-form" class="btn btn-primary">save</button>

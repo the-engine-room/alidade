@@ -82,7 +82,7 @@ $(document).ready(function(){
         }
     });    
     
-    
+    // Save slide contents (manager)
     $('#save-form').click(function(e){
         var theForm = $($(this).data('form'));
         
@@ -105,6 +105,9 @@ $(document).ready(function(){
         e.preventDefault();
         return false;    
     });
+    
+    // launch WYSIWYG editor
+    $('div.textarea').summernote();
     
     // enable bootstrap tooltips
     $('[data-toggle="tooltip"]').tooltip();

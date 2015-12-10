@@ -19,7 +19,8 @@
             </div>
             <div class="form-group">
                 <label for="contents">Contents</label>
-                <textarea rows="12" name="contents" id="contents" class="form-control" data-provide="markdown" data-iconlibrary="fa"><?php echo $page->contents; ?></textarea>
+                <?php /* <textarea rows="12" name="contents" id="contents" class="form-control" data-provide="markdown" data-iconlibrary="fa"><?php echo $page->contents; ?></textarea> */ ?>
+                <div class="textarea" name="content" id="contents"><?php echo $page->contents; ?></div>
             </div>
             
             <button class="btn btn-main" type="submit"><i class="fa fa-save"></i> SAVE</button>

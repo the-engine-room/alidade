@@ -32,8 +32,8 @@
         public function page($page){
             /** load component css and js -> see /app/view/head.php & /app/view/foot.php **/
             $this->set('mdEditor', true);
-            $css = array('/components/bootstrap-markdown/css/bootstrap-markdown.min.css');
-            $js = array('/components/bootstrap-markdown/js/bootstrap-markdown.js', '/components/markdown/lib/markdown.js');
+            $css = array('/components/summernote/dist/summernote.css');
+            $js = array('/components/summernote/dist/summernote.min.js');
             $this->set('js', $js);
             $this->set('css', $css);
             
@@ -66,8 +66,8 @@
         /** edit slide contents **/
         public function slide($step, $position){
             $this->set('mdEditor', true);
-            $css = array('/components/bootstrap-markdown/css/bootstrap-markdown.min.css');
-            $js = array('/components/bootstrap-markdown/js/bootstrap-markdown.js', '/components/markdown/lib/markdown.js');
+            $css = array('/components/summernote/dist/summernote.css');
+            $js = array('/components/summernote/dist/summernote.min.js');
             $this->set('js', $js);
             $this->set('css', $css);
             
