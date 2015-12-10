@@ -42,7 +42,7 @@
                 <p class="text-center">
                     <a class="btn btn-alt btn-lg" href="/user/projects"><i class="fa fa-hand-o-right"></i> Start planning now!</a>
                     <br /><br />
-                    Don’t have time to read the guide? Try our <a href="/page/quick-tips"quick tips</a> first.
+                    Don’t have time to read the guide? Try our <a href="/page/quick-tips">quick tips</a> first.
                 </p>
             </div>
         </section>
