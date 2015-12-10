@@ -184,6 +184,8 @@
         public function invalid(){
             $this->set('title', 'invalid');
         }
+        
+        
         /** User Projects Dashboard **/
         public function projects(){
             $Auth = new Auth($url);
@@ -282,7 +284,7 @@
                         }
                         
                         if(empty($pwd) || empty($cpwd) || !($pwd === $cpwd)){
-                            $error['password'] = 'The password cannot be emtpy and must match with the confirmation field.';
+                            $error['password'] = 'The password cannot be empty and must match with the confirmation field.';
                         }
                         
                         if(empty($error)) {
@@ -299,15 +301,17 @@
                                 $Session = new Session;
                                 $Session->createSession($idUser);
                                 
-                                if(isset($_FILES) && !empty($_FILES)){
-                                    $file = new File;
-                                    $file->upload('profile', 'image', $idUser, TBL_USERS, false, true);    
-                                }
-                                
                             }
                             if($idUser){ 
                                 $response['success'] = 'User created correctly.';
                                 // Login and proceed to project start! 
+                                $Auth = new Auth;
+                                $pass = $Auth->authorize($idUser);
+                                
+                                /** set first login cookie **/
+                                setcookie('TSA-First-Time', 'no', time() + (60*60*24*365*5), '/');
+                                header('Location: /project/start?reg');
+                                
                                 
                             }
                             else {

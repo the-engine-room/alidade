@@ -32,7 +32,8 @@
                         break;
                 }
                 ?>
-                <?php if($currentSlide !== '1.6') { ?>
+                
+                
                 <div class="row">
                     <div class="text-center">
                         
@@ -55,9 +56,14 @@
                         <div class="col-xs-6 col-sm-4 col-md-3">
                             <button type="submit" class="btn btn-main btn-lg btn-block">Forward <i class="fa fa-angle-right"></i></button>
                         </div>
+                        <?php if($currentSlide == '1.6') { ?>
+                        <div class="col-xs-12 col-sm-4 col-md-3">
+                            <a href="/project/slide/1.11?skipped" class="btn btn-main btn-lg btn-block">Skip <i class="fa fa-angle-double-right"></i></a>
+                        </div>
+                        <?php } ?>
                     </div>
                 </div>
-                <?php } ?>
+                
             </form>   
         </div>
         
