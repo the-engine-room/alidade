@@ -41,7 +41,7 @@
                     <div class="pull-right user-panel">
                         <span class="user-name">Hello, <strong><?php echo $_SESSION[APPNAME]['USR']; ?></strong>.</span>
                         <ul class="user-actions">
-                            <li><a href="/" title="All your Projects" class="mininav"><i class="fa fa-home fa-fw"></i><span class="sr-only">Homepage</span></a></li><!--
+                            <li><a href="/" title="Homepage" class="mininav"><i class="fa fa-home fa-fw"></i><span class="sr-only">Homepage</span></a></li><!--
                             <?php if(isset($userRole) && $userRole == 'root') { ?>
                             --><li><a href="/manage/index" title="Manage Contents" class="mininav"><i class="fa fa-wrench fa-fw"></i><span class="sr-only">Manage Contents</span></a></li><!--
                             <?php } ?>

@@ -28,5 +28,8 @@
         </form>
         
     </div>
+    <div class="col-md-2">
+        <a href="/manage" class="btn btn-sm btn-alt pull-right">back to management <i class="fa fa-angle-right"></i></a>
+    </div>
 </div>
 

@@ -108,7 +108,7 @@
                     else {
                     /** 3. Send email with reset link (/user/reset?token=$token) **/
                         
-                        $reset_link = '//'.$_SERVER['HTTP_HOST'].'/user/reset/'.$token;
+                        $reset_link = $_SERVER['HTTP_HOST'].'/user/reset/'.$token;
                         
                         // email headers
                         $headers = "From: " . APPEMAIL . "\r\n";
@@ -116,7 +116,7 @@
                         $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
                         
                         $subject = APPNAME . ': Password recovery';
-                        $message = '<html><body><h1>' . APPNAME . ' </h1><p>Someone requested a new password for this account.</p><p><strong>If this wasn\'t you, then do nothing.</strong></p><p>Otherwise please click on this link: <a href="' . $reset_link . '">Password Reset</a>, Or copy and paste this URL: <span style="color: #339CE8">' . $reset_link . '</span></p><p>Thank you.</p></body></html>';
+                        $message = '<html><body><h1>' . APPNAME . ' </h1><p>Someone requested a new password for this account.</p><p><strong>If this wasn\'t you, then do nothing.</strong></p><p>Otherwise please click on this link: <a href="//' . $reset_link . '">Password Reset</a>, Or copy and paste this URL: <span style="color: #339CE8">' . $reset_link . '</span></p><p>Thank you.</p></body></html>';
                         
                         $sender = mail($email, $subject, $message, $headers);
                         
