@@ -29,7 +29,7 @@
                 <?php } ?>
                 <div class="col-xs-12 col-sm-6 col-md-8">
                     <h1>The Tool Selection Assistant</h1>
-                    <p>As more and more voice and accountability organisations rely on technology in their work, choosing the right technology tool has become critical. </p>
+                    <p>A guide to help you choose the right technology tool for your project.</p>
                 </div>
                 
             </div>
@@ -42,7 +42,7 @@
                 <p class="text-center">
                     <a class="btn btn-alt btn-lg" href="/user/projects"><i class="fa fa-hand-o-right"></i> Start planning now!</a>
                     <br /><br />
-                    Don’t have time to read the guide? Try our <a href="/page/quick-tips"quick tips</a> first.
+                    Don’t have time to read the guide? Try our <a href="/page/quick-tips">quick tips</a> first.
                 </p>
             </div>
         </section>
