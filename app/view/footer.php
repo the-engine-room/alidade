@@ -68,7 +68,7 @@
                     Built by  <a href="http://www.theengineroom.org">the engine room</a>, <a href="http://www.pawa254.org">Pawa254</a> and the <a href="http://www.networksociety.co.za/">Network Society lab</a> at the University of the Witwatersrand.
                     <br />This project was supported by <a href="http://www.makingallvoicescount.org/">Making All Voices Count</a>.
                     <br /> <br />
-                    <a href="mailto: research@theengineroom.org"><i class="fa fa-send"></i> Send us feedback on the tool</a><br /><br />
+                    <a href="mailto:research@theengineroom.org"><i class="fa fa-send"></i> Send us feedback on the tool</a><br /><br />
                     Content is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International Licence</a>
                 </small>
             </div>
