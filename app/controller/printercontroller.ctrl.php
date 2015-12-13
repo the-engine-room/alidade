@@ -3,15 +3,11 @@
     
     class PrinterController extends Controller {
         
-        public function output($project, $step){
+        public function output( $project, $step, $type = 'pdf' ){
             $Project = new Project;
             $Slide = new Slide;
             
             $data = $Project->findProject($project);
-            
-            
-            
-            //dbga($data);
             
             $steps = array();
             foreach($data['slides'] as $slide){
@@ -20,9 +16,7 @@
                 }
             }
             
-            $content = '
-                        
-                        <style type="text/css">
+            $content = '<style type="text/css">
                         <!--
                             h3 {background: #e3e3e3;  padding:5mm 8mm;  font-weight: bold; width: 100%;   }
                             p {background: #FFFFFF;  padding:3mm; }
@@ -168,16 +162,6 @@
                     break;
                 
                 case 4:
-                    
-                    
-                    /*                    
-                    Areas where support is needed:                              Free text
-                    Requirements for the technical provider:                    Free text
-                    List of potential technical partners:                       Free text
-                    Technical partners or advisers best suited to the project   Free text
-                    Name of technical partner chosen                            Free text
-                    */
-                    
                     
                     
                     $thisSlide = $Slide->findSlide($project, 4, 2);            

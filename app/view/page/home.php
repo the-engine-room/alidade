@@ -1,5 +1,3 @@
-
-    
     <div class="jumbotron">
         <div class="container">
             <div class="row">
@@ -10,28 +8,22 @@
                         <div class="form-group">
                             <label for="email">Email</label>
                             <input type="email" class="form-control" name="email" id="email">
-                        </div>
-                        
+                        </div>                        
                         <div class="form-group">
                             <label for="password">Password</label>
                             <input type="password" class="form-control" name="password" id="password">
                         </div>
-                        
                         <div class="form-group">
                             <button type="submit" class="form-control btn btn-alt" name="submit" id="submit"><i class="fa fa-sign-in"></i> Login</button>
                             <a href="/user/create" class="alt">or register here</a> | <a class="alt" href="/user/recover">lost your password?</a>
                         </div>
-                        
-                        
                     </form>
-                    
                 </div>
                 <?php } ?>
                 <div class="col-xs-12 col-sm-6 col-md-8">
                     <h1>The Tool Selection Assistant</h1>
                     <p>A guide to help you choose the right technology tool for your project.</p>
                 </div>
-                
             </div>
         </div>
     </div>
@@ -47,4 +39,3 @@
             </div>
         </section>
     </div>
-    

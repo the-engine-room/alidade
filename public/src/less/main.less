@@ -1,4 +1,8 @@
 @import 'variables.less';
+html, body {
+    height: 100%;
+    position: relative;
+}
 body {
     font-family: 'Lato', 'Arial', sans-serif;
     font-weight: 300;
@@ -34,12 +38,15 @@ blockquote {
     }
     
 }
-
+.wrap { min-height: 100%; position: relative; padding-bottom: 250px;
+}
 footer {
     padding: 25px 0px 30px;
     margin: 30px 0px 0px;
     width: 100%;
-    min-height: 80px;
+    min-height: 155px;
+    bottom: 0px;
+    position: absolute;
     background: lighten(gainsboro, 5%);
 }
 
@@ -68,6 +75,8 @@ a {
     }
 }
 /** user navigation/panel **/
+.logo { font-size: 18px; font-family: 'Francois One', sans-serif;
+     font-weight: 400; color: lighten(@oil, 5%); padding: 0px 8px;  }
 .user-panel {
     height: 30px;
     display: block;
@@ -84,13 +93,14 @@ a {
         li {
             display: inline-block;
             height: 30px;
-            width: 30px;
+           // width: 30px;
             line-height: 30px;
             text-align: center;
             background: @oil;
             &:not(:last-child) { border-right: 1px solid lighten(@oil, 30%); }
-            a { display: block; color: @cream; 
-                &:hover {
+            a { display: block; color: @cream;  text-transform: uppercase; padding: 0px 6px; 
+            
+                &:hover, &.active {
                     color: @oil; background: white;  
                 }
             }
@@ -220,6 +230,7 @@ footer {
 // affixed nav
 
 .toc {
+    margin-top: 35px; 
     ol {
         padding-left: 15px; 
     }

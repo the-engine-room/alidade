@@ -19,7 +19,6 @@
             </div>
             <div class="form-group">
                 <label for="contents">Contents</label>
-                <?php /* <textarea rows="12" name="contents" id="contents" class="form-control" data-provide="markdown" data-iconlibrary="fa"><?php echo $page->contents; ?></textarea> */ ?>
                 <div class="textarea" name="contents" id="contents"><?php echo $page->contents; ?></div>
             </div>
             
@@ -29,6 +28,7 @@
         
     </div>
     <div class="col-md-2">
+        <br />
         <a href="/manage" class="btn btn-sm btn-alt pull-right">back to management <i class="fa fa-angle-right"></i></a>
     </div>
 </div>
