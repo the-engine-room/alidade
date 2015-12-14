@@ -48,7 +48,7 @@
                                 <?php if(isset($userRole) && $userRole == 'root') { ?>
                                 --><li><a href="/manage/index" title="Manage Contents" class="mininav"><i class="fa fa-wrench fa-fw"></i><span class="hidden-xs">Manage</span></a></li><!--
                                 <?php } ?>
-                                --><li><a href="/user/projects" title="All your Projects" class="mininav"><i class="fa fa-user fa-fw"></i><span class="hidden-xs">My Projects</span></a></li><!--
+                                --><li><a href="/user/projects" title="All your Projects" class="mininav"><i class="fa fa-tasks fa-fw"></i><span class="hidden-xs">My Projects</span></a></li><!--
                                 --><li><a href="/user/logout" title="Logout" class="mininav"><i class="fa fa-sign-out fa-fw"></i><span class="sr-only">Logout</span></a></li><!-- --> 
                             </ul>
                         </div>
