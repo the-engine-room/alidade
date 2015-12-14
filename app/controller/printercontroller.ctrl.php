@@ -1,5 +1,6 @@
 <?php
     require_once(ROOT . DS . 'lib' . DS . 'vendor' . DS . 'html2pdf_v4.03' . DS . 'html2pdf.class.php');
+    require_once(ROOT . DS . 'lib' . DS . 'vendor' . DS . 'html_to_doc.inc.php');
     
     class PrinterController extends Controller {
         
@@ -15,7 +16,7 @@
                     $steps[] = $slide;
                 }
             }
-            
+            if($type == 'pdf'){ 
             $content = '<style type="text/css">
                         <!--
                             h3 {background: #e3e3e3;  padding:5mm 8mm;  font-weight: bold; width: 100%;   }
@@ -24,7 +25,10 @@
                         </style>
                         <page>
                         <h1>' . $data['title'] . '</h1>';
-                            
+            }
+            else {
+                $content = '<h1>' . $data['title'] . '</h1>';
+            }
             
             
             
@@ -394,13 +398,22 @@
             }
             
                         
-            $content .= '</page>';
+            
             //echo $content;
             
-            $html2pdf = new HTML2PDF('P','A4','en');
-            $html2pdf->WriteHTML($content);
-            $html2pdf->Output('TSA-Step-' . $step . '.pdf');
-            
+            if($type == 'pdf'){
+                
+                $content .= '</page>';
+                
+                $html2pdf = new HTML2PDF('P','A4','en');
+                $html2pdf->WriteHTML($content);
+                $html2pdf->Output('TSA-Step-' . $step . '.pdf');
+            }
+            elseif($type == 'doc'){
+                $doc = $htmltodoc= new HTML_TO_DOC();
+                $content = '<body>' . $content . '</body>';
+                $doc->createDoc($content,"TSA-Step-" . $step, true);
+            }
         }    
         
     }
