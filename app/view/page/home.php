@@ -1,9 +1,11 @@
     <div class="jumbotron">
         <div class="container">
             <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-6" id="login-panel">
+                    <h1>The Tool Selection Assistant</h1>
+                    <p>A guide to help you choose the right technology tool for your project.</p>
                 <?php if( !isset($_SESSION[APPNAME][SESSIONKEY]) || empty($_SESSION[APPNAME][SESSIONKEY])) { ?>
-                <div class="col-xs-12 col-sm-6 col-md-4" id="login-panel">
-                    <h3>Login</h3>
+                    
                     <form action="/user/login" method="post">
                         <div class="form-group">
                             <label for="email">Email</label>
@@ -18,11 +20,11 @@
                             <a href="/user/create" class="alt">or register here</a> | <a class="alt" href="/user/recover">lost your password?</a>
                         </div>
                     </form>
-                </div>
                 <?php } ?>
+                </div>
+                
                 <div class="col-xs-12 col-sm-6 col-md-8">
-                    <h1>The Tool Selection Assistant</h1>
-                    <p>A guide to help you choose the right technology tool for your project.</p>
+                    
                 </div>
             </div>
         </div>
@@ -31,6 +33,7 @@
         <div class="row">
             <div class="col-xs-12 col-sm-6 col-md-3 text-snap-title"><h3>What is it</h3></div>
             <div class="col-xs-12 col-sm-6 col-md-3"><p><strong>A 4-step guided process</strong> that will help you choose your best option.</p></div>
+            <div class="clearfix visible-sm-block"></div>
             <div class="col-xs-12 col-sm-6 col-md-3 text-snap-title"><h3>What I'll get</h3></div>
             <div class="col-xs-12 col-sm-6 col-md-3">
                 <ul>

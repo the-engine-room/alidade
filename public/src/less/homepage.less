@@ -1,9 +1,16 @@
+.jumbotron {
+    padding-top: 120px; padding-bottom: 120px; background: @statusGo; // url('/assets/images/screw.jpg') no-repeat center center; background-size: cover; background-blend-mode: overlay;
+    h1 { color: @cream; text-shadow: 1px 1px 0px @oil;
+        & ~ p { color: @cream; }
+    }
+}
+
 // text snaps
 #text-snaps {
     padding-bottom: 30px; 
     .text-snap-title{
-        border-bottom: 3px solid @sea;
-        h3 { font-size: 32px; margin-top: 0px; }
+        border-bottom: 6px solid @sea;
+        h3 { font-size: 32px; margin-top: 0px; text-transform: capitalize; }
     }
 }
 
@@ -30,7 +37,7 @@
             
             .step-indicator{
                 display: inline-block;
-                width: 30px;
+                width: 20px;
                 height: 8px;
                 background: @statusGo;
                 margin: 8px 2px; 
@@ -77,10 +84,14 @@
 
 /** Tablets **/
 @media screen and (min-width: 768px){
+    .jumbotron {
+        background: @statusGo url('/assets/images/768.jpg') no-repeat center center; background-size: cover;
+    }
+    
     #text-snaps {
         .text-snap-title{
             border-bottom: none;
-            border-right: 3px solid @sea;
+            border-right: 6px solid @sea;
             min-height: 150px;
             text-align: right; 
         }
@@ -135,5 +146,7 @@
 
 /** Desktop **/
 @media screen and (min-width: 992px){
-    
+    .jumbotron {
+        background: @statusGo url('/assets/images/1920.jpg') no-repeat center center; background-size: cover;
+    }
 }
