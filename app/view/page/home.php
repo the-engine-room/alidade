@@ -31,18 +31,36 @@
     </div>
     <div class="container" id="text-snaps">
         <div class="row">
-            <div class="col-xs-12 col-sm-6 col-md-3 text-snap-title"><h3>What is it</h3></div>
-            <div class="col-xs-12 col-sm-6 col-md-3"><p><strong>A 4-step guided process</strong> that will help you choose your best option.</p></div>
-            <div class="clearfix visible-sm-block"></div>
-            <div class="col-xs-12 col-sm-6 col-md-3 text-snap-title"><h3>What I'll get</h3></div>
-            <div class="col-xs-12 col-sm-6 col-md-3">
-                <ul>
-                    <li>Real life <strong>examples</strong></li>
-                    <li>Tips</li>
-                    <li>Links to <strong>external resources</strong> for help</li>
-                    <li>A <strong>structured report</strong> of all your decisions.</li>
-                </ul>
+            
+            
+            
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <div class="text-snap">
+                    <div class="text-snap-title"><h3>What is it</h3></div>
+                    <div class="text-snap-text"><p><strong>A 4-step guided process</strong> that will help you choose your best option.</p></div>
+                </div>
+            
+                <div class="text-snap">
+                    <div class="text-snap-title"><h3>Why</h3></div>
+                    <div class="text-snap-text"><p>Evidence shows <strong>solid planning is key</strong> in making your project successful. <a href="#planning">Read More <i class="fa fa-angle-double-right"></i></a></p></div>
+                </div>
             </div>
+            
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <div class="text-snap">
+                    <div class="text-snap-title"><h3>What I'll get</h3></div>
+                    <div class="text-snap-text">
+                        <ul>
+                            <li>Real life <strong>examples</strong></li>
+                            <li>Tips</li>
+                            <li>Links to <strong>external resources</strong> for help</li>
+                            <li>A <strong>structured report</strong> of all your decisions.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            
         </div>
     </div>
     <div class="container-fluid" id="walkthrough">

@@ -1,5 +1,5 @@
 <?php $origin =  !isset($original) ? null : $original[0]; ?>
-<div class="container">
+<div class="container" id="slide-content">
     <div class="row">
         <div class="col-md-12">
             <form action="/project/slide/<?php echo $nextSlide; ?><?php echo (!is_null($original) ? '/?p=' . $projecthash : ''); ?> " method="post">

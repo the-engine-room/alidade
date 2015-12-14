@@ -79,24 +79,33 @@
 
 
 #quick-tips {
-    background: @statusGo;
+    background: @gold;
     font-size: 22px;
     p { padding: 15px 0px; }
-    a { color: white; }
+    a { color: @sky; }
 }
 
 /** Tablets **/
 @media screen and (min-width: 768px){
     .jumbotron {
-        background: @statusGo url('/assets/images/768.jpg') no-repeat center top; background-size: cover;
+        background: @gold url('/assets/images/768.jpg') no-repeat center top; background-size: cover; //background-blend-mode: overlay; 
     }
     
     #text-snaps {
         .text-snap-title{
+            float: left; 
             border-bottom: none;
-            border-right: 6px solid @sea;
-            min-height: 150px;
-            text-align: right; 
+            min-height: 100px;
+            text-align: right;
+            width: 50%;
+            padding: 25px; 
+        }
+        .text-snap-text {
+            float: left; 
+            width: 50%;
+            padding: 25px; 
+            border-left: 6px solid @sea;
+            margin-bottom: 10px; 
         }
     }
     
@@ -149,6 +158,6 @@
 /** Desktop **/
 @media screen and (min-width: 992px){
     .jumbotron {
-        background: @statusGo url('/assets/images/1920.jpg') no-repeat center top; background-size: cover;
+        background: @gold url('/assets/images/1920.jpg') no-repeat center top; background-size: cover;
     }
 }
