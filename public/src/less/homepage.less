@@ -1,8 +1,11 @@
 .jumbotron {
-    padding-top: 120px; padding-bottom: 120px; background: @statusGo; // url('/assets/images/screw.jpg') no-repeat center center; background-size: cover; background-blend-mode: overlay;
-    h1 { color: @cream; text-shadow: 1px 1px 0px @oil;
-        & ~ p { color: @cream; }
+    padding-top: 120px;
+    padding-bottom: 120px;
+    background: @statusGo; 
+    h1 { color: @oil; 
+        & ~ p { color: @oil; }
     }
+    a { color: @oil; }
 }
 
 // text snaps
@@ -85,7 +88,7 @@
 /** Tablets **/
 @media screen and (min-width: 768px){
     .jumbotron {
-        background: @statusGo url('/assets/images/768.jpg') no-repeat center center; background-size: cover;
+        background: @statusGo url('/assets/images/768.jpg') no-repeat center top; background-size: cover;
     }
     
     #text-snaps {
@@ -108,8 +111,7 @@
                 color: @cream;
                 font-size: 28px;
                 font-weight: 400;
-                &:before {
-                    
+                &:before {                    
                     content: ' ';
                     width: 75px;
                     height: 300px;
@@ -147,6 +149,6 @@
 /** Desktop **/
 @media screen and (min-width: 992px){
     .jumbotron {
-        background: @statusGo url('/assets/images/1920.jpg') no-repeat center center; background-size: cover;
+        background: @statusGo url('/assets/images/1920.jpg') no-repeat center top; background-size: cover;
     }
 }

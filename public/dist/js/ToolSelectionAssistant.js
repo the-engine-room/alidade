@@ -1,9 +1,9 @@
 $(document).ready(function(){
-    /*
+    
     $(window).scroll(function(){
         parallax('.jumbotron', 0.5);     
     });    
-    */
+    
     $('.choice').click(function(){
         $('.choice-text').hide();
         var $target = $('#' + $(this).attr('id') + '-text');    
@@ -153,6 +153,6 @@ $(document).ready(function(){
 function parallax(selector, speed) {
     var parallaxElement = $(selector);
     
-    parallaxElement.css({ 'background-position': '50% ' +  ( ($(window).scrollTop() * speed) -200)  + 'px'});
+    parallaxElement.css({ 'background-position': 'center ' +  ( ($(window).scrollTop() * speed))  + 'px'});
     
 }
