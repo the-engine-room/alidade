@@ -378,7 +378,7 @@ if(( isset($_GET['config-check']) && $_GET['config-check'] == 1) || isset($_POST
             </div>
         </div>
         <br/><br/>
-        <footer><div class="container-fluid"></div></footer>
+       
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script>
