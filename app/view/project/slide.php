@@ -32,11 +32,8 @@
                         break;
                 }
                 ?>
-                
-                
                 <div class="row">
-                    <div class="text-center">
-                        
+                    <div class="text-center">                        
                         <?php
                         if(isset($inProcess) && $inProcess == true){
                             if(!is_null($prevSlide) && !empty($prevSlide)) { ?>
@@ -50,8 +47,6 @@
                             <div class="col-xs-6 col-sm-4 col-md-3">
                                 <button type="submit" class="btn btn-main btn-lg btn-block">Forward <i class="fa fa-angle-right"></i></button>
                             </div>
-                                
-                            
                             <?php 
                             }
                         }

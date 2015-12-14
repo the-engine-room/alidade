@@ -1,19 +1,16 @@
-<div class="container-fluid">
+<div class="container userpage">
     <div class="row">
-        <div class="col-md-12">
-            <h1>All your projects...</h1>
-                <p>Choose a project and click <strong>Continue</strong></p>
-                <p><small>or create a <a class="" href="/project/start">new project</a></small></p>
+        <div class="col-md-6">
+            <h1>Update &amp; manage my projects</h1>
+        </div>
+        <div class="col-md-4 col-md-offset-2 help">
+            <p>Choose a project and click <strong>Continue</strong></p>
+            <p>Click on a slide button to change or amend an answer</p>
+            <p><small>or create a <a class="" href="/project/start">new project</a></small></p>
+            
         </div>
     </div>
     
-    <!-- Generated markup by the plugin -->
-<div class="tooltip top" role="tooltip">
-  <div class="tooltip-arrow"></div>
-  <div class="tooltip-inner">
-    Some tooltip text!
-  </div>
-</div>
     <?php foreach($projects as $p){  ?>
     
     <div class="row project">
@@ -33,7 +30,7 @@
                 </div>
             </form>
             <?php } else { ?>
-            <h3><?php echo $p['title']; ?> <small> [<?php echo round( (count($p['index']) / count($slideindex['fullIndex'])) * 100); ?>%] </small></h3>
+            <h3><?php echo $p['title']; ?> | <?php echo round( (count($p['index']) / count($slideindex['fullIndex'])) * 100); ?>% </h3>
             <?php } ?>
            
         </div>

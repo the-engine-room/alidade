@@ -23,6 +23,8 @@
             
             .slides ul li  {
                 width: 9.0909%;
+                
+                &:first-child { border-left: none !important; }
             }
             
         }
@@ -30,7 +32,7 @@
         &.step2 { background: lighten(@oil, 10%);
             .slides ul li  { width: 14.2857%; }
             &:before {
-                background: @oil url("/assets/arrow-heads.png") no-repeat scroll left center;
+                background: transparent url("/assets/arrowhead-oil-progressbar.svg") no-repeat scroll left center;
                 
             }
                 
@@ -39,7 +41,7 @@
             .slides ul li  { width: 14.2857%; }
             
             &:before {
-                background: lighten(@oil, 10%) url("/assets/arrow-heads.png") no-repeat scroll center center;
+                background: transparent url("/assets/arrowhead-oil-progressbar-10.svg") no-repeat scroll left center;
             }
             
         }
@@ -47,14 +49,15 @@
             .slides ul li  { width: 10%; }
             
             &:before {
-                background: lighten(@oil, 20%) url("/assets/arrow-heads.png") no-repeat scroll right center;
+                background: transparent url("/assets/arrowhead-oil-progressbar-20.svg") no-repeat scroll left center;
             }
         }
         
         .slides ul {
             margin: 0px; padding: 0px; list-style: none;
             li {
-                display: block; float: left; margin: 0px;
+                display: block; float: left; margin: 0px;border-left: 1px solid white;
+                 // &:not(:first-child) {  }
                 a {
                     cursor: pointer; 
                     display: block;
@@ -73,6 +76,7 @@
                 .tooltip { font-size: 14px; }
             }
         }
+        
     }
     span.title { text-indent: 20px; }
     span.title, span.percentage, span.overall {
