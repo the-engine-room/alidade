@@ -1,0 +1,139 @@
+// text snaps
+#text-snaps {
+    padding-bottom: 30px; 
+    .text-snap-title{
+        border-bottom: 3px solid @sea;
+        h3 { font-size: 32px; margin-top: 0px; }
+    }
+}
+
+#walkthrough {
+    .step {
+        position: relative;
+        width: 100%;
+        .step-inner-wrap{
+            padding: 75px 25px 25px 25px;
+            width: 100%;
+            height: 300px;
+            color: @cream;
+            font-size: 28px;
+            font-weight: 400;
+            &:before {
+                content: ' ';
+                width: 100%;
+                height: 50px;
+                display: block;
+                position: absolute; 
+                left:0;
+                top: 0;
+            }
+            
+            .step-indicator{
+                display: inline-block;
+                width: 30px;
+                height: 8px;
+                background: @statusGo;
+                margin: 8px 2px; 
+            }
+            .step-description{
+                margin: 15px 0px;
+                display: block;
+                clear: both;
+                font-weight: 800;
+            }
+        }
+        
+        &.step-1 {
+            background: @oil;
+        }
+        &.step-2 {
+            background: lighten(@oil, 10%);
+            .step-inner-wrap:before {
+                background: lighten(@oil, 10%) url('/assets/arrowhead-oil-mobile.svg') no-repeat center top / cover;
+            }
+        }
+        &.step-3 {
+            background: lighten(@oil, 20%);
+            .step-inner-wrap:before {
+                background: lighten(@oil, 20%) url('/assets/arrowhead-oil-10-mobile.svg') no-repeat center top / cover;
+            }
+        }
+        &.step-4 {
+            background: lighten(@oil, 30%);
+            .step-inner-wrap:before {
+                background: lighten(@oil, 30%) url('/assets/arrowhead-oil-20-mobile.svg') no-repeat center top / cover;
+            }
+        }
+    }
+}
+
+
+#quick-tips {
+    background: @statusGo;
+    font-size: 22px;
+    p { padding: 15px 0px; }
+    a { color: white; }
+}
+
+/** Tablets **/
+@media screen and (min-width: 768px){
+    #text-snaps {
+        .text-snap-title{
+            border-bottom: none;
+            border-right: 3px solid @sea;
+            min-height: 150px;
+            text-align: right; 
+        }
+    }
+    
+    #walkthrough {
+        .step {
+            position: relative;
+            width: 25%;
+            .step-inner-wrap{
+                padding: 25px 25px 25px 75px;
+                width: 100%;
+                height: 300px;
+                color: @cream;
+                font-size: 28px;
+                font-weight: 400;
+                &:before {
+                    
+                    content: ' ';
+                    width: 75px;
+                    height: 300px;
+                    display: block;
+                    position: absolute; 
+                    left:0;
+                    top: 0;
+                }                
+            }
+            
+            &.step-2 {
+                background: lighten(@oil, 10%);
+                .step-inner-wrap:before {
+                    background: lighten(@oil, 10%) url('/assets/arrowhead-oil.svg') no-repeat left center / cover;
+                }
+            }
+            &.step-3 {
+                background: lighten(@oil, 20%);
+                .step-inner-wrap:before {
+                    background: lighten(@oil, 20%) url('/assets/arrowhead-oil-10.svg') no-repeat left center / cover;
+                }
+            }
+            &.step-4 {
+                background: lighten(@oil, 30%);
+                .step-inner-wrap:before {
+                    background: lighten(@oil, 30%) url('/assets/arrowhead-oil-20.svg') no-repeat left center / cover;
+                } 
+            }
+        }
+    }            
+            
+    
+}
+
+/** Desktop **/
+@media screen and (min-width: 992px){
+    
+}
