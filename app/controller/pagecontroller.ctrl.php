@@ -32,7 +32,7 @@
                 $frag = $DOM->createDocumentFragment();
                 
                 // create initial list
-                $wrapperElement = $DOM->createElement('ol');
+                $wrapperElement = $DOM->createElement('ul');
                 $wrapperAttribute = $DOM->createAttribute('class');
                 $wrapperAttribute->value = 'toc';
                 $wrapperElement->appendChild($wrapperAttribute);
@@ -49,7 +49,7 @@
                 $last = 1;
                 
                 // Get H1, H2, H3 elements
-                foreach ($xpath->query('//*[self::h1 or self::h2 or self::h3]') as $headline) {
+                foreach ($xpath->query('//*[self::h2 or self::h3 or self::h4]') as $headline) {
                     // get level of current headline
                     sscanf($headline->tagName, 'h%u', $curr);
                 
@@ -62,7 +62,7 @@
                     } else if ($curr > $last && $head->lastChild) {
                         // move downwards and create new lists
                         for ($i=$last; $i<$curr; $i++) {
-                            $head->lastChild->appendChild($DOM->createElement('ol'));
+                            $head->lastChild->appendChild($DOM->createElement('ul'));
                             $head = &$head->lastChild->lastChild;
                         }
                     }
