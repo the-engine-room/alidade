@@ -36,13 +36,13 @@
             
             <div class="col-xs-12 col-sm-6 col-md-6">
                 <div class="text-snap">
-                    <div class="text-snap-title"><h3>What is it</h3></div>
+                    <div class="text-snap-title"><h3>What it is</h3></div>
                     <div class="text-snap-text"><p><strong>A 4-step guided process</strong> that will help you choose your best option.</p></div>
                 </div>
             
                 <div class="text-snap">
                     <div class="text-snap-title"><h3>Why</h3></div>
-                    <div class="text-snap-text"><p>Evidence shows <strong>solid planning is key</strong> in making your project successful. <a href="#planning">Read More <i class="fa fa-angle-double-right"></i></a></p></div>
+                    <div class="text-snap-text"><p>Our research suggests that <strong>choosing the right tool is key</strong> in making your project successful.<a href="/page/research-report">Read More <i class="fa fa-angle-double-right"></i></a></p></div>
                 </div>
             </div>
             
@@ -86,7 +86,7 @@
             <div class="col-xs-12 col-sm-3 col-md-3 step step-4">
                 <div class="step-inner-wrap">
                     <span class="step-indicator"></span><span class="step-indicator"></span><span class="step-indicator"></span><span class="step-indicator"></span>
-                    <span class="step-description">Find help or learn</span>
+                    <span class="step-description">Get help, if you need it</span>
                 </div>
             </div>
         </div>

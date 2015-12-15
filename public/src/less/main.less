@@ -38,7 +38,7 @@ blockquote {
         margin-right: 20px; 
     }    
 }
-.wrap { min-height: 100%; position: relative; padding-bottom: 250px; }
+.wrap { min-height: 100%; position: relative; }
 
 #slide-content { margin-bottom: 40px; }
 
@@ -136,13 +136,13 @@ a {
 .userpage, #slide-content {
     margin-bottom: 40px; 
     h1, h2 {
-        font-size: 54px;
+        font-size: 32px;
         color: @statusGo;
         font-weight: 800;
-        border-bottom: 6px solid @statusGo; 
+        border-bottom: 2px solid @statusGo; 
     }
     .alert h2 {
-        font-size: 28px;
+        font-size: 24px;
         color: inherit;
         font-weight: 800;
         border-bottom: none; 
@@ -235,7 +235,7 @@ footer {
     width: 100%;
     min-height: 250px;
     bottom: 0px;
-    position: absolute;
+   
     .slidemap ul {
         padding: 0px; margin: 0px; list-style: none;
         li {}
@@ -259,3 +259,9 @@ footer {
 @import 'homepage.less';
 @import 'manage.less';
 @import 'walking-steps.less';
+
+
+@media screen and (min-width: 768px ){
+    .wrap {  padding-bottom: 250px; }
+    footer {  position: absolute; height: 250px; }
+}
