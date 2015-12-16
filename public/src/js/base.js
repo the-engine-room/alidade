@@ -1,8 +1,10 @@
 $(document).ready(function(){
     
+    /*    
     $(window).scroll(function(){
         parallax('.jumbotron', 0.5);     
     });    
+    */
     
     $('.choice').click(function(){
         $('.choice-text').hide();

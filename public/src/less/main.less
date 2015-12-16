@@ -16,27 +16,33 @@ h1, h2, h3 {
 }
 
 blockquote {
+    
     font-family: 'Roboto Slab', sans-serif;
     font-weight: 300;
-    font-size: 18px;
+    font-size: 16px;
     border: 0px;
     padding: 10px 0px;
     color: @oil;
     min-height: 72px;
+    padding-left: 25px; 
+    border-left: 5px solid @sky;
+    margin: 25px;
+    background: @cream;
+    /* Quotation Mark before quote text
     &:before {
         content: '\f10d';
         box-sizing: border-box;
         font-family: 'FontAwesome';
         font-style: normal;
         color: fade(@oil, 40%);
-        font-size: 48px;
-        padding: 0px 12px; 
-        width: 100px;
+        font-size: 16px;
+        padding: 0px 8px; 
         text-align: center;
-        display: block; float: left; clear: left;
+        display: inline-block; float: left; clear: left;
         height: inherit;
-        margin-right: 20px; 
-    }    
+        margin-right: 10px; 
+    }
+    */
 }
 .wrap { min-height: 100%; position: relative; }
 

@@ -300,9 +300,7 @@
                                 
                                 $Session = new Session;
                                 $Session->createSession($idUser);
-                                
-                            }
-                            if($idUser){ 
+                            
                                 $response['success'] = 'User created correctly.';
                                 // Login and proceed to project start! 
                                 $Auth = new Auth;

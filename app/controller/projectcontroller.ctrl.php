@@ -9,10 +9,12 @@
             }
             
             else {
+                
                 $user = $Auth->getProfile();
                 $this->set('userRole', $user->role);
                     
                 if(isset($_POST['title'])){
+                    
                     
                     $ProjectHash = md5( $_SESSION[APPNAME]['USR'] . time() . $_SESSION[APPNAME][SESSIONKEY]);
                             
@@ -21,10 +23,13 @@
                     $data['title'] = $_POST['title'];
                     
                     $idproject = $this->Project->create($data);
-                    $_SESSION['project'] = $idproject;
                     
-                    header('Location: /project/slide/1.1');
-                
+                    if(is_numeric($idproject)) { 
+                    
+                        $_SESSION['project'] = $idproject;
+                        header('Location: /project/slide/1.1');
+                    
+                    }
                 }
                 else {
                     $this->set('title', 'Start a new project');
@@ -48,22 +53,16 @@
             
             else {
                 
-                
-                
-                
                 $user = $Auth->getProfile();
                 $this->set('user', $user);
                 $this->set('userRole', $user->role);
                 
-                
-                
                 $this->set('inProcess', true);
                 
-              
-              
                 if(!isset($_SESSION['plan']) || $cur === '1.1'){
                     $_SESSION['plan'] = array();
-                    //$_SESSION['project'] = null;
+                    // $_SESSION['project'] = null;
+                    $project = $_SESSION['project'];
                 }
                 
                 $position = explode('.', $cur);
