@@ -1,0 +1,88 @@
+.walking-steps {
+    display: block;
+    width: 100%;
+    .step {
+        width: 100%;
+        display: block;
+        float: left;
+        position: relative;
+        
+        &:before {
+            content: " ";
+            position: absolute;
+            bottom: 0;
+            left: 0; 
+            display: block;
+            float: left;
+            height:  28px;
+            width: 14px;
+            padding: 0px; margin: 0px; 
+        }
+        &.step1 {
+            background: @oil;
+            
+            .slides ul li  {
+                width: 9.0909%;
+                
+                &:first-child { border-left: none !important; }
+            }
+            
+        }
+        
+        &.step2 { background: lighten(@oil, 10%);
+            .slides ul li  { width: 14.2857%; }
+            &:before {
+                background: transparent url("/assets/arrowhead-oil-progressbar.svg") no-repeat scroll left center;
+                
+            }
+                
+        }
+        &.step3 { background: lighten(@oil, 20%);
+            .slides ul li  { width: 14.2857%; }
+            
+            &:before {
+                background: transparent url("/assets/arrowhead-oil-progressbar-10.svg") no-repeat scroll left center;
+            }
+            
+        }
+        &.step4 { background: lighten(@oil, 30%);
+            .slides ul li  { width: 10%; }
+            
+            &:before {
+                background: transparent url("/assets/arrowhead-oil-progressbar-20.svg") no-repeat scroll left center;
+            }
+        }
+        
+        .slides ul {
+            margin: 0px; padding: 0px; list-style: none;
+            li {
+                display: block; float: left; margin: 0px;border-left: 1px solid white;
+                 // &:not(:first-child) {  }
+                a {
+                    cursor: pointer; 
+                    display: block;
+                    min-height: 32px;
+                    background: gainsboro;
+                    &:hover { background: darken(gainsboro, 12%); }
+                    &.done {
+                        background: yellowgreen;
+                        &:hover { background: darken(yellowgreen, 8%); }
+                    }
+                    &.working { background: fade(yellowgreen, 50%);
+                        &:hover { background: fade(yellowgreen, 75%); }
+                    }
+                    .sr-only { display: none;}
+                }
+                .tooltip { font-size: 14px; }
+            }
+        }
+    }
+    span.title { text-indent: 20px; }
+    span.title, span.percentage, span.overall {
+        font-size: 12px; text-transform: uppercase; color: @cream; padding: 4px; line-height: 20px;  display: block; float: left;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .walking-steps .step { width: 25%; }
+}

@@ -6,7 +6,7 @@
      * */
     function hasRole($user, $role){
         
-        if($user->role == 'Root'){
+        if(ucfirst($user->role) == 'Root'){
             return true;
         }
         else {
@@ -123,20 +123,7 @@
         echo '</pre></div>';
     }
     
-    /**
-     * Rearranges an array
-     * used to "reflow" the $_FILES array
-     * with multiple entries
-     * */
-    function rearrange($arr){
-        foreach($arr as $key => $all){
-            foreach($all as $i => $val){
-                $new[$i][$key] = $val;   
-            }   
-        }
-        return $new;
-    }
-    
+        
     /**
      *DateTime printers
      **/
@@ -156,16 +143,18 @@
         return implode('-', array_reverse($d)); 
     }
     
-    /** inject textarea **/
+    
+    /** inject textarea and parse tags in text **/
     function injectAnswerField($string, $name = 'answer', $origin = null){
         return str_replace('[--answer--]', '<textarea id="answer" name="'.$name.'" class="form-control" rows="8">' . (!is_null($origin) ? $origin->answer : '' ) . '</textarea>', $string);
     }
+    
     function injectParam($string, $param, $value){
-        return str_replace('[--'.$param.'--]', $value, $string);
-        
+        return str_replace('[--'.$param.'--]', $value, $string);        
     }
     
-    // title printing, parsing position
+    
+    /** title printing, parsing position **/
     function printTitle($slide, $slideTitle){
         $cur = explode('.', $slide);
         switch($cur[0]){
@@ -190,13 +179,50 @@
         
     }
     
-    function print_scripts($js){
+    
+    /** check slide position and status, return css class **/
+    function checkSlidePosition($currentStep, $currentSlide, $indexStep, $indexSlide){
+        $check = '';
+        
+        if($currentStep == $indexStep){
+            if($currentSlide == $indexSlide){
+                return 'working';
+            }
+            elseif($currentSlide > $indexSlide) {
+                return 'done';
+            }
+        }
+        elseif($currentStep > $indexStep) {
+            return 'done';
+        }
+        return null;
+    }
+    
+    
+    /** Print js scripts from controller-defined variable $js **/
+    function print_scripts($js, $inject=false){
         if(is_array($js)){
             foreach($js as $path){
                 echo '<script src="' . $path . '"></script>';
             }
         }
         else {
-            echo '<script src="' . $js . '"></script>';
+            if($inject == true){
+                echo '<script>' . $js . '</script>';
+            }
+           else { 
+                echo '<script src="' . $js . '"></script>';
+           }
+        }
+    }
+    /** Print css links from controller-defined variable $css **/
+    function print_styles($css){
+        if(is_array($css)){
+            foreach($css as $path){
+                echo '<link type="text/css" rel="stylesheet" href="' . $path . '">';
+            }
+        }
+        else {
+            echo '<link type="tex/css" rel="stylesheet" href="' . $css . '">';
         }
     }

@@ -51,8 +51,12 @@
         
         // manage defaults and routing 
         if(empty($controller)){
-            $controller='home';
-            $action='index';
+            $controller='page';
+            $action='home';
+        }
+        elseif ($controller == 'page' && $action != 'index' ){
+           $qs[] = $action;
+           $action = 'index';
         }
         
         $controllerName=$controller;
@@ -64,7 +68,7 @@
         if((int)method_exists($controller, $action)){
             call_user_func_array(array($dispatch,$action),$qs);
         } else {
-            new Error(502, 'Controller <strong>'.$controller.'</strong> Not Found. Program Shutdown. (main.php, 67)');
+            new Error(502, 'Controller/Method <strong>'.$controller.'/'.$action.'</strong> Not Found. Program Shutdown. (main.php, 71)');
         }
         
         
@@ -85,7 +89,7 @@
         }
         
         else {
-           new Error(501, 'Class <strong>'.ucfirst($className).'</strong> Not Found. Program Shutdown. (main.php, 88)');
+           new Error(501, 'Class <strong>'.ucfirst($className).'</strong> Not Found. Program Shutdown. (main.php, 92)');
            die();
         }
         

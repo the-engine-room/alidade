@@ -1,4 +1,8 @@
 @import 'variables.less';
+html, body {
+    height: 100%;
+    position: relative;
+}
 body {
     font-family: 'Lato', 'Arial', sans-serif;
     font-weight: 300;
@@ -6,37 +10,58 @@ body {
 }
 
 h1, h2, h3 {
-    font-family: 'Francois One', sans-serif;
-    font-weight: 400;
+    font-family: 'Lato', sans-serif;
+    font-weight: 800;
+    text-transform: uppercase; 
 }
 
 blockquote {
-    font-style: italic;
-    font-size: 16px; 
+    
+    font-family: 'Roboto Slab', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    border: 0px;
+    padding: 10px 0px;
+    color: @oil;
+    min-height: 72px;
+    padding-left: 25px; 
+    border-left: 5px solid @sky;
+    margin: 25px;
+    background: @cream;
+    /* Quotation Mark before quote text
+    &:before {
+        content: '\f10d';
+        box-sizing: border-box;
+        font-family: 'FontAwesome';
+        font-style: normal;
+        color: fade(@oil, 40%);
+        font-size: 16px;
+        padding: 0px 8px; 
+        text-align: center;
+        display: inline-block; float: left; clear: left;
+        height: inherit;
+        margin-right: 10px; 
+    }
+    */
 }
+.wrap { min-height: 100%; position: relative; }
 
-footer {
-    padding: 25px 0px 30px;
-    margin: 30px 0px 0px;
-    width: 100%;
-    min-height: 80px;
-    background: lighten(gainsboro, 5%);
-}
+#slide-content { margin-bottom: 40px; }
 
 /** style all links **/
 a {
     -webkit-transition: all 0.5s ease 0s;
     -moz-transition: all 0.5s ease 0s;
     transition: all 0.5s ease 0s; 
-    color: @sea; text-decoration: none;
-    &:hover { color: lighten(@sea, 10%); text-decoration: underline; }
-    &.alt { color: @oil; text-decoration: underline;
-        &:hover { color: @sky; text-decoration: none; }
+    color: @sky; text-decoration: none;
+    &:hover { color: lighten(@sky, 10%); text-decoration: underline; }
+    &.alt { color: @sea; text-decoration: underline;
+        &:hover { color: @sea; text-decoration: none; }
     }
 }
 /** top dark bar **/
 #top {
-    background: @oil; color: @cream; font-size: 12px;
+    background: @oil; color: @cream; font-size: 16px;
     .steps {
         display: block; float: left; clear: both; width:100%; 
         .step { width: 25%; display: block; float: left; clear: none; height: 3px;
@@ -48,6 +73,8 @@ a {
     }
 }
 /** user navigation/panel **/
+.logo { font-size: 18px; font-family: 'Francois One', sans-serif;
+     font-weight: 400; color: lighten(@oil, 5%); padding: 0px 8px;  }
 .user-panel {
     height: 30px;
     display: block;
@@ -64,27 +91,18 @@ a {
         li {
             display: inline-block;
             height: 30px;
-            width: 30px;
+           // width: 30px;
             line-height: 30px;
             text-align: center;
             background: @oil;
             &:not(:last-child) { border-right: 1px solid lighten(@oil, 30%); }
-            a { display: block; color: @cream; 
-                &:hover {
+            a { display: block; color: @cream;  text-transform: uppercase; padding: 0px 6px; 
+            
+                &:hover, &.active {
                     color: @oil; background: white;  
                 }
             }
         }
-    }
-}
-#login-panel {
-    background: fade(@oil, 20%);
-}
-/** landing page **/
-.jumbotron {
-    padding-top: 120px; padding-bottom: 120px; background: url('/assets/images/screw.jpg') no-repeat center -200px; background-size: cover;
-    h1 { color: @cream; text-shadow: 1px 1px 0px @oil;
-        & ~ p { color: @cream; }
     }
 }
 
@@ -94,9 +112,9 @@ a {
     transition: all 0.6s ease 0s;
     border-radius: 0px;
 }
-.btn-main { color: @sky; background: @cream;
+.btn-main { color: @sea; background: @oil;
     &:hover, &:active, &:focus {
-        background: @gold; color: @oil;
+        background: @sky; color: @oil;
     }
 }
 .btn-alt {  background: @gold; color: @oil;
@@ -104,15 +122,40 @@ a {
         background: @cream; color: @sky; 
     }
 }
+.btn-default {  background: gainsboro; color: @oil;
+    &:hover, &:active, &:focus {
+        background: lighten(gainsboro, 10%); color: @sky; 
+    }
+}
 .btn-addon {
     border: 1px solid #CCC;
     background: @gold;
     color: @oil;
 }
+
 /** WYSIWYG **/
 .wysiwyg {
     overflow-y: scroll;
     height: 350px; 
+}
+
+.userpage, #slide-content {
+    margin-bottom: 40px; 
+    h1, h2 {
+        font-size: 32px;
+        color: @statusGo;
+        font-weight: 800;
+        border-bottom: 2px solid @statusGo; 
+    }
+    .alert h2 {
+        font-size: 24px;
+        color: inherit;
+        font-weight: 800;
+        border-bottom: none; 
+    }
+    .help {
+        margin-top: 20px;        
+    }
 }
 
 /** forms **/
@@ -177,11 +220,28 @@ input, select, textarea, .form-control {
 }
 
 h5#pos { padding-top: 8px; text-indent: 5px; }
-
+ // recap pages
+ a.ajx.tsa-tooltip {
+    text-transform: uppercase; color: @sky; font-weight: 800; font-size: 18px; text-decoration: none; 
+ }
+ 
+ .tsa-tooltip-wrap {
+    padding-left: 15px;
+    li & {
+        list-style: none; margin: 8px 0px;
+    }
+ }
+ 
 footer {
     background: @oil;
     color: @cream;
-    font-size: 12px; 
+    font-size: 12px;
+    padding: 25px 0px 30px;
+    margin: 0px;
+    width: 100%;
+    min-height: 250px;
+    bottom: 0px;
+   
     .slidemap ul {
         padding: 0px; margin: 0px; list-style: none;
         li {}
@@ -190,4 +250,24 @@ footer {
         font-size: 12px; color: @sea;
         &:hover { color: @cream; }
     }
+}
+
+// affixed nav
+
+.toc {
+    list-style: none; 
+    margin-top: 35px; 
+    ul {
+        list-style: none; 
+        padding-left: 15px; 
+    }
+}
+@import 'homepage.less';
+@import 'manage.less';
+@import 'walking-steps.less';
+
+
+@media screen and (min-width: 768px ){
+    .wrap {  padding-bottom: 250px; }
+    footer {  position: absolute; height: 250px; }
 }

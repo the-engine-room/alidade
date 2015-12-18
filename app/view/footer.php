@@ -1,18 +1,19 @@
+
 <footer>
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             
             
             <?php if($inProcess) {?> 
-            <div class="col-md-2 slidemap">
+            <div class="col-xs-12 col-sm-6 col-md-2 slidemap">
                 <h5>Quick tips</h5>
                 <ul>
-                    <li><a href="/home/choosing_the_right_technology_tool">Choosing the right technology tool</a></li>
+                    <li><a href="/page/quick-tips">Choosing the right technology tool</a></li>
                 </ul>
             </div>
             
-            <div class="col-md-2 slidemap">
-                <h5>Understanding your needs</h5>
+            <div class="col-xs-12 col-sm-6 col-md-2 slidemap">
+                <h5>1. Understanding your needs</h5>
                 <ul>
                     <li><a href="/project/slide/1.1">About this step</a></li>
                     <li><a href="/project/slide/1.2">Good enough planning</a></li>
@@ -22,8 +23,8 @@
                     <li><a href="/project/slide/1.11">Checklist</a></li>
                 </ul>
             </div>
-            <div class="col-md-2 slidemap">
-                <h5>Understanding the tech</h5>
+            <div class="col-xs-12 col-sm-6 col-md-2 slidemap">
+                <h5>2. Understanding the tech</h5>
                 <ul>
                     <li><a href="/project/slide/2.1">About this step</a></li>
                     <li><a href="/project/slide/2.2">Specifying your requirements</a></li>
@@ -34,8 +35,8 @@
                     <li><a href="/project/slide/2.7">Checklist</a></li>
                 </ul>
             </div>
-            <div class="col-md-2 slidemap">
-                <h5>Try it out</h5>
+            <div class="col-xs-12 col-sm-6 col-md-2 slidemap">
+                <h5>3. Try it out</h5>
                 <ul>
                     <li><a href="/project/slide/3.2">About this step</a></li>
                     <li><a href="/project/slide/3.3">Planning a trial</a></li>
@@ -45,8 +46,8 @@
                 </ul>
             </div>
             
-            <div class="col-md-2 slidemap">
-                <h5>Finding help</h5>
+            <div class="col-xs-12 col-sm-6 col-md-2 slidemap">
+                <h5>4. Finding help</h5>
                 <ul>
                     <li><a href="/project/slide/4.1">What kind of help?</a></li>
                     <li><a href="/project/slide/4.4">Looking for options</a></li>
@@ -62,16 +63,19 @@
             
             
             
-            <div class="col-md-2">
-                <small>
-                Built by <a href="http://www.pawa254.org">Pawa254</a>,
-                <br />the <a href="http://www.networksociety.co.za/">Network Society</a> at the University of the Witwatersrand<br />
-                and <a href="http://www.theengineroom.org">the engine room</a>
-                </small>
+            <div class="col-xs-12 col-sm-6 col-md-2 licensing">
+                
+                    Built by  <a href="http://www.theengineroom.org">the engine room</a>, <a href="http://www.pawa254.org">Pawa254</a> and the <a href="http://www.networksociety.co.za/">Network Society lab</a> at the University of the Witwatersrand.
+                    <br />This project was supported by <a href="http://www.makingallvoicescount.org/">Making All Voices Count</a>.
+                    <br /> <br />
+                    <a href="mailto:research@theengineroom.org"><i class="fa fa-send"></i> Send us feedback on the tool</a><br /><br />
+                    Content is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International Licence</a><br />
+                    <a href="https://github.com/the-engine-room/tool-selection-assistant" target="_blank"><i class="fa fa-github"></i> View on GitHub</a>
+                    
             </div>
         </div>
     </div>
 </footer>
-
+</div> <!-- EOF div.wrap -->
 
 

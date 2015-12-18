@@ -22,7 +22,9 @@
                     <button type="submit" class="form-control btn btn-primary" name="submit" id="submit"><i class="fa fa-sign-in"></i> Login</button>
                 </div>
                 
-                
+                <div class="text-center">
+                    <a href="/user/create">New Account</a> | <a href="/user/recover">Lost Password</a>
+                </div>
             </form>
             
         </div>

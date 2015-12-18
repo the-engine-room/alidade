@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-4">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3col-md-6 col-md-offset-3">
             <h1><?php echo $title; ?></h1>
         </div>
     </div>
@@ -12,7 +12,7 @@
                     
                     <form action="/user/create" method="post" enctype="multipart/form-data">
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-6 col-md-offset-3">
                                 <div class="form-group <?php if(isset($error) && isset($error['name']) && !empty($error['name'])) { echo "has-error"; } ?>">
                                     <label for="name">User Name:</label>
                                     <input type="text" name="name" id="name" class="form-control">
@@ -25,8 +25,7 @@
                                 </div>
                         
                                 
-                            </div>    
-                            <div class="col-md-6">
+                            
                                 <div class="form-group <?php if(isset($error) && isset($error['name']) && !empty($error['name'])) { echo "has-error"; } ?>">
                                     <label for="password">Password:</label>
                                     <input type="password" name="password" id="password" class="form-control">
@@ -39,10 +38,10 @@
                                 
                             </div>
                             
-                            <div class="col-md-12">
+                            <div class="col-md-6 col-md-offset-3">
                                 <div class="form-group">
-                                    <button class="btn btn-default" type="reset"><i class="fa fa-refresh"></i> reset</button>
-                                    <button class="btn btn-primary" type="submit"><i class="fa fa-save"></i> save</button>
+                                    <button class="btn btn-default" type="reset"><i class="fa fa-refresh"></i> RESET</button>
+                                    <button class="btn btn-main" type="submit"><i class="fa fa-save"></i> SAVE</button>
                                     
                                 </div>        
                                 

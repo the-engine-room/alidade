@@ -46,7 +46,7 @@
                                 header('Location: /user/projects');    
                             }
                             else {
-                                setcookie('TSA-First-Time', 'no', 60*60*24*365*5, '/', true);
+                                setcookie('TSA-First-Time', 'no', time() + (60*60*24*365*5), '/');
                                 header('Location: /project/start');
                             }
                             
@@ -65,33 +65,200 @@
         }
         
         
-        public function all() {
-            $this->set('title', 'Users');
-            
+        
+        
+        /** password recovery **/
+        public function recover(){
+            $this->set('title', 'Lost Password');
+            $response = null;
+            if(strtoupper($_SERVER['REQUEST_METHOD']) == 'POST'){
+                /** Action of requesting a new password **/
+                
+                $email = trim(trim(trim($_POST['email'])));
+                
+                /** 1. Validate Email **/
+                $email = filter_var($email, FILTER_SANITIZE_EMAIL);
+                if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                    $valid = false;
+                    $response['danger'] = 'Invalid email address. Please input a valid email address.';
+                }
+                else {
+                    /** find email in user table **/
+                    $userAccount = $this->User->find(array('email' => $email));
+                    if($userAccount){
+                        $valid = true;
+                    }
+                    else {
+                        $valid = false;
+                        $response['danger'] = 'No user with that email address. Are you sure you used this email to register?';    
+                    }
+                }
+                
+                /** check for valid info **/
+                if($valid){
+                    /** 2. Generate 1-time token **/
+                    $token = bin2hex(openssl_random_pseudo_bytes(16));
+                    
+                    /** 2.1 Associate token to account **/
+                    $update = array('token' => $token);
+                    $updated = $this->User->update($update, $userAccount[0]->idusers);
+                    if(!$updated){
+                        $response['danger'] = 'Could not save the recovery token, something was just wrong here.';
+                    }
+                    else {
+                    /** 3. Send email with reset link (/user/reset?token=$token) **/
+                        
+                        $reset_link = $_SERVER['HTTP_HOST'].'/user/reset/'.$token;
+                        
+                        // email headers
+                        $headers = "From: " . APPEMAIL . "\r\n";
+                        $headers .= "MIME-Version: 1.0\r\n";
+                        $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+                        
+                        $subject = APPNAME . ': Password recovery';
+                        $message = '<html><body><h1>' . APPNAME . ' </h1><p>Someone requested a new password for this account.</p><p><strong>If this wasn\'t you, then do nothing.</strong></p><p>Otherwise please click on this link: <a href="//' . $reset_link . '">Password Reset</a>, Or copy and paste this URL: <span style="color: #339CE8">' . $reset_link . '</span></p><p>Thank you.</p></body></html>';
+                        
+                        $sender = mail($email, $subject, $message, $headers);
+                        
+                        if(!$sender){
+                            $response['danger'] = 'Could not send email with reset instructions.';
+                            // echo $message;
+                        }
+                        else {
+                            $response['success'] = 'Email Sent! Please check your inbox and follow instrutions.';
+                        }
+                    }
+                }
+                
+                /** 4. set feedback for user **/
+                $this->set('response', $response);
+            }
+        }
+        
+        
+        /** password reset form **/
+        public function reset($token){
+            $this->set('title', 'Reset your password');
+            $this->set('token', $token);
+            /** validate this request **/
+            if($this->User->validateToken($token)){ 
+                if(strtoupper($_SERVER['REQUEST_METHOD']) == 'POST'){
+                    /** if we have post data, might as well save the request **/
+                    $pwd = $_POST['pwd'];
+                    $cpwd = $_POST['cpwd'];
+                    
+                    /** check for pwd corrispondence **/
+                    if(empty($pwd) || empty($cpwd) || !($pwd === $cpwd)){
+                        $response['danger'] = 'The password cannot be empty and must match with the confirmation field.';
+                    } else { 
+                    
+                        /** get the user profile **/
+                        $user = $this->User->find(array('token' => $token));
+                        /** prepare data **/
+                        $data = array(
+                                      'password' => crypt($pwd, '$1$'.SECRET)
+                                      );
+                        
+                        /** update user data **/ 
+                        if(!$this->User->update($data, $user[0]->idusers)) {
+                            $response['danger'] = 'Could not reset the password because of a technical issue.';
+                        } else {
+                            $response['success'] = 'Password correctly reset.<br /> Please <a href="/"><strong>click here</strong></a> and login.';
+                        }
+                    }
+                    $this->set('response', $response);
+                }
+            } else {
+                /** Invalid token, nonetheless, this page does not exist. **/
+                header('Location: /user/invalid');
+            }
+        }
+        
+        /** redirect here if user has no permission to view content - header set in /lib/template.class.php **/
+        public function forbidden(){
+            $this->set('title',  'Nope.');
+        }
+
+        
+        /** redirect here if the request is invalid, basically a 404 - header set in /lib/template.class.php **/
+        public function invalid(){
+            $this->set('title', 'invalid');
+        }
+        
+        
+        /** User Projects Dashboard **/
+        public function projects(){
             $Auth = new Auth($url);
             if(!$Auth->isLoggedIn()){
                 header('Location: /user/login');
             }
+            
             else {                
                 $user = $Auth->getProfile();
+                $this->set('userRole', $user->role);
                 $this->set('user', $user);
-                $this->set('header', true);
+                $Slidelist = new Slidelist;
+                $Project = new Project;                
+                $Slide = new Slide;
                 
-                if(hasRole($user, 'Administrator')){
-                    $userlist = $this->User->getUserList();
-                    $this->set('userlist', $userlist);
+                $this->set('slideindex', $Slidelist->listed());
+                
+                
+                $menu = array();
+                $allSlides = $Slidelist->getList();
+                foreach($allSlides as $slide){
+                    $menu[$slide->indexer] = $slide->title;
                 }
-                else {
-                    header('Location: /user/forbidden');
+                $this->set('slideMenu', $menu);
+                
+                
+                $projects = $Project->findUserProjects($user->id);
+                
+                foreach($projects as $k => $p){
+                    $projectslideindex = array();
+                    foreach($p['slides'] as $slides) {
+                        $projectslideindex[] = $slides->step . '.' . $slides->slide;
+                    }
+                    $projects[$k]['slideindex'] = $projectslideindex;
+                    
+                    
+                    $indexed = array();
+                    $theProjectIndex = $Slide->projectSlideIndex($p['idprojects']);
+                    
+                    foreach($theProjectIndex as $i){
+                        $indexed[] = $i->indexer;
+                    }
+                    
+                    $projects[$k]['index'] = $indexed;
                 }
+                
+                $this->set('projects', $projects);
+                
+                
+                
             }
+            
         }
         
+        
+        
+        public function logout() {
+            
+            unset($_SESSION[APPNAME][SESSIONKEY]);
+            session_destroy();
+            
+            header('Location: /');
+            
+        }
+    
+    
+        /** new User Registration **/
         public function create() {
             $this->set('title', 'New User');
             
             $Auth = new Auth($url);
-            
+                $user = $Auth->getProfile();
+                $this->set('userRole', $user->role);
                 $this->set('user', $user);
                 $this->set('header', true);
                 
@@ -105,7 +272,6 @@
                         $pwd    =       $_POST['password'];
                         $cpwd   =       $_POST['c_password'];
                         $role   =       $_POST['role'];
-                        $groups  =       $_POST['groups'];
                         
                         // dbga($group);
                         
@@ -118,7 +284,7 @@
                         }
                         
                         if(empty($pwd) || empty($cpwd) || !($pwd === $cpwd)){
-                            $error['password'] = 'The password cannot be emtpy and must match with the confirmation field.';
+                            $error['password'] = 'The password cannot be empty and must match with the confirmation field.';
                         }
                         
                         if(empty($error)) {
@@ -127,7 +293,6 @@
                                             'email'    => $email,
                                             'password' => crypt($pwd, '$1$'.SECRET),
                                             'role'     => $role,
-                                            //'group'    => $group
                                         );
                             $idUser = $this->User->create($data);
                             if($idUser){
@@ -135,15 +300,17 @@
                                 
                                 $Session = new Session;
                                 $Session->createSession($idUser);
-                                
-                                if(isset($_FILES) && !empty($_FILES)){
-                                    $file = new File;
-                                    $file->upload('profile', 'image', $idUser, TBL_USERS, false, true);    
-                                }
-                                
-                            }
-                            if($idUser){ 
+                            
                                 $response['success'] = 'User created correctly.';
+                                // Login and proceed to project start! 
+                                $Auth = new Auth;
+                                $pass = $Auth->authorize($idUser);
+                                
+                                /** set first login cookie **/
+                                setcookie('TSA-First-Time', 'no', time() + (60*60*24*365*5), '/');
+                                header('Location: /project/start?reg');
+                                
+                                
                             }
                             else {
                                 $response['danger'] = 'User could not be created';
@@ -165,6 +332,9 @@
         }
         
     
+        
+        
+        /** editing user profiles -> shoud only be accessible to Root **/
         public function edit($id){
             $this->set('title', 'Edit User');
             
@@ -175,30 +345,18 @@
             
             else {                
                 $user = $Auth->getProfile();
+                
+                $this->set('userRole', $user->role);
                 $this->set('user', $user);
                 $this->set('header', true);
                 
-                // Administrators can edit users.
-                if(hasRole($user, 'Administrator')){ 
+                // Roots can edit users.
+                if(hasRole($user, 'root')){ 
                     
                     if($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST)){
                         $data = $_POST;
                         
-                        $sent_groups = $data['groups'];
-                        unset($data['groups']);
-                        unset($data['profile']);
                         $u = $this->User->update($data, $id);
-                        
-                        $ug = new Usersgroups;
-                        $ug->createUsersGroups($id, $sent_groups);
-                        
-                        
-                        
-                        if(isset($_FILES) && !empty($_FILES)){
-                            $file = new File;
-                            $file->upload('profile', 'image', $id, TBL_USERS, false, true);    
-                        }
-                                
                         if(!$u) {
                             $response['danger'] = 'Something went wrong. Please check the data and try again.';
                         }
@@ -208,39 +366,13 @@
                         
                         $this->set('response', $response);
                     }
-                    
-                    $Roles = new Role;
-                    $Roles =$Roles->findAll();
-                    
-                    $Groups = new Group;
-                    $Groups = $Groups->findAll();
-                    
-                    $this->set('roles', $Roles);
-                    $this->set('groups', $Groups);
-                    
                     $userdata = $this->User->findOne($id);
-                    
-                    $usergroups = array();
-                    $ugroups = $this->User->getUserGroups($id);
-                    foreach($ugroups as $g){
-                        $usergroups[] = $g->group;
-                    }
-                    $userdata->groups = $usergroups;
                     $this->set('data', $userdata);
-                    
-                    
                 }
             }
-            
-            
-            
         }
-        
-        public function forbidden(){
-            $this->set('title',  'Nope.');
-        }
-
-        
+    
+    
         public function profile($id = null){
             $Auth = new Auth($url);
             if(!$Auth->isLoggedIn()){
@@ -249,6 +381,7 @@
             
             else {                
                 $user = $Auth->getProfile();
+                $this->set('userRole', $user->role);
                 $this->set('user', $user);
                 $this->set('header', true);
                 $profile =  $this->User->profilePage($id);
@@ -256,57 +389,8 @@
                 //load profile
                 $this->set('profile', $profile);
                 $this->set('title', $profile->name);
-                // Load statistics
-                $Groups  = new Group;
-                $Parties = new Party;
-                $Devices = new Device;
-                
-                
-                $this->set('devices', $Devices->ofThisUser($id));
-                $this->set('parties', $Parties->ofThisUser($id));
-                $this->set('groups',  $Groups->ofThisUser($id));
                 
             }
-        }
-        
-        public function projects(){
-            $Auth = new Auth($url);
-            if(!$Auth->isLoggedIn()){
-                header('Location: /user/login');
-            }
-            
-            else {                
-                $user = $Auth->getProfile();
-                $this->set('user', $user);
-                $Slidelist = new Slidelist;
-                $Project = new Project;                
-                
-                $this->set('slideindex', $Slidelist->listed());
-                $projects = $Project->findUserProjects($user->id);
-                
-                foreach($projects as $k => $p){
-                    
-                    $projectslideindex = array();
-                    foreach($p['slides'] as $slides) {
-                        $projectslideindex[] = $slides->step . '.' . $slides->slide;
-                    }
-                    $projects[$k]['slideindex'] = $projectslideindex;
-                }
-                
-                $this->set('projects', $projects);
-                
-            }
-            
-        }
-        
-        
-        public function logout() {
-            
-            unset($_SESSION[APPNAME][SESSIONKEY]);
-            session_destroy();
-            
-            header('Location: /user/login');
-            
         }
     }
     

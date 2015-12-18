@@ -3,6 +3,9 @@
     <div class="row">
         <div class="col-md-12">
             <h2><?php echo $title; ?></h2>
+            <?php if(isset($_GET['reg'])){  ?>
+            <div class="alert alert-success">Thank you for registering!</div>
+            <?php } ?>
             <p>Start by naming your project. This will make it easier for you to keep track of it.</p>
             
         </div>
