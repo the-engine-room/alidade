@@ -21,9 +21,11 @@ The Tool Selection Assistant also collects your decisions as you complete each s
 - to quickly show people outside your organization what you’re looking for – so they can give advice or technical support
 - to show potential donors or partners that you’ve really thought through your project.  
 
-## How can I use it? 
+## Can I install it on my own server?
 
-You can easily download and install the Tool Selection Assistant on their own private servers. Read instructions on how to do that [here](https://toolselect.theengineroom.org/install.php).
+Yes! Download the code from the repo and install it by pointing your browser to [your domain]/install.php). 
+
+Note: you will need to properly configure your enviroment variables, found in the file /config/local.example.php. We suggest you copy the file and rename it to "local.php" and proceed to edit the information in the new file.
 
 ## Who made this?
 
