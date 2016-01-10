@@ -23,7 +23,7 @@ The Tool Selection Assistant also collects your decisions as you complete each s
 
 ## Can I install it on my own server?
 
-Yes! Download the code from the repo and install it by pointing your browser to [your domain]/install.php). 
+Yes! Download the code from the repo and install it by pointing your browser to [your domain]/install.php 
 
 Note: you will need to properly configure your enviroment variables, found in the file /config/local.example.php. We suggest you copy the file and rename it to "local.php" and proceed to edit the information in the new file.
 
