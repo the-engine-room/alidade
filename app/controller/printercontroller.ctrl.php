@@ -24,7 +24,7 @@
                             h2 {color: #042a2b; font-weight: bold; margin: 5mm 0mm; }
                             h3 {  color: #042a2b; font-weight: normal; margin: 5mm 0mm 2mm; }
                             p { background: #FFFFFF; line-height: 140%; color: #042a2b;   }
-                            p.small { font-size: 3mm; color: #666; margin: 8mm 0mm;  }
+                            p.small { font-size: 4mm; color: #666; margin: 8mm 0mm;  }
                             p.small a { color: #666;  }
                         -->
                         </style>
