@@ -1,11 +1,40 @@
 .jumbotron {
-    padding-top: 120px;
+    padding-top: 80px;
     padding-bottom: 120px;
-    background: @gold; 
+    background: @lime; 
     h1 { color: @oil; 
         & ~ p { color: @oil; }
     }
+    h3 { text-transform: none !important; }
+    h4 { margin-top: 35px; font-weight: 700;  }
+    .big-divider {
+        display: block;
+        width: 100%;
+        height: 12px;
+        background: black;
+        margin: 20px 0px;    
+    }
     a { color: @oil; }
+    .btn { text-transform: uppercase; }
+    .btn-alt {
+        background: @litelime;
+        &:hover { color: @sky; background: @cream; }
+    }
+    .btn-main {
+        background: @someotherblue;
+        color: white;
+        &.btn-left-text {
+            text-align: left; 
+        }
+        .subtext {
+            color: black;
+            font-weight: 700;
+        }
+        
+        &:hover {
+            background: @liteotherblue;            
+        }
+    }
 }
 
 // text snaps
@@ -78,6 +107,8 @@
 }
 
 
+
+
 #quick-tips {
     background: @gold;
     font-size: 22px;
@@ -88,7 +119,7 @@
 /** Tablets **/
 @media screen and (min-width: 768px){
     .jumbotron {
-        background: @gold url('/assets/images/1920c.jpg') no-repeat center top; background-size: cover; //background-blend-mode: saturation; 
+        background: @lime url('/assets/images/1920_green.jpg') no-repeat center top; background-size: cover; //background-blend-mode: saturation; 
     }
     
     #text-snaps {
@@ -158,6 +189,6 @@
 /** Desktop **/
 @media screen and (min-width: 992px){
     .jumbotron {
-        background: @gold url('/assets/images/1920c.jpg') no-repeat center top; background-size: cover;
+        background: @lime url('/assets/images/1920_green.jpg') no-repeat center top; background-size: cover;
     }
 }

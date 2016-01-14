@@ -1,7 +1,6 @@
 <?php
 
-    class UserController extends Controller {
-        
+    class UserController extends Controller {        
         
         public function login(){
             
@@ -174,7 +173,7 @@
             }
         }
         
-        /** redirect here if user has no permission to view content - header set in /lib/template.class.php **/
+        /** redirect here if user has no permission to view content  - header set in /lib/template.class.php **/
         public function forbidden(){
             $this->set('title',  'Nope.');
         }
@@ -392,5 +391,5 @@
                 
             }
         }
-    }
     
+    }

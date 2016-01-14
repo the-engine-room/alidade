@@ -30,7 +30,7 @@
                 </div>
             </form>
             <?php } else { ?>
-            <h3><?php echo $p['title']; ?> | <?php echo round( (count($p['index']) / count($slideindex['fullIndex'])) * 100); ?>% complete</h3>
+            <h3><?php echo $p['title']; ?> | <?php echo round( (count($p['index']) / (count($slideindex['fullIndex']) - 1)) * 100); ?>% complete</h3>
             <?php } ?>
            
         </div>
