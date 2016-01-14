@@ -6,10 +6,9 @@
             <?php if(isset($_GET['reg'])){  ?>
             <div class="alert alert-success">Thank you for registering!</div>
             <?php } ?>
-            <p>The Tool Selection Assistant walks you through the process of making an informed decision about what technology to use in a project.</p>
-            <p>You can skim through it, take whichever parts you find useful, and return to it at any time - even months later.</p>
-            <p>It doesn't tell you which tool you should to use, but supports your own research and planning by asking questions, giving real-life examples and suggesting places to get help.</p>
-            <p>Registering lets you save your progress and create multiple projects. Start by naming the project here</p>
+            <p>The Tool Selection Assistant walks you through the process of deciding which technology tool is right for you.</p>
+            <p>It doesn't tell you which tool you should use, but supports your own research by asking questions, giving real-life examples and suggesting places to get help.</p>
+            <p>Start by naming your project here</p>
         </div>
     </div>
     <div class="row">

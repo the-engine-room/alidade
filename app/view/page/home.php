@@ -80,12 +80,12 @@
             <div class="col-xs-12 col-sm-6 col-md-6">
                 <div class="text-snap">
                     <div class="text-snap-title"><h3>What it is</h3></div>
-                    <div class="text-snap-text"><p><strong>A 4-step guided process</strong> that will help you choose your best option.</p></div>
+                    <div class="text-snap-text"><p><strong>A 4-step guided process</strong> to help you choose your best option, informed by research with transparency and accountability organisations in Kenya and South Africa.</p></div>
                 </div>
             
                 <div class="text-snap">
                     <div class="text-snap-title"><h3>Why</h3></div>
-                    <div class="text-snap-text"><p>Our research suggests that <strong>choosing the right tool is key</strong> in making your project successful. <a href="/page/research-report">Read More <i class="fa fa-angle-double-right"></i></a></p></div>
+                    <div class="text-snap-text"><p>Our research suggests that <strong>choosing the right tool is key</strong> in making your project successful. <a href="/page/research-report">Read more about the research<i class="fa fa-angle-double-right"></i></a></p></div>
                 </div>
             </div>
             
