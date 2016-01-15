@@ -5,10 +5,34 @@
             <?php
                 if($currentSlide == '1.11'){
             ?>
-            <h2>There are 3 more steps and lots more in the full blown tool!</h2>
-            
-            <p>You can get reports in PDF and MS Word format to share with colleagues, partners and stakeholders, links to resources and guidance in the full tool.</p>
-            <p>If you think this was helpful and want to learn more, <a href="/user/create">register now</a> and start your new project research!</p>
+            <h2>1.11</h2>
+            <h3>Recap of Step 1</h3>
+            <p><span style="line-height: 1.42857;">Look back at the information you have submitted. Is anything missing?</span><br></p>
+            <h3>Step 1 Checklist</h3>
+                <ul>
+                    <li>
+                        <a href="#" class="ajx tsa-tooltip">Project objective</a>&nbsp;
+                        <div class="tsa-tooltip-wrap">
+                            <p>Our project aims to allow users of a clinic to monitor the quality of service provision at 10-15 clinics in our city. </p>
+                            <p><em></em></p>
+                        </div>
+                    </li>
+                    <li><a href="#" class="ajx tsa-tooltip">How a tool could help</a>&nbsp;<div class="tsa-tooltip-wrap"><p>A mobile data collection tool could allow clinic users to rate how well the clinic had met their needs. It could work more quickly than a paper feedback form, and the data would be easier to analyse and process. </p><p><em></em></p></div></li>
+                    <li><a href="#" class="ajx tsa-tooltip">Description of users</a>&nbsp;<div class="tsa-tooltip-wrap"><p>Clinic users at the 35 clinics in our city: both women and men, aged 25-50. Many are on low incomes, and most of them have mobile phones - feature phones, not smartphones </p><p><em></em></p></div></li>
+                    <li><a href="#" class="ajx tsa-tooltip">Incentives for using a tool</a>&nbsp;<div class="tsa-tooltip-wrap"><p>They will be able to find out information about which clinics are treating their patients well, and choose a better clinic for them<br>They will be able to submit information in a simple way using a tool that they already have.  </p><p><em></em></p></div></li>
+                    <li><a href="#" class="ajx tsa-tooltip">Users' skills and experience</a>&nbsp;<div class="tsa-tooltip-wrap"><p>They mainly use feature phones that are only capable of sending SMS messages (though a small number have smartphones, but access to mobile data is limited). They don't tend to look up information online, but they do get information through radio. They mainly use phones to communicate with their friends and family, and less so for other purposes. </p><p><em></em></p></div></li>
+                    <li><a href="#" class="ajx tsa-tooltip">Obstacles</a>&nbsp;<div class="tsa-tooltip-wrap"><p>Many people in our target community have smartphones and intermittent data coverage, but data is expensive. People might not think that our tool is worth their money.<br>They might also be suspicious of us because similar initiatives often come to their area looking for participants but haven't told them about the results. So we'll have to be careful about how we introduce and market our project.<br><br>People might not use the tool if it's too complicated, and we don't have enough the resources to train them, so we will have to test it with them to make sure that it's really easy to use </p><p><em></em></p></div></li>
+                </ul>
+                
+                <p>Output your answers into a document that you can save or print:</p><p><a href="/printer/output/26/1" class="btn btn-main printer" target="_blank"><i class="fa fa-file-pdf-o"></i> Download [PDF]</a>  <a href="/printer/output/26/1/doc" class="btn btn-main printer" target="_blank"><i class="fa fa-file-word-o"></i> Download [DOC]</a></p>
+                    
+                    <h3 style="color: rgb(0, 0, 0);">Next</h3><p><span style="line-height: 1.42857;">What is missing from your list? Show the document with colleagues or contacts you trust - they can help you spot gaps.&nbsp;</span><span style="font-size: 13.6px; line-height: 21.5873px; text-align: right;">The engine room will happily look at your document and help if we can.&nbsp;</span><a href="mailto:post@theengineroom.org" target="_blank" style="font-size: 13.6px; line-height: 21.5873px; text-align: right; background-color: rgb(255, 255, 255);">Get in touch!</a></p><p><span style="line-height: 1.42857;"> </span></p>
+
+
+<p><span style="line-height: 1.42857;">Try </span><a href="http://tsadev.zardtech.com/page/get-help#users" style="line-height: 1.42857; background-color: rgb(255, 255, 255);">these links</a><span style="line-height: 1.42857;"> for other resources that can help.&nbsp;</span><span style="line-height: 22.8571px;">Once you have information that's good enough, move on to the next section.</span></p>                <div class="row">
+                    
+                </div>
+        
             <?php                    
                 }
                 else { 
