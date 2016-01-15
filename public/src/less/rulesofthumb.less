@@ -1,0 +1,47 @@
+.rules-of-thumb {
+    position: relative;
+    padding: 0px 65px; 
+    
+    h1 {
+        text-transform: none !important; 
+        font-size: 32px;
+        color: @oil;
+        
+    }
+    h2 {
+        text-transform: none !important; 
+        font-size: 32px;
+        color: @lime;
+        
+    }
+    
+    
+    .rule {
+        margin: 35px 0px;
+
+        p, li {
+            font-size: 18px;
+            line-height: 160%; 
+        }
+    }
+    
+    .rule:before {
+        display: block;
+        position: absolute;
+        width: 80%;
+        height: 100%;
+        content: ' ';
+        color: @litelime;
+        font-size: 180px;
+        font-weight: 800;
+        z-index: -10;
+        text-align: center;
+        padding: 0px 65px; 
+        
+    }
+    
+    .rule.rule-1:before {
+        content: '1';
+    }
+    
+}

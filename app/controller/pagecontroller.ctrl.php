@@ -2,7 +2,7 @@
     
     class PageController extends Controller {
         
-        protected $TableofContents = array('research-report');
+        protected $TableofContents = array('research-report', 'rules-of-thumb');
         
         public function __construct($model, $controller, $action){
             
