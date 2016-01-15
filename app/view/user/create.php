@@ -46,6 +46,10 @@
                                 </div>        
                                 
                             </div>
+                            
+                            <div class="col-md-6 col-md-offset-3">
+                                <p>Any information you submit will be stored securely on the engine room's server. The engine room will not view or access it for any purpose, and your data will not be shared with anyone else.</p>
+                            </div>
                         </div>
                         
                         

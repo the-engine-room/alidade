@@ -40,6 +40,13 @@
                             <div class="col-xs-6 col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-3">
                                 <a href="/project/slide/<?php echo $prevSlide; ?>?p=<?php echo $projecthash; ?>&back" class="btn btn-main btn-lg btn-block"><i class="fa fa-angle-left"></i> Back</a>
                             </div>
+                            
+                            <?php if($currentSlide == '1.6') { ?>
+                            <div class="col-xs-12 col-sm-4 col-md-3">
+                                <a href="/project/slide/1.11?skipped" class="btn btn-main btn-lg btn-block">Skip user research <i class="fa fa-angle-double-right"></i></a>
+                            </div>
+                            <?php } ?>
+                            
                             <?php
                             }
                             if(!is_null($nextSlide) && !empty($nextSlide)) {
@@ -51,11 +58,7 @@
                             }
                         }
                         ?>
-                        <?php if($currentSlide == '1.6') { ?>
-                        <div class="col-xs-12 col-sm-4 col-md-3">
-                            <a href="/project/slide/1.11?skipped" class="btn btn-main btn-lg btn-block">Skip user research <i class="fa fa-angle-double-right"></i></a>
-                        </div>
-                        <?php } ?>
+                        
                     </div>
                 </div>
                 

@@ -15,17 +15,17 @@
                 
             ?>
             
-            <form action="/project/tour/<?php echo $nextSlide; ?>" method="post">
+            <form action="/project/tour/<?php echo $nextSlide; ?>" method="post" class="tour-content">
                 <input type="hidden" name="current_slide"  value="<?php echo $currentSlide; ?>">
                 <h2><?php echo $slide->title; ?></h2>
                 
-                <div class="alert alert-info">
-                    <h2><i class="fa fa-exclamation-circle"></i> This is a tour, or trial of the tool, if you will.</h2>
-                    Please note that, since this is the trial tour, your answers are <strong>not</strong> being saved, registered or memorised in any way.<br />
-                    To get the full experience, please <a href="/user/create">register</a> or <a href="/user/login">login</a>.
+                <div class="alert alert-info tour-alert">
+                    <h2><i class="fa fa-exclamation-circle"></i> This is a preview that shows you how the Tool Selection Assistant works.</h2>
+                    <p>Information you add into the text boxes will <strong>not</strong> be saved.</p>
+                    <p>Registering lets you start your own projects, save your progress and create PDF or Word documents summarising your work. <a href="/user/create">Register here</a> (or if you've already created an account, <a href="/user/login">login here</a>).</p>
                 </div>
+
                 <?php
-                
                 switch($slide->slide_type){
                     case 1:
                         echo $slide->description;
