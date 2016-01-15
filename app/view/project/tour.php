@@ -20,7 +20,7 @@
                 <h2><?php echo $slide->title; ?></h2>
                 
                 <div class="alert alert-info">
-                    <i class="fa fa-exclamation-circle"></i>
+                    <h2><i class="fa fa-exclamation-circle"></i> This is a tour, or trial of the tool, if you will.</h2>
                     Please note that, since this is the trial tour, your answers are <strong>not</strong> being saved, registered or memorised in any way.<br />
                     To get the full experience, please <a href="/user/create">register</a> or <a href="/user/login">login</a>.
                 </div>
