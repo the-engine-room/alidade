@@ -1,3 +1,50 @@
+    <!-- Modal -->
+    <div class="modal fade" id="user-forms" tabindex="-1" role="dialog" aria-labelledby="UserLoginAndRegistration">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Login or Register</h4>
+          </div>
+          <div class="modal-body">
+            
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <?php
+                        
+                        if( !isset($_SESSION[APPNAME][SESSIONKEY]) || empty($_SESSION[APPNAME][SESSIONKEY])) { ?>
+                        
+                        <form action="/user/login" method="post">
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" name="email" id="email">
+                            </div>                        
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" name="password" id="password">
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="form-control btn btn-alt" name="submit" id="submit"><i class="fa fa-sign-in"></i> Login</button>
+                                <a href="/user/create">or register here</a> | <a href="/user/recover">lost your password?</a>
+                            </div>
+                        </form>
+                        <?php
+                        } 
+                        ?>
+                    </div>
+                    
+                </div>
+            
+          </div>
+          <div class="modal-footer">
+            &nbsp;
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+    
     <div class="jumbotron">
         <div class="container">
             <div class="row">
@@ -21,10 +68,10 @@
                     </div>
                     <div class="row">
                         <div class="col-xs-12 col-sm-6 col-md-6">
-                            <button class="btn btn-alt btn-lg btn-block"><strong>LOGIN</strong> or <strong>REGISTER</strong></button>
+                            <button type="button" class="btn btn-alt btn-lg btn-block" data-toggle="modal" data-target="#user-forms"><strong>LOGIN</strong> or <strong>REGISTER</strong></button>
                         </div>
                         <div class="col-xs-12 col-sm-6 col-md-6">
-                            <a class="btn btn-alt btn-lg btn-block">New user? <strong>TAKE A TOUR</strong></a>
+                            <a class="btn btn-alt btn-lg btn-block" href="/project/tour/1.1">New user? <strong>TAKE A TOUR</strong></a>
                         </div>
                     </div>
                     
@@ -36,8 +83,8 @@
                     </div>
                     <div class="row">
                         <div class="col-xs-12 col-sm-6 col-md-6">
-                            <a class="btn btn-main btn-lg btn-block"><strong>Research Summary</strong></a>
-                            <a class="btn btn-main btn-lg btn-block"><strong>Read the full report</strong></a>
+                            <a class="btn btn-main btn-lg btn-block" href="/page/research-summary"><strong>Research Summary</strong></a>
+                            <a class="btn btn-main btn-lg btn-block" data-toggle="tooltip" data-placement="top" title="coming soon..."><strong>Read the full report</strong></a>
                         </div>
                         <div class="col-xs-12 col-sm-6 col-md-6">
                             <a class="btn btn-main btn-lg btn-block btn-left-text "><span class=""><strong>Six rules of thumb</strong><br /><span class="subtext">for choosing the right tool <br />based on our report</span></span></a>

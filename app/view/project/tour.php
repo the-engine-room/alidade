@@ -2,11 +2,29 @@
 <div class="container" id="slide-content">
     <div class="row">
         <div class="col-md-12">
-            <form action="/project/tour/<?php echo $nextSlide; ?><?php echo (!is_null($original) ? '/?p=' . $projecthash : ''); ?> " method="post">
+            <?php
+                if($currentSlide == '1.11'){
+            ?>
+            <h2>There are 3 more steps and lots more in the full blown tool!</h2>
+            
+            <p>You can get reports in PDF and MS Word format to share with colleagues, partners and stakeholders, links to resources and guidance in the full tool.</p>
+            <p>If you think this was helpful and want to learn more, <a href="/user/create">register now</a> and start your new project research!</p>
+            <?php                    
+                }
+                else { 
+                
+            ?>
+            
+            <form action="/project/tour/<?php echo $nextSlide; ?>" method="post">
                 <input type="hidden" name="current_slide"  value="<?php echo $currentSlide; ?>">
                 <h2><?php echo $slide->title; ?></h2>
-                <?php
                 
+                <div class="alert alert-info">
+                    <i class="fa fa-exclamation-circle"></i>
+                    Please note that, since this is the trial tour, your answers are <strong>not</strong> being saved, registered or memorised in any way.<br />
+                    To get the full experience, please <a href="/user/create">register</a> or <a href="/user/login">login</a>.
+                </div>
+                <?php
                 
                 switch($slide->slide_type){
                     case 1:
@@ -28,7 +46,7 @@
                 <div class="row">
                     <div class="text-center">                        
                         <?php
-                        if(isset($inProcess) && $inProcess == true){
+                        if(isset($inTour) && $inTour == true){
                             if(!is_null($prevSlide) && !empty($prevSlide)) { ?>
                             <div class="col-xs-6 col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-3">
                                 <a href="/project/tour/<?php echo $prevSlide; ?>?p=<?php echo $projecthash; ?>&back" class="btn btn-main btn-lg btn-block"><i class="fa fa-angle-left"></i> Back</a>
@@ -52,7 +70,11 @@
                     </div>
                 </div>
                 
-            </form>   
+            </form>
+            
+            <?php
+                }
+            ?>
         </div>
         
         
