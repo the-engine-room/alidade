@@ -5,7 +5,14 @@
             <?php
                 if($currentSlide == '1.11'){
             ?>
+            <div class="tour-content">
             <h2>1.11</h2>
+            <div class="alert alert-info tour-alert">
+                <h2><i class="fa fa-exclamation-circle"></i> This is a preview that shows you how the Tool Selection Assistant works.</h2>
+                <p>This step summarises all your decisions at the end of each step (the text below is an example). You can show it to colleagues, donors or advisers to explain what you want. </p>
+                <p>There are three more steps in the full guide. To try it out, <a href="/user/create">register here</a> (or if you've already created an account, <a href="/user/login">login here</a>).</p>
+            </div>
+            
             <h3>Recap of Step 1</h3>
             <p><span style="line-height: 1.42857;">Look back at the information you have submitted. Is anything missing?</span><br></p>
             <h3>Step 1 Checklist</h3>
@@ -24,15 +31,15 @@
                     <li><a href="#" class="ajx tsa-tooltip">Obstacles</a>&nbsp;<div class="tsa-tooltip-wrap"><p>Many people in our target community have smartphones and intermittent data coverage, but data is expensive. People might not think that our tool is worth their money.<br>They might also be suspicious of us because similar initiatives often come to their area looking for participants but haven't told them about the results. So we'll have to be careful about how we introduce and market our project.<br><br>People might not use the tool if it's too complicated, and we don't have enough the resources to train them, so we will have to test it with them to make sure that it's really easy to use </p><p><em></em></p></div></li>
                 </ul>
                 
-                <p>Output your answers into a document that you can save or print:</p><p><a href="/printer/output/26/1" class="btn btn-main printer" target="_blank"><i class="fa fa-file-pdf-o"></i> Download [PDF]</a>  <a href="/printer/output/26/1/doc" class="btn btn-main printer" target="_blank"><i class="fa fa-file-word-o"></i> Download [DOC]</a></p>
+                <p>Output your answers into a document that you can save or print:</p><p><a href="/assets/example-project.pdf" class="btn btn-main printer" target="_blank"><i class="fa fa-file-pdf-o"></i> Download [PDF]</a> </p>
                     
-                    <h3 style="color: rgb(0, 0, 0);">Next</h3><p><span style="line-height: 1.42857;">What is missing from your list? Show the document with colleagues or contacts you trust - they can help you spot gaps.&nbsp;</span><span style="font-size: 13.6px; line-height: 21.5873px; text-align: right;">The engine room will happily look at your document and help if we can.&nbsp;</span><a href="mailto:post@theengineroom.org" target="_blank" style="font-size: 13.6px; line-height: 21.5873px; text-align: right; background-color: rgb(255, 255, 255);">Get in touch!</a></p><p><span style="line-height: 1.42857;"> </span></p>
+                    <h3 style="color: rgb(0, 0, 0);">Next</h3><p><span style="line-height: 1.42857;">What is missing from your list? Show the document with colleagues or contacts you trust - they can help you spot gaps.&nbsp;</span><span style=" line-height: 21.5873px; text-align: right;">The engine room will happily look at your document and help if we can.&nbsp;</span><a href="mailto:post@theengineroom.org" target="_blank" style=" line-height: 21.5873px; text-align: right; background-color: rgb(255, 255, 255);">Get in touch!</a></p><p><span style="line-height: 1.42857;"> </span></p>
 
 
-<p><span style="line-height: 1.42857;">Try </span><a href="http://tsadev.zardtech.com/page/get-help#users" style="line-height: 1.42857; background-color: rgb(255, 255, 255);">these links</a><span style="line-height: 1.42857;"> for other resources that can help.&nbsp;</span><span style="line-height: 22.8571px;">Once you have information that's good enough, move on to the next section.</span></p>                <div class="row">
+                    <p><span style="line-height: 1.42857;">Try </span><a href="http://tsadev.zardtech.com/page/get-help#users" style="line-height: 1.42857; background-color: rgb(255, 255, 255);">these links</a><span style="line-height: 1.42857;"> for other resources that can help.&nbsp;</span><span style="line-height: 22.8571px;">Once you have information that's good enough, move on to the next section.</span></p><div class="row">
                     
-                </div>
-        
+            </div>
+            </div>
             <?php                    
                 }
                 else { 
