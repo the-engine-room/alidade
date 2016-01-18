@@ -78,7 +78,7 @@
                     </div>
                     <div class="row">
                         <div class="col-xs-12 col-sm-6 col-md-6">
-                            <a class="btn btn-main btn-lg btn-block" href="/page/research"><strong>Research Summary</strong></a>
+                            <a class="btn btn-main btn-lg btn-block" href="/page/research-summary"><strong>Research Summary</strong></a>
                             <a class="btn btn-main btn-lg btn-block" data-toggle="tooltip" data-placement="bottom" title="coming soon..."><strong>Read the full report</strong></a>
                         </div>
                         <div class="col-xs-12 col-sm-6 col-md-6">
