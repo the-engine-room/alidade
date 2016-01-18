@@ -108,7 +108,7 @@
             
                 <div class="text-snap">
                     <div class="text-snap-title"><h3>Why</h3></div>
-                    <div class="text-snap-text"><p>Our research suggests that <strong>choosing the right tool is key</strong> in making your project successful. <a href="/page/research-report">Read more about the research<i class="fa fa-angle-double-right"></i></a></p></div>
+                    <div class="text-snap-text"><p>Our research suggests that <strong>choosing the right tool is key</strong> in making your project successful. <a href="/page/research-summary">Read more about the research<i class="fa fa-angle-double-right"></i></a></p></div>
                 </div>
             </div>
             
