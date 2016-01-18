@@ -8,7 +8,7 @@
             <?php } ?>
             <p>The Tool Selection Assistant walks you through the process of deciding which technology tool is right for you.</p>
             <p>It doesn't tell you which tool you should use, but supports your own research by asking questions, giving real-life examples and suggesting places to get help.</p>
-            <p>Start by naming your project here</p>
+            <p>Start by naming your project here. <small>Want to keep working on an existing project? Click <a href="https://toolselect.theengineroom.org/user/projects">here</a>.</a>here</small></p>
         </div>
     </div>
     <div class="row">
