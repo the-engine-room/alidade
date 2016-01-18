@@ -57,7 +57,7 @@
                     </div>
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-12">
-                            <h4>Use our guide to avoid common mistakes and borrow from what’s worked.</h4>
+                            <h4>Use our guide to avoid common mistakes and borrow from what worked.</h4>
                             <span class="big-divider"></span>
                         </div>
                     </div>
@@ -72,17 +72,17 @@
                     
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-12">
-                            <h4>The research behind the guide</h4>
+                            <h4>Read more about the research</h4>
                             <span class="big-divider"></span>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-xs-12 col-sm-6 col-md-6">
-                            <a class="btn btn-main btn-lg btn-block" href="/page/research-summary"><strong>Research Summary</strong></a>
+                            <a class="btn btn-main btn-lg btn-block" href="/page/research"><strong>Research Summary</strong></a>
                             <a class="btn btn-main btn-lg btn-block" data-toggle="tooltip" data-placement="bottom" title="coming soon..."><strong>Read the full report</strong></a>
                         </div>
                         <div class="col-xs-12 col-sm-6 col-md-6">
-                            <a class="btn btn-main btn-lg btn-block btn-left-text" href="/page/rules-of-thumb"><span><strong>Six rules of thumb</strong><br /><span class="subtext">for choosing the right tool <br />based on our report</span></span></a>
+                            <a class="btn btn-main btn-lg btn-block btn-left-text" href="/page/six-rules"><span><strong>Six rules of thumb</strong><br /><span class="subtext">for choosing the right tool <br />based on our report</span></span></a>
                         </div>
                     </div>
                     
@@ -158,7 +158,7 @@
         </div>
     </div>
     <div class="container-fluid text-center" id="quick-tips">
-        <p><strong>Wondering which tech fits your project?<br /><a href="/project/tour/1.1">Take a tour of the platform</a></strong></p>
+        <p><strong>Wondering where to start?<br /><a href="/page/six-rules"> Try our six rules of thumb.</a></strong></p>
     </div>
     
     <?php if (!empty($page)) { ?> 
