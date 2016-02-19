@@ -25,7 +25,7 @@
                                 </div>
                                 <div class="form-group">
                                     <button type="submit" class="form-control btn btn-alt" name="submit" id="submit"><i class="fa fa-sign-in"></i> Login</button>
-                                    <a href="/user/create">or register here</a> | <a href="/user/recover">lost your password?</a>
+                                    <a href="/user/create">or register here</a> 
                                 </div>
                             </form>
                             <?php
