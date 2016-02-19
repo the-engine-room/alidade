@@ -8,7 +8,7 @@
             <div class="col-xs-12 col-sm-6 col-md-2 slidemap">
                 <h5>Quick tips</h5>
                 <ul>
-                    <li><a href="/page/quick-tips">Choosing the right technology tool</a></li>
+                    <li><a href="/page/quick-tips">Six rules of thumb for choosing a technology tool</a></li>
                 </ul>
             </div>
             
@@ -16,9 +16,8 @@
                 <h5>1. Understanding your needs</h5>
                 <ul>
                     <li><a href="/project/slide/1.1">About this step</a></li>
-                    <li><a href="/project/slide/1.2">Good enough planning</a></li>
                     <li><a href="/project/slide/1.3">What is your objective?</a></li>
-                    <li><a href="/project/slide/1.4">How will a tool help?</a></li>
+                    <li><a href="/project/slide/1.4">How could a tool help achieve your objective?</a></li>
                     <li><a href="/project/slide/1.5">Who will use the tool?</a></li>
                     <li><a href="/project/slide/1.11">Checklist</a></li>
                 </ul>
@@ -29,9 +28,7 @@
                     <li><a href="/project/slide/2.1">About this step</a></li>
                     <li><a href="/project/slide/2.2">Specifying your requirements</a></li>
                     <li><a href="/project/slide/2.3">Finding options</a></li>
-                    <li><a href="/project/slide/2.4">Finding use cases</a></li>
                     <li><a href="/project/slide/2.5">Thinking through the risks</a></li>
-                    <li><a href="/project/slide/2.6">Buy, adapt or build</a></li>
                     <li><a href="/project/slide/2.7">Checklist</a></li>
                 </ul>
             </div>
@@ -40,8 +37,8 @@
                 <ul>
                     <li><a href="/project/slide/3.2">About this step</a></li>
                     <li><a href="/project/slide/3.3">Planning a trial</a></li>
-                    <li><a href="/project/slide/3.5">Documenting your learnings</a></li>
-                    <li><a href="/project/slide/3.6">Applying your learnings</a></li>
+                    <li><a href="/project/slide/3.5">Documenting what you learn</a></li>
+                    <li><a href="/project/slide/3.6">Applying what you learn</a></li>
                     <li><a href="/project/slide/3.7">Checklist</a></li>
                 </ul>
             </div>
@@ -49,11 +46,9 @@
             <div class="col-xs-12 col-sm-6 col-md-2 slidemap">
                 <h5>4. Finding help</h5>
                 <ul>
-                    <li><a href="/project/slide/4.1">What kind of help?</a></li>
-                    <li><a href="/project/slide/4.4">Looking for options</a></li>
-                    <li><a href="/project/slide/4.5">Building your capacity</a></li>
-                    <li><a href="/project/slide/4.6">Engaging with partners</a></li>
-                    <li><a href="/project/slide/4.7">Selecting a partner</a></li>
+                    <li><a href="/project/slide/4.1">About this step</a></li>
+                    <li><a href="/project/slide/4.5">Building your own capacity</a></li>
+                    <li><a href="/project/slide/4.7">Choosing a partner</a></li>
                     <li><a href="/project/slide/4.8">Working with a partner</a></li>
                     <li><a href="/project/slide/4.9">Checklist</a></li>
                 </ul>
