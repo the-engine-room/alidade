@@ -10,7 +10,7 @@
             <p>It doesn't tell you which tool you should use, but supports your own research by asking questions, giving real-life examples and suggesting places to get help.</p>
             <p><b>New here?</b> Start by naming your project below.</p> 
             
-            <p><b>Already started a project?</b> Find all your projects <a href="https://toolselect.theengineroom.org/user/projects">here</a>.</a>here</p>
+            <p><b>Already started a project?</b> Find all your projects <a href="https://toolselect.theengineroom.org/user/projects">here</a>.</p>
         </div>
     </div>
     <div class="row">
