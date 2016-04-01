@@ -36,7 +36,7 @@ __Note: you will need to properly configure your enviroment variables, found in 
 
 ## Who made this?
 
-Built by [the engine room](https://www.theengineroom.org). Content prepared by [the engine room](https://www.theengineroom.org), [Pawa254](http://pawa254.org/) and [the Network Society initiative at the University of the Witwatersrand](http://www.networksociety.co.za/). This tool was developed as part of a research project supported by [Making All Voices Count](www.makingallvoicescount.org/) in Kenya and South Africa in 2015. We interviewed 38 organisations working on transparency, citizen reporting and increasing government accountability to find out how they chose technology for their projects, and what they would like to have been doing better. [Read more about the research>>](http://tsadev.zardtech.com/page/tool-selection-research)
+Built by [the engine room](https://www.theengineroom.org). Content prepared by the engine room, [Pawa254](http://pawa254.org/) and [the Network Society initiative at the University of the Witwatersrand](http://www.networksociety.co.za/). This tool was developed as part of a research project supported by [Making All Voices Count](www.makingallvoicescount.org/) in Kenya and South Africa in 2015. We interviewed 38 organisations working on transparency, citizen reporting and increasing government accountability to find out how they chose technology for their projects, and what they would like to have been doing better. [Read more about the research>>](http://tsadev.zardtech.com/page/tool-selection-research)
 
 Built with:
 - PHP (5.4 min)
