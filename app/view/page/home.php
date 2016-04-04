@@ -61,16 +61,7 @@
                             <span class="big-divider"></span>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-6 col-md-6">
-                            <button type="button" class="btn btn-alt btn-lg btn-block" data-toggle="modal" data-target="#user-forms"><strong>LOGIN</strong> or <strong>REGISTER</strong></button>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-6">
-                            <a class="btn btn-alt btn-lg btn-block" href="/project/tour/1.1">New user? <strong>TAKE A TOUR</strong></a>
-                        </div>
-                    </div>
-                    
-                    <div class="row">
+                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <h4>Read more about the research</h4>
                             <span class="big-divider"></span>
@@ -85,6 +76,16 @@
                             <a class="btn btn-main btn-lg btn-block btn-left-text" href="/page/rules-of-thumb"><span><strong>Six rules of thumb</strong><br /><span class="subtext">for choosing the right tool <br />based on our report</span></span></a>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            <button type="button" class="btn btn-alt btn-lg btn-block" data-toggle="modal" data-target="#user-forms"><strong>LOGIN</strong> or <strong>REGISTER</strong></button>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            <a class="btn btn-alt btn-lg btn-block" href="/project/tour/1.1">New user? <strong>TAKE A TOUR</strong></a>
+                        </div>
+                    </div>
+                    
+                 
                     
                 </div>
                 
