@@ -73,7 +73,7 @@
                             <a class="btn btn-main btn-lg btn-block" href="/public/assets/Full-report%20-%20Tool%E2%80%93Selection-Research-Report.pdf"><strong>Full report</strong></a>
                         </div>
                         <div class="col-xs-12 col-sm-6 col-md-6">
-                            <a class="btn btn-main btn-lg btn-block btn-left-text" href="/page/rules-of-thumb"><span><strong>Six rules of thumb</strong><br /><span class="subtext">for choosing the right tool <br />based on our report</span></span></a>
+                            <a class="btn btn-main btn-lg btn-block btn-left-text" href="/page/rules-of-thumb"><span><strong>Six rules of thumb</strong><br /><span class="subtext">for choosing the right tool <br />based on our research</span></span></a>
                         </div>
                     </div>
                     <div class="row">
