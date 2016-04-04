@@ -55,13 +55,8 @@
                             Despite putting in significant effort, <strong>less than a quarter of initiatives were happy</strong> with the tools they chose. 
                         </div>
                     </div>
+                    
                     <div class="row">
-                        <div class="col-xs-12 col-sm-12 col-md-12">
-                            <h4>Use our guide to avoid common mistakes and borrow from what worked.</h4>
-                            <span class="big-divider"></span>
-                        </div>
-                    </div>
-                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <h4>Read more about the research</h4>
                             <span class="big-divider"></span>
@@ -74,6 +69,12 @@
                         </div>
                         <div class="col-xs-12 col-sm-6 col-md-6">
                             <a class="btn btn-main btn-lg btn-block btn-left-text" href="/page/rules-of-thumb"><span><strong>Six rules of thumb</strong><br /><span class="subtext">for choosing the right tool <br />based on our research</span></span></a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <h4>Use our guide to avoid common mistakes and borrow from what worked.</h4>
+                            <span class="big-divider"></span>
                         </div>
                     </div>
                     <div class="row">
@@ -159,7 +160,7 @@
         </div>
     </div>
     <div class="container-fluid text-center" id="quick-tips">
-        <p><strong>Wondering where to start?<br /><a href="/page/six-rules"> Try our six rules of thumb.</a></strong></p>
+        <p><strong>Wondering where to start?<br /><a href="/page/rules-of-thumb"> Try our six rules of thumb.</a></strong></p>
     </div>
     
     <?php if (!empty($page)) { ?> 
