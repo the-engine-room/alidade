@@ -11,7 +11,7 @@ No. (There are far too many tools to choose from, and you will know best what to
 
 Instead, it supports your own research and planning by asking questions, giving real-life examples and suggesting places to get help.
 
-### So what does it do?
+### So, what does it do?
 
 It guides you through a four-step process that helps you think through your tool selection in a methodical way. 
 
