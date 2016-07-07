@@ -44,4 +44,4 @@ Built with:
 - Html2PDF (by Laurent Minguet)
 - Bootstrap, Fontawesome, jQuery
 
-Content is licensed under a [Creative Commons Attribution 4.0 International Licence](https://creativecommons.org/licenses/by/4.0/)
+Content is licensed under a [Creative Commons Attribution 4.0 International Licence](https://creativecommons.org/licenses/by/4.0/).
