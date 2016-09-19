@@ -409,7 +409,7 @@
                     break;
             }
             
-            $content .= '<p class="small">The guide was built by the engine room (<a href="https://www.theengineroom.org">https://www.theengineroom.org</a>), Pawa254 (<a href="http://pawa254.org">http://pawa254.org</a>) and the Network Society Lab (<a href="http://www.networksociety.co.za">www.networksociety.co.za</a>) at the University of the Witwatersrand. It is part of a research project supported by Making All Voices Count (<a href="http://www.makingallvoicescount.org/">www.makingallvoicescount.org/</a>)</p>';
+            $content .= '<p class="small">The guide was built by The Engine Room (<a href="https://www.theengineroom.org">https://www.theengineroom.org</a>), Pawa254 (<a href="http://pawa254.org">http://pawa254.org</a>) and the Network Society Lab (<a href="http://www.networksociety.co.za">www.networksociety.co.za</a>) at the University of the Witwatersrand. It is part of a research project supported by Making All Voices Count (<a href="http://www.makingallvoicescount.org/">www.makingallvoicescount.org/</a>)</p>';
                 
             if($type == 'pdf'){
                 $content .= '</page>';
