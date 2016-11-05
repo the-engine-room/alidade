@@ -120,6 +120,7 @@
                 
                 if($_GET['p']){
                     $hash = $_GET['p'];
+                    $this->set('hash', $hash);
                     $project = $this->Project->find(array('hash' => $hash));
                     
                     if(!empty($project) && is_object($project[0])) {

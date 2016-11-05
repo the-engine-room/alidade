@@ -18,10 +18,6 @@
     <![endif]-->
   </head>
   <body>
-    <h1>Hello, Everyone!</h1>
-    <h2>I'm going to be a cool thing.</h2>
-    <p>...and I'm built on bootstrap!</p>
 
-    
   </body>
 </html>

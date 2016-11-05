@@ -206,9 +206,7 @@
                                     nl2br($thisSlide->answer) .
                                     (is_null($thisSlide->choice) ? '' : '<br /> ' . $thisSlide->choice) . 
                                     (is_null($thisSlide->extra) ? '' : nl2br($thisSlide->extra)) . 
-                                    '</p>';                
-                                    
-                                    
+                                    '</p>';
                     $thisSlide = $Slide->findSlide($project, 4, 6);            
                     $content .= '   <h3>Technical partners or advisers best suited to the project:</h3>
                                     <p>' .

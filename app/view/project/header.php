@@ -2,24 +2,26 @@
 if(!isset($page) || $page !== 'start') {
 $currs = explode('.', $currentSlide);
 ?>
-
+<?php
+$piece = ($inTour ? 'tour' : 'slide');
+?>
 
 <div class="walking-steps">
     <div class="step step1 <?php echo ($currs[0] == 1 ? '' : 'hidden-xs'); ?>">
         <div class="slides hidden-xs">
             <?php ?>
             <ul>
-                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 1, 1); ?>"><span class="sr-only">slide name</span></a></li>
-                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 1, 2); ?>"><span class="sr-only">slide name</span></a></li>
-                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 1, 3); ?>"><span class="sr-only">slide name</span></a></li>
-                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 1, 4); ?>"><span class="sr-only">slide name</span></a></li>
-                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 1, 5); ?>"><span class="sr-only">slide name</span></a></li>
-                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 1, 6); ?>"><span class="sr-only">slide name</span></a></li>
-                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 1, 7); ?>"><span class="sr-only">slide name</span></a></li>
-                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 1, 8); ?>"><span class="sr-only">slide name</span></a></li>
-                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 1, 9); ?>"><span class="sr-only">slide name</span></a></li>
-                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 1, 10); ?>"><span class="sr-only">slide name</span></a></li>
-                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 1, 11); ?>"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 1, 1); ?>" href="/project/<?php echo $piece; ?>/1.1<?php echo (!is_null($hash) ? '/?p=' . $projecthash : ''); ?>"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 1, 2); ?>" href="/project/<?php echo $piece; ?>/1.2<?php echo (!is_null($hash) ? '/?p=' . $projecthash : ''); ?>"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 1, 3); ?>" href="/project/<?php echo $piece; ?>/1.3<?php echo (!is_null($hash) ? '/?p=' . $projecthash : ''); ?>"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 1, 4); ?>" href="/project/<?php echo $piece; ?>/1.4<?php echo (!is_null($hash) ? '/?p=' . $projecthash : ''); ?>"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 1, 5); ?>" href="/project/<?php echo $piece; ?>/1.5<?php echo (!is_null($hash) ? '/?p=' . $projecthash : ''); ?>"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 1, 6); ?>" href="/project/<?php echo $piece; ?>/1.6<?php echo (!is_null($hash) ? '/?p=' . $projecthash : ''); ?>"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 1, 7); ?>" href="/project/<?php echo $piece; ?>/1.7<?php echo (!is_null($hash) ? '/?p=' . $projecthash : ''); ?>"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 1, 8); ?>" href="/project/<?php echo $piece; ?>/1.8<?php echo (!is_null($hash) ? '/?p=' . $projecthash : ''); ?>"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 1, 9); ?>" href="/project/<?php echo $piece; ?>/1.9<?php echo (!is_null($hash) ? '/?p=' . $projecthash : ''); ?>"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 1, 10); ?>" href="/project/<?php echo $piece; ?>/1.10<?php echo (!is_null($hash) ? '/?p=' . $projecthash : ''); ?>"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 1, 11); ?>" href="/project/<?php echo $piece; ?>/1.11<?php echo (!is_null($hash) ? '/?p=' . $projecthash : ''); ?>"><span class="sr-only">slide name</span></a></li>
             </ul>
         </div>
         <span class="title">1. Understanding Your Needs:</span>
@@ -29,13 +31,13 @@ $currs = explode('.', $currentSlide);
         <div class="slides hidden-xs">
             <?php ?>
             <ul>
-                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 2, 1); ?>"><span class="sr-only">slide name</span></a></li>
-                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 2, 2); ?>"><span class="sr-only">slide name</span></a></li>
-                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 2, 3); ?>"><span class="sr-only">slide name</span></a></li>
-                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 2, 4); ?>"><span class="sr-only">slide name</span></a></li>
-                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 2, 5); ?>"><span class="sr-only">slide name</span></a></li>
-                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 2, 6); ?>"><span class="sr-only">slide name</span></a></li>
-                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 2, 7); ?>"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 2, 1); ?>" href="/project/<?php echo $piece; ?>/2.1<?php echo (!is_null($hash) ? '/?p=' . $projecthash : ''); ?>"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 2, 2); ?>" href="/project/<?php echo $piece; ?>/2.2<?php echo (!is_null($hash) ? '/?p=' . $projecthash : ''); ?>"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 2, 3); ?>" href="/project/<?php echo $piece; ?>/2.3<?php echo (!is_null($hash) ? '/?p=' . $projecthash : ''); ?>"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 2, 4); ?>" href="/project/<?php echo $piece; ?>/2.4<?php echo (!is_null($hash) ? '/?p=' . $projecthash : ''); ?>"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 2, 5); ?>" href="/project/<?php echo $piece; ?>/2.5<?php echo (!is_null($hash) ? '/?p=' . $projecthash : ''); ?>"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 2, 6); ?>" href="/project/<?php echo $piece; ?>/2.6<?php echo (!is_null($hash) ? '/?p=' . $projecthash : ''); ?>"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 2, 7); ?>" href="/project/<?php echo $piece; ?>/2.7<?php echo (!is_null($hash) ? '/?p=' . $projecthash : ''); ?>"><span class="sr-only">slide name</span></a></li>
             </ul>
         </div>
         <span class="title">2. Understand the technology:</span>
@@ -46,13 +48,13 @@ $currs = explode('.', $currentSlide);
             <?php ?>
             <ul>
                 
-                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 3, 1); ?>"><span class="sr-only">slide name</span></a></li>
-                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 3, 2); ?>"><span class="sr-only">slide name</span></a></li>
-                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 3, 3); ?>"><span class="sr-only">slide name</span></a></li>
-                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 3, 4); ?>"><span class="sr-only">slide name</span></a></li>
-                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 3, 5); ?>"><span class="sr-only">slide name</span></a></li>
-                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 3, 6); ?>"><span class="sr-only">slide name</span></a></li>
-                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 3, 7); ?>"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 3, 1); ?>/3.1<?php echo (!is_null($hash) ? '/?p=' . $projecthash : ''); ?>"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 3, 2); ?>/3.2<?php echo (!is_null($hash) ? '/?p=' . $projecthash : ''); ?>"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 3, 3); ?>/3.3<?php echo (!is_null($hash) ? '/?p=' . $projecthash : ''); ?>"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 3, 4); ?>/3.4<?php echo (!is_null($hash) ? '/?p=' . $projecthash : ''); ?>"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 3, 5); ?>/3.5<?php echo (!is_null($hash) ? '/?p=' . $projecthash : ''); ?>"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 3, 6); ?>/3.6<?php echo (!is_null($hash) ? '/?p=' . $projecthash : ''); ?>"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 3, 7); ?>/3.7<?php echo (!is_null($hash) ? '/?p=' . $projecthash : ''); ?>"><span class="sr-only">slide name</span></a></li>
             </ul>
         </div>
         <span class="title">3. Try it out:</span>
@@ -62,16 +64,16 @@ $currs = explode('.', $currentSlide);
         <div class="slides hidden-xs">
             <?php ?>
             <ul>
-                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 4, 1); ?>"><span class="sr-only">slide name</span></a></li>
-                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 4, 2); ?>"><span class="sr-only">slide name</span></a></li>
-                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 4, 3); ?>"><span class="sr-only">slide name</span></a></li>
-                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 4, 4); ?>"><span class="sr-only">slide name</span></a></li>
-                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 4, 5); ?>"><span class="sr-only">slide name</span></a></li>
-                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 4, 6); ?>"><span class="sr-only">slide name</span></a></li>
-                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 4, 7); ?>"><span class="sr-only">slide name</span></a></li>
-                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 4, 8); ?>"><span class="sr-only">slide name</span></a></li>
-                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 4, 9); ?>"><span class="sr-only">slide name</span></a></li>
-                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 4, 10); ?>"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 4, 1); ?>/4.1<?php echo (!is_null($hash) ? '/?p=' . $projecthash : ''); ?>"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 4, 2); ?>/4.2<?php echo (!is_null($hash) ? '/?p=' . $projecthash : ''); ?>"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 4, 3); ?>/4.3<?php echo (!is_null($hash) ? '/?p=' . $projecthash : ''); ?>"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 4, 4); ?>/4.4<?php echo (!is_null($hash) ? '/?p=' . $projecthash : ''); ?>"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 4, 5); ?>/4.5<?php echo (!is_null($hash) ? '/?p=' . $projecthash : ''); ?>"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 4, 6); ?>/4.6<?php echo (!is_null($hash) ? '/?p=' . $projecthash : ''); ?>"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 4, 7); ?>/4.7<?php echo (!is_null($hash) ? '/?p=' . $projecthash : ''); ?>"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 4, 8); ?>/4.8<?php echo (!is_null($hash) ? '/?p=' . $projecthash : ''); ?>"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 4, 9); ?>/4.9<?php echo (!is_null($hash) ? '/?p=' . $projecthash : ''); ?>"><span class="sr-only">slide name</span></a></li>
+                <li><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 4, 10); ?>/4.10<?php echo (!is_null($hash) ? '/?p=' . $projecthash : ''); ?>"><span class="sr-only">slide name</span></a></li>
             </ul>
         </div>
         <span class="title">4. Find a partner:</span>
