@@ -25,7 +25,7 @@
                                 </div>
                                 <div class="form-group">
                                     <button type="submit" class="form-control btn btn-alt" name="submit" id="submit"><i class="fa fa-sign-in"></i> Login</button>
-                                    <a href="/user/create">or register here</a> | <a href="/user/recover">lost your password?</a>
+                                    <a href="/user/create">or register here</a> 
                                 </div>
                             </form>
                             <?php
@@ -55,6 +55,22 @@
                             Despite putting in significant effort, <strong>less than a quarter of initiatives were happy</strong> with the tools they chose. 
                         </div>
                     </div>
+                    
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <h4>Read more about the research</h4>
+                            <span class="big-divider"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            <a class="btn btn-main btn-lg btn-block" href="/page/summary"><strong>Research Summary</strong></a>
+                            <a class="btn btn-main btn-lg btn-block" href="/public/assets/Full-report%20-%20Tool%E2%80%93Selection-Research-Report.pdf"><strong>Full report</strong></a>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            <a class="btn btn-main btn-lg btn-block btn-left-text" href="/page/rules-of-thumb"><span><strong>Six rules of thumb</strong><br /><span class="subtext">for choosing the right tool <br />based on our research</span></span></a>
+                        </div>
+                    </div>
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <h4>Use our guide to avoid common mistakes and borrow from what worked.</h4>
@@ -70,21 +86,7 @@
                         </div>
                     </div>
                     
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12 col-md-12">
-                            <h4>Read more about the research</h4>
-                            <span class="big-divider"></span>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-6 col-md-6">
-                            <a class="btn btn-main btn-lg btn-block" href="/page/research-summary"><strong>Research Summary</strong></a>
-                            <a class="btn btn-main btn-lg btn-block" data-toggle="tooltip" data-placement="bottom" title="coming soon..."><strong>Read the full report</strong></a>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-6">
-                            <a class="btn btn-main btn-lg btn-block btn-left-text" href="/page/six-rules"><span><strong>Six rules of thumb</strong><br /><span class="subtext">for choosing the right tool <br />based on our report</span></span></a>
-                        </div>
-                    </div>
+                 
                     
                 </div>
                 
@@ -114,7 +116,7 @@
             
                 <div class="text-snap">
                     <div class="text-snap-title"><h3>Why</h3></div>
-                    <div class="text-snap-text"><p>Our research suggests that <strong>choosing the right tool is key</strong> in making your project successful. <a href="/page/research-summary">Read more about the research<i class="fa fa-angle-double-right"></i></a></p></div>
+                    <div class="text-snap-text"><p>Our research suggests that <strong>choosing the right tool is key</strong> in making your project successful. <a href="/page/summary">Read more about the research <i class="fa fa-angle-double-right"></i></a></p></div>
                 </div>
             </div>
             
@@ -164,7 +166,7 @@
         </div>
     </div>
     <div class="container-fluid text-center" id="quick-tips">
-        <p><strong>Wondering where to start?<br /><a href="/page/six-rules"> Try our six rules of thumb.</a></strong></p>
+        <p><strong>Wondering where to start?<br /><a href="/page/rules-of-thumb"> Try our six rules of thumb.</a></strong></p>
     </div>
     
     <?php if (!empty($page)) { ?> 

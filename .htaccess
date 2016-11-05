@@ -1,6 +1,6 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On    
-    RewriteRule ^(admin|craft|install.php)($|/) - [L]    
+    RewriteRule ^(admin|craft|install.php|webhook.php)($|/) - [L]    
     RewriteRule ^$ public/ [L]
     RewriteRule (.*) public/$1 [L]
 </IfModule>
