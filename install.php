@@ -113,6 +113,7 @@ if(( isset($_GET['config-check']) && $_GET['config-check'] == 1) || isset($_POST
                   `role` varchar(45) NOT NULL DEFAULT 'user',
                   `created_at` timestamp NULL DEFAULT NULL,
                   `modified_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+                  `token` VARCHAR(255) DEFAULT NULL,
                   PRIMARY KEY (`idusers`),
                   UNIQUE KEY `email_UNIQUE` (`email`),
                   KEY `idx_role` (`role`)

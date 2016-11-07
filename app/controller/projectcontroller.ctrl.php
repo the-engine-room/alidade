@@ -221,6 +221,12 @@
                     $projectIndex[$p['step']][] = $p['slideStep'];
                 }
                 $this->set('projectIndex', $projectIndex);
+                
+                $menu = array();
+                foreach($slidelist as $slide){
+                    $menu[$slide->indexer] = $slide->title;
+                }
+                $this->set('slideMenu', $menu);
             }
         }
         

@@ -63,9 +63,6 @@
             }
         }
         
-        
-        
-        
         /** password recovery **/
         public function recover(){
             $this->set('title', 'Lost Password');
@@ -84,6 +81,7 @@
                 else {
                     /** find email in user table **/
                     $userAccount = $this->User->find(array('email' => $email));
+                    
                     if($userAccount){
                         $valid = true;
                     }
@@ -97,7 +95,9 @@
                 if($valid){
                     /** 2. Generate 1-time token **/
                     $token = bin2hex(openssl_random_pseudo_bytes(16));
-                    
+                    if(!$token){
+                        die('could not generate random token.');
+                    }
                     /** 2.1 Associate token to account **/
                     $update = array('token' => $token);
                     $updated = $this->User->update($update, $userAccount[0]->idusers);
