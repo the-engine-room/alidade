@@ -1,0 +1,83 @@
+#slide-sidebar {
+	min-height: 100%;
+	background: @sidebar-bg;
+	
+	.step {
+		margin: 0px -15px;
+		h3 {
+			font-size: 13px;
+			color: @white;
+			background: @sidebar-header url('/assets/images/pointer.png') no-repeat 30px center;
+			display: block; 
+			padding-left: 50px;
+			margin: 0px;
+			line-height: 34px;
+		}
+		ul {
+			margin: 0px;
+			padding: 0px;
+			list-style: none;
+			li {
+				position: relative; 
+				clear: none; 
+				a {
+					color: @white;
+					font-size: 13px;
+					font-weight: 700;
+					background: url('/assets/images/uncheck.png') no-repeat 30px center;
+					display: block; 
+					padding: 6px 15px 6px 50px; 
+					&.done {
+						background: url('/assets/images/check.png') no-repeat 30px center;
+					}
+					&.working {
+						background: @sidebar-active url('/assets/images/uncheck.png') no-repeat 30px center;
+						&:after {
+							content: '';
+							position: absolute;
+							right: -30px;
+							top: 0;
+							width: 0;
+							height: 0;
+							border: 15px solid;
+							border-color: transparent transparent transparent @sidebar-active;							
+						}
+						&.taller:after {
+							content: '';
+							position: absolute;
+							right: -48px;
+							top: 0;
+							width: 0;
+							height: 0;
+							border: 24px solid;
+							border-color: transparent transparent transparent @sidebar-active;	
+						}
+					}
+					&:hover {
+						background-color: @sidebar-hover; 
+						&:after {
+							content: '';
+							position: absolute;
+							right: -30px;
+							top: 0;
+							width: 0;
+							height: 0;
+							border: 15px solid;
+							border-color: transparent transparent transparent @sidebar-hover;							
+						}
+					}
+					&.taller:hover:after {
+						content: '';
+							position: absolute;
+							right: -48px;
+							top: 0;
+							width: 0;
+							height: 0;
+							border: 24px solid;
+							border-color: transparent transparent transparent @sidebar-hover;							
+					}
+				}				
+			}
+		}
+	}
+}

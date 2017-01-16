@@ -1,7 +1,11 @@
 <?php $origin =  !isset($original) ? null : $original[0]; ?>
-<div class="container" id="slide-content">
-    <div class="row">
-        <div class="col-md-12">
+<div class="container-fluid" id="slide-page">
+    <div class="row slide-container">
+        <div class="col-md-2 col-sm-4 hidden-xs" id="slide-sidebar">
+            <?php include('sidebar.php'); ?>
+            
+        </div>
+        <div class="col-md-10 col-sm-8 col-xs-12" id="slide-content">
             
             <form action="/project/slide/<?php echo $nextSlide; ?><?php echo (!is_null($original) ? '/?p=' . $projecthash : ''); ?> " method="post">
                 <input type="hidden" name="current_slide"  value="<?php echo $currentSlide; ?>">
@@ -16,12 +20,10 @@
                 <input type="hidden" name="edit" value="true">
                 <?php }
                 
-                
                 $prevAnswer = injectPrevAnswer($slide->description);
                 if($prevAnswer){
                     $slide->description = $prevAnswer['content'];
                 }
-                
                 
                 switch($slide->slide_type){
                     case 1:

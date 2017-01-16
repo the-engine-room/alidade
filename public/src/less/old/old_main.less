@@ -1,0 +1,286 @@
+@import 'variables.less';
+html, body {
+    height: 100%;
+    position: relative;
+}
+body {
+    font-family: 'Lato', 'Arial', sans-serif;
+    font-weight: 400;
+    font-size: 16px; 
+}
+
+h1, h2, h3 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase; 
+}
+
+blockquote {
+    
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    border: 0px;
+    padding: 10px 0px;
+    color: @oil;
+    min-height: 72px;
+    padding-left: 25px; 
+    border-left: 5px solid @sky;
+    margin: 25px;
+    background: @cream;
+    /* Quotation Mark before quote text
+    &:before {
+        content: '\f10d';
+        box-sizing: border-box;
+        font-family: 'FontAwesome';
+        font-style: normal;
+        color: fade(@oil, 40%);
+        font-size: 16px;
+        padding: 0px 8px; 
+        text-align: center;
+        display: inline-block; float: left; clear: left;
+        height: inherit;
+        margin-right: 10px; 
+    }
+    */
+}
+.wrap { min-height: 100%; position: relative; }
+.previous-answer {
+    padding: 25px; background: #c4c4c4;
+    a.prev-answer {
+        display: block; clear: both; padding: 5px 10px; float: right; margin: 15px 0px 0px 0px;
+    }
+}
+#slide-content { margin-bottom: 40px; }
+.tour-alert.alert-info{
+    color: @lime;
+    background-color: fade(@lime, 25%);
+    border-color: lighten(@lime, 15%);
+}
+
+.tour-alert h2 { margin-top: 0px !important; }
+.tour-content .alert-info.saving-alert { display: none !important; }
+/** style all links **/
+a {
+    -webkit-transition: all 0.5s ease 0s;
+    -moz-transition: all 0.5s ease 0s;
+    transition: all 0.5s ease 0s; 
+    color: @sky; text-decoration: none;
+    &:hover { color: lighten(@sky, 10%); text-decoration: underline; }
+    &.alt { color: @sea; text-decoration: underline;
+        &:hover { color: @sea; text-decoration: none; }
+    }
+}
+/** top dark bar **/
+#top {
+    background: @oil; color: @cream; font-size: 16px;
+    .steps {
+        display: block; float: left; clear: both; width:100%; 
+        .step { width: 25%; display: block; float: left; clear: none; height: 3px;
+            &.step-1 { background: @oil; }
+            &.step-2 { background: lighten(@oil, 10%); }
+            &.step-3 { background: lighten(@oil, 20%); }
+            &.step-4 { background: lighten(@oil, 30%); }
+        }
+    }
+}
+/** user navigation/panel **/
+.logo { font-size: 18px; font-family: 'Francois One', sans-serif;
+     font-weight: 400; color: lighten(@oil, 5%); padding: 0px 8px;  }
+.user-panel {
+    height: 30px;
+    display: block;
+    span.user-name {
+        line-height: 30px;
+        display: inline-block;
+        padding: 0px 10px; 
+    }
+    .user-actions {
+        list-style: none;
+        display: inline-block;
+        padding: 0px;
+        margin: 0px;
+        li {
+            display: inline-block;
+            height: 30px;
+           // width: 30px;
+            line-height: 30px;
+            text-align: center;
+            background: @oil;
+            &:not(:last-child) { border-right: 1px solid lighten(@oil, 30%); }
+            a { display: block; color: @cream;  text-transform: uppercase; padding: 0px 6px; 
+            
+                &:hover, &.active {
+                    color: @oil; background: white;  
+                }
+            }
+        }
+    }
+}
+
+/** custom buttons **/
+.btn {
+    -webkit-transition: all 0.6s ease 0s;
+    transition: all 0.6s ease 0s;
+    border-radius: 0px;
+}
+.btn-main { color: @sea; background: @oil;
+    &:hover, &:active, &:focus {
+        background: @sky; color: @oil;
+    }
+}
+.btn-alt {  background: @gold; color: @oil;
+    &:hover, &:active, &:focus {
+        background: @cream; color: @sky; 
+    }
+}
+.btn-default {  background: gainsboro; color: @oil;
+    &:hover, &:active, &:focus {
+        background: lighten(gainsboro, 10%); color: @sky; 
+    }
+}
+.btn-addon {
+    border: 1px solid #CCC;
+    background: @gold;
+    color: @oil;
+}
+
+/** WYSIWYG **/
+.wysiwyg {
+    overflow-y: scroll;
+    height: 350px; 
+}
+
+.userpage, #slide-content {
+    margin-bottom: 40px; 
+    h1, h2 {
+        font-size: 32px;
+        color: @statusGo;
+        font-weight: 800;
+        border-bottom: 2px solid @statusGo; 
+    }
+    .alert h2 {
+        font-size: 24px;
+        color: inherit;
+        font-weight: 800;
+        border-bottom: none; 
+    }
+    .help {
+        margin-top: 20px;        
+    }
+}
+
+/** forms **/
+input, select, textarea, .form-control {
+    border-radius: 0px;
+    box-shadow: none;
+    &:focus, &:active, &:hover {
+        box-shadow: none;
+        border: 1px solid transparent; 
+        border-bottom: 1px solid @sky;
+    }
+}
+.form-box {
+    padding: 25px;
+    margin: 30px 0px;
+    background: @cream;
+    border-bottom: 4px solid @sky;
+    h3 { margin-top: 0px; color: @oil;  font-weight: normal; }
+}
+/** progress bar **/
+.step {
+    width: 25%;
+    padding: 0px;
+    margin: 0px;
+    float: left;
+    clear: none;
+}
+.slide-position {
+    height: 15px;
+    display: block;
+    clear: none;
+    border-right: 1px solid white;
+    float: left; 
+    &.slide-position-0 {
+        background: @statusNo;
+    }
+    &.slide-position-1 {
+        background: @statusWk;
+    }
+    &.slide-position-2 {
+        background: @statusGo;
+    }
+}
+
+.choice-text{display: none;}
+
+.go-back-button {
+    display: block;
+    min-height: 100%;
+    min-width: 100%;
+    background-color: transparent;
+    transition: all 0.5s ease 0s;
+    -moz-transition: all 0.5s ease 0s;
+    -webkit-transition: all 0.5s ease 0s; 
+    &:hover {
+        background-color: darken(@statusGo, 15%);
+    }
+}
+
+.checkboxcheck {
+    display: none; 
+}
+
+h5#pos { padding-top: 8px; text-indent: 5px; }
+ // recap pages
+ a.ajx.tsa-tooltip {
+    text-transform: uppercase; color: @sky; font-weight: 800; font-size: 18px; text-decoration: none; 
+ }
+ 
+ .tsa-tooltip-wrap {
+    padding-left: 15px;
+    li & {
+        list-style: none; margin: 8px 0px;
+    }
+ }
+ 
+footer {
+    background: @oil;
+    color: @cream;
+    font-size: 12px;
+    padding: 25px 0px 30px;
+    margin: 0px;
+    width: 100%;
+    min-height: 250px;
+    bottom: 0px;
+   
+    .slidemap ul {
+        padding: 0px; margin: 0px; list-style: none;
+        li {}
+    }
+    a {
+        font-size: 12px; color: @sea;
+        &:hover { color: @cream; }
+    }
+}
+
+// affixed nav
+
+.toc {
+    list-style: none; 
+    margin-top: 35px; 
+    ul {
+        list-style: none; 
+        padding-left: 15px; 
+    }
+}
+@import 'homepage.less';
+@import 'manage.less';
+@import 'walking-steps.less';
+@import 'rulesofthumb.less';
+
+
+@media screen and (min-width: 768px ){
+    .wrap {  padding-bottom: 250px; }
+    footer {  position: absolute; height: 250px; }
+}

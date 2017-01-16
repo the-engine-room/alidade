@@ -1,6 +1,5 @@
 
-<footer>
-    <div class="container-fluid">
+<footer class="container-fluid">
         <div class="row">
             
             
@@ -69,8 +68,8 @@
                     
             </div>
         </div>
-    </div>
+    
 </footer>
-</div> <!-- EOF div.wrap -->
+
 
 

@@ -1,10 +1,12 @@
 $(document).ready(function(){
     
-    /*    
-    $(window).scroll(function(){
-        parallax('.jumbotron', 0.5);     
-    });    
-    */
+    /** Set arrowheads for the sidebar **/
+    $('.step ul li a').each(function(){
+        if($(this).height() > 30) {
+            $(this).addClass('taller');
+        }
+    });
+    
     
     $('.choice').click(function(){
         $('.choice-text').hide();
