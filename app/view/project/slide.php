@@ -2,6 +2,7 @@
 <div class="container" id="slide-content">
     <div class="row">
         <div class="col-md-12">
+            
             <form action="/project/slide/<?php echo $nextSlide; ?><?php echo (!is_null($original) ? '/?p=' . $projecthash : ''); ?> " method="post">
                 <input type="hidden" name="current_slide"  value="<?php echo $currentSlide; ?>">
                 <input type="hidden" name="current_project" value="<?php echo $_SESSION['project']; ?>">
@@ -14,6 +15,13 @@
                 if(isset($edit) && $edit == true ) { ?>
                 <input type="hidden" name="edit" value="true">
                 <?php }
+                
+                
+                $prevAnswer = injectPrevAnswer($slide->description);
+                if($prevAnswer){
+                    $slide->description = $prevAnswer['content'];
+                }
+                
                 
                 switch($slide->slide_type){
                     case 1:
@@ -68,3 +76,34 @@
         
     </div>
 </div>
+
+<?php
+if ($prevAnswer) { 
+// load modal box for the previous answer editing functionality
+?>
+
+<div class="modal fade editPrevAnswer" tabindex="-1" role="dialog" aria-labelledby="editPrevAnswer">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+        <form action="/save" method="post" class="saveAnswer">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h3 class="modal-title" id="myModalLabel"><?php echo $prevAnswer['slide']->title; ?></h3>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" name="id" id="slide" value="<?php echo $prevAnswer['slide']->idslides; ?>">
+                <div class="form-group">
+                    <textarea class="form-control" rows="8" id="answer" name="answer"><?php echo $prevAnswer['slide']->answer; ?></textarea>    
+                </div>
+            
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Save changes</button>
+            </div>
+        </form>
+    </div>
+  </div>
+</div>
+
+<?php } ?>

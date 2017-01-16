@@ -153,6 +153,29 @@
         return str_replace('[--'.$param.'--]', $value, $string);        
     }
     
+    function injectPrevAnswer($string){
+        preg_match('/\[--prev\|\d\.\d\--]/', $string, $matches);
+        if(!empty($matches) && is_array($matches)){
+            $p = explode('|', $matches[0]);
+            $slide = str_replace('--]', '', $p[1]);
+            $parts = explode('.', $slide);
+            $step = $parts[0];
+            $slide = $parts[1];
+            
+            // palce slide model here and use getPreviousANswer method
+            $Slides = new Slide;
+            $hash = filter_var($_GET['p'], FILTER_SANITIZE_SPECIAL_CHARS);
+            $slide = $Slides->findPreviousAnswer($hash, $step, $slide);
+            
+            $previous = "<div class=\"previous-answer\"><h3>" . $slide->step . "." . $slide->slide . " "  . $slide->title . "</h3><p id=\"answerBox\">" . nl2br($slide->answer) . "</p><a href=\"#\" class=\"prev-answer\" data-toggle=\"modal\" data-target=\".editPrevAnswer\">I need to change this answer.</a></div>";    
+            
+            $string = str_replace($matches[0], $previous, $string);
+            return array('content' => $string, 'slide' => $slide);
+        }
+        else {
+            return false;
+        }
+    }
     
     /** title printing, parsing position **/
     function printTitle($slide, $slideTitle){

@@ -27,6 +27,7 @@
             
             <ul>
                 <li><strong>[--answer--]</strong> This is used as a placeholder for the textarea in the slide contents. </li>
+                <li><strong>[--prev|step.slide--]</strong> This will print a box with the answer from the slide you select with a link to edit that answer. An example can be: [--prev|1.4--]. This would print a box with the answer from slide number 4 of step 1. </li>
             </ul>
             <a href="/manage" class="btn btn-sm btn-alt pull-right">back to management <i class="fa fa-angle-right"></i></a>
             

@@ -3,8 +3,7 @@
     class Slide extends Model {
         protected $table = 'slides';
         protected $dates = true;
-        #code
-        
+
         public function findProjectSlides($p){
             
             $sql = 'SELECT * FROM `' . $this->table . '` AS `s`
@@ -65,5 +64,37 @@
                 return $stmt->fetchAll(PDO::FETCH_OBJ);
             }
         }
-    }
+        
+        public function findPreviousAnswer($hash, $step, $slide){
+            $sql.='
+            SELECT 
+                `slides`.*, 
+                `slide_list`.`title`, 
+                `slide_list`.`description`,
+                `projects`.`hash` 
+            FROM `slides`
+            INNER JOIN `slide_list` ON (`slide_list`.`step` = `slides`.`step` AND `slide_list`.`position` = `slides`.`slide`) 
+            INNER JOIN `projects` ON `projects`.`idprojects` = `slides`.`project`  
+            WHERE 
+                `projects`.`hash` = :hash AND `slides`.`step` = :step and `slides`.`slide` = :slide 
+            ORDER BY `slides`.`modified_at` DESC 
+            LIMIT 1';
+            $stmt = $this->database->prepare($sql);
+            
+            $stmt->bindParam(':hash', $hash, PDO::PARAM_STR);
+            $stmt->bindParam(':step', $step, PDO::PARAM_INT);
+            $stmt->bindParam(':slide', $slide, PDO::PARAM_INT);
+            
+            $q = $stmt->execute();
+            
+            if(!$q){
+                new Error(601, 'Could not execute query. (slide.model.php, 20)');
+                return false;
+            }
+            else {
+                return $stmt->fetch(PDO::FETCH_OBJ);
+            }
+
+        }
     
+    }    

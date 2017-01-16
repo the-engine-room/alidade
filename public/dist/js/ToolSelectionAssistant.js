@@ -26,7 +26,7 @@ $(document).ready(function(){
         var vals = {
             project: $(this).children('#project').val(),
             title:   $(this).children().children('#title').val()
-        }
+        };
         
         $.getJSON(
                   $(this).attr('action'),
@@ -45,7 +45,34 @@ $(document).ready(function(){
         return false;    
     });
     
-    $('.ajx.tsa-tooltip').each(function(index){
+    $('.saveAnswer').submit(function(e){
+        e.preventDefault();
+        var vals = {
+            slide:  $(this).find('#slide').val(),
+            answer: $(this).find('#answer').val()
+        };
+        
+        $.post(
+            '/ajax/save_answer',
+            vals,
+            function(response){
+                if(response.code === 'success') {
+                    // hide modal
+                    $('.editPrevAnswer').modal('toggle');
+                    // refresh content box
+                    $('#answerBox').html(vals.answer);
+                }
+                else {
+                    $('.editAnswer .modal-body').prepend(
+                        '<div class="alert alert-danger"><i class="fa fa-times"></i> ' + response.message + '</div>'     
+                    );
+                }
+            },
+            'json'       
+        );
+    });
+    
+    $('.ajx.tsa-tooltip').each(function(){
         var theUrlPieces = $(this).attr('href').split('/');
         var Slide = theUrlPieces[theUrlPieces.length - 1];
         var Holder = $(this).parent();
@@ -73,6 +100,41 @@ $(document).ready(function(){
                     }
                 );
         
+    });
+    
+    // Load previous slide answers to check them out
+    $('.prev-slide-loader').click(function(e){
+        // prevent usual behaviour
+        e.preventDefault();
+        // empty previously loaded answer (might not be the first click, ya know?)
+        $('.prev-slide-loader').next().empty();
+        var Holder = $('.prev-slide-loader').next();
+        // load answer
+        $.getJSON(
+            '/ajax/getprojectslide',
+            {
+                project:    $(this).data('project'),
+                slide:      $(this).data('slide')
+            },
+            function(response){
+                
+                if (response.code == 'danger') {
+                    Holder.append('No data found.');
+                }
+                
+                else { 
+                    Holder.append(
+                        "<div class=\"tsa-tooltip-wrap\">" +
+                        "<p>" + response.answer + " " + response.choice + "</p>" +
+                        "<p><em>" + response.extra + "</em></p>" +
+                        "</div>"
+                    );
+                }
+            }
+        );
+        // display answer
+        
+        return false;
     });
     
     $('#extra15-2').click(function(){

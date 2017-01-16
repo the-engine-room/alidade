@@ -78,7 +78,44 @@
             }
         }
         
-        
+        public function save_answer(){
+            $status = false;
+            
+            if(strtolower($_SERVER['REQUEST_METHOD']) == 'post') {
+                $Auth = new Auth($url);
+                $user = $Auth->getProfile();
+                if(!$Auth->isLoggedIn()){
+                    return false;
+                }
+                else {
+                    $Slide = new Slide;
+                    
+                    $id = filter_var($_POST['slide'], FILTER_SANITIZE_NUMBER_INT);
+                    $answer = filter_var($_POST['answer'], FILTER_SANITIZE_SPECIAL_CHARS);
+                    
+                    
+                    $slide = $Slide->find(array('idslides' => $id));
+                    $slide = $slide[0];
+                    //dbga($slide);
+                    
+                    $update = $Slide->update(array('answer' => $answer), $slide->idslides );
+                    if($update){
+                        $response['code'] = 'success';
+                        $response['icon'] = 'tick';
+                        $response['message'] = '<strong>Awww yeah!</strong> The answer has been correctly updated.';
+                    }
+                    else {
+                        $response['code'] = 'danger';
+                        $response['icon'] = 'times';
+                        $response['message'] = '<strong>Whooops!</strong> Something went wrong and your changes have not been saved.';
+                    }
+                    $status = $response;
+                    echo json_encode($status);
+                }
+            }
+            
+            return $status;
+        }
     
        
         
