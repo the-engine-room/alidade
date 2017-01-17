@@ -102,9 +102,10 @@
         }
         
         public function home(){
-            $url = 'homepage';
+            $url = 'homepage';            
             $page = $this->Page->find(array('url' => $url));
             $this->set('page', $page[0]->contents);
+            $this->set('bodyClass', 'homepage');
         }
         
     }

@@ -40,7 +40,7 @@
 <noscript><p><img src="//www.theengineroom.org/piwik/piwik.php?idsite=9" style="border:0;" alt="" /></p></noscript>
 <!-- End Piwik Code -->
     </head>
-    <body>
+    <body class="<?php echo (isset($bodyClass) ? $bodyClass : ''); ?>">
         
         <?php /* 
         <div class="wrap">

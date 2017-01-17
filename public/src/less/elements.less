@@ -12,3 +12,43 @@
 		}
 	}
 }
+
+// sidebar boxes
+/*
+@questions-box: #D2DCE0;
+@example-box: 	#B4CDCD;
+@casestudy-box: #B9D6CA;
+@research-box: 	#DFD1D8;
+@tips-box: 		#F4CBC0;
+@answer-box: 	#FAF7F3;
+*/
+.box {
+	.border-radius(8px);
+	margin-bottom: 10px;
+	padding: 15px;
+	font-size: 13px; 
+	&.box-questions {
+		background-color: @questions-box;
+	}
+	&.box-example {
+		background-color: @example-box;
+	}
+	&.box-casestudy {
+		background-color: @casestudy-box;
+	}
+	&.box-research {
+		background-color: @research-box;
+	}
+	&.box-tips {
+		background-color: @tips-box;
+	}
+	&.box-answer {
+		background-color: @answer-box;
+	}
+	h3 {
+		text-transform: uppercase;
+		font-size: 16px;
+		margin-top: 0px; 
+	}
+	
+}

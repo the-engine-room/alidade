@@ -2,77 +2,111 @@
 <div class="container-fluid" id="slide-page">
     <div class="row slide-container">
         <div class="col-md-2 col-sm-4 hidden-xs" id="slide-sidebar">
-            <?php include('sidebar.php'); ?>
-            
+            <?php include('sidebar.php'); ?>            
         </div>
         <div class="col-md-10 col-sm-8 col-xs-12" id="slide-content">
+            <div class="row">
+                <div class="col-md-10 col-sm-8 col-xs-12">
+                    
+                    <?php
+                        $slideListMenu = $slideMenu;
+                        reset($slideListMenu);
+                        while(key($slideListMenu) != $currentSlide ) { next($slideListMenu); }
+                        $backSlide = prev($slideListMenu);
+                        $backKey = key($slideListMenu);
+                        
+                        if(!empty($backSlide)) { 
+                    ?>
+                    
+                    <a class="back-link" href="/project/slide/<?php echo $backKey; ?>/?p=<?php echo $hash; ?>&edit"><i class="fa fa-chevron-left"></i> BACK: <?php echo $backSlide; ?></a>
+                    <?php } ?>
+                    <h1><?php echo $currentSlide . ' ' . $slide->title; ?></h1>
+                </div>
+            </div>
             
-            <form action="/project/slide/<?php echo $nextSlide; ?><?php echo (!is_null($original) ? '/?p=' . $projecthash : ''); ?> " method="post">
-                <input type="hidden" name="current_slide"  value="<?php echo $currentSlide; ?>">
-                <input type="hidden" name="current_project" value="<?php echo $_SESSION['project']; ?>">
-                <h2><?php echo $slide->title; ?></h2>
-                <?php
-                
-                if(!is_null($original)) { ?>
-                <input type="hidden" name="slide_update" value="<?php echo $_SESSION['project']; ?>">
-                <?php }
-                if(isset($edit) && $edit == true ) { ?>
-                <input type="hidden" name="edit" value="true">
-                <?php }
-                
-                $prevAnswer = injectPrevAnswer($slide->description);
-                if($prevAnswer){
-                    $slide->description = $prevAnswer['content'];
-                }
-                
-                switch($slide->slide_type){
-                    case 1:
-                        echo $slide->description;
-                        break;
-                    case 2:
-                        echo injectAnswerField($slide->description, 'answer', $origin);
-                        break;
-                    case 3:
-                        echo injectAnswerField($slide->description, 'answer', $origin);
-                        break;
-                    default:
-                        $text = injectParam($slide->description, 'project', $_SESSION['project']);
-                        $text = injectParam($text, 'step', $step_number);
-                        echo $text;
-                        break;
-                }
-                ?>
-                <div class="row">
-                    <div class="text-center">                        
+            <div class="row">
+                <div class="col-md-7 col-sm-8 col-xs-12">
+                    
+                    <form action="/project/slide/<?php echo $nextSlide; ?><?php echo (!is_null($original) ? '/?p=' . $projecthash : ''); ?> " method="post">
+                        <input type="hidden" name="current_slide"  value="<?php echo $currentSlide; ?>">
+                        <input type="hidden" name="current_project" value="<?php echo $_SESSION['project']; ?>">
+                        
                         <?php
-                        if(isset($inProcess) && $inProcess == true){
-                            if(!is_null($prevSlide) && !empty($prevSlide)) { ?>
-                            <div class="col-xs-6 col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-3">
-                                <a href="/project/slide/<?php echo $prevSlide; ?>?p=<?php echo $projecthash; ?>&back" class="btn btn-main btn-lg btn-block"><i class="fa fa-angle-left"></i> Back</a>
-                            </div>
-                            
-                            <?php if($currentSlide == '1.6') { ?>
-                            <div class="col-xs-12 col-sm-4 col-md-3">
-                                <a href="/project/slide/1.11?skipped" class="btn btn-main btn-lg btn-block">Skip user research <i class="fa fa-angle-double-right"></i></a>
-                            </div>
-                            <?php } ?>
-                            
-                            <?php
-                            }
-                            if(!is_null($nextSlide) && !empty($nextSlide)) {
-                            ?>
-                            <div class="col-xs-6 col-sm-4 col-md-3">
-                                <button type="submit" class="btn btn-main btn-lg btn-block">Forward <i class="fa fa-angle-right"></i></button>
-                            </div>
-                            <?php 
-                            }
+                        
+                        if(!is_null($original)) { ?>
+                        <input type="hidden" name="slide_update" value="<?php echo $_SESSION['project']; ?>">
+                        <?php }
+                        if(isset($edit) && $edit == true ) { ?>
+                        <input type="hidden" name="edit" value="true">
+                        <?php }
+                        
+                        
+                        $boxes = injectBox($slide->description);
+                        $text = $boxes['content'];
+                        
+                        $prevAnswer = injectPrevAnswer($text);
+                        if($prevAnswer){
+                            $text = $prevAnswer['content'];
+                        }
+                        
+                        switch($slide->slide_type){
+                            case 1:
+                                echo $text;
+                                break;
+                            case 2:
+                                echo injectAnswerField($text, 'answer', $origin);
+                                break;
+                            case 3:
+                                echo injectAnswerField($text, 'answer', $origin);
+                                break;
+                            default:
+                                $text = injectParam($text, 'project', $_SESSION['project']);
+                                $text = injectParam($text, 'step', $step_number);
+                                echo $text;
+                                break;
                         }
                         ?>
+                        <div class="row">
+                            <div class="text-center">                        
+                                <?php
+                                if(isset($inProcess) && $inProcess == true){
+                                    /*
+                                    if(!is_null($prevSlide) && !empty($prevSlide)) { ?>
+                                    <div class="col-xs-6 col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-3">
+                                        <a href="/project/slide/<?php echo $prevSlide; ?>?p=<?php echo $projecthash; ?>&back" class="btn btn-main btn-lg btn-block"><i class="fa fa-angle-left"></i> Back</a>
+                                    </div>
+                                    
+                                    <?php if($currentSlide == '1.6') { ?>
+                                    <div class="col-xs-12 col-sm-4 col-md-3">
+                                        <a href="/project/slide/1.11?skipped" class="btn btn-main btn-lg btn-block">Skip user research <i class="fa fa-angle-double-right"></i></a>
+                                    </div>
+                                    <?php } ?>
+                                    
+                                    <?php
+                                    }*/
+                                    if(!is_null($nextSlide) && !empty($nextSlide)) {
+                                    ?>
+                                    <div class="col-xs-6 col-sm-4 col-md-3">
+                                        <button type="submit" class="btn btn-alidade btn-lg">NEXT: <?php echo $slideMenu[$nextSlide]; ?></button>
+                                    </div>
+                                    <?php 
+                                    }
+                                }
+                                ?>
+                                
+                            </div>
+                        </div>
                         
-                    </div>
+                    </form> 
+                </div>
+                <div class="col-md-5 col-sm-4 col-xs-12">
+                    <aside>
+                        <?php echo implode(' ', $boxes['boxes']); ?>
+                    </aside>
                 </div>
                 
-            </form>   
+            </div>
+              
         </div>
         
         

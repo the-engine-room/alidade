@@ -177,6 +177,22 @@
         }
     }
     
+    function injectBox($string){
+        preg_match_all('/\[--box\|(?<name>\w+)--](.+?)\[--endbox--]/im', $string, $matches);
+        $boxes = array();
+        $fullMatches = $matches[0];
+        $names = $matches['name'];
+        $texts = $matches[2];
+        foreach($fullMatches as $index => $match){
+            $string = str_replace($match, '', $string);
+        }
+        foreach($names as $i => $box){
+            
+            $boxes[] = '<div class="box box-' . $box . '"><h3>' . ($box=='casestudy' ? 'case study' : $box) . '</h3>' . $texts[$i] . '</div>';
+        }
+        return array('content' => $string, 'boxes' => $boxes);        
+    }
+    
     /** title printing, parsing position **/
     function printTitle($slide, $slideTitle){
         $cur = explode('.', $slide);

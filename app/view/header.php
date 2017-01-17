@@ -41,8 +41,8 @@
 
 <div class="container-fluid">
 	<header class="row">
-		<div class="col-sm-6"><h1>Alidade</h1></div>
-		<div class="col-sm-6">
+		<div class="col-md-8 col-sm-6 col-xs-4"><h1>Alidade</h1></div>
+		<div class="col-md-4 col-sm-6 col-xs-8">
 			<?php if(isset($_SESSION[APPNAME][SESSIONKEY]) && !empty($_SESSION[APPNAME][SESSIONKEY])) { ?>
 			<div class="pull-right user-panel">
 				<span class="user-name">Hello, <strong><?php echo $_SESSION[APPNAME]['USR']; ?></strong>.</span>
@@ -56,7 +56,7 @@
 				</ul>
 			</div>		
 			<?php } else { ?>
-			<a href="#" data-toggle="modal" data-target="#user-forms" class="btn btn-alidade btn-lg pull-right">Signup/Login</a>
+			<a href="#" data-toggle="modal" data-target="#user-forms" class="btn btn-alidade btn-lg pull-right">Register or Login to save progress</a>
 		<?php } ?>
 		</div>
 	</header>

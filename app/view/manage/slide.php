@@ -2,7 +2,7 @@
     
     <div class="row">
         <div class="col-md-9">
-            <h2>Edit "<?php echo $slide->title; ?>"</h2>
+            <h1>Edit "<?php echo $slide->title; ?>"</h1>
 
             <form class="/manage/slide/<?php echo $slide->step . '/' . $slide->position; ?>" method="post" id="slide-form">
                 <input id="step" name="step" type="hidden" value="<?php echo $slide->step; ?>">
@@ -26,8 +26,19 @@
             <p>Please take care while editing slide content. You might come across strange placeholders, or reference/pointers couples that are used to maintain some of the frontend functionalities. Here are some of them, so you know what's going on. </p>
             
             <ul>
-                <li><strong>[--answer--]</strong> This is used as a placeholder for the textarea in the slide contents. </li>
-                <li><strong>[--prev|step.slide--]</strong> This will print a box with the answer from the slide you select with a link to edit that answer. An example can be: [--prev|1.4--]. This would print a box with the answer from slide number 4 of step 1. </li>
+                <li><strong>[--answer--]</strong><br />This is used as a placeholder for the textarea in the slide contents. </li>
+                <li><strong>[--prev|step.slide--]</strong><br />This will print a box with the answer from the slide you select with a link to edit that answer. An example can be: [--prev|1.4--]. This would print a box with the answer from slide number 4 of step 1. </li>
+                <li><strong>[--start-sidebar--]</strong><br />All content <em><strong>below</strong></em> this placeholder will be placed in the right sidebar.</li>
+                <li>
+                    <strong>[--box|type--]content[--endbox--]</strong><br />You can create boxes that can go pretty much everywhere you want. Supported values for <em>type</em> are:
+                    <ul>
+                        <li>questions</li>
+                        <li>example</li>
+                        <li>casestudy</li>
+                        <li>research</li>
+                        <li>tips</li>                        
+                    </ul>
+                </li>
             </ul>
             <a href="/manage" class="btn btn-sm btn-alt pull-right">back to management <i class="fa fa-angle-right"></i></a>
             
