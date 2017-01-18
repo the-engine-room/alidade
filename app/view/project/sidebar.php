@@ -12,7 +12,7 @@ $piece = ($inTour ? 'tour' : 'slide');
 			<h3>STEP 1</h3>
 		</header>
 		<ul>
-			<?php for($i = 1; $i < 12; $i++){ ?>
+			<?php for($i = 1; $i < 5; $i++){ ?>
 			<li>
 				<a
 				   title="<?php echo $slideMenu['1.' . $i]; ?>"
@@ -48,7 +48,7 @@ $piece = ($inTour ? 'tour' : 'slide');
 			<h3>STEP 3</h3>
 		</header>
 		<ul>
-			<?php for($i = 1; $i < 8; $i++){ ?>
+			<?php for($i = 1; $i < 6; $i++){ ?>
 			<li>
 				<a
 				   title="<?php echo $slideMenu['3.' . $i]; ?>"

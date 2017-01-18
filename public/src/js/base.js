@@ -7,6 +7,12 @@ $(document).ready(function(){
         }
     });
     
+    $('.picker').click(function(e){
+        e.preventDefault();
+        $('.picks, .13-buttons').addClass('hide');
+        $($(this).data('target')).removeClass('hide');
+    });
+    
     
     $('.choice').click(function(){
         $('.choice-text').hide();

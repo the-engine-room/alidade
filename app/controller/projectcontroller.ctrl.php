@@ -59,6 +59,7 @@
                 
                 $this->set('inProcess', true);
                 
+                
                 if(!isset($_SESSION['plan']) || $cur === '1.1'){
                     $_SESSION['plan'] = array();
                     // $_SESSION['project'] = null;
