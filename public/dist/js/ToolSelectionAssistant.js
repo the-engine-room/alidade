@@ -1,4 +1,12 @@
+function doYouSeeMe(selector){
+  var y = $(selector).position().top;
+  var windowY = $(window).scrollTop();
+  return y > windowY && y < windowY + $(window).height();
+}
+
 $(document).ready(function(){
+
+   $('#slide-sidebar').css({ 'height': $('#slide-content').outerHeight() + 50 });
     
     /** Set arrowheads for the sidebar **/
     $('.step ul li a').each(function(){
@@ -11,6 +19,7 @@ $(document).ready(function(){
         e.preventDefault();
         $('.picks, .13-buttons').addClass('hide');
         $($(this).data('target')).removeClass('hide');
+        $('input[name="extra"]').val($(this).data('target'));
     });
     
     
@@ -55,10 +64,18 @@ $(document).ready(function(){
     
     $('.saveAnswer').submit(function(e){
         e.preventDefault();
-        var vals = {
-            slide:  $(this).find('#slide').val(),
-            answer: $(this).find('#answer').val()
-        };
+        var vals = { slide: null, answer: [] };
+        vals.slide = $(this).find('#slide').val();
+        
+        if($('.answer').length > 0 ) {
+            $('.answer').each( function(index) {
+                vals.answer[index] = $(this).val();
+            });
+        }
+        else {
+            vals.answer = $(this).find('#answer').val();     
+        }
+       
         
         $.post(
             '/ajax/save_answer',
@@ -68,7 +85,19 @@ $(document).ready(function(){
                     // hide modal
                     $('.editPrevAnswer').modal('toggle');
                     // refresh content box
-                    $('#answerBox').html(vals.answer);
+                    // check if the answers are an array
+                    if(typeof vals.answer == 'object'){
+                        var r = '<ul>';
+                        vals.answer.forEach(function(i){
+                            r = r + '<li>' + i + '</li>';
+                        });
+                        r = r + '</ul>';
+                        $('#answerBox').html(r);    
+                    }
+                    else {
+                        $('#answerBox').html(vals.answer);    
+                    }
+                    
                 }
                 else {
                     $('.editAnswer .modal-body').prepend(

@@ -27,8 +27,8 @@
             
             <ul>
                 <li><strong>[--answer--]</strong><br />This is used as a placeholder for the textarea in the slide contents. </li>
+                <li><strong>[--multiple-answer-counter--]</strong><br />This is used as a placeholder for multiple textareas in the slide contents. Note that "counter" must be a growing digit (starting at 0) and must be different for every placeholder. Also note that this functionality is currently supported exclusively for slides 3.2, 4.2 and 4.5</li>
                 <li><strong>[--prev|step.slide--]</strong><br />This will print a box with the answer from the slide you select with a link to edit that answer. An example can be: [--prev|1.4--]. This would print a box with the answer from slide number 4 of step 1. </li>
-                <li><strong>[--start-sidebar--]</strong><br />All content <em><strong>below</strong></em> this placeholder will be placed in the right sidebar.</li>
                 <li>
                     <strong>[--box|type--]content[--endbox--]</strong><br />You can create boxes that can go pretty much everywhere you want. Supported values for <em>type</em> are:
                     <ul>

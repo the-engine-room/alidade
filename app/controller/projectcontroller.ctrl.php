@@ -2,6 +2,8 @@
     
     class Projectcontroller extends Controller {
         
+        var $multiSlides = array( '3.2', '4.2', '4.5' );
+        
         public function start(){
             $Auth = new Auth($url);
             if(!$Auth->isLoggedIn()){
@@ -27,7 +29,7 @@
                     if(is_numeric($idproject)) { 
                     
                         $_SESSION['project'] = $idproject;
-                        header('Location: /project/slide/1.1');
+                        header('Location: /project/slide/1.0');
                     
                     }
                 }
@@ -38,12 +40,7 @@
             }
         }
         
-        
-        
-        
-        
         /** urls are in the form of /project/slide/1.2 **/
-        
         public function slide($cur){
             
             $Auth = new Auth($url);
@@ -56,13 +53,12 @@
                 $user = $Auth->getProfile();
                 $this->set('user', $user);
                 $this->set('userRole', $user->role);
-                
+                $this->set('multiSlides', $this->multiSlides);
                 $this->set('inProcess', true);
                 
                 
                 if(!isset($_SESSION['plan']) || $cur === '1.1'){
                     $_SESSION['plan'] = array();
-                    // $_SESSION['project'] = null;
                     $project = $_SESSION['project'];
                 }
                 
@@ -72,8 +68,7 @@
                 $slide_no   = (int)$position[1];
                 
                 $Slide = new Slide;
-                $Slidelist = new Slidelist;
-                
+                $Slidelist = new Slidelist;                
                 
                 $slidelist = $Slidelist->getList();
                 
@@ -104,11 +99,7 @@
                 
                 $nextSlide = $slideIndex['fullIndex'][array_search($cur, $slideIndex['fullIndex'], true) + 1];
                 $prevSlide = $slideIndex['fullIndex'][array_search($cur, $slideIndex['fullIndex'], true) - 1];                
-                /*
-                echo $cur; 
-                echo array_search($cur, $slideIndex['fullIndex']) + 1;
-                dbga($slideIndex);
-                */
+                
                 
                 $this->set('nextSlide', $nextSlide);
                 $this->set('prevSlide', $prevSlide);
@@ -149,10 +140,9 @@
                 if(isset($_POST) && !empty($_POST)){
                     
                     $_SESSION['plan'][$_POST['current_slide']] = $_POST;
-                    
+                                        
                     $slide_position = explode('.', $_POST['current_slide']);
-                    
-                    
+                                        
                     $slide = array();
                     $slide['project'] = $_SESSION['project'];
                     $slide['step'] = $slide_position[0];
@@ -161,8 +151,18 @@
                     $slide['choice'] = (!empty($_POST['choice']) ? $_POST['choice'] : null);
                     $slide['extra'] = (!empty($_POST['extra']) ? $_POST['extra'] : null);
                     
+                    if($_POST['current_slide'] == '1.3'){
+                        // special slide with multiple answer boxes
+                        $extra = filter_var($_POST['extra'], FILTER_SANITIZE_SPECIAL_CHARS);
+                        $answer = ( $extra == '#pick-1' ? $_POST['a'] : $_POST['b'] );
+                        $answer = implode('##break## ', $answer);
+                    }
+                    // do that for the other multifields too
+                    elseif(in_array($_POST['current_slide'], $this->multiSlides)){
+                        $answer = implode('##break## ', $_POST['answer']);
+                    }
                     //Parse Answers
-                    if(is_array($_POST['answer'])){
+                    elseif(is_array($_POST['answer'])){
                         $answer = array_filter($_POST['answer']);
                         
                         // implode checkboxes in step 4.2
@@ -176,6 +176,7 @@
                     else {
                         $answer = $_POST['answer'];
                     }
+                    
                     $slide['answer'] = $answer;
                     
                     // creating or updating ?
@@ -212,6 +213,10 @@
                             }
                         }
                     }
+                    
+                    
+                    
+                    
                 }
                 
               

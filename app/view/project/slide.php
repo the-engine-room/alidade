@@ -9,18 +9,25 @@
 <div class="container-fluid" id="slide-page">
     <div class="row slide-container">
         <div class="col-md-2 col-sm-4 hidden-xs" id="slide-sidebar">
-            <?php include('sidebar.php'); ?>            
+            
+            <?php include('sidebar.php'); ?>
+            
         </div>
         <div class="col-md-10 col-sm-8 col-xs-12" id="slide-content">
             <?php
             if($currentSlide == '1.3'){
-                
+                if(!empty($origin->answer) && !empty($origin->extra) ) {
+                    $extra = !empty($origin->extra) ? $origin->extra : '';
+                    $answer = explode('##break##', $origin->answer);
+                    $answer = array_map('trim', $answer);
+                }
                 
                 if(!empty($backSlide)) { 
                 ?>
             <a class="back-link" href="/project/slide/<?php echo $backKey; ?>/?p=<?php echo $hash; ?>&edit"><i class="fa fa-chevron-left"></i> BACK: <?php echo $backSlide; ?></a>
             <?php } ?>
             <h1><?php echo $currentSlide . ' ' . $slide->title; ?></h1>
+            
             <form action="/project/slide/<?php echo $nextSlide . '/?p=' . $projecthash ; ?> " method="post">
                 <input type="hidden" name="current_slide"  value="<?php echo $currentSlide; ?>">
                 <input type="hidden" name="current_project" value="<?php echo $_SESSION['project']; ?>">
@@ -29,13 +36,14 @@
                 <input type="hidden" name="slide_update" value="<?php echo $_SESSION['project']; ?>">
                 <?php } if(isset($edit) && $edit == true ) { ?>
                 <input type="hidden" name="edit" value="true">
-                <?php } ?>  
+                <?php } ?>
+                <input type="hidden" name="extra" value="<?php echo(!empty($extra) ? $extra : ''); ?>">
                 <div class="row">
                     <div class="col-md-7">
                         <p>This is a very important part of the process. If you think deeply now about your users, you will be more likely to choose a tool that is a great fit for everyone.</p>
                         <p>You will need to do different kinds of research depending on whether your users are inside or outside your organisation.</p>
                         
-                        <div class="13-buttons">
+                        <div class="13-buttons <?php echo (isset($extra) ? 'hide' : ''); ?>">
                             <p>Choose one of the following options:</p>
                             <a href="#" class="btn btn-alidade btn-lg picker" data-target="#pick-1">People in our organisation</a> or <a href="#" class="btn btn-alidade btn-lg picker" data-target="#pick-2">People outside our organisation</a>    
                         </div>
@@ -51,7 +59,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row hide picks" id="pick-1">
+                <div class="row <?php echo ((isset($extra) && $extra == '#pick-2') ? 'hide' : ''); ?> picks" id="pick-1">
                     <div class="col-md-7">
                         <h3>We only need people in our organisation to use the tool.</h3>
                         <p><small>Wait! I changed my mind. <a href="#" class="picker" data-target="#pick-2">We want people putside our organisation to use the tool.</a></small></p>
@@ -61,7 +69,7 @@
                     <div class="col-md-7">
                         <p><strong>1. Describe the people that will use the tool</strong><br />
                         List any people or groups that you hope will use the tool.</p>
-                        <textarea id="13-a1" name="13-a1" class="form-control" rows="8"></textarea>
+                        <textarea id="13-a1" name="a[1]" class="form-control" rows="8"><?php echo ((isset($extra) && $extra == '#pick-1') ? $answer[0] : ''); ?></textarea>
                     </div>
                     <div class="col-md-5">
                         <div class="box box-tips">
@@ -79,7 +87,7 @@
                     <div class="col-md-7">
                         <p><strong>2. How are your potential users approaching the issue now?</strong><br />
                         Are any of them already using an existing tool effectively?</p>
-                        <textarea id="13-a2" name="13-a2" class="form-control" rows="8"></textarea>
+                        <textarea id="13-a2" name="a[2]" class="form-control" rows="8"><?php echo ((isset($extra) && $extra == '#pick-1') ? $answer[1] : ''); ?></textarea>
                     </div>
                     <div class="col-md-5">                        
                     </div>
@@ -94,7 +102,7 @@
                             <li>Are there costs involved, and can they afford them?</li> 
                         </ul>
                         <p>There may be other questions that are worth asking in your organization. Take your time to write them down.</p>
-                        <textarea id="13-a3" name="13-a3" class="form-control" rows="8"></textarea>
+                        <textarea id="13-a3" name="a[3]" class="form-control" rows="8"><?php echo ((isset($extra) && $extra == '#pick-1') ? $answer[2] : ''); ?></textarea>
                     </div>
                     <div class="col-md-5">
                         <div class="box box-tips">
@@ -108,10 +116,16 @@
                             Maybe something else would work better for your organization. Take time and find the best solution.}
                         </div>
                     </div>
+                    
+                    <div class="col-md-12">
+                        <?php if(!is_null($nextSlide) && !empty($nextSlide)) { ?>
+                        <button type="submit" class="btn btn-alidade btn-lg">NEXT: <?php echo $slideMenu[$nextSlide]; ?></button>
+                        <?php } ?>
+                    </div>
                 </div>
                 
                 
-                <div class="row hide picks" id="pick-2">
+                <div class="row <?php echo ((isset($extra) && $extra == '#pick-1') ? 'hide' : ''); ?>  picks" id="pick-2">
                     
                     <div class="col-md-7">
                         <h3>We want people outside our organisation to use the tool.</h3>
@@ -127,7 +141,7 @@
                         Write a profile of your intended user. Pretend you are describing them to someone who knows nothing about them.</p>
                         
                         <p>There may be other questions that are worth asking in your organization. Take your time to write them down.</p>
-                        <textarea id="13-b1" name="13-b1" class="form-control" rows="8"></textarea>
+                        <textarea id="13-b1" name="b[1]" class="form-control" rows="8"><?php echo ((isset($extra) && $extra == '#pick-2') ? $answer[0] : ''); ?></textarea>
                     </div>
                     <div class="col-md-5">
                         <div class="box box-example">
@@ -162,7 +176,7 @@
                         <p><strong>2. Why would they want to use your tool? What will they get out of it?</strong><br />
                         Write why you think your users would be interested in the tool. <br />
                         This means making assumptions. You will check them later in Step 3. </p>
-                        <textarea id="13-b2" name="13-b2" class="form-control" rows="8"></textarea>
+                        <textarea id="13-b2" name="b[2]" class="form-control" rows="8"><?php echo ((isset($extra) && $extra == '#pick-2') ? $answer[1] : ''); ?></textarea>
                     </div>
                     <div class="col-md-5">
                         <div class="box box-example">
@@ -185,7 +199,7 @@
                             <li>What are the main methods your typical member uses to achieve this? </li>
                             <li>Do they prefer to use particular tools for some activities, and different tools (like email) for others? Find out why.</li>
                         </ul>
-                        <textarea id="13-b3" name="13-b3" class="form-control" rows="8"></textarea>
+                        <textarea id="13-b3" name="b[3]" class="form-control" rows="8"><?php echo ((isset($extra) && $extra == '#pick-2') ? $answer[2] : ''); ?></textarea>
                     </div>
                     <div class="col-md-5">
                         <div class="box box-example">
@@ -215,7 +229,7 @@
                         <p>
                         There may be other questions that are worth asking for your target user. Take your time to write them down.
                         </p>
-                        <textarea id="13-b4" name="13-b4" class="form-control" rows="8"></textarea>
+                        <textarea id="13-b4" name="b[4]" class="form-control" rows="8"><?php echo ((isset($extra) && $extra == '#pick-2') ? $answer[3] : ''); ?></textarea>
                     </div>
                     <div class="col-md-5">
                         <div class="box box-example">
@@ -236,7 +250,11 @@
                             Other options may work best for your organization. Take time and find the best.
                         </div>
                     </div>
-                    
+                    <div class="col-md-12">
+                        <?php if(!is_null($nextSlide) && !empty($nextSlide)) { ?>
+                        <button type="submit" class="btn btn-alidade btn-lg">NEXT: <?php echo $slideMenu[$nextSlide]; ?></button>
+                        <?php } ?>
+                    </div>
                 </div>
                 
                 
@@ -246,12 +264,7 @@
             ?>
             <div class="row">
                 <div class="col-md-10 col-sm-8 col-xs-12">
-                    
-                    
-                    <?php
-                        if(!empty($backSlide)) { 
-                    ?>
-                    
+                    <?php if(!empty($backSlide)) { ?>
                     <a class="back-link" href="/project/slide/<?php echo $backKey; ?>/?p=<?php echo $hash; ?>&edit"><i class="fa fa-chevron-left"></i> BACK: <?php echo $backSlide; ?></a>
                     <?php } ?>
                     <h1><?php echo $currentSlide . ' ' . $slide->title; ?></h1>
@@ -281,24 +294,31 @@
                         
                         $prevAnswer = injectPrevAnswer($text);
                         if($prevAnswer){
+                            
                             $text = $prevAnswer['content'];
                         }
                         
-                        switch($slide->slide_type){
-                            case 1:
-                                echo $text;
-                                break;
-                            case 2:
-                                echo injectAnswerField($text, 'answer', $origin);
-                                break;
-                            case 3:
-                                echo injectAnswerField($text, 'answer', $origin);
-                                break;
-                            default:
-                                $text = injectParam($text, 'project', $_SESSION['project']);
-                                $text = injectParam($text, 'step', $step_number);
-                                echo $text;
-                                break;
+                        // multiple answer slides
+                        if( in_array( $currentSlide, $multiSlides )){
+                            echo injectMultipleAnswerField($text, 'answer', $origin); 
+                        }
+                        else { 
+                            switch($slide->slide_type){
+                                case 1:
+                                    echo $text;
+                                    break;
+                                case 2:
+                                    echo injectAnswerField($text, 'answer', $origin);
+                                    break;
+                                case 3:
+                                    echo injectAnswerField($text, 'answer', $origin);
+                                    break;
+                                default:
+                                    $text = injectParam($text, 'project', $_SESSION['project']);
+                                    $text = injectParam($text, 'step', $step_number);
+                                    echo $text;
+                                    break;
+                            }
                         }
                         ?>
                         <div class="row" id="slide-buttons">
@@ -349,7 +369,17 @@ if ($prevAnswer) {
             <div class="modal-body">
                 <input type="hidden" name="id" id="slide" value="<?php echo $prevAnswer['slide']->idslides; ?>">
                 <div class="form-group">
-                    <textarea class="form-control" rows="8" id="answer" name="answer"><?php echo $prevAnswer['slide']->answer; ?></textarea>    
+                    <?php
+                    if($prevAnswer['multi'] == true){
+                        $parts = array_map('trim', explode('##break##', $prevAnswer['slide']->answer));
+                        foreach($parts as $i => $part){
+                    ?>
+                        <textarea class="form-control answer" rows="8" id="answer-<?php echo $i; ?>" name="answer[<?php echo $i; ?>]"><?php echo $part; ?></textarea>
+                    <?php
+                        } 
+                    } else { ?>
+                    <textarea class="form-control" rows="8" id="answer" name="answer"><?php echo $prevAnswer['slide']->answer; ?></textarea>
+                    <?php } ?>
                 </div>
             
             </div>

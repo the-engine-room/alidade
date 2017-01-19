@@ -7,9 +7,10 @@ $piece = ($inTour ? 'tour' : 'slide');
 ?>
 
 
+
     <div class="step step1 <?php echo ($currs[0] == 1 ? '' : 'hidden-xs'); ?>">
 		<header>
-			<h3>STEP 1</h3>
+			<h3><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 1, 0); ?>" href="/project/<?php echo $piece; ?>/1.0<?php echo (!is_null($hash) ? '/?p=' . $hash : ''); ?>">STEP 1</a></h3>
 		</header>
 		<ul>
 			<?php for($i = 1; $i < 5; $i++){ ?>
@@ -27,7 +28,7 @@ $piece = ($inTour ? 'tour' : 'slide');
     </div>
     <div class="step step2 <?php echo ($currs[0] == 2 ? '' : 'hidden-xs'); ?>">
         <header>
-			<h3>STEP 2</h3>
+			<h3><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 2, 0); ?>" href="/project/<?php echo $piece; ?>/2.0<?php echo (!is_null($hash) ? '/?p=' . $hash : ''); ?>">STEP 2</a></h3>
 		</header>
 		<ul>
 			<?php for($i = 1; $i < 8; $i++){ ?>
@@ -45,7 +46,7 @@ $piece = ($inTour ? 'tour' : 'slide');
     </div>
     <div class="step step3 <?php echo ($currs[0] == 3 ? '' : 'hidden-xs'); ?>">
 		<header>
-			<h3>STEP 3</h3>
+			<h3><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 3, 0); ?>" href="/project/<?php echo $piece; ?>/3.0<?php echo (!is_null($hash) ? '/?p=' . $hash : ''); ?>">STEP 3</a></h3>
 		</header>
 		<ul>
 			<?php for($i = 1; $i < 6; $i++){ ?>
@@ -61,29 +62,24 @@ $piece = ($inTour ? 'tour' : 'slide');
 			<?php } ?>
 		</ul>
     </div>
-<?php /* 
-    <div class="step step4 <?php echo ($currs[0] == 4 ? '' : 'hidden-xs'); ?>">
-        <div class="slides hidden-xs">
-            <?php ?>
-            <ul>
-                <li><a title="<?php echo $slideMenu['4.1']; ?>" class="slide <?php echo checkSlidePosition($step_number, $slide_number, 4, 1); ?>" href="/project/<?php echo $piece; ?>/4.1<?php echo (!is_null($hash) ? '/?p=' . $hash : ''); ?>&edit"><span class="sr-only">slide name</span></a></li>
-                <li><a title="<?php echo $slideMenu['4.2']; ?>" class="slide <?php echo checkSlidePosition($step_number, $slide_number, 4, 2); ?>" href="/project/<?php echo $piece; ?>/4.2<?php echo (!is_null($hash) ? '/?p=' . $hash : ''); ?>&edit"><span class="sr-only">slide name</span></a></li>
-                <li><a title="<?php echo $slideMenu['4.3']; ?>" class="slide <?php echo checkSlidePosition($step_number, $slide_number, 4, 3); ?>" href="/project/<?php echo $piece; ?>/4.3<?php echo (!is_null($hash) ? '/?p=' . $hash : ''); ?>&edit"><span class="sr-only">slide name</span></a></li>
-                <li><a title="<?php echo $slideMenu['4.4']; ?>" class="slide <?php echo checkSlidePosition($step_number, $slide_number, 4, 4); ?>" href="/project/<?php echo $piece; ?>/4.4<?php echo (!is_null($hash) ? '/?p=' . $hash : ''); ?>&edit"><span class="sr-only">slide name</span></a></li>
-                <li><a title="<?php echo $slideMenu['4.5']; ?>" class="slide <?php echo checkSlidePosition($step_number, $slide_number, 4, 5); ?>" href="/project/<?php echo $piece; ?>/4.5<?php echo (!is_null($hash) ? '/?p=' . $hash : ''); ?>&edit"><span class="sr-only">slide name</span></a></li>
-                <li><a title="<?php echo $slideMenu['4.6']; ?>" class="slide <?php echo checkSlidePosition($step_number, $slide_number, 4, 6); ?>" href="/project/<?php echo $piece; ?>/4.6<?php echo (!is_null($hash) ? '/?p=' . $hash : ''); ?>&edit"><span class="sr-only">slide name</span></a></li>
-                <li><a title="<?php echo $slideMenu['4.7']; ?>" class="slide <?php echo checkSlidePosition($step_number, $slide_number, 4, 7); ?>" href="/project/<?php echo $piece; ?>/4.7<?php echo (!is_null($hash) ? '/?p=' . $hash : ''); ?>&edit"><span class="sr-only">slide name</span></a></li>
-                <li><a title="<?php echo $slideMenu['4.8']; ?>" class="slide <?php echo checkSlidePosition($step_number, $slide_number, 4, 8); ?>" href="/project/<?php echo $piece; ?>/4.8<?php echo (!is_null($hash) ? '/?p=' . $hash : ''); ?>&edit"><span class="sr-only">slide name</span></a></li>
-                <li><a title="<?php echo $slideMenu['4.9']; ?>" class="slide <?php echo checkSlidePosition($step_number, $slide_number, 4, 9); ?>" href="/project/<?php echo $piece; ?>/4.9<?php echo (!is_null($hash) ? '/?p=' . $hash : ''); ?>&edit"><span class="sr-only">slide name</span></a></li>
-                <li><a title="<?php echo $slideMenu['4.10']; ?>" class="slide <?php echo checkSlidePosition($step_number, $slide_number, 4, 10); ?>" href="/project/<?php echo $piece; ?>/4.10<?php echo (!is_null($hash) ? '/?p=' . $hash : ''); ?>&edit"><span class="sr-only">slide name</span></a></li>
-            </ul>
-        </div>
-        <span class="title">4. Find a partner:</span>
-        <span class="percentage"><?php echo (($currs[0] == 4 ? $currs[1] : ( $currs[0] > 4 ? count($slideindex[4]) : 0 ))  . '/' . count($slideindex[4])); ?></span>
+	<div class="step step4 <?php echo ($currs[0] == 4 ? '' : 'hidden-xs'); ?>">
+		<header>
+			<h3><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 4, 0); ?>" href="/project/<?php echo $piece; ?>/4.0<?php echo (!is_null($hash) ? '/?p=' . $hash : ''); ?>">STEP 4</a></h3>
+		</header>
+		<ul>
+			<?php for($i = 1; $i < 9; $i++){ ?>
+			<li>
+				<a
+				   title="<?php echo $slideMenu['4.' . $i]; ?>"
+				   class="slide <?php echo checkSlidePosition($step_number, $slide_number, 4, $i); ?>"
+				   href="/project/<?php echo $piece; ?>/4.<?php echo $i; ?><?php echo (!is_null($hash) ? '/?p=' . $hash : ''); ?>&edit"
+				>
+					<?php echo $slideMenu['4.' . $i]; ?>
+				</a>
+			</li>
+			<?php } ?>
+		</ul>
     </div>
-*/ ?>
-
-
 
 
 

@@ -148,6 +148,25 @@
     function injectAnswerField($string, $name = 'answer', $origin = null){
         return str_replace('[--answer--]', '<textarea id="answer" name="'.$name.'" class="form-control" rows="8">' . (!is_null($origin) ? $origin->answer : '' ) . '</textarea>', $string);
     }
+    function injectMultipleAnswerField($string, $name = 'answer', $origin = null){
+        // get data from answer fields
+        $a = explode('##break##', $origin->answer);
+        $a = array_map('trim', $a);
+        
+        // match placeholders 
+        preg_match_all('/\[--multiple-answer-\d--]/', $string, $matches);
+        $matches = $matches[0];
+        
+        // cycle over matches and inject answer text
+        foreach($matches as $i => $match){
+            $string = str_replace(  '[--multiple-answer-' . $i . '--]',
+                                    '<textarea id="answer-'.$i.'" name="'.$name.'['.$i.']" class="form-control" rows="8">' . ( isset($a[$i]) ? $a[$i] : '' ) . '</textarea>',
+                                    $string );
+        }
+        
+        //return htmled string
+        return $string;
+    }
     
     function injectParam($string, $param, $value){
         return str_replace('[--'.$param.'--]', $value, $string);        
@@ -166,11 +185,22 @@
             $Slides = new Slide;
             $hash = filter_var($_GET['p'], FILTER_SANITIZE_SPECIAL_CHARS);
             $slide = $Slides->findPreviousAnswer($hash, $step, $slide);
+            // if the answer had multi texts, manage that
+            if(preg_match('/##break##/', $slide->answer) !== false){
+                $parts = explode('##break##', $slide->answer);
+                $text = '<ul><li>' . implode('</li><li>', $parts) . '</li></ul>';
+                $multi = true;
+            }
+            else {
+                $text = nl2br($slide->answer);
+                $multi = false;
+            }
             
-            $previous = "<div class=\"previous-answer\"><h3>" . $slide->step . "." . $slide->slide . " "  . $slide->title . "</h3><p id=\"answerBox\">" . nl2br($slide->answer) . "</p><a href=\"#\" class=\"prev-answer\" data-toggle=\"modal\" data-target=\".editPrevAnswer\">I need to change this answer.</a></div>";    
+            $previous = "<div class=\"previous-answer box box-answer\"><h3>" . $slide->step . "." . $slide->slide . " "  . $slide->title . "</h3><div id=\"answerBox\">" . $text . "</div><a href=\"#\" class=\"prev-answer\" data-toggle=\"modal\" data-target=\".editPrevAnswer\">I need to change this answer.</a></div>";    
             
             $string = str_replace($matches[0], $previous, $string);
-            return array('content' => $string, 'slide' => $slide);
+            
+            return array( 'content' => $string, 'slide' => $slide, 'multi' => $multi );
         }
         else {
             return false;

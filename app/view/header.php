@@ -40,7 +40,7 @@
 
 
 <div class="container-fluid">
-	<header class="row">
+	<header class="row" id="app-header">
 		<div class="col-md-8 col-sm-6 col-xs-4"><h1>Alidade</h1></div>
 		<div class="col-md-4 col-sm-6 col-xs-8">
 			<?php if(isset($_SESSION[APPNAME][SESSIONKEY]) && !empty($_SESSION[APPNAME][SESSIONKEY])) { ?>

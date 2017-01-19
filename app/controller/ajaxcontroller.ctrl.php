@@ -91,8 +91,12 @@
                     $Slide = new Slide;
                     
                     $id = filter_var($_POST['slide'], FILTER_SANITIZE_NUMBER_INT);
-                    $answer = filter_var($_POST['answer'], FILTER_SANITIZE_SPECIAL_CHARS);
-                    
+                    if(is_array($_POST['answer'])){
+                        $answer = implode('##break## ', filter_var_array($_POST['answer'], FILTER_SANITIZE_SPECIAL_CHARS));
+                    }
+                    else {
+                        $answer = filter_var($_POST['answer'], FILTER_SANITIZE_SPECIAL_CHARS);    
+                    }
                     
                     $slide = $Slide->find(array('idslides' => $id));
                     $slide = $slide[0];

@@ -6,12 +6,44 @@
 		margin: 0px -15px;
 		h3 {
 			font-size: 13px;
-			color: @white;
-			background: @sidebar-header url('/assets/images/pointer.png') no-repeat 30px center;
-			display: block; 
-			padding-left: 50px;
+			color: @white;			
+			display: block; 			
 			margin: 0px;
 			line-height: 34px;
+			position: relative; 
+			clear: none; 
+			a {
+				color: @white;
+				padding-left: 50px;
+				display: block;
+				background: @sidebar-header url('/assets/images/pointer.png') no-repeat 30px center;
+				&:hover {
+					background-color: @sidebar-hover; 
+					&:after {
+						content: '';
+						position: absolute;
+						right: -34px;
+						top: 0;
+						width: 0;
+						height: 0;
+						border: 17px solid;
+						border-color: transparent transparent transparent @sidebar-hover;							
+					}
+				}
+				&.working {
+					background: @sidebar-active url('/assets/images/pointer.png') no-repeat 30px center;
+					&:after {
+						content: '';
+						position: absolute;
+						right: -34px;
+						top: 0;
+						width: 0;
+						height: 0;
+						border: 17px solid;
+						border-color: transparent transparent transparent @sidebar-active;							
+					}
+				}
+			}
 		}
 		ul {
 			margin: 0px;
