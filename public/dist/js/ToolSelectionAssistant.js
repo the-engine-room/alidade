@@ -6,7 +6,7 @@ function doYouSeeMe(selector){
 
 $(document).ready(function(){
 
-   $('#slide-sidebar').css({ 'height': $('#slide-content').outerHeight() + 50 });
+    $('#slide-sidebar').css({ 'min-height': $('#slide-content').outerHeight() + 50 });
     
     /** Set arrowheads for the sidebar **/
     $('.step ul li a').each(function(){
