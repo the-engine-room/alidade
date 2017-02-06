@@ -21,6 +21,7 @@ $(document).ready(function(){
     });
 
 
+
     $('.choice').click(function(){
         $('.choice-text').hide();
         var $target = $('#' + $(this).attr('id') + '-text');
@@ -34,6 +35,35 @@ $(document).ready(function(){
         });
     }
 
+    /** check checkboxes on checkbox pages **/
+    if( $('input[type="checkbox"]').length > 0 ){
+      var selection = $('#extra-holder').val().split(';');
+      for( i = 0; i < selection.length; i++ ){
+        $('input[type="checkbox"]#r-' + selection[i]).prop('checked', true);;
+      }
+    }
+
+    /** display/hide textareas in slide 4.2 depending on slide 4.1 **/
+    if( $('#preselected').length > 0 ){
+      // get selected options
+      var selection = $('#preselected').val().split(';');
+      $('.answer-wrapper').addClass('hide');
+      for (i = 0; i <= selection.length; i++){
+        var v = selection[i];
+        if(v == 1 || v == 4){
+          $('.answer-1').removeClass('hide').addClass('show');
+        }
+        else if (v == 5 || v == 6) {
+          $('.answer-4').removeClass('hide').addClass('show');
+        }
+        else if ( v == 2) {
+          $('.answer-2').removeClass('hide').addClass('show');
+        }
+        else if ( v == 3) {
+          $('.answer-3').removeClass('hide').addClass('show');
+        }
+      }
+    }
 
     $('.ajx.project-name').submit(function(e){
         e.preventDefault();

@@ -176,6 +176,14 @@
                         $answer = $_POST['answer'];
                     }
 
+                    /** Slide 4.1 has options instead of radios **/
+                    if($_POST['current_slide'] == '4.1'){
+                        $options = array_keys($_POST['option']);
+                        $slide['extra'] = implode(';', $options);
+                        $answer = '';
+                        $this->set('selection', $options);
+                    }
+
                     $slide['answer'] = $answer;
 
                     // creating or updating ?
@@ -213,7 +221,7 @@
                         }
                     }
                 }
-                
+
                 /** Conditional Logic bits **/
                 // Skip a slide if user does not select "New tool" on 2.5
                 if(isset($_POST) && !empty($_POST)){

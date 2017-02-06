@@ -6,7 +6,7 @@
     $backSlide = prev($slideListMenu);
     $backKey = key($slideListMenu);
 ?>
-<div class="container-fluid" id="slide-page">
+<div class="container-fluid slide-<?php echo $currentSlide; ?> step-<?php echo substr($currentSlide, 0, 1); ?> " id="slide-page" >
     <div class="row slide-container">
         <div class="col-md-2 col-sm-4 hidden-xs" id="slide-sidebar">
             <?php include('sidebar.php'); ?>
@@ -276,6 +276,14 @@
                     <form action="/project/slide/<?php echo $nextSlide . '/?p=' . $projecthash ; ?> " method="post">
                         <input type="hidden" name="current_slide"  value="<?php echo $currentSlide; ?>">
                         <input type="hidden" name="current_project" value="<?php echo $_SESSION['project']; ?>">
+                        <input type="hidden" id="extra-holder" value="<?php echo $origin->extra; ?>">
+                        <?php
+                        /** check for preselected options in slide 4.2 **/
+                        if($currentSlide == '4.2') {
+                            $selection = implode(';', $selection);
+                        ?>
+                        <input type="hidden" name="preselected" id="preselected" value="<?php echo $selection; ?>">
+                        <?php } ?>
 
                         <?php
 
