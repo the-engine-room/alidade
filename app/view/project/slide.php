@@ -1,5 +1,5 @@
 <?php
-    $origin = !isset($original) ? null : $original[0]; 
+    $origin = !isset($original) ? null : $original[0];
     $slideListMenu = $slideMenu;
     reset($slideListMenu);
     while(key($slideListMenu) != $currentSlide ) { next($slideListMenu); }
@@ -9,9 +9,7 @@
 <div class="container-fluid" id="slide-page">
     <div class="row slide-container">
         <div class="col-md-2 col-sm-4 hidden-xs" id="slide-sidebar">
-            
             <?php include('sidebar.php'); ?>
-            
         </div>
         <div class="col-md-10 col-sm-8 col-xs-12" id="slide-content">
             <?php
@@ -21,31 +19,31 @@
                     $answer = explode('##break##', $origin->answer);
                     $answer = array_map('trim', $answer);
                 }
-                
-                if(!empty($backSlide)) { 
+
+                if(!empty($backSlide)) {
                 ?>
             <a class="back-link" href="/project/slide/<?php echo $backKey; ?>/?p=<?php echo $hash; ?>&edit"><i class="fa fa-chevron-left"></i> BACK: <?php echo $backSlide; ?></a>
             <?php } ?>
             <h1><?php echo $currentSlide . ' ' . $slide->title; ?></h1>
-            
+
             <form action="/project/slide/<?php echo $nextSlide . '/?p=' . $projecthash ; ?> " method="post">
                 <input type="hidden" name="current_slide"  value="<?php echo $currentSlide; ?>">
                 <input type="hidden" name="current_project" value="<?php echo $_SESSION['project']; ?>">
-                
+
                 <?php if(!is_null($original)) { ?>
                 <input type="hidden" name="slide_update" value="<?php echo $_SESSION['project']; ?>">
                 <?php } if(isset($edit) && $edit == true ) { ?>
                 <input type="hidden" name="edit" value="true">
                 <?php } ?>
-                <input type="hidden" name="extra" value="<?php echo(!empty($extra) ? $extra : ''); ?>">
+                <input type="hidden" name="extra" value="<?php echo(!empty($extra) ? $extra : 'no'); ?>" id="extra13">
                 <div class="row">
                     <div class="col-md-7">
                         <p>This is a very important part of the process. If you think deeply now about your users, you will be more likely to choose a tool that is a great fit for everyone.</p>
                         <p>You will need to do different kinds of research depending on whether your users are inside or outside your organisation.</p>
-                        
+
                         <div class="13-buttons <?php echo (isset($extra) ? 'hide' : ''); ?>">
                             <p>Choose one of the following options:</p>
-                            <a href="#" class="btn btn-alidade btn-lg picker" data-target="#pick-1">People in our organisation</a> or <a href="#" class="btn btn-alidade btn-lg picker" data-target="#pick-2">People outside our organisation</a>    
+                            <a href="#" class="btn btn-alidade btn-lg picker" data-target="#pick-1">People in our organisation</a> or <a href="#" class="btn btn-alidade btn-lg picker" data-target="#pick-2">People outside our organisation</a>
                         </div>
                     </div>
                     <div class="col-md-5">
@@ -62,10 +60,10 @@
                 <div class="row <?php echo ((isset($extra) && $extra == '#pick-2') ? 'hide' : ''); ?> picks" id="pick-1">
                     <div class="col-md-7">
                         <h3>We only need people in our organisation to use the tool.</h3>
-                        <p><small>Wait! I changed my mind. <a href="#" class="picker" data-target="#pick-2">We want people putside our organisation to use the tool.</a></small></p>
+                        <p><small>Wait! I changed my mind. <a href="#" class="picker" data-target="#pick-2">We want people outside our organisation to use the tool.</a></small></p>
                     </div>
                     <div class="col-md-5"></div>
-                    
+
                     <div class="col-md-7">
                         <p><strong>1. Describe the people that will use the tool</strong><br />
                         List any people or groups that you hope will use the tool.</p>
@@ -83,15 +81,15 @@
                             </ul>
                         </div>
                     </div>
-                    
+
                     <div class="col-md-7">
                         <p><strong>2. How are your potential users approaching the issue now?</strong><br />
                         Are any of them already using an existing tool effectively?</p>
                         <textarea id="13-a2" name="a[2]" class="form-control" rows="8"><?php echo ((isset($extra) && $extra == '#pick-1') ? $answer[1] : ''); ?></textarea>
                     </div>
-                    <div class="col-md-5">                        
+                    <div class="col-md-5">
                     </div>
-                    
+
                     <div class="col-md-7">
                         <p><strong>3. Could anything prevent them from using a new tool?</strong><br />
                         Look for any issues that could stop people from using your tool. Thinking about this in advance will help you plan. <br />
@@ -99,7 +97,7 @@
                         <ul>
                             <li>Do they already think they need a tool, or will you have to persuade them to use it? </li>
                             <li>Do they have the technical skills they need? Will they have enough time to learn how a new tool works? </li>
-                            <li>Are there costs involved, and can they afford them?</li> 
+                            <li>Are there costs involved, and can they afford them?</li>
                         </ul>
                         <p>There may be other questions that are worth asking in your organization. Take your time to write them down.</p>
                         <textarea id="13-a3" name="a[3]" class="form-control" rows="8"><?php echo ((isset($extra) && $extra == '#pick-1') ? $answer[2] : ''); ?></textarea>
@@ -116,30 +114,30 @@
                             Maybe something else would work better for your organization. Take time and find the best solution.}
                         </div>
                     </div>
-                    
+
                     <div class="col-md-12">
                         <?php if(!is_null($nextSlide) && !empty($nextSlide)) { ?>
                         <button type="submit" class="btn btn-alidade btn-lg">NEXT: <?php echo $slideMenu[$nextSlide]; ?></button>
                         <?php } ?>
                     </div>
                 </div>
-                
-                
+
+
                 <div class="row <?php echo ((isset($extra) && $extra == '#pick-1') ? 'hide' : ''); ?>  picks" id="pick-2">
-                    
+
                     <div class="col-md-7">
                         <h3>We want people outside our organisation to use the tool.</h3>
                         <p><small>Wait! I changed my mind. <a href="#" class="picker" data-target="#pick-1">We need people inside our organisation to use the tool.</a></small></p>
                     </div>
                     <div class="col-md-5"></div>
-                    
+
                     <div class="col-md-7">
                         <p><strong>1. Describe your target audience</strong><br />
                         Write down what you already know about them. What do they have in common? <br />
                         Include demographic information such as age, location, occupation or gender, etc.<br />
                         If your user group contains many different types of people, break them down into sub-groups.<br />
                         Write a profile of your intended user. Pretend you are describing them to someone who knows nothing about them.</p>
-                        
+
                         <p>There may be other questions that are worth asking in your organization. Take your time to write them down.</p>
                         <textarea id="13-b1" name="b[1]" class="form-control" rows="8"><?php echo ((isset($extra) && $extra == '#pick-2') ? $answer[0] : ''); ?></textarea>
                     </div>
@@ -171,7 +169,7 @@
                             </ul>
                         </div>
                     </div>
-                    
+
                     <div class="col-md-7">
                         <p><strong>2. Why would they want to use your tool? What will they get out of it?</strong><br />
                         Write why you think your users would be interested in the tool. <br />
@@ -183,13 +181,13 @@
                             <h3>Example</h3>
                             We assume that our users will want to send feedback about a clinic they have used because they think it will improve the service they are given. We assume that they will be more likely to send feedback if they can use their phones to do so, because this will make it easier and cheaper for them.
                         </div>
-                        
+
                         <div class="box box-casestudy">
                             <h3>Case study</h3>
                             We decided to use Facebook in the project. Later, we found out that it was very popular only with white middle-class people, not the black, working-class communities the project was trying to reach.
                         </div>
                     </div>
-                    
+
                     <div class="col-md-7">
                         <p><strong>3. What technology tools does your target audience already use?</strong><br />
                         Some questions that might help:</p>
@@ -206,21 +204,21 @@
                             <h3>Example</h3>
                             Our typical user does not use internet-based messaging services like WhatsApp because mobile data is currently too expensive for them. They get information about politics through newspapers rather than the internet, and prefer to access information through their phone rather than a desktop computer. They use social media (mainly Facebook) for talking to friends several times a week, but do not use it for talking about other topics. They only rarely use email.
                         </div>
-                        
+
                         <div class="box box-casestudy">
                             <h3>Case study</h3>
                             "We expected, as everyone said, that everyone would use SMS. All the techies were crazy about it. Then when you really talk to [a person with a similar project] he says that 99% of the complaints came in by telephone, and 1% by SMS. That is a striking number. He says, 'well, you can be try to be as fancy as you want, but it does not work.'"
                         </div>
                     </div>
-                    
-                    
-                    
-                    
-                    
+
+
+
+
+
                     <div class="col-md-7">
                         <p><strong>4. Could anything prevent them from using a new tool?</strong><br />
                         Look for any issues that could stop people from using your tool. Thinking about this in advance will help you plan.<br />
-                        Here are some questions to help you start:</p> 
+                        Here are some questions to help you start:</p>
                         <ul>
                             <li>Do they already think they need a tool, or will you have to persuade them to use it? </li>
                             <li>Do they have the technical skills they need? Will they have enough time to learn how a new tool works? </li>
@@ -238,7 +236,7 @@
                             They might also be suspicious of us because similar initiatives often come to their area looking for participants but haven't told them about the results. So we'll have to be careful about how we introduce and market our project.<br />
                             People might not use the tool if it's too complicated, and we don't have enough the resources to train them, so we will have to test it with them to make sure that it's really easy to use.)
                         </div>
-                        
+
                         <div class="box box-tips">
                             <h3>tips</h3>
                             Be aware that not everyone will take a new tool to heart. Think how to engage people to increase use:
@@ -256,10 +254,10 @@
                         <?php } ?>
                     </div>
                 </div>
-                
-                
+
+
             </form>
-            <?php 
+            <?php
             } else {
             ?>
             <div class="row">
@@ -270,39 +268,39 @@
                     <h1><?php echo $currentSlide . ' ' . $slide->title; ?></h1>
                 </div>
             </div>
-            
+
             <div class="row">
                 <div class="col-md-7 col-sm-8 col-xs-12">
-                    
+
                     <?php /* <form action="/project/slide/<?php echo $nextSlide; ?><?php echo (!is_null($original) ? '/?p=' . $projecthash : ''); ?> " method="post"> */ ?>
                     <form action="/project/slide/<?php echo $nextSlide . '/?p=' . $projecthash ; ?> " method="post">
                         <input type="hidden" name="current_slide"  value="<?php echo $currentSlide; ?>">
                         <input type="hidden" name="current_project" value="<?php echo $_SESSION['project']; ?>">
-                        
+
                         <?php
-                        
+
                         if(!is_null($original)) { ?>
                         <input type="hidden" name="slide_update" value="<?php echo $_SESSION['project']; ?>">
                         <?php }
                         if(isset($edit) && $edit == true ) { ?>
                         <input type="hidden" name="edit" value="true">
                         <?php }
-                        
-                        
+
+
                         $boxes = injectBox($slide->description);
                         $text = $boxes['content'];
-                        
+
                         $prevAnswer = injectPrevAnswer($text);
                         if($prevAnswer){
-                            
+
                             $text = $prevAnswer['content'];
                         }
-                        
+
                         // multiple answer slides
                         if( in_array( $currentSlide, $multiSlides )){
-                            echo injectMultipleAnswerField($text, 'answer', $origin); 
+                            echo injectMultipleAnswerField($text, 'answer', $origin);
                         }
-                        else { 
+                        else {
                             switch($slide->slide_type){
                                 case 1:
                                     echo $text;
@@ -328,18 +326,19 @@
                                     if($currentSlide == '3.5') {
                                 ?>
                                 <button type="submit" class="btn btn-alidade btn-lg">Yes, well'use an existing tool</button> or <button type="submit" class="btn btn-alidade btn-lg">No, we need to build a tool</button>
-                                <?php     
+                                <?php
                                 }
                                 elseif(!is_null($nextSlide) && !empty($nextSlide)) {
+
                                 ?>
                                 <button type="submit" class="btn btn-alidade btn-lg">NEXT: <?php echo $slideMenu[$nextSlide]; ?></button>
-                                <?php 
+                                <?php
                                     }
                                 }
                                 ?>
                             </div>
-                        </div>                        
-                    </form> 
+                        </div>
+                    </form>
                 </div>
                 <div class="col-md-5 col-sm-4 col-xs-12">
                     <aside>
@@ -347,14 +346,14 @@
                     </aside>
                 </div>
             </div>
-        <?php  } ?>   
+        <?php  } ?>
         </div>
-             
+
     </div>
 </div>
 
 <?php
-if ($prevAnswer) { 
+if ($prevAnswer) {
 // load modal box for the previous answer editing functionality
 ?>
 
@@ -376,12 +375,12 @@ if ($prevAnswer) {
                     ?>
                         <textarea class="form-control answer" rows="8" id="answer-<?php echo $i; ?>" name="answer[<?php echo $i; ?>]"><?php echo $part; ?></textarea>
                     <?php
-                        } 
+                        }
                     } else { ?>
                     <textarea class="form-control" rows="8" id="answer" name="answer"><?php echo $prevAnswer['slide']->answer; ?></textarea>
                     <?php } ?>
                 </div>
-            
+
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

@@ -5,7 +5,7 @@
      * returns boolean
      * */
     function hasRole($user, $role){
-        
+
         if(ucfirst($user->role) == 'Root'){
             return true;
         }
@@ -14,13 +14,13 @@
                 return true;
             }
             else {
-                return false; 
+                return false;
             }
-        }        
+        }
     }
-    
-    
-    
+
+
+
     /** Prints out Bootstrap alerts
      * finds key of response and
      * uses it to format the alert
@@ -45,18 +45,18 @@
             echo '<div class="alert alert-' . $type . '  alert-dismissible" role="alert">
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <i class="fa fa-' . $icon . '"></i> ' . $text . '
-                    
+
                 </div>';
         }
     }
-    
+
     /** Parse responses from deletion
      * and passes off the info to printResponse
      * */
     function parseResponse($response){
         $res = array();
         $r = explode(':', $response);
-       
+
         switch($r[0]){
             case 'd':
                 if($r[1] == 'err') {
@@ -71,7 +71,7 @@
         }
         return $res;
     }
-    
+
     /**
      * verify that an array index exists and is not empty or null.
      * can also do some type control.
@@ -102,12 +102,12 @@
                 }
             }
             else {
-                return true;    
+                return true;
             }
-            
+
         }
     }
-    
+
     /** prints friendly arrays
      * used mainly for debugging
      * */
@@ -116,21 +116,21 @@
         print_r($array);
         echo '</pre></div>';
     }
-    
+
     function dsql($sql){
         echo '<div class="dbg"><pre>';
         echo $sql;
         echo '</pre></div>';
     }
-    
-        
+
+
     /**
      *DateTime printers
      **/
     function dateFormat($timestamp){
         return date('D, j M Y, H:i', $timestamp);
     }
-    
+
     function dateFormatNoTime($timestamp){
         return date('D, j M Y', $timestamp);
     }
@@ -140,10 +140,10 @@
     }
     function dbDateNoTime($string){
         $d = explode('/', $string);
-        return implode('-', array_reverse($d)); 
+        return implode('-', array_reverse($d));
     }
-    
-    
+
+
     /** inject textarea and parse tags in text **/
     function injectAnswerField($string, $name = 'answer', $origin = null){
         return str_replace('[--answer--]', '<textarea id="answer" name="'.$name.'" class="form-control" rows="8">' . (!is_null($origin) ? $origin->answer : '' ) . '</textarea>', $string);
@@ -152,35 +152,37 @@
         // get data from answer fields
         $a = explode('##break##', $origin->answer);
         $a = array_map('trim', $a);
-        
-        // match placeholders 
+
+        // match placeholders
         preg_match_all('/\[--multiple-answer-\d--]/', $string, $matches);
         $matches = $matches[0];
-        
+
         // cycle over matches and inject answer text
         foreach($matches as $i => $match){
             $string = str_replace(  '[--multiple-answer-' . $i . '--]',
                                     '<textarea id="answer-'.$i.'" name="'.$name.'['.$i.']" class="form-control" rows="8">' . ( isset($a[$i]) ? $a[$i] : '' ) . '</textarea>',
                                     $string );
         }
-        
+
         //return htmled string
         return $string;
     }
-    
+
     function injectParam($string, $param, $value){
-        return str_replace('[--'.$param.'--]', $value, $string);        
+        return str_replace('[--'.$param.'--]', $value, $string);
     }
-    
+
     function injectPrevAnswer($string){
-        preg_match('/\[--prev\|\d\.\d\--]/', $string, $matches);
+        //$string = strip_tags($string, '<div><b><i><a><ul><ol><li>');
+
+        preg_match('/\[--prev\|\d\.\d\--]/im', $string, $matches);
         if(!empty($matches) && is_array($matches)){
             $p = explode('|', $matches[0]);
             $slide = str_replace('--]', '', $p[1]);
             $parts = explode('.', $slide);
             $step = $parts[0];
             $slide = $parts[1];
-            
+
             // palce slide model here and use getPreviousANswer method
             $Slides = new Slide;
             $hash = filter_var($_GET['p'], FILTER_SANITIZE_SPECIAL_CHARS);
@@ -195,21 +197,23 @@
                 $text = nl2br($slide->answer);
                 $multi = false;
             }
-            
-            $previous = "<div class=\"previous-answer box box-answer\"><h3>" . $slide->step . "." . $slide->slide . " "  . $slide->title . "</h3><div id=\"answerBox\">" . $text . "</div><a href=\"#\" class=\"prev-answer\" data-toggle=\"modal\" data-target=\".editPrevAnswer\">I need to change this answer.</a></div>";    
-            
+
+            $previous = "<div class=\"previous-answer box box-answer\"><h3>" . $slide->step . "." . $slide->slide . " "  . $slide->title . "</h3><div id=\"answerBox\">" . $text . "</div><a href=\"#\" class=\"prev-answer\" data-toggle=\"modal\" data-target=\".editPrevAnswer\">I need to change this answer.</a></div>";
+
             $string = str_replace($matches[0], $previous, $string);
-            
+
             return array( 'content' => $string, 'slide' => $slide, 'multi' => $multi );
         }
         else {
             return false;
         }
     }
-    
+
     function injectBox($string){
-        preg_match_all('/\[--box\|(?<name>\w+)--](.+?)\[--endbox--]/im', $string, $matches);
+        preg_match_all('/\[--box\|(?<name>\w+)--](.*?)\[--endbox--]/', $string, $matches);
+        //preg_match_all('/\[--box\|(\w+)--](.+?)\[--endbox--]/im', $string, $matches);
         $boxes = array();
+        // dbga($matches);
         $fullMatches = $matches[0];
         $names = $matches['name'];
         $texts = $matches[2];
@@ -217,12 +221,12 @@
             $string = str_replace($match, '', $string);
         }
         foreach($names as $i => $box){
-            
+
             $boxes[] = '<div class="box box-' . $box . '"><h3>' . ($box=='casestudy' ? 'case study' : $box) . '</h3>' . $texts[$i] . '</div>';
         }
-        return array('content' => $string, 'boxes' => $boxes);        
+        return array('content' => $string, 'boxes' => $boxes);
     }
-    
+
     /** title printing, parsing position **/
     function printTitle($slide, $slideTitle){
         $cur = explode('.', $slide);
@@ -243,16 +247,16 @@
                 $title .= 'Quick tips';
                 break;
         }
-        
+
         echo $title . ' - ' . $slideTitle;
-        
+
     }
-    
-    
+
+
     /** check slide position and status, return css class **/
     function checkSlidePosition($currentStep, $currentSlide, $indexStep, $indexSlide){
         $check = '';
-        
+
         if($currentStep == $indexStep){
             if($currentSlide == $indexSlide){
                 return 'working';
@@ -266,8 +270,8 @@
         }
         return null;
     }
-    
-    
+
+
     /** Print js scripts from controller-defined variable $js **/
     function print_scripts($js, $inject=false){
         if(is_array($js)){
@@ -279,7 +283,7 @@
             if($inject == true){
                 echo '<script>' . $js . '</script>';
             }
-           else { 
+           else {
                 echo '<script src="' . $js . '"></script>';
            }
         }

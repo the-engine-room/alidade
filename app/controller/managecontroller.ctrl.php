@@ -33,7 +33,7 @@
             /** load component css and js -> see /app/view/head.php & /app/view/foot.php **/
             $this->set('mdEditor', true);
             $css = array('/components/summernote/dist/summernote.css');
-            $js = array('/components/summernote/dist/summernote.min.js');
+            $js = array('/components/summernote/dist/summernote.js'); // hacked version
             $this->set('js', $js);
             $this->set('css', $css);
             
@@ -67,7 +67,7 @@
         public function slide($step, $position){
             $this->set('mdEditor', true);
             $css = array('/components/summernote/dist/summernote.css');
-            $js = array('/components/summernote/dist/summernote.min.js');
+           $js = array('/components/summernote/dist/summernote.js'); // hacked version
             $this->set('js', $js);
             $this->set('css', $css);
             

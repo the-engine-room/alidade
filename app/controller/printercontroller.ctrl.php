@@ -118,9 +118,9 @@
                                                 
                     break;
                 case 2:
-                    $content .= '<h2>Understand The Tech</h2>';
-                    $thisSlide = $Slide->findSlide($project, $step, 2);            
-                    $content .= '   <h3>What things the tool must be able to do:</h3>
+                    $content .=     '<h2>Understand The Tech</h2>';
+                    $thisSlide =    $Slide->findSlide($project, $step, 2);            
+                    $content .=     '<h3>What things the tool must be able to do:</h3>
                                     <p>' .
                                     nl2br($thisSlide->answer) .
                                     (is_null($thisSlide->choice) ? '' : '<br /> ' . $thisSlide->choice) . 
@@ -138,7 +138,7 @@
                                     <p>' .
                                     nl2br($thisSlide->answer) .
                                     (is_null($thisSlide->choice) ? '' : '<br /> ' . $thisSlide->choice) . 
-                                    (is_null($thisSlide->extra) ? '' : nl2br($thisSlide->extra)) . 
+                                    (is_null($thisSlide->extra)  ? '' : nl2br($thisSlide->extra)) . 
                                     '</p>';
                     $thisSlide = $Slide->findSlide($project, $step, 6);            
                     $content .= '   <h3>Decision to use an existing tool, adapt an existing tool or build a new tool</h3>

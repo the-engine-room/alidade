@@ -1,42 +1,40 @@
-function doYouSeeMe(selector){
-  var y = $(selector).position().top;
-  var windowY = $(window).scrollTop();
-  return y > windowY && y < windowY + $(window).height();
-}
-
 $(document).ready(function(){
 
     $('#slide-sidebar').css({ 'min-height': $('#slide-content').outerHeight() + 50 });
-    
+
     /** Set arrowheads for the sidebar **/
     $('.step ul li a').each(function(){
         if($(this).height() > 30) {
             $(this).addClass('taller');
         }
     });
-    
+
+    /** Manage the Selection on 1.3 **/
+    if( $('input[name="extra"]').length > 0 && $('input[name="extra"]').val() == 'no') {
+      $('.picks').addClass('hide');
+    }
     $('.picker').click(function(e){
         e.preventDefault();
         $('.picks, .13-buttons').addClass('hide');
         $($(this).data('target')).removeClass('hide');
         $('input[name="extra"]').val($(this).data('target'));
     });
-    
-    
+
+
     $('.choice').click(function(){
         $('.choice-text').hide();
-        var $target = $('#' + $(this).attr('id') + '-text');    
-        $target.show('fast');        
-    });    
-    
-    
+        var $target = $('#' + $(this).attr('id') + '-text');
+        $target.show('fast');
+    });
+
+
     if($('textarea[name="answer"]').length > 1){
         $('textarea[name="answer"]').each(function(i) {
                 $(this).attr('name', 'answer[' + i + ']');
-        }); 
+        });
     }
-    
-    
+
+
     $('.ajx.project-name').submit(function(e){
         e.preventDefault();
         var theForm = $(this);
@@ -44,7 +42,7 @@ $(document).ready(function(){
             project: $(this).children('#project').val(),
             title:   $(this).children().children('#title').val()
         };
-        
+
         $.getJSON(
                   $(this).attr('action'),
                   vals,
@@ -58,25 +56,25 @@ $(document).ready(function(){
                     }
                   }
                   );
-        
-        return false;    
+
+        return false;
     });
-    
+
     $('.saveAnswer').submit(function(e){
         e.preventDefault();
         var vals = { slide: null, answer: [] };
         vals.slide = $(this).find('#slide').val();
-        
+
         if($('.answer').length > 0 ) {
             $('.answer').each( function(index) {
                 vals.answer[index] = $(this).val();
             });
         }
         else {
-            vals.answer = $(this).find('#answer').val();     
+            vals.answer = $(this).find('#answer').val();
         }
-       
-        
+
+
         $.post(
             '/ajax/save_answer',
             vals,
@@ -92,28 +90,28 @@ $(document).ready(function(){
                             r = r + '<li>' + i + '</li>';
                         });
                         r = r + '</ul>';
-                        $('#answerBox').html(r);    
+                        $('#answerBox').html(r);
                     }
                     else {
-                        $('#answerBox').html(vals.answer);    
+                        $('#answerBox').html(vals.answer);
                     }
-                    
+
                 }
                 else {
                     $('.editAnswer .modal-body').prepend(
-                        '<div class="alert alert-danger"><i class="fa fa-times"></i> ' + response.message + '</div>'     
+                        '<div class="alert alert-danger"><i class="fa fa-times"></i> ' + response.message + '</div>'
                     );
                 }
             },
-            'json'       
+            'json'
         );
     });
-    
+
     $('.ajx.tsa-tooltip').each(function(){
         var theUrlPieces = $(this).attr('href').split('/');
         var Slide = theUrlPieces[theUrlPieces.length - 1];
         var Holder = $(this).parent();
-        
+
         $.getJSON(
                     '/ajax/getprojectslide',
                     {
@@ -121,12 +119,12 @@ $(document).ready(function(){
                         slide: Slide
                     },
                     function(response){
-                        
+
                         if (response.code == 'danger') {
                             Holder.append('No data found.');
                         }
-                        
-                        else { 
+
+                        else {
                             Holder.append(
                                 "<div class=\"tsa-tooltip-wrap\">" +
                                 "<p>" + response.answer + " " + response.choice + "</p>" +
@@ -136,9 +134,9 @@ $(document).ready(function(){
                         }
                     }
                 );
-        
+
     });
-    
+
     // Load previous slide answers to check them out
     $('.prev-slide-loader').click(function(e){
         // prevent usual behaviour
@@ -154,12 +152,12 @@ $(document).ready(function(){
                 slide:      $(this).data('slide')
             },
             function(response){
-                
+
                 if (response.code == 'danger') {
                     Holder.append('No data found.');
                 }
-                
-                else { 
+
+                else {
                     Holder.append(
                         "<div class=\"tsa-tooltip-wrap\">" +
                         "<p>" + response.answer + " " + response.choice + "</p>" +
@@ -170,10 +168,10 @@ $(document).ready(function(){
             }
         );
         // display answer
-        
+
         return false;
     });
-    
+
     $('#extra15-2').click(function(){
         if($(this).is(':checked')) {
             $('.checkboxcheck').show();
@@ -181,62 +179,62 @@ $(document).ready(function(){
         else {
             $('.checkboxcheck').hide();
         }
-    });    
-    
+    });
+
     // Save slide contents (manager)
     $('#save-form').click(function(e){
         var theForm = $($(this).data('form'));
-        
+
         var data = {
             'title'         : theForm.children().children('#title').val(),
             'description'   : $('.textarea').summernote('code'),
             'step'          : theForm.children('#step').val(),
             'position'      : theForm.children('#position').val()
         }
-        
+
         $.post(
                 '/ajax/save_slide',
                 data,
                 function(response){
-                    theForm.prepend('<div class="alert alert-' + response.code + '"><i class="fa fa-' + response.icon + '"></i> ' + response.message + '</div>'); 
+                    theForm.prepend('<div class="alert alert-' + response.code + '"><i class="fa fa-' + response.icon + '"></i> ' + response.message + '</div>');
                 },
                 'json'
         );
-        
+
         e.preventDefault();
-        return false;    
+        return false;
     });
-    
-    
+
+
     // Save slide contents (manager)
     $('#save-page-form').click(function(e){
         var theForm = $($(this).data('form'));
-        
+
         var data = {
             'title'         : theForm.children().children('#title').val(),
             'contents'      : $('.textarea').summernote('code'),
             'url'           : theForm.children().children('#url').val(),
             'id'            : theForm.find('#page').val()
         }
-        
+
         $.post(
                 '/ajax/save_page',
                 data,
                 function(response){
-                    theForm.prepend('<div class="alert alert-' + response.code + '"><i class="fa fa-' + response.icon + '"></i> ' + response.message + '</div>'); 
+                    theForm.prepend('<div class="alert alert-' + response.code + '"><i class="fa fa-' + response.icon + '"></i> ' + response.message + '</div>');
                 },
                 'json'
         );
-        
+
         e.preventDefault();
-        return false;    
+        return false;
     });
-        
+
     // launch WYSIWYG editor
     if ($('.textarea').length > 0 ) {
-        $('.textarea').summernote();        
+        $('.textarea').summernote();
     }
-    
+
     // affix nav for report
     $('.toc').affix({
         offset: {
@@ -246,8 +244,9 @@ $(document).ready(function(){
             }
         }
     });
-    
+
     // enable bootstrap tooltips
     $('[data-toggle="tooltip"]').tooltip();
 });
+
 ;
