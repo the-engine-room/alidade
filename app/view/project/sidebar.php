@@ -61,13 +61,17 @@ $piece = ($inTour ? 'tour' : 'slide');
 			</li>
 			<?php } ?>
 		</ul>
-    </div>
-	<div class="step step4 <?php echo ($currs[0] == 4 ? '' : 'hidden-xs'); ?>">
+  </div>
+<?php /** check for actual position - only show if step is 4 and slide is < 8 **/
+  $displayStep4 = ' hide ';
+  if( $currs[0] == 4 && $currs[1] < 8 ) { $displayStep4 = ' show '; }
+?>
+  <div class="step step4 <?php echo $displayStep4 . '  ' . ($currs[0] == 4 ? '' : 'hidden-xs'); ?>">
 		<header>
 			<h3><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 4, 0); ?>" href="/project/<?php echo $piece; ?>/4.0<?php echo (!is_null($hash) ? '/?p=' . $hash : ''); ?>">STEP 4</a></h3>
 		</header>
 		<ul>
-			<?php for($i = 1; $i < 9; $i++){ ?>
+			<?php for($i = 1; $i < 8; $i++){ ?>
 			<li>
 				<a
 				   title="<?php echo $slideMenu['4.' . $i]; ?>"
@@ -81,6 +85,11 @@ $piece = ($inTour ? 'tour' : 'slide');
 		</ul>
     </div>
 
+<div class="step">
+<header>
+  <h3><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 4, 8); ?>" href="/project/<?php echo $piece; ?>/4.8<?php echo (!is_null($hash) ? '/?p=' . $hash : ''); ?>">CONGRATULATIONS</a></h3>
+</header>
+</div>
 
 
 
@@ -94,12 +103,12 @@ $piece = ($inTour ? 'tour' : 'slide');
 <?php /*
 <div class="container-fluid">
     <div class="row">
-        
+
         <div class="col-md-12">
             <h1><?php printTitle($currentSlide, $slide->title); ?></h1>
         </div>
-        
-        
+
+
     </div>
     <div class="row">
         <div class="col-md-12">
@@ -115,11 +124,11 @@ $piece = ($inTour ? 'tour' : 'slide');
             <div class="step">
                 STEP 4: FIND A PARTNER
             </div>
-        
+
             <div class="step">
                 <?php
                 for($i = 1; $i< count($slideindex[1]) + 1; $i++) {
-                    
+
                     if($currentSlide === '1.' . $i) {
                         $status = '1'; }
                     elseif(
@@ -132,12 +141,12 @@ $piece = ($inTour ? 'tour' : 'slide');
                         $status = '2';
                     }
                     else {
-                        $status = '0';    
+                        $status = '0';
                     }
-                    
-                ?>    
+
+                ?>
                 <div class="slide-position slide-position-<?php echo $status; ?> step-1" style="width: <?php echo round( (100/count($slideindex[1])) , 4); ?>%;"></div>
-                <?php    
+                <?php
                 }
                 ?>
             </div>
@@ -156,12 +165,12 @@ $piece = ($inTour ? 'tour' : 'slide');
                     */
                     /*
                     else {
-                        $status = '0';    
+                        $status = '0';
                     }
-                    
-                ?>    
+
+                ?>
                 <div class="slide-position slide-position-<?php echo $status; ?> step-2" style="width: <?php echo round( (100/count($slideindex[2])) , 4); ?>%;"></div>
-                <?php    
+                <?php
                 }
                 ?>
             </div>
@@ -178,15 +187,15 @@ $piece = ($inTour ? 'tour' : 'slide');
                         $status = '2';
                     }
                     */
-                    
+
                     /*
                     else {
-                        $status = '0';    
+                        $status = '0';
                     }
-                    
-                ?>    
+
+                ?>
                 <div class="slide-position slide-position-<?php echo $status; ?> step-3" style="width: <?php echo round( (100/count($slideindex[3])) , 4); ?>%;"></div>
-                <?php    
+                <?php
                 }
                 ?>
             </div>
@@ -203,20 +212,20 @@ $piece = ($inTour ? 'tour' : 'slide');
                         $status = '2';
                     }
                     */
-                    
+
                     /*
                     else {
-                        $status = '0';    
+                        $status = '0';
                     }
-                    
-                ?>    
+
+                ?>
                 <div class="slide-position slide-position-<?php echo $status; ?> step-4" style="width: <?php echo round( (100/count($slideindex[4])) , 4); ?>%;"></div>
-                <?php    
+                <?php
                 }
                 ?>
         </div>
-    
-        
+
+
         </div>
     </div>
 </div>

@@ -333,7 +333,7 @@
                                 if(isset($inProcess) && $inProcess == true){
                                     if($currentSlide == '3.5') {
                                 ?>
-                                <button type="submit" class="btn btn-alidade btn-lg">Yes, well'use an existing tool</button> or <button type="submit" class="btn btn-alidade btn-lg">No, we need to build a tool</button>
+                                <a href="/project/slide/4.8?p=<?php echo $hash; ?>" class="btn btn-alidade btn-lg">Yes, well'use an existing tool</a> or <button type="submit" class="btn btn-alidade btn-lg">No, we need to build a tool</button>
                                 <?php
                                 }
                                 elseif(!is_null($nextSlide) && !empty($nextSlide)) {
@@ -355,7 +355,7 @@
                 </div>
             </div>
         <?php  } ?>
-        </div>
+      </div>
 
     </div>
 </div>
