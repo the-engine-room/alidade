@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="26px" height="26px" viewBox="0 0 26 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>LearnIconFooter</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="13" cy="13" r="13"></circle>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="26" height="26" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="footer-copy" transform="translate(-776.000000, -35.000000)">
+            <g id="learnGroup" transform="translate(776.000000, 33.000000)">
+                <g id="LearnIconFooter" transform="translate(0.000000, 2.000000)">
+                    <use id="Oval" stroke="#FFFFFF" mask="url(#mask-2)" stroke-width="4" xlink:href="#path-1"></use>
+                    <text id="" font-family="FontAwesome" font-size="20" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="7" y="20"></tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

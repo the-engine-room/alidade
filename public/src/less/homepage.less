@@ -1,5 +1,80 @@
-.homepage {
+.animation {
 	background: url('/assets/images/hpbg.png') no-repeat center top;
 	background-size: cover;
 	.jumbotron{background: transparent; }
+}
+
+.lnk {
+	color: @btn;
+	text-decoration: underline;
+	.transition(all 0.5s ease 0s);
+	&.lnk-lg { font-size: 24px; }
+	&:hover {
+		color: @btn-on-hover;
+	}
+	&:active, &:visited {
+		color: @btn-pressed;
+	}
+}
+.box-1 {
+	padding: 60px 15px;
+	h2 { font-family: "Lato", sans-serif;
+		a { color: @text;}
+	}
+	p { font-size: 24px; }
+}
+.carousel {
+	background: #666471;
+	padding-top: 110px;
+	padding-bottom: 90px;
+	color: white;
+	.quote {
+		font-size: 24px;
+		font-family: "Oswald", sans-serif;
+		line-height: 36px;
+	}
+	.pointer {
+		display: block; clear: both;
+	}
+	.quoter {
+		width: 33.3333%;
+		float: left;
+		clear: none;
+		img {
+			.scaler(0.8);
+		}
+		.quoter-name {
+			display: block;
+			clear: both;
+			font-weight: bold;
+			font-size: 16px;
+		}
+	}
+}
+.who-made-this {
+		background-color: @background;
+		color: #3A3F41;
+		h2 {
+			margin-top: 100px;
+			margin-bottom: 40px;
+			font-weight: 400;
+			font-size: 48px;
+			& ~ p {
+				font-size: 24px;
+				margin-bottom: 80px;
+			}
+		}
+		.col-md-4 {
+			a:first-child{
+				display: block;
+				margin-bottom: 100px;
+				height: 200px;
+
+				& ~ img { margin-bottom: 60px; }
+				& ~ p {
+					font-size: 24px;
+					margin-bottom: 80px;
+				}
+			}
+		}
 }

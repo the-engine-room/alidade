@@ -3,3 +3,16 @@
      -moz-border-radius: @radius;
           border-radius: @radius;
 }
+.transition(@t) {
+  -webkit-transition: @t;
+     -moz-transition: @t;
+          transition: @t;
+}
+
+.scaler(@s){
+  -webkit-transform: scale(@s); 
+     -moz-transform: scale(@s);
+      -ms-transform: scale(@s);
+       -o-transform: scale(@s);
+          transform: scale(@s);
+}

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="70px" height="71px" viewBox="0 0 70 71" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>tech2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <radialGradient cx="50.2095485%" cy="49.3349536%" fx="50.2095485%" fy="49.3349536%" r="69.1812486%" id="radialGradient-1">
+            <stop stop-color="#B5CDCD" stop-opacity="0.1" offset="0%"></stop>
+            <stop stop-color="#BCBCB7" stop-opacity="0.2847" offset="20.52%"></stop>
+            <stop stop-color="#CE9280" stop-opacity="0.6655" offset="62.83%"></stop>
+            <stop stop-color="#DF694B" offset="100%"></stop>
+        </radialGradient>
+        <radialGradient cx="50.2095449%" cy="49.334985%" fx="50.2095449%" fy="49.334985%" r="69.180858%" id="radialGradient-2">
+            <stop stop-color="#B5CDCD" stop-opacity="0.1" offset="0%"></stop>
+            <stop stop-color="#BCBCB7" stop-opacity="0.2847" offset="20.52%"></stop>
+            <stop stop-color="#CE9280" stop-opacity="0.6655" offset="62.83%"></stop>
+            <stop stop-color="#DF694B" offset="100%"></stop>
+        </radialGradient>
+    </defs>
+    <g id="homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard-v2.11" transform="translate(-960.000000, -338.000000)">
+            <g id="maps" transform="translate(960.000000, 338.500000)">
+                <g id="illustration_final_02_icon_24">
+                    <g id="links">
+                        <g id="Group">
+                            <ellipse id="Oval" fill="#464354" fill-rule="nonzero" cx="34.8419355" cy="34.8419355" rx="34.8419355" ry="34.8419355"></ellipse>
+                            <ellipse id="Oval" fill="url(#radialGradient-1)" fill-rule="nonzero" opacity="0.3" cx="34.8419355" cy="34.8419355" rx="34.8419355" ry="34.8419355"></ellipse>
+                            <ellipse id="Oval" fill="url(#radialGradient-2)" fill-rule="nonzero" opacity="0.3" cx="34.8419355" cy="34.8419355" rx="28.861828" ry="28.861828"></ellipse>
+                            <ellipse id="Oval" fill="#DF694B" fill-rule="nonzero" opacity="0.6" cx="34.8419355" cy="34.8419355" rx="23.0706452" ry="23.0706452"></ellipse>
+                            <g transform="translate(21.827957, 20.322581)" id="Shape">
+                                <path d="M20.8645161,8.62204301 C20.8193548,8.77258065 20.7591398,8.9155914 20.6913978,9.05107527 L19.9311828,10.6467742 L24.2064516,9.11129032 L24.2064516,24.7446237 L17.8086022,27.0478495 L17.8086022,15.1252688 L16.4086022,18.0758065 C16.3483871,18.1962366 16.288172,18.3091398 16.2129032,18.422043 L16.2129032,27.0026882 L9.81505376,24.466129 L9.81505376,18.4145161 C9.73978495,18.294086 9.67956989,18.1736559 9.61935484,18.0456989 L8.21182796,15.0951613 L8.21182796,24.4586022 L1.81397849,26.761828 L1.81397849,11.1209677 L5.66021505,9.73602151 L5.32903226,9.05107527 C5.21612903,8.80268817 5.11075269,8.54677419 5.03548387,8.27580645 L0.21827957,10.0145161 L0.21827957,29.0198925 L9.00967742,25.8586022 L17.0107527,29.0198925 L25.8096774,25.8586022 L25.8096774,6.84569892 L20.8645161,8.62204301 Z" fill="#D2DBE0" fill-rule="nonzero"></path>
+                                <path d="M19.9311828,10.6467742 L17.8086022,15.1252688"></path>
+                                <path d="M18.6531183,8.07860215 L14.3658065,17.1063441 C14.118172,17.6189247 13.5762366,17.9343011 13.0109677,17.9343011 C12.4464516,17.9343011 11.9037634,17.6189247 11.6689247,17.1063441 L7.36956989,8.07860215 C7.06322581,7.43655914 6.9811828,6.70268817 6.9811828,5.99064516 C6.9811828,2.68935484 9.67806452,0.0188172043 13.0109677,0.0188172043 C16.343871,0.0188172043 19.0407527,2.68935484 19.0407527,5.99064516 C19.0415054,6.70268817 18.9594624,7.43731183 18.6531183,8.07860215 Z M13.0117204,3.00473118 C11.3512903,3.00473118 9.99645161,4.34602151 9.99645161,5.99064516 C9.99645161,7.63526882 11.3512903,8.97655914 13.0117204,8.97655914 C14.6721505,8.97655914 16.0269892,7.63526882 16.0269892,5.99064516 C16.0262366,4.34602151 14.6721505,3.00473118 13.0117204,3.00473118 Z" fill="#D2DBE0" fill-rule="nonzero"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

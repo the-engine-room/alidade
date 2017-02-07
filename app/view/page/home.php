@@ -1,180 +1,156 @@
-    <!-- Modal -->
-    <div class="modal fade" id="user-forms" tabindex="-1" role="dialog" aria-labelledby="UserLoginAndRegistration">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Login or Register</h4>
-                </div>
-                <div class="modal-body">
-            
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12 col-md-12">
-                            <?php
-                            
-                            if( !isset($_SESSION[APPNAME][SESSIONKEY]) || empty($_SESSION[APPNAME][SESSIONKEY])) { ?>
-                            
-                            <form action="/user/login" method="post">
-                                <div class="form-group">
-                                    <label for="email">Email</label>
-                                    <input type="email" class="form-control" name="email" id="email">
-                                </div>                        
-                                <div class="form-group">
-                                    <label for="password">Password</label>
-                                    <input type="password" class="form-control" name="password" id="password">
-                                </div>
-                                <div class="form-group">
-                                    <button type="submit" class="form-control btn btn-alt" name="submit" id="submit"><i class="fa fa-sign-in"></i> Login</button>
-                                    <a href="/user/create">or register here</a> 
-                                </div>
-                            </form>
-                            <?php
-                            } 
-                            ?>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<div class="container-fluid animation">
+animation
+</div>
+
+<div class="container-fluid box-1">
+  <div class="row">
+    <div class="col-md-6">
+      <h2><a href="#">Read our six-rule summary for choosing tech</a></h2>
+      <p>Based on our research, six tips and six questions to lead you to a better choice.</p>
     </div>
-    
-    
-    
-    <div class="jumbotron">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-7" id="login-panel">
-                    <h1>Tool Selection Assistant</h1>
-                    <h3>Help to choose the right technology for success in your project</h3>
-                    
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-6 col-md-6">
-                            In 2015, we researched how 38 Kenyan and South African organisations choose digital technology tools to use in transparency and accountability initiatives.
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-6">
-                            Despite putting in significant effort, <strong>less than a quarter of initiatives were happy</strong> with the tools they chose. 
-                        </div>
-                    </div>
-                    
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12 col-md-12">
-                            <h4>Read more about the research</h4>
-                            <span class="big-divider"></span>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-6 col-md-6">
-                            <a class="btn btn-main btn-lg btn-block" href="/page/summary"><strong>Research Summary</strong></a>
-                            <a class="btn btn-main btn-lg btn-block" href="/public/assets/Full-report%20-%20Tool%E2%80%93Selection-Research-Report.pdf"><strong>Full report</strong></a>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-6">
-                            <a class="btn btn-main btn-lg btn-block btn-left-text" href="/page/rules-of-thumb"><span><strong>Six rules of thumb</strong><br /><span class="subtext">for choosing the right tool <br />based on our research</span></span></a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12 col-md-12">
-                            <h4>Use our guide to avoid common mistakes and borrow from what worked.</h4>
-                            <span class="big-divider"></span>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-6 col-md-6">
-                            <button type="button" class="btn btn-alt btn-lg btn-block" data-toggle="modal" data-target="#user-forms"><strong>LOGIN</strong> or <strong>REGISTER</strong></button>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-6">
-                            <a class="btn btn-alt btn-lg btn-block" href="/project/tour/1.1">New user? <strong>TAKE A TOUR</strong></a>
-                        </div>
-                    </div>
-                    
-                 
-                    
-                </div>
-                
-                <div class="col-xs-12 col-sm-6 col-md-5">
-                    
-                </div>
-                
-            </div>
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-7 text-center">
-                    <br />
-                    <i class="fa fa-angle-down fa-5x" style="color: #D8EF9F; font-size: 96px"></i>
-                </div>
-            </div>
-        </div>
+    <div class="col-md-6">
+      <h2><a href="#">Read about the research Alidade was built on</a></h2>
+      <p>Result of a 2-year research project with activists in Kenya and South Africa. Designed to help social change organisations anywhere.</p>
     </div>
-    <div class="container" id="text-snaps">
+  </div>
+</div>
+
+
+
+<div class="container-fluid carousel">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="quotes">
+        <div id="quote-1" class="quote hidden">
+          one
+        </div>
+        <div id="quote-2" class="quote show">
+          I used the site to choose video and audio recording tools for citizen journalists in various parts of South Africa... The tool focused me on the importance of trying tools out, and I found the focus on understanding users really helpful. It worked really well for people like me, who have some familiarity with the tech, but not with thinking through the tech choices.
+        </div>
+        <div id="quote-3" class="quote hidden">third quote</div>
+        <div class="pointer"></div>
+        <div class="quoter text-center" id="quoter-1" data-target="#quote-1">
+          <img class="center-block" src="/assets/images/hp/Kate_photo.png" alt="Kate McAlpine">
+          <span class="quoter-name">Kate McAlpine</span>
+          <span class="quoter-role">Lead Strategist,<br />Caucus for Children’s Rights (Tanzania)</span>
+        </div>
+        <div class="quoter text-center active" id="quoter-2" data-target="#quote-2">
+          <img class="center-block" src="/assets/images/hp/Paul_photo.png" alt="Paul McNally">
+          <span class="quoter-name">Paul McNally</span>
+          <span class="quoter-role">Citizen Justice Network,<br />University of Witwatersrand (South Africa)</span>
+        </div>
+        <div class="quoter text-center" id="quoter-3" data-target="#quote-3">
+          <img class="center-block" src="/assets/images/hp/Sanne_photo.png" alt="Sanne van den Berg">
+          <span class="quoter-name">Sanne van den Berg</span>
+          <span class="quoter-role">Country Engagement Developer (Tanzania and Uganda),<br />Making All Voices Count</span>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid who-made-this">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="container">
         <div class="row">
-            
-            
-            
-            <div class="col-xs-12 col-sm-6 col-md-6">
-                <div class="text-snap">
-                    <div class="text-snap-title"><h3>What it is</h3></div>
-                    <div class="text-snap-text"><p><strong>A 4-step guided process</strong> to help you choose your best option, informed by research with transparency and accountability organisations in Kenya and South Africa.</p></div>
-                </div>
-            
-                <div class="text-snap">
-                    <div class="text-snap-title"><h3>Why</h3></div>
-                    <div class="text-snap-text"><p>Our research suggests that <strong>choosing the right tool is key</strong> in making your project successful. <a href="/page/summary">Read more about the research <i class="fa fa-angle-double-right"></i></a></p></div>
-                </div>
+          <div class="col-md-12">
+            <h2 class=" text-center">Who made this</h2>
+            <p class="text-left">In 2015-16, The Engine Room, Pawa254 and the Network Society Lab conducted an 18-month research project into how Kenyan and South African organisations choose digital technology tools for transparency and accountability projects. To makde the findings as practical as possible, we created Alidade. <br />
+              The project was supported by Making All Voices Count.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <a href="https://www.theengineroom.org"><img src="/assets/images/hp/ERlogo.png" alt="the engine room"  class="img-responsive center-block"></a>
+            <img src="/assets/images/hp/Tom_photo.png" alt="Tom Walker - The Engine Room" class="img-responsive center-block">
+            <p><strong>Tom Walker</strong> is a research lead at <strong>The Engine Room</strong>, an international organisation that helps activists, organisations and other social change agents make the most of technology and data to increase their impact.</p>
+          </div>
+          <div class="col-md-4">
+            <a href="https://www.theengineroom.org"><img src="/assets/images/hp/NSLlogo.png" alt="network society lab"  class="img-responsive center-block"></a>
+            <img src="/assets/images/hp/Indra_photo.png" alt="Indra de Lanerolle - Network Society Lab" class="img-responsive center-block">
+            <p><strong>Indra de Lanerolle</strong> leads <strong>The Network Society Project</strong>, which conducts research on the Internet and its effects on society in South Africa and other African countries. It is based at the Journalism and Media programme at the University of Witwatersrand.</p>
+          </div>
+          <div class="col-md-4">
+            <a href="https://www.theengineroom.org"><img src="/assets/images/hp/PAWAlogo.png" alt="the engine room"  class="img-responsive center-block"></a>
+            <img src="/assets/images/hp/Sasha_photo.png" alt="Tom Walker - The Engine Room" class="img-responsive center-block">
+            <p><strong>Sasha Kinney</strong> provides research and support for creative activism, civic tech, citizen journalism, grassroots organizing and social movements in Kenya.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center"><a href="#" class="lnk lnk-lg"><strong>Learn more about the research behind Alidade</strong></a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Login -->
+<div class="modal fade" id="user-forms" tabindex="-1" role="dialog" aria-labelledby="UserLoginAndRegistration">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Login or Register</h4>
             </div>
-            
-            <div class="col-xs-12 col-sm-6 col-md-6">
-                <div class="text-snap">
-                    <div class="text-snap-title"><h3>What I'll get</h3></div>
-                    <div class="text-snap-text">
-                        <ul>
-                            <li>Real life <strong>examples</strong></li>
-                            <li>Tips</li>
-                            <li>Links to <strong>external resources</strong> for help</li>
-                            <li>A <strong>structured report</strong> of all your decisions.</li>
-                        </ul>
+            <div class="modal-body">
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <?php
+
+                        if( !isset($_SESSION[APPNAME][SESSIONKEY]) || empty($_SESSION[APPNAME][SESSIONKEY])) { ?>
+
+                        <form action="/user/login" method="post">
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" name="email" id="email">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" name="password" id="password">
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="form-control btn btn-alt" name="submit" id="submit"><i class="fa fa-sign-in"></i> Login</button>
+                                <a href="/user/create">or register here</a>
+                            </div>
+                        </form>
+                        <?php
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
-            
-            
         </div>
     </div>
-    <div class="container-fluid" id="walkthrough">
-        <div class="row">
-            <div class="col-xs-12 col-sm-3 col-md-3 step step-1">
-                <div class="step-inner-wrap">
-                    <span class="step-indicator"></span>
-                    <span class="step-description">Understand your needs</span>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-3 col-md-3 step step-2">
-                <div class="step-inner-wrap">
-                    <span class="step-indicator"></span><span class="step-indicator"></span>
-                    <span class="step-description">Understand the tech</span>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-3 col-md-3 step step-3">
-                <div class="step-inner-wrap">
-                    <span class="step-indicator"></span><span class="step-indicator"></span><span class="step-indicator"></span>
-                    <span class="step-description">Try it out!</span>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-3 col-md-3 step step-4">
-                <div class="step-inner-wrap">
-                    <span class="step-indicator"></span><span class="step-indicator"></span><span class="step-indicator"></span><span class="step-indicator"></span>
-                    <span class="step-description">Get help, if you need it</span>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid text-center" id="quick-tips">
-        <p><strong>Wondering where to start?<br /><a href="/page/rules-of-thumb"> Try our six rules of thumb.</a></strong></p>
-    </div>
-    
-    <?php if (!empty($page)) { ?> 
-    <div class="container">
-        <section class="row">
-            <div class="col-md-12">            
-                <?php echo $page; ?>
-            </div>
-        </section>
-    </div>
-    <?php } ?>
+</div>

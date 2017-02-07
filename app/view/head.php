@@ -5,19 +5,19 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        
+
         <title><?php echo SITE_TITLE; ?></title>
-    
+
         <!-- Fonts -->
-        <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Oswald:700' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Oswald:400,700' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <!-- Local Styles, if Any -->
         <?php if(isset($css) && !empty($css)){ print_styles($css); } ?>
-        
+
         <link rel="stylesheet" href="/dist/css/main.css">
-        
+
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -41,10 +41,10 @@
 <!-- End Piwik Code -->
     </head>
     <body class="<?php echo (isset($bodyClass) ? $bodyClass : ''); ?>">
-        
-        <?php /* 
+
+        <?php /*
         <div class="wrap">
-            
+
             <div class="container-fluid" id="top">
                 <div class="row">
                     <div class="steps">
@@ -65,11 +65,11 @@
                                 --><li><a href="/manage/index" title="Manage Contents" class="mininav"><i class="fa fa-wrench fa-fw"></i><span class="hidden-xs">Manage</span></a></li><!--
                                 <?php } ?>
                                 --><li><a href="/user/projects" title="All your Projects" class="mininav"><i class="fa fa-tasks fa-fw"></i><span class="hidden-xs">My Projects</span></a></li><!--
-                                --><li><a href="/user/logout" title="Logout" class="mininav"><i class="fa fa-sign-out fa-fw"></i><span class="sr-only">Logout</span></a></li><!-- --> 
+                                --><li><a href="/user/logout" title="Logout" class="mininav"><i class="fa fa-sign-out fa-fw"></i><span class="sr-only">Logout</span></a></li><!-- -->
                             </ul>
                         </div>
-                    
-                    <?php    
+
+                    <?php
                     }
                     ?>
                 </div>

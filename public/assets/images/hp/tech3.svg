@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="70px" height="70px" viewBox="0 0 70 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>tech3</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <radialGradient cx="50.209591%" cy="49.3350075%" fx="50.209591%" fy="49.3350075%" r="69.1804704%" id="radialGradient-1">
+            <stop stop-color="#B5CDCD" stop-opacity="0.1" offset="0%"></stop>
+            <stop stop-color="#C0C8B8" stop-opacity="0.4354" offset="35.35%"></stop>
+            <stop stop-color="#D5BE8E" stop-opacity="0.9649" offset="91.16%"></stop>
+            <stop stop-color="#D6BD8B" offset="100%"></stop>
+        </radialGradient>
+        <radialGradient cx="50.2096316%" cy="49.3349567%" fx="50.2096316%" fy="49.3349567%" r="69.1818924%" id="radialGradient-2">
+            <stop stop-color="#B5CDCD" stop-opacity="0.1" offset="0%"></stop>
+            <stop stop-color="#C0C8B8" stop-opacity="0.4354" offset="35.35%"></stop>
+            <stop stop-color="#D5BE8E" stop-opacity="0.9649" offset="91.16%"></stop>
+            <stop stop-color="#D6BD8B" offset="100%"></stop>
+        </radialGradient>
+    </defs>
+    <g id="homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard-v2.11" transform="translate(-1031.000000, -418.000000)">
+            <g id="database" transform="translate(1031.000000, 418.000000)">
+                <g id="illustration_final_02_icon_12">
+                    <g id="Layer_3" fill-rule="nonzero">
+                        <g id="Group">
+                            <circle id="Oval" fill="#464354" cx="34.9291667" cy="34.9291667" r="34.5116667"></circle>
+                            <circle id="Oval" fill="url(#radialGradient-1)" opacity="0.3" cx="34.9291667" cy="34.9291667" r="34.5116667"></circle>
+                            <circle id="Oval" fill="url(#radialGradient-2)" opacity="0.3" cx="34.9291667" cy="34.9291667" r="27.5483333"></circle>
+                            <circle id="Oval" fill="#D2DBE0" opacity="0.6" cx="34.9291667" cy="34.9291667" r="21.6983333"></circle>
+                            <path d="M43.5008333,27.7866667 L43.5008333,29.215 C43.5008333,30.7883333 39.6616667,32.0725 34.9291667,32.0725 C30.1966667,32.0725 26.3575,30.7891667 26.3575,29.215 L26.3575,27.7866667 C26.3575,26.2133333 30.1966667,24.9291667 34.9291667,24.9291667 C39.6616667,24.9291667 43.5008333,26.2125 43.5008333,27.7866667 Z M43.5008333,31.6033333 L43.5008333,33.5008333 C43.5008333,35.0741667 39.6616667,36.3583333 34.9291667,36.3583333 C30.1966667,36.3583333 26.3575,35.075 26.3575,33.5008333 L26.3575,31.6033333 C28.1983333,32.8983333 31.57,33.5008333 34.9291667,33.5008333 C38.2883333,33.5008333 41.6591667,32.8983333 43.5008333,31.6033333 Z M43.5008333,35.8883333 L43.5008333,37.7858333 C43.5008333,39.3591667 39.6616667,40.6433333 34.9291667,40.6433333 C30.1966667,40.6433333 26.3575,39.36 26.3575,37.7858333 L26.3575,35.8883333 C28.1983333,37.1833333 31.57,37.7858333 34.9291667,37.7858333 C38.2883333,37.7858333 41.6591667,37.1841667 43.5008333,35.8883333 Z M43.5008333,40.1741667 L43.5008333,42.0716667 C43.5008333,43.645 39.6616667,44.9291667 34.9291667,44.9291667 C30.1966667,44.9291667 26.3575,43.6458333 26.3575,42.0716667 L26.3575,40.1741667 C28.1983333,41.4691667 31.57,42.0716667 34.9291667,42.0716667 C38.2883333,42.0716667 41.6591667,41.47 43.5008333,40.1741667 Z" id="Shape" fill="#EBE8E3"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
