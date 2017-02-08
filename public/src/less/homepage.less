@@ -28,21 +28,58 @@
 	padding-top: 110px;
 	padding-bottom: 90px;
 	color: white;
+	.quotes { }
 	.quote {
 		font-size: 24px;
 		font-family: "Oswald", sans-serif;
+		font-weight: 400;
 		line-height: 36px;
+		padding: 0px 72px;
+		position: relative;
+		&:before {
+			content: '“';
+			position: absolute;
+			left: -30px;
+			top: 40px;
+			font-size: 220px;
+			color: white;
+			font-family: "Lato", serif;
+
+		}
 	}
 	.pointer {
-		display: block; clear: both;
+		display: block;
+		clear: both;
+		//background: url('/assets/images/hp/FeedbackIconFooter.svg') no-repeat center center;
+		border-top: 4px solid white;
+		border-bottom: 0px;
+		margin-left: 80px; margin-right: 80px;
+		height: 4px;
+
+
+		& ~ .point {
+			display: block;
+			margin: -45px auto 0px;
+			content: ' ';
+			border-right: 4px solid white;
+			border-bottom: 4px solid white;
+			-ms-transform: rotate(45deg); /* IE 9 */
+	 		-webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+	 		transform: rotate(45deg);
+			width: 40px; height: 40px;
+			background-color: #666471;
+		}
 	}
 	.quoter {
 		width: 33.3333%;
 		float: left;
 		clear: none;
+		margin-top: 40px;
+		cursor: pointer;
 		img {
-			.scaler(0.8);
+			.scaler(0.6);
 		}
+		&.active img { .scaler(1); }
 		.quoter-name {
 			display: block;
 			clear: both;
@@ -54,6 +91,7 @@
 .who-made-this {
 		background-color: @background;
 		color: #3A3F41;
+		padding-bottom: 60px;
 		h2 {
 			margin-top: 100px;
 			margin-bottom: 40px;
@@ -77,4 +115,25 @@
 				}
 			}
 		}
+}
+
+.creators {
+	background: #666471;
+	color: white;
+	padding-bottom: 60px;
+	h2 {
+		margin-top: 100px;
+		margin-bottom: 40px;
+		font-weight: 400;
+		font-size: 48px;
+
+	}
+	.col-md-4 {
+		img { margin-bottom: 20px; }
+		p {
+			font-size: 30px;
+			margin-bottom: 80px;
+		}
+	}
+
 }

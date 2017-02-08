@@ -20,15 +20,18 @@ animation
 <div class="container-fluid carousel">
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
-      <div class="quotes">
+      <div class="quotes clearfix">
         <div id="quote-1" class="quote hidden">
-          one
+          We used Alidade to help us decide how to develop an information scorecard for child protection planning. I'd definitely recommend it to other organisations - I'm not sure we would have been able to choose the right tool without it. It means putting in some hard work, but it is well worth it if you want to make a smart decision.
         </div>
         <div id="quote-2" class="quote show">
           I used the site to choose video and audio recording tools for citizen journalists in various parts of South Africa... The tool focused me on the importance of trying tools out, and I found the focus on understanding users really helpful. It worked really well for people like me, who have some familiarity with the tech, but not with thinking through the tech choices.
         </div>
-        <div id="quote-3" class="quote hidden">third quote</div>
-        <div class="pointer"></div>
+        <div id="quote-3" class="quote hidden">
+          I see the tool as a good test for seeing how serious a grantee is about working on a problem using tech. It helps those without tech knowledge to simplify their path through the forest of tech options out there, and brings those with tech expertise back to what it should really be all about: content.
+        </div>
+        <hr class="pointer"/>
+        <div class="point"></div>
         <div class="quoter text-center" id="quoter-1" data-target="#quote-1">
           <img class="center-block" src="/assets/images/hp/Kate_photo.png" alt="Kate McAlpine">
           <span class="quoter-name">Kate McAlpine</span>
@@ -69,18 +72,76 @@ animation
             <p><strong>Tom Walker</strong> is a research lead at <strong>The Engine Room</strong>, an international organisation that helps activists, organisations and other social change agents make the most of technology and data to increase their impact.</p>
           </div>
           <div class="col-md-4">
-            <a href="https://www.theengineroom.org"><img src="/assets/images/hp/NSLlogo.png" alt="network society lab"  class="img-responsive center-block"></a>
+            <a href="https://networksocietylab.org/"><img src="/assets/images/hp/NSLlogo.png" alt="network society lab"  class="img-responsive center-block"></a>
             <img src="/assets/images/hp/Indra_photo.png" alt="Indra de Lanerolle - Network Society Lab" class="img-responsive center-block">
             <p><strong>Indra de Lanerolle</strong> leads <strong>The Network Society Project</strong>, which conducts research on the Internet and its effects on society in South Africa and other African countries. It is based at the Journalism and Media programme at the University of Witwatersrand.</p>
           </div>
           <div class="col-md-4">
-            <a href="https://www.theengineroom.org"><img src="/assets/images/hp/PAWAlogo.png" alt="the engine room"  class="img-responsive center-block"></a>
+            <a href="#"><img src="/assets/images/hp/PAWAlogo.png" alt="the engine room"  class="img-responsive center-block"></a>
             <img src="/assets/images/hp/Sasha_photo.png" alt="Tom Walker - The Engine Room" class="img-responsive center-block">
             <p><strong>Sasha Kinney</strong> provides research and support for creative activism, civic tech, citizen journalism, grassroots organizing and social movements in Kenya.</p>
           </div>
         </div>
         <div class="row">
           <div class="col-md-12 text-center"><a href="#" class="lnk lnk-lg"><strong>Learn more about the research behind Alidade</strong></a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid creators">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h2 class=" text-center">Creators of Alidade</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <img src="/assets/images/hp/Alan_photo.png" alt="Alan Zard - LEVEL73" class="img-responsive center-block">
+            <p class="text-center"><strong>Alan Zard</strong><br />Web Dev</p>
+          </div>
+          <div class="col-md-4">
+            <img src="/assets/images/hp/Ivana_photo.png" alt="Ivana Bugarinovic" class="img-responsive center-block">
+            <p class="text-center"><strong>Ivana Bugarinovic</strong><br />Illustration</p></div>
+          <div class="col-md-4">
+            <img src="/assets/images/hp/Maya_photo.png" alt="Maya Richman" class="img-responsive center-block">
+            <p class="text-center"><strong>Maya Richman</strong><br />Web Ops</p>
+          </div>
+          <div class="col-md-4">
+            <img src="/assets/images/hp/Ozren_photo.png" alt="Ozren Muic" class="img-responsive center-block">
+            <p class="text-center"><strong>Ozren Muic</strong><br />UX UI Design</p>
+          </div>
+          <div class="col-md-4">
+            <img src="/assets/images/hp/Ruth_photo.png" alt="Ruth Miller" class="img-responsive center-block">
+            <p class="text-center"><strong>Ruth Miller</strong><br />UX Research</p>
+          </div>
+          <div class="col-md-4">
+            <img src="/assets/images/hp/Tin_photo.png" alt="Tin Geber" class="img-responsive center-block">
+            <p class="text-center"><strong>Tin Geber</strong><br />Tech Lead</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <h2 class=" text-center">Contributors</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <img src="/assets/images/hp/Amy_photo.png" alt="Amy O'Donnell" class="img-responsive center-block">
+            <p class="text-center"><strong>Amy O'Donnell</strong><br />Oxfam GB</p>
+          </div>
+          <div class="col-md-4">
+            <img src="/assets/images/hp/Laura_photo.png" alt="Laura Walker McDonald" class="img-responsive center-block">
+            <p class="text-center"><strong>Laura Walker McDonald</strong><br />SIMLab</p>
+          </div>
+          <div class="col-md-4">
+            <img src="/assets/images/hp/Dirk_photo.png" alt="Dirk Slater" class="img-responsive center-block">
+            <p class="text-center"><strong>Dirk Slater</strong><br />FabRiders</p>
+          </div>
         </div>
       </div>
     </div>

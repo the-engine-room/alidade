@@ -7,6 +7,26 @@ function doYouSeeMe(selector){
 */
 $(document).ready(function(){
 
+    /** Homepage quotes **/
+    $('.quoter').click(function(e){
+      e.preventDefault();
+      var target = $(this).data('target');
+      // Hide all quotes
+      $('.quote').removeClass('show').addClass('hidden');
+      // Show Clicked Quote
+      $(target).removeClass('hidden').addClass('show');
+      // tweak scaling of avatars
+      $('.quoter').removeClass('active');
+      $(this).addClass('active');
+      // set the pointer
+      var activeOffset = $('.quoter.active').offset();
+      var pointerPosition = (activeOffset.left + ($('.quoter.active').width()/2)) - ($('.pointer ~ .point').width()/2) - 10;
+      console.log(pointerPosition);
+      $('.pointer ~ .point').offset({left : pointerPosition});
+    });
+
+
+
     $('#slide-sidebar').css({ 'min-height': $('#slide-content').outerHeight() + 50 });
 
     /** Set arrowheads for the sidebar **/

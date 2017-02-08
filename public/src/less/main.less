@@ -12,7 +12,7 @@
 html, body {
 	height: 100%;
 	background: @background;
-	color: @text; 
+	color: @text;
 }
 
 h1, h2, h3 {
@@ -25,13 +25,41 @@ h4, h5, h6 {
 }
 
 footer {
-	background: @footer;
+	background: @hp-footer;
 	color: @white;
 	padding-top: 25px;
 	padding-bottom: 25px;
 	font-size: 16px;
 	a {
 		color: @white;
-		text-decoration: underline; 
+		text-decoration: underline;
+	}
+	.feedback {
+		a { font-size: 20px; font-weight: bold; &:hover { color: white; } }
+	}
+	.icon {
+		padding-right: 12px;
+		width: 5%;
+		& + div {
+			width: 95%;
+			margin-bottom: 30px;
+		}
+	}
+	.rotate-45 { //feedback icon needs rotation
+		-ms-transform: rotate(-45deg); /* IE 9 */
+		-webkit-transform: rotate(-45deg); /* Chrome, Safari, Opera */
+		transform: rotate(-45deg);
+	}
+	.logos {
+		margin-top: 30px;
+		font-weight: bold;
+		font-size: 24px;
+		text-align: right;
+		vertical-align: middle;
+		a {
+			text-decoration: none;
+			&:hover { text-decoration: underline; color: white; }
+			.gh { margin-left: 30px; }
+		}
 	}
 }
