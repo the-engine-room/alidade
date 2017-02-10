@@ -44,10 +44,10 @@
             if(!in_array($this->_action, $this->exclude) && $this->_controller !== 'rss'){
                 /* Include Base Head @ view/head.php */
                 include (ROOT . DS . 'app' . DS . 'view' . DS . 'head.php');
-                
+
                 if (file_exists(ROOT . DS . 'app' . DS . 'view' . DS . $this->_controller . DS . 'header.php')) {
                     include (ROOT . DS . 'app' . DS . 'view' . DS . $this->_controller . DS . 'header.php');
-                } else {
+                } else if( $this->_action != 'home' ){
                     include (ROOT . DS . 'app' . DS . 'view' . DS . 'header.php');
                 }
 

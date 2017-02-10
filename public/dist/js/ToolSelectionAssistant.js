@@ -1,4 +1,56 @@
+
+function doYouSee(selector){
+  var y = $(selector).position().top;
+  var windowY = $(window).scrollTop();
+  return y > windowY && y < windowY + $(window).height();
+}
+function headerFade(){
+  if($('#homepage-header:not(:visible)')){
+
+  }
+}
 $(document).ready(function(){
+  console.log($(window).height());
+  console.log($('#slide-2 .contents').position().top);
+  /** homepage scrollytelling **/
+  $(window).on('scroll', function() {
+    /** detect scroll position and attach slide id **/
+    var WY = $(window).scrollTop();
+    var WH = $(window).height();
+    var third = WH/3;
+
+    /** have the header appear when we scrolled at least 100px **/
+    if(WY > 100 && $('#homepage-header:not(:visible)') ) {
+      $('#homepage-header').addClass('show affix affix-top').removeClass('hide');
+    }
+
+    if(doYouSee($('#slide-2'))) {
+      $('#slide-2 .contents').addClass('showtime').removeClass('ninjad');
+    }
+
+
+    if(doYouSee($('#slide-3'))) {
+      $('#slide-3 .contents').addClass('showtime').removeClass('ninjad');
+      $('#animate-logo-1').fadeTo(1000, 0);
+      $('#spyglass-animate').fadeTo(2000, 1);
+    }
+
+
+    if(doYouSee($('.carousel'))){
+      $('.alidade-container, .background').addClass('hide');
+    }
+  });
+
+
+
+
+
+
+
+
+
+
+
 
     /** Homepage quotes **/
     $('.quoter').click(function(e){

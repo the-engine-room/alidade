@@ -1,7 +1,133 @@
 .animation {
-	background: url('/assets/images/hpbg.png') no-repeat center top;
-	background-size: cover;
-	.jumbotron{background: transparent; }
+	background: #292639;
+	background-size: auto;
+	color: white;
+
+/* > .container {
+background: url('/assets/images/hp/techIcons.png') no-repeat fixed 75% top;
+background-size: auto;
+} */
+
+.background { position: fixed; left: 45%; top: 40px;  }
+
+/** testing **/
+.row { border-top: 1px solid red; }
+
+	.contents {
+		.transition(all 2s ease 0.5s);
+
+		&.showtime {
+			display: block;
+			opacity: 1;
+			padding-top: 30%;
+		}
+		&.ninjad {
+			opacity: 0.1;
+			padding-top: 50%;
+		}
+
+	}
+
+
+	h1, h3, h4 {
+		font-weight: 400;
+		font-family: 'Oswald', sans-serif;
+	}
+	p { font-size: 20px; line-height: 36px;
+		.checkmark {
+			margin-right: 20px;
+		}
+	}
+ 	#intro {
+		height: 100vh;
+
+		h1 {
+			font-size: 72px;
+			margin-top: 80px;
+			line-height: 78px;
+			&:first-line {
+				font-size: 58px;
+			}
+	 	}
+		h3 {
+			font-size: 30px;
+			line-height: 48px;
+			margin-top: 40px;
+		}
+		h4 {
+			font-size: 20px;
+			line-height: 30px;
+			margin-bottom: 70px;
+			margin-top: 30px;
+		}
+	}
+
+	#slide-2 {
+		h1 { font-size: 42px; }
+		height: 100vh;
+	}
+
+	#slide-3 {
+		h1 { font-size: 42px; }
+		height: 100vh;
+	}
+	#slide-4 {
+		h1 { font-size: 42px; }
+		height: 100vh;
+	}
+
+
+	.alidade-container {
+		position: fixed;
+		left: 50%;
+		top: 0;
+		width: 50%;
+		height: 100vh;
+
+		#animate-logo-1 {
+			height: 344px;
+			width: 302px;
+			background: url('/assets/images/hp/alidade.png') no-repeat center center;
+			.transition(all 2s ease 0);
+			opacity: 1;
+			position: absolute;
+			left: 0;
+			top: 45%;
+			&.pouff {
+				opacity: 0;
+			}
+		}
+		#spyglass-animate {
+			background: url('/assets/images/hp/alidade_magnifying-glass.png') no-repeat center center;
+			.transition(all 3s ease 0);
+			opacity: 0;
+			position: absolute;
+			left: 0;
+			top: 10%;
+			width: 630px;
+			height: 630px;
+			&.showtime {
+				opacity: 1;
+			}
+		}
+		.app-icon {
+			width: 70px;
+			height: 70px;
+			position: absolute;
+			&#app-icon-msg {
+				background: url('/assets/images/hp/tech1.svg') no-repeat center center;
+				left: 20%; top: 25%;
+			}
+			&#app-icon-map {
+				background: url('/assets/images/hp/tech2.svg') no-repeat center center;
+				left: 30%; top: 35%;
+			}
+			&#app-icon-dbm {
+				background: url('/assets/images/hp/tech3.svg') no-repeat center center;
+				left: 40%; top: 45%;
+			}
+		}
+	}
 }
 
 .lnk {
@@ -37,14 +163,13 @@
 		padding: 0px 72px;
 		position: relative;
 		&:before {
-			content: '“';
+			content: ' ';
 			position: absolute;
-			left: -30px;
-			top: 40px;
-			font-size: 220px;
-			color: white;
-			font-family: "Lato", serif;
-
+			background: url('/assets/images/hp/quote.svg') no-repeat center center;
+			left: -50px;
+			top: -30px;
+			width: 90px;
+			height: 75px;
 		}
 	}
 	.pointer {
