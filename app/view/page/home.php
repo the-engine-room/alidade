@@ -9,6 +9,9 @@
 
 
   <div class="container">
+
+
+
     <div class="row" id="intro">
       <div class="col-md-6">
         <h1>Choosing technology is hard.<br />Alidade can help.</h1>
@@ -20,15 +23,6 @@
             <p>Complete this interactive guide and get a planning document ready to be shared with colleagues, technical developers or funders.</p>
           </div>
         </div>
-      </div>
-
-      <div class="alidade-container">
-        <div class="logo" id="animate-logo-1"></div>
-        <div class="app-icon" id="app-icon-msg"></div>
-        <div class="app-icon" id="app-icon-map"></div>
-        <div class="app-icon" id="app-icon-dbm"></div>
-        <div class="spyglass" id="spyglass-animate"></div>
-
       </div>
     </div>
 
@@ -48,6 +42,8 @@
           <h1>Alidade helps you plot a path to the right choice.</h1>
           <p><img src="/assets/images/hp/checkmark.svg" class="checkmark" alt="check mark">Interactive questions, tips, real-life examples</p>
           <p><img src="/assets/images/hp/checkmark.svg" class="checkmark" alt="check mark">Save your progress</p>
+
+          <img src="/assets/images/hp/steps.svg">
         </div>
       </div>
     </div>
@@ -62,7 +58,62 @@
       </div>
     </div>
   </div>
+
+
+  <!-- /** animation box **/ -->
+  <div class="alidade-container">
+    <div class="logo" id="animate-logo-1"></div>
+    <div class="app-icon" id="app-icon-msg"></div>
+    <div class="app-icon" id="app-icon-map"></div>
+    <div class="app-icon" id="app-icon-dbm"></div>
+    <div class="spyglass" id="spyglass-animate"></div>
+    <div class="paper" id="paper-1">
+      <div class="checkrow"></div>
+      <div class="checkrow sideways"></div>
+      <div class="checkrow sideways"></div>
+    </div>
+    <div class="paper" id="paper-2">
+      <div class="checkrow"></div>
+      <div class="checkrow sideways"></div>
+      <div class="checkrow sideways"></div>
+      <div class="checkrow sideways"></div>
+      <div class="paper-contents ninjad">
+        <h2>My tech project plan</h2>
+        <img src="/assets/images/hp/tech2.svg" alt="App Icon">
+        <div class="paragraph paragraph-fl">
+          <div class="line line-lg">&nbsp;</div>
+          <div class="line line-lg line-sh-1">&nbsp;</div>
+        </div>
+        <div class="paragraph">
+            <div class="line">&nbsp;</div>
+            <div class="line">&nbsp;</div>
+            <div class="line">&nbsp;</div>
+            <div class="line">&nbsp;</div>
+            <div class="line line-sh-2">&nbsp;</div>
+        </div>
+        <div class="paragraph">
+            <div class="line">&nbsp;</div>
+            <div class="line">&nbsp;</div>
+            <div class="line line-sh-3">&nbsp;</div>
+        </div>
+        <div class="paragraph">
+            <div class="line">&nbsp;</div>
+            <div class="line">&nbsp;</div>
+            <div class="line line-sh-1">&nbsp;</div>            
+        </div>
+      </div>
+    </div>
+    <div class="paper" id="paper-3">
+      <div class="checkrow sideways"></div>
+      <div class="checkrow sideways"></div>
+    </div>
+
+  </div>
+
 </div>
+
+
+
 <div class="container-fluid box-1">
   <div class="row">
     <div class="col-md-6">
@@ -75,6 +126,10 @@
     </div>
   </div>
 </div>
+
+
+
+
 </div>
 
 
