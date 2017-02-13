@@ -74,7 +74,10 @@ $(document).ready(function(){
           },
           800
         );
-
+        /** animate the steps **/
+        $('#step1icon, .text-step-1').stop(true, true).delay(800).animate({ opacity: 1 }, 800);
+        $('#step2icon, #arrow1, .text-step-2').stop(true, true).delay(1200).animate({ opacity: 1 }, 800);
+        $('#step3icon, #arrow2, .text-step-3').stop(true, true).delay(1600).animate({ opacity: 1 }, 800);
         /** animate the papers **/
         $('.paper#paper-1').stop(true, true).animate({ top: '450px', opacity: 1 }, 800);
         $('.paper#paper-2').stop(true, true).animate({ top: '470px', opacity: 1 }, 800);
@@ -109,7 +112,7 @@ $(document).ready(function(){
       800,
       'swing',
       function(){
-        $('.paper#paper-2 .paper-contents').addClass('showtime').removeClass('ninjad');        
+        $('.paper#paper-2 .paper-contents').addClass('showtime').removeClass('ninjad');
       });
 
 

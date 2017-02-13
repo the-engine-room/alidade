@@ -66,6 +66,43 @@
 	#slide-3 {
 		h1 { font-size: 42px; }
 		height: 100vh;
+
+		svg { margin-top: 40px; float: left; clear: none;
+			#step1icon { opacity: 0; }
+			#step2icon,  #arrow1 { opacity: 0; }
+			#step3icon,  #arrow2 { opacity: 0; }
+		}
+		.text-steps {
+			margin-top: 40px;
+			position: relative;
+			float: left;
+			clear: none;
+			.text-step {
+				height: 103px;
+				opacity: 0; 
+				&.text-step-1 { margin-left: -35px; }
+				&.text-step-2 { margin-left: 53px; }
+				&.text-step-3 { margin-left: 0px; margin-top: 24px;  }
+				.number, .text {
+					font-size: 20px;
+					font-family: 'Oswald', sans-serif;
+					display: inline-block;
+				}
+				.number {
+					width: 36px;
+					height: 36px;
+					line-height: 36px;
+					text-align: center;
+					margin: 22px 16px;
+					.border-radius(18px);
+					background: white;
+					color: @header;
+				}
+			}
+
+
+		}
+
 	}
 	#slide-4 {
 		h1 { font-size: 42px; }
