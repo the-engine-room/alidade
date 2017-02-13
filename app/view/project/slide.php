@@ -26,10 +26,11 @@
             <?php } ?>
             <h1><?php echo $currentSlide . ' ' . $slide->title; ?></h1>
 
-            <form action="/project/slide/<?php echo $nextSlide . '/?p=' . $projecthash ; ?> " method="post">
+            <form action="/project/slide/<?php echo $nextSlide . '/?p=' . $projecthash ; ?> " method="post" id="mainForm">
                 <input type="hidden" name="current_slide"  value="<?php echo $currentSlide; ?>">
                 <input type="hidden" name="current_project" value="<?php echo $_SESSION['project']; ?>">
-
+                <input type="hidden" name="hash"  value="<?php echo $projecthash; ?>">
+                <input type="hidden" name="next_slide"  value="<?php echo $nextSlide; ?>">
                 <?php if(!is_null($original)) { ?>
                 <input type="hidden" name="slide_update" value="<?php echo $_SESSION['project']; ?>">
                 <?php } if(isset($edit) && $edit == true ) { ?>
@@ -261,22 +262,23 @@
             } else {
             ?>
             <div class="row">
-                <div class="col-md-10 col-sm-8 col-xs-12">
-                    <?php if(!empty($backSlide)) { ?>
-                    <a class="back-link" href="/project/slide/<?php echo $backKey; ?>/?p=<?php echo $hash; ?>&edit"><i class="fa fa-chevron-left"></i> BACK: <?php echo $backSlide; ?></a>
-                    <?php } ?>
-                    <h1><?php echo $currentSlide . ' ' . $slide->title; ?></h1>
-                </div>
+              <div class="col-md-10 col-sm-8 col-xs-12">
+                <?php if(!empty($backSlide)) { ?>
+                <a class="back-link" href="/project/slide/<?php echo $backKey; ?>/?p=<?php echo $hash; ?>&edit"><i class="fa fa-chevron-left"></i> BACK: <?php echo $backSlide; ?></a>
+                <?php } ?>
+                <h1><?php echo $currentSlide . ' ' . $slide->title; ?></h1>
+              </div>
             </div>
 
             <div class="row">
                 <div class="col-md-7 col-sm-8 col-xs-12">
-
-                    <?php /* <form action="/project/slide/<?php echo $nextSlide; ?><?php echo (!is_null($original) ? '/?p=' . $projecthash : ''); ?> " method="post"> */ ?>
-                    <form action="/project/slide/<?php echo $nextSlide . '/?p=' . $projecthash ; ?> " method="post">
+                    <form action="/project/slide/<?php echo $nextSlide . '/?p=' . $projecthash ; ?> " method="post"  id="mainForm">
                         <input type="hidden" name="current_slide"  value="<?php echo $currentSlide; ?>">
+                        <input type="hidden" name="hash"  value="<?php echo $projecthash; ?>">
+                        <input type="hidden" name="next_slide"  value="<?php echo $nextSlide; ?>">
                         <input type="hidden" name="current_project" value="<?php echo $_SESSION['project']; ?>">
                         <input type="hidden" id="extra-holder" value="<?php echo $origin->extra; ?>">
+                        
                         <?php
                         /** check for preselected options in slide 4.2 **/
                         if($currentSlide == '4.2') {
@@ -349,14 +351,18 @@
                     </form>
                 </div>
                 <div class="col-md-5 col-sm-4 col-xs-12">
-                    <aside>
-                        <?php echo implode(' ', $boxes['boxes']); ?>
-                    </aside>
+                  <aside>
+                  <?php
+                  if($slide->slide_type == 4) {
+                    echo '<img class="img-responsive" src="/assets/images/tool/RecapStep' . $slide->step . '.svg" alt="' . $slide->title . '">';
+                  }
+                  ?>
+                  <?php echo implode(' ', $boxes['boxes']); ?>
+                  </aside>
                 </div>
             </div>
         <?php  } ?>
       </div>
-
     </div>
 </div>
 
@@ -381,7 +387,7 @@ if ($prevAnswer) {
                         $parts = array_map('trim', explode('##break##', $prevAnswer['slide']->answer));
                         foreach($parts as $i => $part){
                     ?>
-                        <textarea class="form-control answer" rows="8" id="answer-<?php echo $i; ?>" name="answer[<?php echo $i; ?>]"><?php echo $part; ?></textarea>
+                    <textarea class="form-control answer" rows="8" id="answer-<?php echo $i; ?>" name="answer[<?php echo $i; ?>]"><?php echo $part; ?></textarea>
                     <?php
                         }
                     } else { ?>

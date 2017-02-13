@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="284px" height="305px" viewBox="0 0 284 305" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>RecapStep2</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="tool" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="tool/2.7-recap" transform="translate(-1013.000000, -204.000000)">
+            <g id="RecapStep2" transform="translate(1017.000000, 207.000000)">
+                <g id="recap_2">
+                    <g id="artwork">
+                        <g id="Group">
+                            <g stroke-width="5.9536">
+                                <polygon id="Shape" stroke="#464354" fill="#EBE8E3" fill-rule="nonzero" points="223.35914 275.203997 32.2261041 298.670006 0.244367123 42.7848365 191.378162 19.3195863"></polygon>
+                                <polygon id="Shape" stroke="#D2DBE0" fill="#D2DBE0" fill-rule="nonzero" points="222.954644 271.967018 68.8576466 271.967018 68.8576466 34.3612577 200.985129 19.0783491"></polygon>
+                                <path d="M0.244367123,42.7848365 L191.378162,19.3195863" id="Shape" stroke="#464354"></path>
+                                <polygon id="Shape" stroke="#464354" points="223.35914 275.203997 32.2261041 298.670006 0.244367123 42.7848365 191.378162 19.3195863"></polygon>
+                                <g transform="translate(31.115068, 54.728354)" id="Shape" stroke="#464354">
+                                    <path d="M0.239054795,17.4692157 L137.335082,0.637988987"></path>
+                                    <path d="M3.2139589,41.2720462 L140.309986,24.4408195"></path>
+                                    <path d="M6.18886301,65.0756353 L143.28489,48.2444086"></path>
+                                    <path d="M9.16376712,88.8784658 L146.259795,72.0472391"></path>
+                                    <path d="M12.1386712,112.682055 L149.234699,95.8508282"></path>
+                                    <path d="M15.1135753,136.484885 L152.209603,119.653659"></path>
+                                    <path d="M18.0892384,160.288475 L155.184507,143.457248"></path>
+                                    <path d="M21.0641425,184.091305 L158.16017,167.260078"></path>
+                                    <path d="M24.0390466,207.894894 L161.135074,191.063667"></path>
+                                </g>
+                                <rect id="Rectangle-path" stroke="#464354" fill="#EBE8E3" fill-rule="nonzero" x="83.9841233" y="0.0904010127" width="192.594685" height="257.840101"></rect>
+                            </g>
+                            <g transform="translate(100.934247, 19.073797)">
+                                <g>
+                                    <g transform="translate(58.435616, 10.620506)" id="Shape" stroke-width="5.9536">
+                                        <path d="M0.239054795,0.444544051 L94.5192301,0.444544051" stroke="#64B5F6"></path>
+                                        <path d="M0.239054795,11.562697 L94.5192301,11.562697" stroke="#464354"></path>
+                                        <path d="M0.239054795,22.6808499 L94.5192301,22.6808499" stroke="#464354"></path>
+                                    </g>
+                                    <ellipse id="Oval" fill="#64B5F6" fill-rule="nonzero" cx="22.6859205" cy="22.1832033" rx="22.3778055" ry="22.1786516"></ellipse>
+                                    <polyline id="Shape" stroke="#464354" stroke-width="3.9691" stroke-linecap="round" stroke-linejoin="round" points="32.3277973 16.0931015 20.038863 28.2733051 13.0432849 21.3396316"></polyline>
+                                </g>
+                                <g transform="translate(0.000000, 56.136962)">
+                                    <g transform="translate(58.435616, 11.270506)" id="Shape" stroke-width="5.9536">
+                                        <path d="M0.239054795,0.0555050633 L94.5192301,0.0555050633" stroke="#64B5F6"></path>
+                                        <path d="M0.239054795,11.173658 L94.5192301,11.173658" stroke="#464354"></path>
+                                        <path d="M0.239054795,22.2918109 L94.5192301,22.2918109" stroke="#464354"></path>
+                                    </g>
+                                    <ellipse id="Oval" fill="#64B5F6" fill-rule="nonzero" cx="22.6859205" cy="22.4441643" rx="22.3778055" ry="22.1786516"></ellipse>
+                                    <polyline id="Shape" stroke="#464354" stroke-width="3.9691" stroke-linecap="round" stroke-linejoin="round" points="32.3277973 16.3540625 20.038863 28.5335075 13.0432849 21.6005927"></polyline>
+                                </g>
+                                <g transform="translate(0.000000, 112.273924)">
+                                    <g transform="translate(58.435616, 11.379114)" id="Shape" stroke="#D2DBE0" stroke-width="5.9536">
+                                        <path d="M0.239054795,0.207099873 L94.5192301,0.207099873"></path>
+                                        <path d="M0.239054795,11.3252528 L94.5192301,11.3252528"></path>
+                                        <path d="M0.239054795,22.4434057 L94.5192301,22.4434057"></path>
+                                    </g>
+                                    <ellipse id="Oval" fill="#D2DBE0" fill-rule="nonzero" cx="22.6859205" cy="22.7043667" rx="22.3778055" ry="22.1786516"></ellipse>
+                                </g>
+                                <g transform="translate(0.000000, 172.203924)">
+                                    <g transform="translate(58.435616, 11.379114)" id="Shape" stroke="#D2DBE0" stroke-width="5.9536">
+                                        <path d="M0.239054795,0.307236076 L94.5192301,0.307236076"></path>
+                                        <path d="M0.239054795,11.425389 L94.5192301,11.425389"></path>
+                                        <path d="M0.239054795,22.5435419 L94.5192301,22.5435419"></path>
+                                    </g>
+                                    <ellipse id="Oval" fill="#D2DBE0" fill-rule="nonzero" cx="22.6859205" cy="22.8045029" rx="22.3778055" ry="22.1786516"></ellipse>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="284px" height="306px" viewBox="0 0 284 306" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>RecapStep4</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="tool" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="tool/4.7" transform="translate(-1013.000000, -204.000000)">
+            <g id="RecapStep4" transform="translate(1017.000000, 207.000000)">
+                <g id="recap_4">
+                    <g id="artwork">
+                        <g id="Group">
+                            <g transform="translate(0.000000, 0.000000)" stroke-width="5.9536">
+                                <polygon id="Shape" stroke="#464354" fill="#EBE8E3" fill-rule="nonzero" points="223.35914 276.10008 32.2261041 299.64286 0.244367123 42.9205393 191.378162 19.3785205"></polygon>
+                                <polygon id="Shape" stroke="#D2DBE0" fill="#D2DBE0" fill-rule="nonzero" points="222.954644 272.852511 68.8576466 272.852511 68.8576466 34.4694021 200.985129 19.1364941"></polygon>
+                                <path d="M0.244367123,42.9205393 L191.378162,19.3785205" id="Shape" stroke="#464354"></path>
+                                <polygon id="Shape" stroke="#464354" points="223.35914 276.10008 32.2261041 299.64286 0.244367123 42.9205393 191.378162 19.3785205"></polygon>
+                                <g transform="translate(31.115068, 54.903132)" id="Shape" stroke="#464354">
+                                    <path d="M0.239054795,17.5263678 L137.335082,0.640076225"></path>
+                                    <path d="M3.2139589,41.4070714 L140.309986,24.5207798"></path>
+                                    <path d="M6.18886301,65.2885361 L143.28489,48.4022445"></path>
+                                    <path d="M9.16376712,89.1692397 L146.259795,72.2829481"></path>
+                                    <path d="M12.1386712,113.050704 L149.234699,96.1644128"></path>
+                                    <path d="M15.1135753,136.931408 L152.209603,120.045116"></path>
+                                    <path d="M18.0892384,160.812873 L155.184507,143.926581"></path>
+                                    <path d="M21.0641425,184.693576 L158.16017,167.807285"></path>
+                                    <path d="M24.0390466,208.575041 L161.135074,191.688749"></path>
+                                </g>
+                                <rect id="Rectangle-path" stroke="#464354" fill="#EBE8E3" fill-rule="nonzero" x="83.9841233" y="0.0864251965" width="192.594685" height="258.683648"></rect>
+                            </g>
+                            <g transform="translate(100.934247, 19.131928)">
+                                <g transform="translate(0.000000, 0.000000)">
+                                    <g transform="translate(58.435616, 10.655252)" id="Shape" stroke-width="5.9536">
+                                        <path d="M0.239054795,0.445998416 L94.5192301,0.445998416" stroke="#64B5F6"></path>
+                                        <path d="M0.239054795,11.6005254 L94.5192301,11.6005254" stroke="#464354"></path>
+                                        <path d="M0.239054795,22.7550523 L94.5192301,22.7550523" stroke="#464354"></path>
+                                    </g>
+                                    <ellipse id="Oval" fill="#64B5F6" fill-rule="nonzero" cx="22.6859205" cy="22.2557776" rx="22.3778055" ry="22.2512111"></ellipse>
+                                    <polyline id="Shape" stroke="#464354" stroke-width="3.9691" stroke-linecap="round" stroke-linejoin="round" points="32.3277973 16.1457515 20.038863 28.3658037 13.0432849 21.4094462"></polyline>
+                                </g>
+                                <g transform="translate(0.000000, 56.320619)">
+                                    <g transform="translate(58.435616, 11.311650)" id="Shape" stroke-width="5.9536">
+                                        <path d="M0.239054795,0.0514150819 L94.5192301,0.0514150819" stroke="#64B5F6"></path>
+                                        <path d="M0.239054795,11.205942 L94.5192301,11.205942" stroke="#464354"></path>
+                                        <path d="M0.239054795,22.360469 L94.5192301,22.360469" stroke="#464354"></path>
+                                    </g>
+                                    <ellipse id="Oval" fill="#64B5F6" fill-rule="nonzero" cx="22.6859205" cy="22.5175924" rx="22.3778055" ry="22.2512111"></ellipse>
+                                    <polyline id="Shape" stroke="#464354" stroke-width="3.9691" stroke-linecap="round" stroke-linejoin="round" points="32.3277973 16.4075663 20.038863 28.6268574 13.0432849 21.6712609"></polyline>
+                                </g>
+                                <g transform="translate(0.000000, 112.641238)">
+                                    <g transform="translate(58.435616, 11.416342)" id="Shape" stroke-width="5.9536">
+                                        <path d="M0.239054795,0.207777419 L94.5192301,0.207777419" stroke="#64B5F6"></path>
+                                        <path d="M0.239054795,11.3623044 L94.5192301,11.3623044" stroke="#464354"></path>
+                                        <path d="M0.239054795,22.5168313 L94.5192301,22.5168313" stroke="#464354"></path>
+                                    </g>
+                                    <ellipse id="Oval" fill="#64B5F6" fill-rule="nonzero" cx="22.6859205" cy="22.7786461" rx="22.3778055" ry="22.2512111"></ellipse>
+                                    <polyline id="Shape" stroke="#464354" stroke-width="3.9691" stroke-linecap="round" stroke-linejoin="round" points="32.3277973 16.66862 20.038863 28.8886722 13.0432849 21.9330757"></polyline>
+                                </g>
+                                <g transform="translate(0.000000, 172.767305)">
+                                    <g transform="translate(58.435616, 11.416342)" id="Shape" stroke-width="5.9536">
+                                        <path d="M0.239054795,0.308241226 L94.5192301,0.308241226" stroke="#64B5F6"></path>
+                                        <path d="M0.239054795,11.4627682 L94.5192301,11.4627682" stroke="#464354"></path>
+                                        <path d="M0.239054795,22.6172951 L94.5192301,22.6172951" stroke="#464354"></path>
+                                    </g>
+                                    <ellipse id="Oval" fill="#64B5F6" fill-rule="nonzero" cx="22.6859205" cy="22.8791099" rx="22.3778055" ry="22.2512111"></ellipse>
+                                    <polyline id="Shape" stroke="#464354" stroke-width="3.9691" stroke-linecap="round" stroke-linejoin="round" points="32.3277973 16.7690838 20.038863 28.989136 13.0432849 22.0335395"></polyline>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -9,27 +9,27 @@ $piece = ($inTour ? 'tour' : 'slide');
 
 
     <div class="step step1 <?php echo ($currs[0] == 1 ? '' : 'hidden-xs'); ?>">
-		<header>
-			<h3><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 1, 0); ?>" href="/project/<?php echo $piece; ?>/1.0<?php echo (!is_null($hash) ? '/?p=' . $hash : ''); ?>">STEP 1</a></h3>
-		</header>
-		<ul>
-			<?php for($i = 1; $i < 5; $i++){ ?>
-			<li>
-				<a
-				   title="<?php echo $slideMenu['1.' . $i]; ?>"
-				   class="slide <?php echo checkSlidePosition($step_number, $slide_number, 1, $i); ?>"
-				   href="/project/<?php echo $piece; ?>/1.<?php echo $i; ?><?php echo (!is_null($hash) ? '/?p=' . $hash : ''); ?>&edit"
-				>
-					<?php echo $slideMenu['1.' . $i]; ?>
-				</a>
-			</li>
-			<?php } ?>
-		</ul>
+  		<header>
+  			<h3><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 1, 0); ?>" href="/project/<?php echo $piece; ?>/1.0<?php echo (!is_null($hash) ? '/?p=' . $hash : ''); ?>">STEP 1</a></h3>
+  		</header>
+  		<ul>
+  			<?php for($i = 1; $i < 5; $i++){ ?>
+  			<li>
+  				<a
+  				   title="<?php echo $slideMenu['1.' . $i]; ?>"
+  				   class="slide <?php echo checkSlidePosition($step_number, $slide_number, 1, $i); ?>"
+  				   href="/project/<?php echo $piece; ?>/1.<?php echo $i; ?><?php echo (!is_null($hash) ? '/?p=' . $hash : ''); ?>&edit"
+  				>
+  					<?php echo $slideMenu['1.' . $i]; ?>
+  				</a>
+  			</li>
+  			<?php } ?>
+  		</ul>
     </div>
     <div class="step step2 <?php echo ($currs[0] == 2 ? '' : 'hidden-xs'); ?>">
-        <header>
-			<h3><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 2, 0); ?>" href="/project/<?php echo $piece; ?>/2.0<?php echo (!is_null($hash) ? '/?p=' . $hash : ''); ?>">STEP 2</a></h3>
-		</header>
+      <header>
+			  <h3><a class="slide <?php echo checkSlidePosition($step_number, $slide_number, 2, 0); ?>" href="/project/<?php echo $piece; ?>/2.0<?php echo (!is_null($hash) ? '/?p=' . $hash : ''); ?>">STEP 2</a></h3>
+		  </header>
 		<ul>
 			<?php for($i = 1; $i < 8; $i++){ ?>
 			<li>
