@@ -23,12 +23,12 @@
     <div class="row" id="intro">
       <div class="col-md-6">
         <h1>Choosing technology is hard.<br />Alidade can help.</h1>
-        <h3>Use Alidade to create a plan for finding technology tools that suit your social change project.</h3>
+        <h3>Alidade creates a plan for finding technology tools that suit your social change project.</h3>
         <h4>Built on in-depth research in Kenya and South Africa.<br />Designed for activists and social change organisations everywhere.</h4>
         <div class="row">
           <div class="col-md-10 col-md-offset-1">
             <a href="" class="btn btn-alidade btn-lg btn-block" data-toggle="modal" data-target="#user-forms">Start Alidade</a>
-            <p>Complete this interactive guide and get a planning document ready to be shared with colleagues, technical developers or funders.</p>
+            <p>Complete this interactive guide and get a planning document to share with colleagues, technical developers or funders.</p>
           </div>
         </div>
       </div>
@@ -150,7 +150,7 @@
     </div>
     <div class="col-md-6">
       <h2><a href="#">Read about the research Alidade was built on</a></h2>
-      <p>Result of a 2-year research project with activists in Kenya and South Africa. Designed to help social change organisations anywhere.</p>
+      <p>Result of a 2-year research project with activists in Kenya and South Africa. Learn more.</p>
     </div>
   </div>
 </div>
