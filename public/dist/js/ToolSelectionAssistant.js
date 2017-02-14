@@ -30,7 +30,7 @@ $(document).ready(function(){
 
     /** have the header appear when we scrolled at least 100px **/
     if(WY > 100 && $('#homepage-header:not(:visible)') ) {
-      $('#homepage-header').addClass('show affix affix-top').removeClass('hide');
+      $('#homepage-header').addClass('affix affix-top').fadeTo(350, 1);
     }
 
     if(doYouSee($('#slide-2'))) {

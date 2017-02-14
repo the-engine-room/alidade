@@ -1,5 +1,13 @@
-<div class="row hide" id="homepage-header">
-  <div class="col-md-12"><h1>Alidade</h1></div>
+
+<div class="container-fluid" id="homepage-header">
+  <div class="row">
+    <div class="col-md-6">
+      <h1>Alidade</h1>
+    </div>
+    <div class="col-md-3 col-md-offset-3">
+      <a href="" class="btn btn-alidade btn-lg btn-block" data-toggle="modal" data-target="#user-forms">Start Alidade</a>
+    </div>
+  </div>
 </div>
 <div class="container-fluid animation">
 
@@ -19,7 +27,7 @@
         <h4>Built on in-depth research in Kenya and South Africa.<br />Designed for activists and social change organisations everywhere.</h4>
         <div class="row">
           <div class="col-md-10 col-md-offset-1">
-            <a href="" class="btn btn-alidade btn-lg btn-block">Start Alidade</a>
+            <a href="" class="btn btn-alidade btn-lg btn-block" data-toggle="modal" data-target="#user-forms">Start Alidade</a>
             <p>Complete this interactive guide and get a planning document ready to be shared with colleagues, technical developers or funders.</p>
           </div>
         </div>
@@ -314,20 +322,20 @@
 
 <!-- Login -->
 <div class="modal fade" id="user-forms" tabindex="-1" role="dialog" aria-labelledby="UserLoginAndRegistration">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Login or Register</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fa fa-times fa-times-2x"></i></span></button>
+                <h2 class="modal-title" id="myModalLabel">To save your progress, please register or login:</h2>
+                <p>You will be able to finish at your own pace.</p>
             </div>
             <div class="modal-body">
-
                 <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-12">
+                    <div class="col-xs-12 col-sm-12 col-md-6">
                         <?php
 
                         if( !isset($_SESSION[APPNAME][SESSIONKEY]) || empty($_SESSION[APPNAME][SESSIONKEY])) { ?>
-
+                        <h3>Login</h3>
                         <form action="/user/login" method="post">
                             <div class="form-group">
                                 <label for="email">Email</label>
@@ -338,14 +346,47 @@
                                 <input type="password" class="form-control" name="password" id="password">
                             </div>
                             <div class="form-group">
-                                <button type="submit" class="form-control btn btn-alt" name="submit" id="submit"><i class="fa fa-sign-in"></i> Login</button>
-                                <a href="/user/create">or register here</a>
+                                <button type="submit" class="form-control btn btn-alidade btn-block" name="submit" id="submit">Login</button>
                             </div>
                         </form>
                         <?php
                         }
                         ?>
                     </div>
+
+
+                    <div class="col-xs-12 col-sm-12 col-md-6">
+                        <?php
+
+                        if( !isset($_SESSION[APPNAME][SESSIONKEY]) || empty($_SESSION[APPNAME][SESSIONKEY])) { ?>
+                        <h3>Register</h3>
+                        <form action="/user/create" method="post">
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" name="email" id="email">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" name="password" id="password">
+                            </div>
+                            <div class="form-group">
+                                <label for="c_password">Confirm Password:</label>
+                                <input type="password" name="c_password" id="c_password" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="form-control btn  btn-alidade btn-block" name="submit" id="submit">Register</button>
+
+                            </div>
+                        </form>
+                        <?php
+                        }
+                        ?>
+                    </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <p><small>We will never share your email address with anyone, or for any reason. We will only contact you if we need to tell you something important about the status of Alidade.</small></p>
+                  </div>
                 </div>
             </div>
         </div>

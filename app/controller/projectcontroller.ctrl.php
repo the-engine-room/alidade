@@ -7,7 +7,8 @@
         public function start(){
             $Auth = new Auth($url);
             if(!$Auth->isLoggedIn()){
-                header('Location: /user/login');
+              // setup a disposable user that we can later just edit and amend for our needs
+              header('Location: /user/disposable');
             }
 
             else {
@@ -45,7 +46,8 @@
 
             $Auth = new Auth($url);
             if(!$Auth->isLoggedIn()){
-                header('Location: /user/login');
+                //header('Location: /user/login');
+                header('Location: /user/disposable');
             }
 
             else {
