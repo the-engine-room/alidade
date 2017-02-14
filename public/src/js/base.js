@@ -297,6 +297,46 @@ $(document).ready(function(){
       });
     });
 
+    $('#editProfile').click(function(e){
+      e.preventDefault();
+      $('#editProfileForm alert').remove();
+      var data = $('#editProfileForm').serialize();
+      $.post('/ajax/edit_profile', data, function(response){
+        if(response.code == 'success'){
+          var holder = $('#editProfileForm').parent();
+          $('#editProfileForm').remove();
+          $(holder).append('<div class="alert alert-success">' + response.message + '</div>');
+          setTimeout(function(){ $('#user-forms').modal('hide'); }, 3000);
+        }
+        else {
+          $('#editProfile').before('<div class="alert alert-danger">' + response.message + '</div>');
+        }
+      },
+      'json'
+    );
+
+    });
+
+
+    $('#login').click(function(e){
+      e.preventDefault();
+      $('#loginForm alert').remove();
+      var data = $('#loginForm').serialize();
+      $.post('/ajax/login', data, function(response){
+        if(response.code == 'success'){
+          var holder = $('#loginForm').parent();
+          $('#loginForm').remove();
+          $(holder).append('<div class="alert alert-success">' + response.message + '</div>');
+          setTimeout(function(){ $('#user-forms').modal('hide'); }, 3000);
+        }
+        else {
+          $('#login').before('<div class="alert alert-danger">' + response.message + '</div>');
+        }
+      },
+      'json'
+      );
+    });
+
     $('.ajx.tsa-tooltip').each(function(){
         var theUrlPieces = $(this).attr('href').split('/');
         var Slide = theUrlPieces[theUrlPieces.length - 1];

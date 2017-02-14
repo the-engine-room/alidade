@@ -1,49 +1,87 @@
-<!-- Modal -->
+
+<!-- Login -->
 <div class="modal fade" id="user-forms" tabindex="-1" role="dialog" aria-labelledby="UserLoginAndRegistration">
-	<div class="modal-dialog" role="document">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title" id="myModalLabel">Login or Register</h4>
-			</div>
-			<div class="modal-body">
-		
-				<div class="row">
-					<div class="col-xs-12 col-sm-12 col-md-12">
-						<?php
-						
-						if( !isset($_SESSION[APPNAME][SESSIONKEY]) || empty($_SESSION[APPNAME][SESSIONKEY])) { ?>
-						
-						<form action="/user/login" method="post">
-							<div class="form-group">
-								<label for="email">Email</label>
-								<input type="email" class="form-control" name="email" id="email">
-							</div>                        
-							<div class="form-group">
-								<label for="password">Password</label>
-								<input type="password" class="form-control" name="password" id="password">
-							</div>
-							<div class="form-group">
-								<button type="submit" class="form-control btn btn-alt" name="submit" id="submit"><i class="fa fa-sign-in"></i> Login</button>
-								<a href="/user/create">or register here</a> 
-							</div>
-						</form>
-						<?php
-						} 
-						?>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fa fa-times fa-times-2x"></i></span></button>
+                <h2 class="modal-title" id="myModalLabel">To save your progress, please register or login:</h2>
+                <p>You will be able to finish at your own pace.</p>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-6">
+                        <?php if($_SESSION[APPNAME]['DISP']){ ?>
+                        <h3>Login</h3>
+                        <form action="/user/login" method="post" id="loginForm">
+
+														<?php if($_SESSION[APPNAME]['DISP']){ ?>
+														<input type="hidden" name="prj" value="<?php echo $_SESSION['project']; ?>">
+														<?php } ?>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" name="email" id="email">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" name="password" id="password">
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="form-control btn btn-alidade btn-block" name="submit" id="login">Login</button>
+                            </div>
+                        </form>
+                        <?php } ?>
+                    </div>
+
+
+                    <div class="col-xs-12 col-sm-12 col-md-6">
+                        <h3>Register</h3>
+                        <?php if($_SESSION[APPNAME]['DISP']){ ?>
+                        <form action="/user/edit" method="post" id="editProfileForm">
+                          <input type="hidden" value="<?php echo $user->id; ?>" name="user">
+                        <?php } else { ?>
+                        <form action="/user/create" method="post">
+                        <?php }?>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" name="email" id="email">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" name="password" id="password">
+                            </div>
+                            <div class="form-group">
+                                <label for="c_password">Confirm Password:</label>
+                                <input type="password" name="c_password" id="c_password" class="form-control">
+                            </div>
+                            <div class="form-group">
+															<button type="submit"
+																class="form-control btn btn-alidade btn-block"
+																name="submit"
+																<?php if($_SESSION[APPNAME]['DISP']){ ?>id="editProfile"<?php } ?>>
+																Register
+															</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <p><small>We will never share your email address with anyone, or for any reason. We will only contact you if we need to tell you something important about the status of Alidade.</small></p>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
 
 
 <div class="container-fluid">
 	<header class="row" id="app-header">
 		<div class="col-md-8 col-sm-6 col-xs-4"><h1>Alidade</h1></div>
 		<div class="col-md-4 col-sm-6 col-xs-8">
-			<?php if(isset($_SESSION[APPNAME][SESSIONKEY]) && !empty($_SESSION[APPNAME][SESSIONKEY])) { ?>
+			<?php if(isset($_SESSION[APPNAME][SESSIONKEY]) && !empty($_SESSION[APPNAME][SESSIONKEY]) && !isset($_SESSION[APPNAME]['DISP'])) { ?>
 			<div class="pull-right user-panel">
 				<span class="user-name">Hello, <strong><?php echo $_SESSION[APPNAME]['USR']; ?></strong>.</span>
 				<ul class="user-actions">
@@ -52,9 +90,9 @@
 					--><li><a href="/manage/index" title="Manage Contents" class="mininav"><i class="fa fa-wrench fa-fw"></i><span class="hidden-xs">Manage</span></a></li><!--
 					<?php } ?>
 					--><li><a href="/user/projects" title="All your Projects" class="mininav"><i class="fa fa-tasks fa-fw"></i><span class="hidden-xs">My Projects</span></a></li><!--
-					--><li><a href="/user/logout" title="Logout" class="mininav"><i class="fa fa-sign-out fa-fw"></i><span class="sr-only">Logout</span></a></li><!-- --> 
+					--><li><a href="/user/logout" title="Logout" class="mininav"><i class="fa fa-sign-out fa-fw"></i><span class="sr-only">Logout</span></a></li><!-- -->
 				</ul>
-			</div>		
+			</div>
 			<?php } else { ?>
 			<a href="#" data-toggle="modal" data-target="#user-forms" class="btn btn-alidade btn-lg pull-right">Register or Login to save progress</a>
 		<?php } ?>

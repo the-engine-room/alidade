@@ -5,6 +5,8 @@
     while(key($slideListMenu) != $currentSlide ) { next($slideListMenu); }
     $backSlide = prev($slideListMenu);
     $backKey = key($slideListMenu);
+    dbga($_SESSION);
+    dbga($user);
 ?>
 <div class="container-fluid slide-<?php echo $currentSlide; ?> step-<?php echo substr($currentSlide, 0, 1); ?> " id="slide-page" >
     <div class="row slide-container">
@@ -278,7 +280,7 @@
                         <input type="hidden" name="next_slide"  value="<?php echo $nextSlide; ?>">
                         <input type="hidden" name="current_project" value="<?php echo $_SESSION['project']; ?>">
                         <input type="hidden" id="extra-holder" value="<?php echo $origin->extra; ?>">
-                        
+
                         <?php
                         /** check for preselected options in slide 4.2 **/
                         if($currentSlide == '4.2') {

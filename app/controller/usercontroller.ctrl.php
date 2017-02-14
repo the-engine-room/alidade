@@ -34,10 +34,19 @@
                         if(!$Auth->isLoggedIn()){
 
                             $pass = $Auth->authorize($user[0]->idusers);
+                            $_SESSION[APPNAME]['DISP'] = false;
+
 
                         }
                         else {
                             $pass = true;
+                        }
+
+
+                        if(isset($_POST['prj']) && !empty($_POST['prj']) && filter_var($_POST['prj'], FILTER_VALIDATE_INT)){
+                          $project = filter_var($_POST['prj'], FILTER_SANITIZE_NUMBER_INT);
+                          $Project = new Project;
+                          $Project->update(array('user' => $user[0]->idusers), $project);
                         }
 
                         if($pass == true){
@@ -324,10 +333,6 @@
 
         public function disposable(){
           $Auth = new Auth($url);
-          $user = $Auth->getProfile();
-          $this->set('userRole', $user->role);
-          $this->set('user', $user);
-          $this->set('header', true);
           $time = time();
           $error = array();
 
@@ -345,26 +350,32 @@
             // Login and proceed to project start!
             $Auth = new Auth;
             $pass = $Auth->authorize($idUser);
+            $user = $Auth->getProfile();
+            $this->set('userRole', $user->role);
+            $this->set('user', $user);
+            $this->set('header', true);
+
 
             //lets create a dummy project
             $ProjectHash = md5( $_SESSION[APPNAME]['USR'] . $time . $_SESSION[APPNAME][SESSIONKEY]);
+            $Project = new Project;
+            $prj['user']   = $idUser;
+            $prj['hash']   = $ProjectHash;
+            $prj['title']  = 'Project-' . $time;
 
-            $data['user']   = $idUser;
-            $data['hash']   = $ProjectHash;
-            $data['title']  = 'Project-' . $time;
-
-            $idproject = $this->Project->create($data);
+            $idproject = $Project->create($prj);
             $_SESSION['project'] = $idproject;
 
             /** set first login cookie **/
             setcookie('TSA-First-Time', 'no', $time + (60*60*24*365*5), '/');
-            header('Location: /project/slide/1.0');
+            $_SESSION[APPNAME]['DISP'] = $time;
+            header('Location: /project/slide/1.0?p=' . $ProjectHash);
           }
         }
 
 
         /** editing user profiles -> shoud only be accessible to Root **/
-        public function edit($id){
+        public function edit($id = null){
             $this->set('title', 'Edit User');
 
             $Auth = new Auth($url);
@@ -379,12 +390,28 @@
                 $this->set('user', $user);
                 $this->set('header', true);
 
+                // check that user data incoming is the same data of current user
+                if(
+                  $_SERVER['REQUEST_METHOD'] == 'POST'
+                  && !empty($_POST)
+                  && isset($_POST['user'])
+                  && filter_var($_POST['user'], FILTER_VALIDATE_INT)
+                ){
+
+                  $id = (int)$_POST['user'];
+                  $SessionUser = $this->User->getUser($id);
+                  if($SessionUser->session === $_SESSION[APPNAME][SESSIONKEY]){
+                    // update the user credentials with the ones submitted by the user
+
+
+                  }
+
+
+                }
                 // Roots can edit users.
                 if(hasRole($user, 'root')){
-
                     if($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST)){
                         $data = $_POST;
-
                         $u = $this->User->update($data, $id);
                         if(!$u) {
                             $response['danger'] = 'Something went wrong. Please check the data and try again.';

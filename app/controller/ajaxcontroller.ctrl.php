@@ -279,4 +279,120 @@
         }
 
 
-    }
+        public function edit_profile($id = null){
+          $Auth = new Auth($url);
+          if(!$Auth->isLoggedIn()){
+            header('Location: /user/login');
+          }
+          else {
+            $User = new User;
+
+            $user = $Auth->getProfile();
+            $this->set('userRole', $user->role);
+            $this->set('user', $user);
+            $this->set('header', true);
+
+            // check that user data incoming is the same data of current user
+            if(
+              $_SERVER['REQUEST_METHOD'] == 'POST'
+              && !empty($_POST)
+              && isset($_POST['user'])
+              && filter_var($_POST['user'], FILTER_VALIDATE_INT)
+            ){
+
+              $id = filter_var($_POST['user'], FILTER_SANITIZE_NUMBER_INT);
+              $SessionUser = $User->getUser($id);
+              if($SessionUser->session === $_SESSION[APPNAME][SESSIONKEY]){
+                // update the user credentials with the ones submitted by the user
+                $data = $_POST;
+
+                /** check for email uniqueness **/
+                if(!$User->uniqueEmail($data['email'])) {
+                  $response['code'] = 'danger';
+                  $response['message'] = 'This email is already in our database.';
+                }
+                elseif(!filter_var($data['email'], FILTER_VALIDATE_EMAIL)){
+                  $response['code'] = 'danger';
+                  $response['message'] = 'Please use a valid email. You could need it to recover your password.';
+                }
+                /** check for password identity **/
+                elseif ($data['password'] !== $data['c_password']) {
+                  $response['code'] = 'danger';
+                  $response['message'] = 'The passwords do not match';
+                }
+
+                else {
+                  unset($data['user']);
+                  unset($data['c_password']);
+
+                  $data['profile_type'] = 'regular';
+                  $data['password'] = crypt($data['password'], '$1$'.SECRET);
+                  $data['name'] = $data['email'];
+
+                  $u = $User->update($data, $id);
+                  if(!$u) {
+                    $response['code'] = 'danger';
+                    $response['message'] = 'Something went wrong. Please check the data and try again.';
+                  }
+                  else {
+                    $response['code'] = 'success';
+                    $response['message'] = 'Registration complete!';
+                  }
+                }
+
+                $this->set('response', $response);
+                echo json_encode($response);
+              }
+            }
+          }
+        }
+
+        /** ajax login and project save **/
+        public function login(){
+          if($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST)){
+            $response = array();
+
+            $uput_email = $_POST['email'];
+            $uput_password = $_POST['password'];
+
+            if(empty($uput_email) || !filter_var($uput_email, FILTER_VALIDATE_EMAIL)){
+              $response['danger'] = '<strong>Invalid/Empty email</strong>. Please input a valid email address.';
+            }
+            if(empty($uput_password)){
+              $response['code'] = 'danger';
+              $response['message'] = '<strong>Empty Password</strong>. Please input a password.';
+            }
+            if(!isset($response['code'])){
+              // No errors, we can proceed and see if we can auth this guy here.
+              $User = new User;
+              $user = $User->find(array(
+                            'email' => $uput_email,
+                            'password' => crypt($uput_password, '$1$' . SECRET)
+                          ));
+
+              if(!empty($user)){
+                $Auth = new Auth;
+                if(!$Auth->isLoggedIn()){
+                  $Auth->authorize($user[0]->idusers);
+                }
+                setcookie('TSA-First-Time', 'no', time() + (60*60*24*365*5), '/');
+                if(isset($_POST['prj']) && !empty($_POST['prj']) && filter_var($_POST['prj'], FILTER_VALIDATE_INT)){
+                  $project = filter_var($_POST['prj'], FILTER_SANITIZE_NUMBER_INT);
+                  $Project = new Project;
+                  $Project->update(array('user' => $user[0]->idusers), $project);
+                }
+
+                $response['code'] = 'success';
+                $response['message'] = 'Logged in!';
+              }
+              else {
+                $response['code'] = 'danger';
+                $response['message'] = 'No correspondance found. Please check your credentials and try again.';
+
+              }
+            }
+            echo json_encode($response);
+          }
+        }
+
+  }

@@ -5,7 +5,7 @@
       <h1>Alidade</h1>
     </div>
     <div class="col-md-3 col-md-offset-3">
-      <a href="" class="btn btn-alidade btn-lg btn-block" data-toggle="modal" data-target="#user-forms">Start Alidade</a>
+      <a href="/project/slide/1.0" class="btn btn-alidade btn-lg btn-block">Start Alidade</a>
     </div>
   </div>
 </div>
@@ -27,7 +27,7 @@
         <h4>Built on in-depth research in Kenya and South Africa.<br />Designed for activists and social change organisations everywhere.</h4>
         <div class="row">
           <div class="col-md-10 col-md-offset-1">
-            <a href="" class="btn btn-alidade btn-lg btn-block" data-toggle="modal" data-target="#user-forms">Start Alidade</a>
+            <a href="/project/slide/1.0" class="btn btn-alidade btn-lg btn-block">Start Alidade</a>
             <p>Complete this interactive guide and get a planning document ready to be shared with colleagues, technical developers or funders.</p>
           </div>
         </div>
@@ -50,8 +50,6 @@
           <h1>Alidade helps you plot a path to the right choice.</h1>
           <p><img src="/assets/images/hp/checkmark.svg" class="checkmark" alt="check mark">Interactive questions, tips, real-life examples</p>
           <p><img src="/assets/images/hp/checkmark.svg" class="checkmark" alt="check mark">Save your progress</p>
-
-
           <svg id="homepage-steps" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 208 309">
             <defs>
             <style>.cls-1{isolation:isolate;}.cls-2{fill:none;stroke:#af6455;stroke-linecap:square;stroke-width:4px;stroke-dasharray:10;}.cls-3{fill:#b86161;}.cls-4{fill:#af6455;}</style></defs>
