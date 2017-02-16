@@ -326,8 +326,10 @@ $(document).ready(function(){
         if(response.code == 'success'){
           var holder = $('#loginForm').parent();
           $('#loginForm').remove();
-          $(holder).append('<div class="alert alert-success">' + response.message + '</div>');
-          setTimeout(function(){ $('#user-forms').modal('hide'); }, 3000);
+          $(holder).append('<div class="alert alert-success">' + response.message + '<strong>Reloading credentials...</strong></div>');
+          // hide modal after 1 second.
+          setTimeout(function(){ $('#user-forms').modal('hide'); }, 1950);
+          setTimeout(function(){ location.reload(); }, 2000);
         }
         else {
           $('#login').before('<div class="alert alert-danger">' + response.message + '</div>');

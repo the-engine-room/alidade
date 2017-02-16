@@ -372,9 +372,8 @@
 
               if(!empty($user)){
                 $Auth = new Auth;
-                if(!$Auth->isLoggedIn()){
-                  $Auth->authorize($user[0]->idusers);
-                }
+                $Auth->authorize($user[0]->idusers);
+
                 setcookie('TSA-First-Time', 'no', time() + (60*60*24*365*5), '/');
                 if(isset($_POST['prj']) && !empty($_POST['prj']) && filter_var($_POST['prj'], FILTER_VALIDATE_INT)){
                   $project = filter_var($_POST['prj'], FILTER_SANITIZE_NUMBER_INT);

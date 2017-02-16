@@ -5,7 +5,6 @@
     while(key($slideListMenu) != $currentSlide ) { next($slideListMenu); }
     $backSlide = prev($slideListMenu);
     $backKey = key($slideListMenu);
-
 ?>
 <div class="container-fluid slide-<?php echo $currentSlide; ?> step-<?php echo substr($currentSlide, 0, 1); ?> " id="slide-page" >
     <div class="row slide-container">
