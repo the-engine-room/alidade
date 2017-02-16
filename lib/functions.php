@@ -176,13 +176,16 @@
         //$string = strip_tags($string, '<div><b><i><a><ul><ol><li>');
 
         preg_match('/\[--prev\|\d\.\d\--]/im', $string, $matches);
+        /*$matches =  $matches[0];*/
+      
         if(!empty($matches) && is_array($matches)){
+
             $p = explode('|', $matches[0]);
             $slide = str_replace('--]', '', $p[1]);
             $parts = explode('.', $slide);
             $step = $parts[0];
             $slide = $parts[1];
-
+            echo $step . " -- " .$slide;
             // palce slide model here and use getPreviousANswer method
             $Slides = new Slide;
             $hash = filter_var($_GET['p'], FILTER_SANITIZE_SPECIAL_CHARS);

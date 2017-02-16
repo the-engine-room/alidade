@@ -5,7 +5,7 @@
     while(key($slideListMenu) != $currentSlide ) { next($slideListMenu); }
     $backSlide = prev($slideListMenu);
     $backKey = key($slideListMenu);
-  
+
 ?>
 <div class="container-fluid slide-<?php echo $currentSlide; ?> step-<?php echo substr($currentSlide, 0, 1); ?> " id="slide-page" >
     <div class="row slide-container">
@@ -301,9 +301,9 @@
                         $boxes = injectBox($slide->description);
                         $text = $boxes['content'];
 
+                        //while($prevAnswer = injectPrevAnswer())
                         $prevAnswer = injectPrevAnswer($text);
                         if($prevAnswer){
-
                             $text = $prevAnswer['content'];
                         }
 
@@ -405,5 +405,28 @@ if ($prevAnswer) {
     </div>
   </div>
 </div>
+
+<?php } ?>
+
+<?php if($currentSlide == '1.0'){ ?>
+  <div class="modal fade welcome" tabindex="-1" role="dialog" aria-labelledby="welcome">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h2 class="modal-title" id="myModalLabel">Hello!</h2>
+        </div>
+        <div class="modal-body">
+          <h4>Thanks for using Alidade! We hope it helps you.</h4>
+          <p>You don’t need to complete Alidade in one go: you can skip any step and revise your answers whenever you want.</p>
+          <p>All your data will be saved automatically until you close this page.</p>
+          <p><a href="#" id="register-from-modal" data-toggle="modal" data-target="#user-forms">Registering</a> lets you come back later to continue your project, and create multiple projects.</p>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-alidade btn-lg" data-dismiss="modal">Let's get started</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 <?php } ?>

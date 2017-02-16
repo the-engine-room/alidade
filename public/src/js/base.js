@@ -154,6 +154,14 @@ $(document).ready(function(){
         }
     });
 
+    /** alert out if window close **/ /*
+    if($('#slide-page').length > 0) {
+
+          window.onbeforeunload = function(){
+            return confirm('Are you sure? All unsaved progress will be lost!');
+          }
+        }
+      */
     /** Manage the Selection on 1.3 **/
     if( $('input[name="extra"]').length > 0 && $('input[name="extra"]').val() == 'no') {
       $('.picks').addClass('hide');
@@ -165,7 +173,10 @@ $(document).ready(function(){
         $('input[name="extra"]').val($(this).data('target'));
     });
 
-
+    $('.welcome').modal('show');
+    $('#register-from-modal').click(function(){
+      $('.welcome').modal('hide');
+    });
 
     $('.choice').click(function(){
         $('.choice-text').hide();
