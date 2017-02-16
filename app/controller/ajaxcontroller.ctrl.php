@@ -335,6 +335,7 @@
                     $response['message'] = 'Something went wrong. Please check the data and try again.';
                   }
                   else {
+                    unset($_SESSION[APPNAME]['DISP']);
                     $response['code'] = 'success';
                     $response['message'] = 'Registration complete!';
                   }
