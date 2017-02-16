@@ -296,39 +296,44 @@
                         if(isset($edit) && $edit == true ) { ?>
                         <input type="hidden" name="edit" value="true">
                         <?php }
+                        /** check if this is a recap slide **/
+                        if($slide->slide_type == 4){
+                          echo injectRecap($slide->description);
+                        } else {
 
+                          $boxes = injectBox($slide->description);
+                          $text = $boxes['content'];
 
-                        $boxes = injectBox($slide->description);
-                        $text = $boxes['content'];
-
-                        //while($prevAnswer = injectPrevAnswer())
-                        $prevAnswer = injectPrevAnswer($text);
-                        if($prevAnswer){
+                          $prevAnswer = injectPrevAnswer($text);
+                          if($prevAnswer){
                             $text = $prevAnswer['content'];
+                          }
+
+                          // multiple answer slides
+                          if( in_array( $currentSlide, $multiSlides )){
+                            echo injectMultipleAnswerField($text, 'answer', $origin);
+                          }
+                          else {
+                            switch($slide->slide_type){
+                              case 1:
+                                echo $text;
+                                break;
+                              case 2:
+                                echo injectAnswerField($text, 'answer', $origin);
+                                break;
+                              case 3:
+                                echo injectAnswerField($text, 'answer', $origin);
+                                break;
+                              default:
+                                $text = injectParam($text, 'project', $_SESSION['project']);
+                                $text = injectParam($text, 'step', $step_number);
+                                echo $text;
+                                break;
+                            }
+                          }
                         }
 
-                        // multiple answer slides
-                        if( in_array( $currentSlide, $multiSlides )){
-                            echo injectMultipleAnswerField($text, 'answer', $origin);
-                        }
-                        else {
-                            switch($slide->slide_type){
-                                case 1:
-                                    echo $text;
-                                    break;
-                                case 2:
-                                    echo injectAnswerField($text, 'answer', $origin);
-                                    break;
-                                case 3:
-                                    echo injectAnswerField($text, 'answer', $origin);
-                                    break;
-                                default:
-                                    $text = injectParam($text, 'project', $_SESSION['project']);
-                                    $text = injectParam($text, 'step', $step_number);
-                                    echo $text;
-                                    break;
-                            }
-                        }
+
                         ?>
                         <div class="row" id="slide-buttons">
                             <div class="col-xs-12 col-sm-12 col-md-12">
@@ -358,7 +363,7 @@
                     echo '<img class="img-responsive" src="/assets/images/tool/RecapStep' . $slide->step . '.svg" alt="' . $slide->title . '">';
                   }
                   ?>
-                  <?php echo implode(' ', $boxes['boxes']); ?>
+                  <?php echo (!empty($boxes) && isset($boxes) ? implode(' ', $boxes['boxes']) : ''); ?>
                   </aside>
                 </div>
             </div>
