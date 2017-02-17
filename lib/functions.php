@@ -175,7 +175,7 @@
     function injectPrevAnswer($string){
         //$string = strip_tags($string, '<div><b><i><a><ul><ol><li>');
 
-        preg_match('/\[--prev\|\d\.\d\--]/im', $string, $matches);
+        preg_match_all('/\[--prev\|\d\.\d\--]/im', $string, $matches);
         $matches =  $matches[0];
 
         if(!empty($matches) && is_array($matches)){

@@ -148,23 +148,20 @@ $(document).ready(function(){
     $('#slide-sidebar').css({ 'min-height': $('#slide-content').outerHeight() + 50 });
 
     /** warn of data loss **/
-    if($('#slide-page').length > 0){
+    if( $('#slide-page').length > 0 ){
       /** what have you clicked? **/
       $(window).click(function(ev){
         var target = ev.target;
-        console.log($(target));
-        console.log($(target).parents('#slide-page').length == 0);
         /** if i'm clicking stuff outside of the tool execute onbefroeunload warning **/
         window.onbeforeunload = function (e) {
           e = e || window.event;
           var y = e.pageY || e.clientY;
-          if (y < 0 || $(target).parents('#slide-page').length == 0){
+          if( y < 0 || $(target).parents('#slide-page').length == 0 ){
             return "Leaving now will result in loosing any unsaved progress.";
           }
         }
       });
     }
-
 
     /** Set arrowheads for the sidebar **/
     $('.step ul li a').each(function(){
@@ -172,8 +169,7 @@ $(document).ready(function(){
             $(this).addClass('taller');
         }
     });
-
-
+    
     /** Manage the Selection on 1.3 **/
     if( $('input[name="extra"]').length > 0 && $('input[name="extra"]').val() == 'no') {
       $('.picks').addClass('hide');
