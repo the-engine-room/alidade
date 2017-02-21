@@ -1,4 +1,3 @@
-
 function doYouSee(selector){
   var y = $(selector).position().top;
   var windowY = $(window).scrollTop();
@@ -169,7 +168,7 @@ $(document).ready(function(){
             $(this).addClass('taller');
         }
     });
-    
+
     /** Manage the Selection on 1.3 **/
     if( $('input[name="extra"]').length > 0 && $('input[name="extra"]').val() == 'no') {
       $('.picks').addClass('hide');
@@ -229,6 +228,22 @@ $(document).ready(function(){
       }
     }
 
+    $('.project-deleter').click(function(){
+      var confirmText = 'Are you sure? This will delete all the answers and documents associated with this project permanently.';
+      var deleter = $(this);
+      var progBar = deleter.next('a');
+      if(confirm(confirmText)){
+        var project = $(this).data('delete');
+        $.post('/ajax/delete_project', {project: project}, function(response){
+          if(response.code == 200){
+            progBar.remove();
+            deleter.remove();
+          }
+        }, 'json');
+      }
+    });
+
+    /** project name save **/
     $('.ajx.project-name').submit(function(e){
         e.preventDefault();
         var theForm = $(this);

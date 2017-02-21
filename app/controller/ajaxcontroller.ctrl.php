@@ -395,4 +395,32 @@
           }
         }
 
+        /** delete a whole project depending on the hash and the user **/
+        public function delete_project(){
+          $Auth = new Auth($url);
+          if($Auth->isLoggedIn()){
+            // get the hash
+            $user = $Auth->getProfile();
+            $hash = $_POST['project'];
+            $ObjProject = new Project;
+            $Project = $ObjProject->find(array('hash' => $hash));
+            if($Project) {
+              if($Project[0]->user == $user->id){
+                // delete slides
+                $Slides = new Slide;
+                $Slides->clean($Project[0]->idprojects);
+                // delete project
+                $ObjProject->delete($Project[0]->idprojects);
+                $response = array('code' => 200);
+              }
+            } else {
+              $response = array('code' => 400);
+            }
+          }
+          else {
+            $response = array('code' => '0');
+          }
+
+          echo json_encode($response);
+        }
   }

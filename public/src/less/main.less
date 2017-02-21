@@ -63,3 +63,65 @@ footer {
 		}
 	}
 }
+
+
+/** Projects page **/
+.project-wrapper {
+	background: @header;
+	padding: 10px;
+	width: 90%;
+	margin: 15px 0px;
+	min-height: 50px;
+	float: left; clear: none;
+	.project-bar {
+		width: 100%;
+		background: lighten(@header, 10%);
+		position: relative;
+		line-height: 30px;
+		min-height: 30px;
+		.project-progress {
+			display: block;
+			position: absolute;
+			min-height: 30px;
+			background: @btn;
+			z-index: 10;
+		}
+		.project-title {
+			position: absolute;
+			z-index: 50;
+			color: white;
+			font-family: 'Oswald';
+			font-size: 20px;
+			font-weight: 400;
+			padding: 0px 15px;
+			width: 100%;
+		}
+
+	}
+	& + .project-continue {
+		width: 10%;
+		margin: 15px 0px;
+		line-height: 50px;
+		color: white;
+		text-align: center;
+		background: @btn;
+		float: left; clear: none;
+		-webkit-border-top-right-radius: 2px;
+		-webkit-border-bottom-right-radius: 2px;
+		-moz-border-radius-topright: 2px;
+		-moz-border-radius-bottomright: 2px;
+		border-top-right-radius: 2px;
+		border-bottom-right-radius: 2px;
+	}
+}
+.project-deleter {
+	cursor: pointer;
+	position: absolute;
+	left: -3px; top: -5px;
+	width: 30px;
+	height: 30px;
+	background-color: #EBE7E3;
+	box-shadow: 0 0 4px 0 rgba(0,0,0,0.5);
+	.border-radius(15px);
+	i { font-size: 20px; width: 30px;text-align: center; line-height: 30px; }
+}

@@ -337,6 +337,13 @@
                         ?>
                         <div class="row" id="slide-buttons">
                             <div class="col-xs-12 col-sm-12 col-md-12">
+                              <?php
+                                if($slide->slide_type == 4) {
+                              ?>
+                              <a href="/printer/output/<?php echo $_SESSION['project'] . '/' . substr($currentSlide, 0, 1); ?>" target="_blank" class="btn btn-alidade btn-lg">Download PDF</a>
+                              <?php
+                                }
+                              ?>
                                 <?php
                                 if(isset($inProcess) && $inProcess == true){
                                     if($currentSlide == '3.5') {
@@ -345,7 +352,6 @@
                                 <?php
                                 }
                                 elseif(!is_null($nextSlide) && !empty($nextSlide)) {
-
                                 ?>
                                 <button type="submit" class="btn btn-alidade btn-lg">NEXT: <?php echo $slideMenu[$nextSlide]; ?></button>
                                 <?php
