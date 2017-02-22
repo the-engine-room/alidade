@@ -137,9 +137,16 @@
                         $this->set('back', true);
                     }
                 }
-
+                /** access the selection from other slides as well **/
+                if($cur == '4.2'){
+                  $getSlideOptions =$Slide->find(array(
+                                                     'project'    => $project[0]->idprojects,
+                                                     'step'       => 4,
+                                                     'slide'      => 1,
+                                                     ));
+                  $this->set('selection', explode(';', $getSlideOptions[0]->extra));
+                }
                 if(isset($_POST) && !empty($_POST)){
-
                     $_SESSION['plan'][$_POST['current_slide']] = $_POST;
 
                     $slide_position = explode('.', $_POST['current_slide']);
@@ -185,6 +192,7 @@
                         $answer = '';
                         $this->set('selection', $options);
                     }
+
 
                     $slide['answer'] = $answer;
 
@@ -403,5 +411,5 @@
             }
         }
 
-        
+
     }
