@@ -9,7 +9,9 @@
     </div>
 
     <?php
+    $counter = count($projects);
     foreach($projects as $p){
+      $indicator = $counter;
       // completeness percentage
       $completeness = round( (count($p['index']) / (count($slideindex['fullIndex']) - 1)) * 100);
 
@@ -30,7 +32,7 @@
               <div class="project-wrapper">
                 <div class="project-bar">
                   <div class="project-progress" style="width: <?php echo $completeness; ?>%"></div>
-                  <div class="project-title"><?php echo $p['title']; ?> <div class="pull-right"><?php echo $completeness; ?>%</div></div>
+                  <div class="project-title">Project #<?php echo $counter; ?> (<?php echo strftime('%d %b %Y', strtotime($p['created_at'])); ?>) <div class="pull-right"><?php echo $completeness; ?>%</div></div>
                 </div>
               </div>
               <div class="project-continue">
@@ -40,6 +42,10 @@
         </div>
 
     </div>
-    <?php } ?>
+
+  <?php
+    $counter--;
+  }
+  ?>
 
 </div>

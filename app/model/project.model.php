@@ -30,7 +30,7 @@
         }
 
         public function findProject($id){
-            $sql .= 'SELECT * FROM `' . $this->table . '` AS `p`
+            $sql .= 'SELECT *, UNIX_TIMESTAMP(created_at) AS creation  FROM `' . $this->table . '` AS `p`
                         WHERE `p`.`idprojects` = :id';
             $stmt = $this->database->prepare($sql);
             $stmt->bindParam(':id', $id, PDO::PARAM_INT);
@@ -64,4 +64,3 @@
             }
         }
     }
-    
