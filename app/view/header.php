@@ -79,7 +79,7 @@
 
 <div class="container-fluid">
 	<header class="row" id="app-header">
-		<div class="col-md-8 col-sm-6 col-xs-4"><h1>Alidade</h1></div>
+		<div class="col-md-8 col-sm-6 col-xs-4"><img src="/assets/images/Alidade_logo_logo_circle.svg" class="alidade-header-logo" alt="Alidade Logo"><h1>Alidade</h1></div>
 		<div class="col-md-4 col-sm-6 col-xs-8">
 			<?php if(isset($_SESSION[APPNAME][SESSIONKEY]) && !empty($_SESSION[APPNAME][SESSIONKEY]) && !isset($_SESSION[APPNAME]['DISP'])) { ?>
 			<div class="pull-right user-panel">
@@ -89,7 +89,7 @@
 					<?php if(isset($userRole) && $userRole == 'root') { ?>
 					--><li><a href="/manage/index" title="Manage Contents" class="mininav"><i class="fa fa-wrench fa-fw"></i><span class="hidden-xs">Manage</span></a></li><!--
 					<?php } ?>
-					--><li><a href="/user/projects" title="All your Projects" class="mininav"><i class="fa fa-tasks fa-fw"></i><span class="hidden-xs">My Projects</span></a></li><!--
+        --><li><a href="/user/projects" title="All your Projects" class="mininav" id="projects-page"><i class="fa fa-tasks fa-fw"></i><span class="hidden-xs">My Projects</span></a></li><!--
 					--><li><a href="/user/logout" title="Logout" class="mininav"><i class="fa fa-sign-out fa-fw"></i><span class="sr-only">Logout</span></a></li><!-- -->
 				</ul>
 			</div>

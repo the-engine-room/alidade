@@ -140,7 +140,7 @@ $(document).ready(function(){
       // set the pointer
       var activeOffset = $('.quoter.active').offset();
       var pointerPosition = (activeOffset.left + ($('.quoter.active').width()/2)) - ($('.pointer ~ .point').width()/2) - 10;
-      console.log(pointerPosition);
+      //console.log(pointerPosition);
       $('.pointer ~ .point').offset({left : pointerPosition});
     });
 
@@ -151,11 +151,13 @@ $(document).ready(function(){
       /** what have you clicked? **/
       $(window).click(function(ev){
         var target = ev.target;
+      //  console.log($(target));
+        //return false;
         /** if i'm clicking stuff outside of the tool execute onbefroeunload warning **/
         window.onbeforeunload = function (e) {
           e = e || window.event;
           var y = e.pageY || e.clientY;
-          if( y < 0 || $(target).parents('#slide-page').length == 0 ){
+          if( y < 0 || ( $(target).parents('#slide-page').length == 0 && $(target).parents('#projects-page').length == 0)){
             return "Leaving now will result in loosing any unsaved progress.";
           }
         }
@@ -269,6 +271,22 @@ $(document).ready(function(){
         return false;
     });
 
+    /** Save answers when navigating to the projects page **/
+    $('#projects-page').click(function(e){
+        e.preventDefault();
+        var data = $('form#mainForm').serialize();
+        var destination = $(this).attr('href');
+        $.post(
+            '/ajax/continuity',
+            data,
+            function(response){
+              window.location.href = destination;
+            },
+            'json'
+        );
+    });
+
+    /** save answers in modals **/
     $('.saveAnswer').submit(function(e){
         e.preventDefault();
         var vals = { slide: null, answer: [] };
@@ -374,6 +392,9 @@ $(document).ready(function(){
       );
     });
 
+
+    // **** UNUSED ****
+    /*
     $('.ajx.tsa-tooltip').each(function(){
         var theUrlPieces = $(this).attr('href').split('/');
         var Slide = theUrlPieces[theUrlPieces.length - 1];
@@ -403,6 +424,7 @@ $(document).ready(function(){
                 );
 
     });
+    */
 
     // Load previous slide answers to check them out
     $('.prev-slide-loader').click(function(e){
@@ -512,6 +534,5 @@ $(document).ready(function(){
         }
     });
 
-    // enable bootstrap tooltips
-    $('[data-toggle="tooltip"]').tooltip();
+
 });

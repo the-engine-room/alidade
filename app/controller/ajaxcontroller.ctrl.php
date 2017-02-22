@@ -131,6 +131,7 @@
                 return false;
             }
             else {
+              $Slide = new Slide;
               $_SESSION['plan'][$_POST['current_slide']] = $_POST;
 
               $slide_position = explode('.', $_POST['current_slide']);
@@ -179,17 +180,18 @@
 
               $slide['answer'] = $answer;
 
-              //dbga($_POST);
+              /** update slide **/
+              $toUpdate = $Slide->find(array('step'   => $slide['step'],
+                                             'slide'  => $slide['slide'],
+                                             'project'=> $slide['project']
+                                             ));
 
-              if(isset($_POST['slide_update']) && !empty($_POST['slide_update'])){
-                /** update slide **/
 
-
-
+              if(!empty($toUpdate)){
+                $Slide->update($slide, $toUpdate[0]->idslides);
               } else {
                 /** new slide **/
-
-                $response['code'] = 'success';
+                $r = $Slide->create($slide);
               }
             }
             $response['code'] = 'success';
