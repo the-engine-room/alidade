@@ -56,7 +56,9 @@
         }
         elseif ($controller == 'page' && $action != 'index' ){
            $qs[] = $action;
-           $action = 'index';
+           if ($action == 'six-rules-for-choosing-technology'){
+             $action = 'six_rules';
+           }
         }
 
         $controllerName=$controller;
@@ -89,7 +91,7 @@
             require_once(ROOT . DS . 'app' . DS . 'controller' . DS . strtolower($className).'.ctrl.php');
         }
         elseif(file_exists(ROOT . DS . 'lib' . DS . 'vendor' . DS . 'dompdf' . DS . 'autoload.inc.php')){
-          require_once(ROOT . DS . 'lib' . DS . 'vendor' . DS . 'dompdf' . DS . 'autoload.inc.php');          
+          require_once(ROOT . DS . 'lib' . DS . 'vendor' . DS . 'dompdf' . DS . 'autoload.inc.php');
         }
         else {
            new Error(501, 'Class <strong>'.ucfirst($className).'</strong> Not Found. Program Shutdown. (main.php, 92)');

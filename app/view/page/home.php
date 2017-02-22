@@ -144,11 +144,11 @@
 <div class="container-fluid box-1">
   <div class="row">
     <div class="col-md-6">
-      <h2><a href="https://alidade.tech/page/six-rules">Read our six-rule summary for choosing tech</a></h2>
+      <h2><a href="/page/six-rules-for-choosing-technology">Read our six-rule summary for choosing tech</a></h2>
       <p>Based on our research, six tips and six questions to lead you to a better choice.</p>
     </div>
     <div class="col-md-6">
-      <h2><a href="https://alidade.tech/page/research">Read about the research Alidade was built on</a></h2>
+      <h2><a href="/page/research">Read about the research Alidade was built on</a></h2>
       <p>Result of a 2-year research project with activists in Kenya and South Africa.</p>
     </div>
   </div>
