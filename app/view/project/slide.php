@@ -429,9 +429,10 @@ if ($prevAnswer) {
         </div>
         <div class="modal-body">
           <h4>Thanks for using Alidade! We hope it helps you.</h4>
-          <p>You don’t need to complete Alidade in one go: you can skip any step and revise your answers whenever you want.</p>
+          <p>Follow the steps to create a strategy plan for your tech project. You can skip steps and complete them in any order.</p>
+          <p>Used Alidade before? <a href="#" id="register-from-modal" data-toggle="modal" data-target="#user-forms">Login</a>.</p>
+          <p>Want to save your progress for later? <a href="#" id="register-from-modal" data-toggle="modal" data-target="#user-forms">Register</a>.</p>
           <p>All your data will be saved automatically until you close this page.</p>
-          <p><a href="#" id="register-from-modal" data-toggle="modal" data-target="#user-forms">Registering</a> lets you come back later to continue your project, and create multiple projects.</p>
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-alidade btn-lg" data-dismiss="modal">Let's get started</button>
