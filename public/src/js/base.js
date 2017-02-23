@@ -39,6 +39,7 @@ $(document).ready(function(){
 
     if(doYouSee($('#slide-3')) && slides.slide3 == false) {
       $('#slide-3 .contents').addClass('showtime').removeClass('ninjad');
+      $('.background img').fadeTo(500, 0.2);
       $('#animate-logo-1').fadeTo(500, 0);
       $('#spyglass-animate').fadeTo(1000, 1, function(){
         /** animate the icons **/
@@ -157,7 +158,7 @@ $(document).ready(function(){
         window.onbeforeunload = function (e) {
           e = e || window.event;
           var y = e.pageY || e.clientY;
-          if( y < 0 || ( $(target).parents('#slide-page').length == 0 && $(target).parents('#projects-page').length == 0)){
+          if( y < 0 || ( $(target).parents('#slide-page').length == 0 && $(target).parents('#projects-page').length == 0 && $(target).parents('#loginForm').length == 0)){
             return "Leaving now will result in loosing any unsaved progress.";
           }
         }
@@ -230,6 +231,7 @@ $(document).ready(function(){
       }
     }
 
+    /** delete projects **/
     $('.project-deleter').click(function(){
       var confirmText = 'Are you sure? This will delete all the answers and documents associated with this project permanently.';
       var deleter = $(this);
@@ -382,7 +384,7 @@ $(document).ready(function(){
           $(holder).append('<div class="alert alert-success">' + response.message + '<strong>Reloading credentials...</strong></div>');
           // hide modal after 1 second.
           setTimeout(function(){ $('#user-forms').modal('hide'); }, 1950);
-          setTimeout(function(){ location.reload(); }, 2000);
+          setTimeout(function(){ location.href= "/user/projects"; }, 2000);
         }
         else {
           $('#login').before('<div class="alert alert-danger">' + response.message + '</div>');
@@ -391,7 +393,6 @@ $(document).ready(function(){
       'json'
       );
     });
-
 
     // **** UNUSED ****
     /*

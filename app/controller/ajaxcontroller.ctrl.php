@@ -381,7 +381,11 @@
                 if(isset($_POST['prj']) && !empty($_POST['prj']) && filter_var($_POST['prj'], FILTER_VALIDATE_INT)){
                   $project = filter_var($_POST['prj'], FILTER_SANITIZE_NUMBER_INT);
                   $Project = new Project;
-                  $Project->update(array('user' => $user[0]->idusers), $project);
+                  $Slides = new Slide;
+                  // let's delete this junk, we don't need it
+                  $Slides->clean($project);
+                  // delete project
+                  $Project->delete($project);
                 }
 
                 $response['code'] = 'success';

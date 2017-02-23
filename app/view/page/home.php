@@ -68,7 +68,7 @@
             </div>
             <div class="text-step text-step-3">
               <div class="number">3</div>
-              <div class="text">Trial tools with users</div>
+              <div class="text">Plan a trial of the tool with your users</div>
             </div>
           </div>
         </div>
@@ -204,7 +204,7 @@
         <div class="row">
           <div class="col-md-12">
             <h2 class=" text-center">Who made this</h2>
-            <p class="text-left">In 2015-16, The Engine Room, Pawa254 and the Network Society Lab conducted an 18-month research project into how Kenyan and South African organisations choose digital technology tools for transparency and accountability projects. To makde the findings as practical as possible, we created Alidade. <br />
+            <p class="text-left">In 2015-16, The Engine Room, Pawa254 and the Network Society Lab conducted an 18-month research project into how Kenyan and South African organisations choose digital technology tools for transparency and accountability projects. To make the findings as practical as possible, we created Alidade. <br />
               The project was supported by Making All Voices Count.</p>
           </div>
         </div>
