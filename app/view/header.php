@@ -79,7 +79,8 @@
 
 <div class="container-fluid">
 	<header class="row" id="app-header">
-		<div class="col-md-8 col-sm-6 col-xs-4"><img src="/assets/images/Alidade_logo_logo_circle.svg" class="alidade-header-logo" alt="Alidade Logo"><h1>Alidade</h1></div>
+		<div class="col-md-8 col-sm-6 col-xs-4">
+      <a href="/"><img src="/assets/images/Alidade_logo_logo_circle.svg" class="alidade-header-logo" alt="Alidade Logo"></a><h1>Alidade</h1></div>
 		<div class="col-md-4 col-sm-6 col-xs-8">
 			<?php if(isset($_SESSION[APPNAME][SESSIONKEY]) && !empty($_SESSION[APPNAME][SESSIONKEY]) && !isset($_SESSION[APPNAME]['DISP'])) { ?>
 			<div class="pull-right user-panel">
