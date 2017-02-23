@@ -89,7 +89,7 @@
               <textarea name="step6" class="form-control" rows="12"></textarea>
             </div>
             <div class="col-md-5 col-sm-3 col-xs-12">
-              <img src="/assets/images/six-rules/Step5.svg" class="img-responsive center-block" alt="Research!">
+              <img src="/assets/images/six-rules/step5.svg" class="img-responsive center-block" alt="Research!">
               <div class="box box-research">
                 <h3>Research Finding</h3>
                 The few organisations that explicitly planned for the risks involved in choosing new tools were most likely to be happy with their choice. They also gained knowledge that they said they would be useful next time they chose a tool.
