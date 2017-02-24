@@ -11,7 +11,7 @@
             <div class="modal-body">
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-6">
-                        <?php if($_SESSION[APPNAME]['DISP']){ ?>
+                        <?php if((!isset($_SESSION[APPNAME][SESSIONKEY]) || empty($_SESSION[APPNAME][SESSIONKEY])) || $_SESSION[APPNAME]['DISP']){ ?>
                         <h3>Login</h3>
                         <form action="/user/login" method="post" id="loginForm">
 

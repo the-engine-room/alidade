@@ -187,8 +187,8 @@
 
                     /** Slide 4.1 has options instead of radios **/
                     if($_POST['current_slide'] == '4.1'){
-                        $options = array_keys($_POST['option']);
-                        $slide['extra'] = implode(';', $options);
+                        $options = is_array($_POST['option']) ? array_keys($_POST['option']) : null;
+                        $slide['extra'] = !empty($_POST['option']) ? implode(';', $options) : '';
                         $answer = '';
                         $this->set('selection', $options);
                     }

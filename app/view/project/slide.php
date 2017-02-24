@@ -283,7 +283,8 @@
                         <?php
                         /** check for preselected options in slide 4.2 **/
                         if($currentSlide == '4.2') {
-                            $selection = implode(';', $selection);
+                          $selection = !empty($selection) ? implode(';', $selection) : ''; 
+
                         ?>
                         <input type="hidden" name="preselected" id="preselected" value="<?php echo $selection; ?>">
                         <?php } ?>
