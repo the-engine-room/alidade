@@ -10,7 +10,7 @@
     <div class="col-xs-12 col-sm-6 col-md-4 feedback">
       <div class="pull-left icon"><i class="fa fa-question-circle-o "></i></div>
       <div class="pull-left">
-        <a href="/page/research-report">Learn more about the research</a><br />
+        <a href="/page/research">Learn more about the research</a><br />
         <p>Part of an in-depth research project on how Kenyan and South African transparency and accountability organisations choose technology.</p>
       </div>
       <div class="clearfix"></div>

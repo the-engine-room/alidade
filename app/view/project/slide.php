@@ -283,7 +283,7 @@
                         <?php
                         /** check for preselected options in slide 4.2 **/
                         if($currentSlide == '4.2') {
-                          $selection = !empty($selection) ? implode(';', $selection) : ''; 
+                          $selection = !empty($selection) ? implode(';', $selection) : '';
 
                         ?>
                         <input type="hidden" name="preselected" id="preselected" value="<?php echo $selection; ?>">
@@ -349,7 +349,9 @@
                                 if(isset($inProcess) && $inProcess == true){
                                     if($currentSlide == '3.5') {
                                 ?>
-                                <a href="/project/slide/4.8?p=<?php echo $hash; ?>" class="btn btn-alidade btn-lg">Yes, well'use an existing tool</a> or <button type="submit" class="btn btn-alidade btn-lg">No, we need to build a tool</button>
+                                <p></p>
+                                <p>Do you need more help to choose, build or implement a tool?</p>
+                                <button type="submit" class="btn btn-alidade btn-lg">Yes, we need help</button> or <a href="/project/slide/4.8?p=<?php echo $hash; ?>" class="btn btn-alidade btn-lg">No, we don't</a>
                                 <?php
                                 }
                                 elseif(!is_null($nextSlide) && !empty($nextSlide)) {
@@ -368,6 +370,10 @@
                   <?php
                   if($slide->slide_type == 4) {
                     echo '<img class="img-responsive" src="/assets/images/tool/RecapStep' . $slide->step . '.svg" alt="' . $slide->title . '">';
+                  }
+                  elseif($slide->slide_type == 1){
+                    echo '<img class="img-responsive center-block" src="/assets/images/six-rules/Step' . $slide->step . '.svg" alt="' . $slide->title . '"><p></p>';
+
                   }
                   ?>
                   <?php echo (!empty($boxes) && isset($boxes) ? implode(' ', $boxes['boxes']) : ''); ?>

@@ -39,8 +39,8 @@
       <div class="col-md-6">
         <div class="contents ninjad">
           <h1>There are lots of tech options to choose from.</h1>
-          <p><img src="/assets/images/hp/checkmark.svg" class="checkmark" alt="check mark">Which options are best for your project?</p>
-          <p><img src="/assets/images/hp/checkmark.svg" class="checkmark" alt="check mark">How do you know if you’re asking the right questions?</p>
+          <p><img src="/assets/images/hp/checkmark.png" class="checkmark" alt="check mark">Which options are best for your project?</p>
+          <p><img src="/assets/images/hp/checkmark.png" class="checkmark" alt="check mark">How do you know if you’re asking the right questions?</p>
         </div>
       </div>
     </div>
@@ -49,8 +49,8 @@
       <div class="col-md-6">
         <div class="contents ninjad">
           <h1>Alidade helps you plot a path to the right choice.</h1>
-          <p><img src="/assets/images/hp/checkmark.svg" class="checkmark" alt="check mark">Interactive questions, tips, real-life examples</p>
-          <p><img src="/assets/images/hp/checkmark.svg" class="checkmark" alt="check mark">Save your progress</p>
+          <p><img src="/assets/images/hp/checkmark.png" class="checkmark" alt="check mark">Interactive questions, tips, real-life examples</p>
+          <p><img src="/assets/images/hp/checkmark.png" class="checkmark" alt="check mark">Save your progress</p>
           <svg id="homepage-steps" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 208 309">
             <defs>
             <style>.cls-1{isolation:isolate;}.cls-2{fill:none;stroke:#af6455;stroke-linecap:square;stroke-width:4px;stroke-dasharray:10;}.cls-3{fill:#b86161;}.cls-4{fill:#af6455;}</style></defs>
@@ -79,8 +79,8 @@
       <div class="col-md-6">
         <div class="contents ninjad">
           <h1>Get a detailed technology plan for your project</h1>
-          <p><img src="/assets/images/hp/checkmark.svg" class="checkmark" alt="check mark">Export in PDF or Word</p>
-          <p><img src="/assets/images/hp/checkmark.svg" class="checkmark" alt="check mark">Share with collegues, technology partners and donors</p>
+          <p><img src="/assets/images/hp/checkmark.png" class="checkmark" alt="check mark">Export in PDF or Word</p>
+          <p><img src="/assets/images/hp/checkmark.png" class="checkmark" alt="check mark">Share with collegues, technology partners and donors</p>
         </div>
       </div>
     </div>

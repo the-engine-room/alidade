@@ -27,6 +27,9 @@
                                 <input type="password" class="form-control" name="password" id="password">
                             </div>
                             <div class="form-group">
+                              <a href="/user/recover" title="start password recovery procedure">Password forgotten?</a>
+                            </div>
+                            <div class="form-group">
                                 <button type="submit" class="form-control btn btn-alidade btn-block" name="submit" id="login">Login</button>
                             </div>
                         </form>

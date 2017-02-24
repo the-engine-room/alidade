@@ -49,9 +49,9 @@
           <p>However, this learning was hampered by a lack of user research or trialling, difficulties accessing relevant advice from peers, advisers or technical partners, and limited awareness of their own knowledge gaps.</p>
           <p>We identified a few key steps that could help address these problems. We created Alidade to guide activists and organisations through these steps. We hope that it can help them make better decisions in future. </p>
           <div class="row icon-wrap">
-            <div class="col-md-5 col-sm-5 col-xs-12"><a href="" class="btn btn-lg btn-block btn-alidade"><i class="fa  fa-file-pdf-o"></i> Read short research summary</a> </div>
+            <div class="col-md-5 col-sm-5 col-xs-12"><a href="" class="btn btn-lg btn-block btn-alidade"><i class="fa  fa-file-pdf-o"></i> Read summary</a> </div>
             <div class="col-md-2 col-sm-2 col-xs-12"><span class="btn btn-lg btn-block">or</span></div>
-            <div class="col-md-5 col-sm-5 col-xs-12"><a href="" class="btn btn-lg  btn-block btn-alidade"><i class="fa fa-file-pdf-o"></i> Download full research report</a></div>
+            <div class="col-md-5 col-sm-5 col-xs-12"><a href="" class="btn btn-lg  btn-block btn-alidade"><i class="fa fa-file-pdf-o"></i> Read full report</a></div>
           </div>
           <p>Short on time? Start with our <a href="/page/six-rules-for-choosing-technology">Six rules for choosing technology</a>.
 
