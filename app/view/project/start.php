@@ -6,11 +6,9 @@
             <?php if(isset($_GET['reg'])){  ?>
             <div class="alert alert-success">Thank you for registering!</div>
             <?php } ?>
-            <p>The Tool Selection Assistant walks you through the process of deciding which technology tool is right for you.</p>
-            <p>It doesn't tell you which tool you should use, but supports your own research by asking questions, giving real-life examples and suggesting places to get help.</p>
-            <p><b>New here?</b> Start by naming your project below.</p> 
+            <p>Alidade helps you create a plan for choosing technology that suits your project.</p>
             
-            <p><b>Already started a project?</b> Find all your projects <a href="https://toolselect.theengineroom.org/user/projects">here</a>.</p>
+            <p><b>New here?</b> Start by naming your project below.</p> 
         </div>
     </div>
     <div class="row">
