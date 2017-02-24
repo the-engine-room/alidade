@@ -79,7 +79,7 @@
       <div class="col-md-6">
         <div class="contents ninjad">
           <h1>Get a detailed technology plan for your project</h1>
-          <p><img src="/assets/images/hp/checkmark.png" class="checkmark" alt="check mark">Export in PDF or Word</p>
+          <p><img src="/assets/images/hp/checkmark.png" class="checkmark" alt="check mark">Export in PDF</p>
           <p><img src="/assets/images/hp/checkmark.png" class="checkmark" alt="check mark">Share with collegues, technology partners and donors</p>
         </div>
       </div>
@@ -165,10 +165,10 @@
     <div class="col-md-10 col-md-offset-1">
       <div class="quotes clearfix">
         <div id="quote-1" class="quote hidden">
-          We used Alidade to help us decide how to develop an information scorecard for child protection planning. I'd definitely recommend it to other organisations - I'm not sure we would have been able to choose the right tool without it. It means putting in some hard work, but it is well worth it if you want to make a smart decision.
+          I used it to choose video and audio recording tools for citizen journalists in various parts of South Africa... The tool focused me on the importance of trying tools out, and I found the focus on understanding users really helpful. It worked really well for people like me, who have some familiarity with the tech, but not with thinking through the tech choices.
         </div>
         <div id="quote-2" class="quote show">
-          I used the site to choose video and audio recording tools for citizen journalists in various parts of South Africa... The tool focused me on the importance of trying tools out, and I found the focus on understanding users really helpful. It worked really well for people like me, who have some familiarity with the tech, but not with thinking through the tech choices.
+          We used Alidade to help us decide how to develop an information scorecard for child protection planning. I'd definitely recommend it to other organisations - I'm not sure we would have been able to choose the right tool without it. It means putting in some hard work, but it is well worth it if you want to make a smart decision.
         </div>
         <div id="quote-3" class="quote hidden">
           I see the tool as a good test for seeing how serious a grantee is about working on a problem using tech. It helps those without tech knowledge to simplify their path through the forest of tech options out there, and brings those with tech expertise back to what it should really be all about: content.
@@ -176,14 +176,14 @@
         <hr class="pointer"/>
         <div class="point"></div>
         <div class="quoter text-center" id="quoter-1" data-target="#quote-1">
+          <img class="center-block" src="/assets/images/hp/Paul_photo.png" alt="Paul McNally">
+          <span class="quoter-name">Paul McNally</span>
+          <span class="quoter-role">Citizen Justice Network,<br />University of Witwatersrand (South Africa)</span>  
+        </div>
+        <div class="quoter text-center active" id="quoter-2" data-target="#quote-2">
           <img class="center-block" src="/assets/images/hp/Kate_photo.png" alt="Kate McAlpine">
           <span class="quoter-name">Kate McAlpine</span>
           <span class="quoter-role">Lead Strategist,<br />Caucus for Children’s Rights (Tanzania)</span>
-        </div>
-        <div class="quoter text-center active" id="quoter-2" data-target="#quote-2">
-          <img class="center-block" src="/assets/images/hp/Paul_photo.png" alt="Paul McNally">
-          <span class="quoter-name">Paul McNally</span>
-          <span class="quoter-role">Citizen Justice Network,<br />University of Witwatersrand (South Africa)</span>
         </div>
         <div class="quoter text-center" id="quoter-3" data-target="#quote-3">
           <img class="center-block" src="/assets/images/hp/Sanne_photo.png" alt="Sanne van den Berg">
@@ -245,45 +245,46 @@
         <div class="row">
           <div class="col-md-4">
             <img src="/assets/images/hp/Alan_photo.png" alt="Alan Zard - LEVEL73" class="img-responsive center-block">
-            <p class="text-center"><strong>Alan Zard</strong><br />Web Dev</p>
+            <p class="text-center"><strong><a href="https://alanzard.com/">Alan Zard</a></strong><br />Web Dev</p>
           </div>
           <div class="col-md-4">
             <img src="/assets/images/hp/Ivana_photo.png" alt="Ivana Bugarinovic" class="img-responsive center-block">
-            <p class="text-center"><strong>Ivana Bugarinovic</strong><br />Illustration</p></div>
+            <p class="text-center"><strong><a href="https://dribbble.com/helexa">Ivana Bugarinovic</a></strong><br />Illustration</p>
+          </div>
           <div class="col-md-4">
             <img src="/assets/images/hp/Maya_photo.png" alt="Maya Richman" class="img-responsive center-block">
-            <p class="text-center"><strong>Maya Richman</strong><br />Web Ops</p>
+            <p class="text-center"><strong><a href="https://theengineroom.org/people/maya-richman/">Maya Richman</a></strong><br />Web Ops</p>
           </div>
           <div class="col-md-4">
             <img src="/assets/images/hp/Ozren_photo.png" alt="Ozren Muic" class="img-responsive center-block">
-            <p class="text-center"><strong>Ozren Muic</strong><br />UX UI Design</p>
+            <p class="text-center"><strong><a href="http://ozrenmuic.from.hr/">Ozren Muic</a></strong><br />UX UI Design</p>
           </div>
           <div class="col-md-4">
             <img src="/assets/images/hp/Ruth_photo.png" alt="Ruth Miller" class="img-responsive center-block">
-            <p class="text-center"><strong>Ruth Miller</strong><br />UX Research</p>
+            <p class="text-center"><strong><a href="http://ruthmiller.net/">Ruth Miller</a></strong><br />UX Research</p>
           </div>
           <div class="col-md-4">
             <img src="/assets/images/hp/Tin_photo.png" alt="Tin Geber" class="img-responsive center-block">
-            <p class="text-center"><strong>Tin Geber</strong><br />Tech Lead</p>
+            <p class="text-center"><strong><a href="https://theengineroom.org/people/tin-geber/">Tin Geber</a></strong><br />Tech Lead</p>
           </div>
         </div>
         <div class="row">
           <div class="col-md-12">
-            <h2 class=" text-center">Contributors</h2>
+            <h2 class=" text-center">Special thanks to contributors</h2>
           </div>
         </div>
         <div class="row">
           <div class="col-md-4">
             <img src="/assets/images/hp/Amy_photo.png" alt="Amy O'Donnell" class="img-responsive center-block">
-            <p class="text-center"><strong>Amy O'Donnell</strong><br />Oxfam GB</p>
+            <p class="text-center"><strong>Amy O'Donnell</strong><br /><a href="http://oxfam.org.uk/">Oxfam GB</a></p>
           </div>
           <div class="col-md-4">
             <img src="/assets/images/hp/Laura_photo.png" alt="Laura Walker McDonald" class="img-responsive center-block">
-            <p class="text-center"><strong>Laura Walker McDonald</strong><br />SIMLab</p>
+            <p class="text-center"><strong>Laura Walker McDonald</strong><br /><a href="http://simlab.org/">SIMLab</a></p>
           </div>
           <div class="col-md-4">
             <img src="/assets/images/hp/Dirk_photo.png" alt="Dirk Slater" class="img-responsive center-block">
-            <p class="text-center"><strong>Dirk Slater</strong><br />FabRiders</p>
+            <p class="text-center"><strong>Dirk Slater</strong><br /><a href="http://www.fabriders.net/">Fabriders</a></p>
           </div>
         </div>
       </div>
