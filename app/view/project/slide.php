@@ -299,7 +299,10 @@
                         <?php }
                         /** check if this is a recap slide **/
                         if($slide->slide_type == 4){
-                          echo injectRecap($slide->description);
+                          $boxes = injectBox($slide->description);
+                          $text = $boxes['content'];
+                          echo injectRecap($text);
+
                         } else {
 
                           $boxes = injectBox($slide->description);

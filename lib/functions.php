@@ -244,6 +244,9 @@
         }
         return $string;
       }
+      else {
+        return $string; 
+      }
     }
 
     function injectBox($string){
