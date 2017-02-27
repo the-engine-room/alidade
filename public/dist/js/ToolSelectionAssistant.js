@@ -184,7 +184,7 @@ $(document).ready(function(){
     });
 
     $('.welcome').modal('show');
-    $('#register-from-modal').click(function(){
+    $('.register-from-modal').click(function(){
       $('.welcome').modal('hide');
     });
 

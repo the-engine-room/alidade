@@ -437,8 +437,8 @@ if ($prevAnswer) {
         <div class="modal-body">
           <h4>Thanks for using Alidade! We hope it helps you.</h4>
           <p>Follow the steps to create a strategy plan for your tech project. You can skip steps and complete them in any order.</p>
-          <p>Used Alidade before? <a href="#" id="register-from-modal" data-toggle="modal" data-target="#user-forms">Login</a>.</p>
-          <p>Want to save your progress for later? <a href="#" id="register-from-modal" data-toggle="modal" data-target="#user-forms">Register</a>.</p>
+          <p>Used Alidade before? <a href="#" class="register-from-modal" data-toggle="modal" data-target="#user-forms">Login</a>.</p>
+          <p>Want to save your progress for later? <a href="#" class="register-from-modal" data-toggle="modal" data-target="#user-forms">Register</a>.</p>
           <p>All your data will be saved automatically until you close this page.</p>
         </div>
         <div class="modal-footer">
