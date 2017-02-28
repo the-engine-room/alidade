@@ -1,6 +1,7 @@
 
 <footer class="container-fluid">
   <div class="row">
+
     <div class="col-xs-12 col-sm-6 col-md-4 licensing">
       <p>Created by <a href="http://www.theengineroom.org">The Engine Room</a>, the <a href="http://www.networksociety.co.za/">Network Society Lab</a> and Mtaani Initiative based at <a href="http://www.pawa254.org">Pawa254</a>.</p>
       <p>Built by  <a href="http://www.theengineroom.org">The Engine Room</a></p>
@@ -8,6 +9,9 @@
       <p><a href="/page/research-report">Acknowledgements</a></p>
 	  </div>
     <div class="col-xs-12 col-sm-6 col-md-4 feedback">
+      <div class="pull-left icon"><i class="fa fa-file-text"></i></div>
+      <div class="pull-left"><a href="https://docs.google.com/document/d/1yRrQdx1hI7g75fgEPOO5Wve4Ed3L7G7Pws3_RBsf19c/edit#heading=h.q3ndwmnudcmx">Get a non-interactive version of Alidade in Google Doc form.</a></div>
+
       <div class="pull-left icon"><i class="fa fa-question-circle-o "></i></div>
       <div class="pull-left">
         <a href="/page/research">Learn more about the research</a><br />

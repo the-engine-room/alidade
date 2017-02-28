@@ -237,22 +237,22 @@
         <div class="row">
           <div class="col-md-4">
             <div class="row">
-              <div class="col-md-12 col-xs-6 col-xs-push-6"><a href="https://www.theengineroom.org"><img src="/assets/images/hp/ERlogo.png" alt="the engine room"  class="img-responsive center-block imgr"></a></div>
-              <div class="col-md-12 col-xs-6 col-xs-pull-6"><img src="/assets/images/hp/Tom_photo.png" alt="Tom Walker - The Engine Room" class="img-responsive center-block imgr"></div>
+              <div class="col-md-12 col-md-push-0 col-xs-6 col-xs-push-6"><a href="https://www.theengineroom.org"><img src="/assets/images/hp/ERlogo.png" alt="the engine room"  class="img-responsive center-block imgr"></a></div>
+              <div class="col-md-12 col-md-pull-0 col-xs-6 col-xs-pull-6"><img src="/assets/images/hp/Tom_photo.png" alt="Tom Walker - The Engine Room" class="img-responsive center-block imgr"></div>
               <div class="col-md-12 col-xs-12"><p><strong>Tom Walker</strong> is a research lead at <strong>The Engine Room</strong>, an international organisation that helps activists, organisations and other social change agents make the most of technology and data to increase their impact.</p></div>
             </div>
           </div>
           <div class="col-md-4">
             <div class="row">
-              <div class="col-md-12 col-xs-6 col-xs-push-6"><a href="https://networksocietylab.org/"><img src="/assets/images/hp/NSLlogo.png" alt="network society lab"  class="img-responsive center-block imgr"></a></div>
-              <div class="col-md-12 col-xs-6 col-xs-pull-6"><img src="/assets/images/hp/Indra_photo.png" alt="Indra de Lanerolle - Network Society Lab" class="img-responsive center-block imgr"></div>
+              <div class="col-md-12 col-md-push-0  col-xs-6 col-xs-push-6"><a href="https://networksocietylab.org/"><img src="/assets/images/hp/NSLlogo.png" alt="network society lab"  class="img-responsive center-block imgr"></a></div>
+              <div class="col-md-12 col-md-pull-0 col-xs-6 col-xs-pull-6"><img src="/assets/images/hp/Indra_photo.png" alt="Indra de Lanerolle - Network Society Lab" class="img-responsive center-block imgr"></div>
               <div class="col-md-12 col-xs-12"><p><strong>Indra de Lanerolle</strong> leads <strong>The Network Society Project</strong>, which conducts research on the Internet and its effects on society in South Africa and other African countries. It is based at the Journalism and Media programme at the University of Witwatersrand.</p></div>
             </div>
           </div>
           <div class="col-md-4">
             <div class="row">
-              <div class="col-md-12 col-xs-6 col-xs-push-6"><a href="#"><img src="/assets/images/hp/PAWAlogo.png" alt="the engine room"  class="img-responsive center-block imgr"></a></div>
-              <div class="col-md-12 col-xs-6 col-xs-pull-6"><img src="/assets/images/hp/Sasha_photo.png" alt="Tom Walker - The Engine Room" class="img-responsive center-block imgr"></div>
+              <div class="col-md-12 col-md-push-0  col-xs-6 col-xs-push-6"><a href="#"><img src="/assets/images/hp/PAWAlogo.png" alt="the engine room"  class="img-responsive center-block imgr"></a></div>
+              <div class="col-md-12 col-md-pull-0 col-xs-6 col-xs-pull-6"><img src="/assets/images/hp/Sasha_photo.png" alt="Tom Walker - The Engine Room" class="img-responsive center-block imgr"></div>
               <div class="col-md-12 col-xs-12"><p><strong>Sasha Kinney</strong> provides research and support for creative activism, civic tech, citizen journalism, grassroots organizing and social movements in Kenya.</p></div>
             </div>
           </div>
@@ -314,7 +314,7 @@
             <img src="/assets/images/hp/Laura_photo.png" alt="Laura Walker McDonald" class="img-responsive center-block imgr">
             <p class="text-center"><strong>Laura Walker McDonald</strong><br /><a href="http://simlab.org/">SIMLab</a></p>
           </div>
-          <div class="col-md-4 col-xs-6 col-xs-offset-3">
+          <div class="col-md-4 col-md-offset-0 col-xs-6 col-xs-offset-3">
             <img src="/assets/images/hp/Dirk_photo.png" alt="Dirk Slater" class="img-responsive center-block imgr">
             <p class="text-center"><strong>Dirk Slater</strong><br /><a href="http://www.fabriders.net/">Fabriders</a></p>
           </div>
