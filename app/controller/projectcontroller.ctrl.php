@@ -164,6 +164,7 @@
                         $extra = filter_var($_POST['extra'], FILTER_SANITIZE_SPECIAL_CHARS);
                         $answer = ( $extra == '#pick-1' ? $_POST['a'] : $_POST['b'] );
                         $answer = implode('##break## ', $answer);
+                        
                     }
                     // do that for the other multifields too
                     elseif(in_array($_POST['current_slide'], $this->multiSlides)){

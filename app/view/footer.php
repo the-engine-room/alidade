@@ -32,10 +32,10 @@
   <div class="row logos">
 		<div class="col-md-5">
 			<div class="row">
-        <div class="col-md-3"><img src="/assets/images/hp/ERlogoFooter.png" alt="the engine room" class="img-responsive center-block"></div>
-        <div class="col-md-3"><img src="/assets/images/hp/NSLlogoFooter.png" alt="Network Society Lab" class="img-responsive center-block"></div>
-        <div class="col-md-3"><img src="/assets/images/hp/PAWAlogoFooter.png" alt="PAWA Initiative" class="img-responsive center-block"></div>
-        <div class="col-md-3"><img src="/assets/images/hp/MAVClogoFooter.png" alt="MAVC" class="img-responsive center-block"></div>
+        <div class="col-md-3 col-xs-3"><img src="/assets/images/hp/ERlogoFooter.png" alt="the engine room" class="img-responsive center-block imgr"></div>
+        <div class="col-md-3 col-xs-3"><img src="/assets/images/hp/NSLlogoFooter.png" alt="Network Society Lab" class="img-responsive center-block"></div>
+        <div class="col-md-3 col-xs-3"><img src="/assets/images/hp/PAWAlogoFooter.png" alt="PAWA Initiative" class="img-responsive center-block"></div>
+        <div class="col-md-3 col-xs-3"><img src="/assets/images/hp/MAVClogoFooter.png" alt="MAVC" class="img-responsive center-block"></div><br /><br />
       </div>
 		</div>
 

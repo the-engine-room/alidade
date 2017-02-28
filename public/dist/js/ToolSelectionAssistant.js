@@ -21,14 +21,18 @@ $(document).ready(function(){
   }
 
   /** homepage scrollytelling **/
-  $(window).on('scroll', function() {
+  if($('body').hasClass('homepage')) {
+
+    $(window).on('scroll', function() {
     /** detect scroll position and attach slide id **/
     var WY = $(window).scrollTop();
     var WH = $(window).height();
     var third = WH/3;
 
+
+
     /** have the header appear when we scrolled at least 100px **/
-    if(WY > 100 && $('#homepage-header:not(:visible)') ) {
+    if(WY > 100 && $('#homepage-header:not(:visible)') && $(window).width() > 768) {
       $('#homepage-header').addClass('affix affix-top').fadeTo(350, 1);
     }
 
@@ -126,7 +130,7 @@ $(document).ready(function(){
     }
   });
 
-
+  }
     /** Homepage quotes **/
     $('.quoter').click(function(e){
       e.preventDefault();

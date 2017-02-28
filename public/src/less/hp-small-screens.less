@@ -1,0 +1,76 @@
+@media screen and (max-width: 991px) {
+  .first-fold {
+    background: #292639;
+    color: white;
+    padding-bottom: 60px;
+    h1, h2, h3 { color: white; text-align: center; font-weight: normal; }
+    h1 { font-size: 30px; line-height: 42px;
+      small { color: white; font-size: 28px; }
+      &:not(:first-of-type){
+        font-size: 20px;
+        line-height: 30px;
+        text-align: left;
+      }
+    }
+    h2 { font-size: 16px; line-height: 26px;  }
+    h3 { font-size: 14px;  line-height: 23px; margin: 35px auto; }
+    p {
+      font-size: 14px; line-height: 28px;
+      img.checkmark { margin-right: 10px; float: left; clear: none; margin-top: 7px;}
+      span { display: inline; float: left; width: 85%;}
+    }
+
+    ol.three-steps {
+      list-style: none;
+      margin: 35px auto;
+      padding-left: 20%;
+      li {
+        margin-bottom: 20px;
+        font-family: "Oswald",sans-serif;
+        img { margin-right: 15px; }
+      }
+    }
+  }
+  .carousel  {
+    padding-top: 35px;
+    .quote {
+      font-family: Oswald,sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 21px;
+      padding: 0px 0px 0px 30px;
+      position: relative;
+      &::before {
+        background: rgba(0, 0, 0, 0) url("/assets/images/hp/quote.svg") no-repeat scroll center center;
+        background-size: contain;
+        content: " ";
+        height: 45px;
+        left: -10px;
+        position: absolute;
+        top: -20px;
+        width: 30px;
+      }
+    }
+    hr.pointer {
+      margin-left: 0px;
+      margin-right: 0px;
+    }
+    .quoter-name { font-size: 12px; }
+    .quoter-role { font-size: 8px; line-height: 100%;  }
+  }
+
+  img.imgr, .creators .col-md-4 img.imgr { max-width: 100%; height: auto; display: block; }
+  .who-made-this {
+    font-size: 16px;
+    & h2 ~ p { font-size: 16px;  }
+    .col-xs-6 a:first-child {
+      margin-bottom: 20px;
+      height: auto;
+    }
+  }
+
+  .creators .col-md-4 p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+}
