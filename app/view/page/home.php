@@ -23,13 +23,13 @@
     <div class="row" id="intro">
       <div class="col-md-6">
         <h1>Choosing technology is hard.<br />Alidade can help.</h1>
-        <h3>Alidade creates a plan for finding technology tools that suit your social change project.</h3>
+        <h3>Use Alidade to create a plan for finding technology tools that suit your social change project.</h3>
         <h4>Built on in-depth research in Kenya and South Africa.<br />Designed for activists and social change organisations everywhere.</h4>
         <div class="row">
           <div class="col-md-10 col-md-offset-1">
 
             <a href="/project/slide/1.0" class="btn btn-alidade btn-lg btn-block">Start Alidade</a>
-            <p>Complete this interactive guide and get a planning document to share with colleagues, technical developers or funders.</p>
+            <p>Complete this interactive guide and get a planning document to share with colleagues, technical developers or donors.</p>
           </div>
         </div>
       </div>
@@ -49,8 +49,8 @@
       <div class="col-md-6">
         <div class="contents ninjad">
           <h1>Alidade helps you plot a path to the right choice.</h1>
-          <p><img src="/assets/images/hp/checkmark.png" class="checkmark" alt="check mark">Interactive questions, tips, real-life examples</p>
-          <p><img src="/assets/images/hp/checkmark.png" class="checkmark" alt="check mark">Save your progress</p>
+          <p><img src="/assets/images/hp/checkmark.png" class="checkmark" alt="check mark">Interactive questions to help structure your thinking</p>
+          <p><img src="/assets/images/hp/checkmark.png" class="checkmark" alt="check mark">Real-life examples and useful resources</p>
           <svg id="homepage-steps" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 208 309">
             <defs>
             <style>.cls-1{isolation:isolate;}.cls-2{fill:none;stroke:#af6455;stroke-linecap:square;stroke-width:4px;stroke-dasharray:10;}.cls-3{fill:#b86161;}.cls-4{fill:#af6455;}</style></defs>
@@ -78,9 +78,9 @@
     <div class="row" id="slide-4">
       <div class="col-md-6">
         <div class="contents ninjad">
-          <h1>Get a detailed technology plan for your project</h1>
-          <p><img src="/assets/images/hp/checkmark.png" class="checkmark" alt="check mark">Export in PDF</p>
-          <p><img src="/assets/images/hp/checkmark.png" class="checkmark" alt="check mark">Share with collegues, technology partners and donors</p>
+          <h1>Get a detailed technology strategy plan for your project</h1>
+          <p><img src="/assets/images/hp/checkmark.png" class="checkmark" alt="check mark">Export as a personalised PDF</p>
+          <p><img src="/assets/images/hp/checkmark.png" class="checkmark" alt="check mark">Ready to share with collegues, technology partners and donors</p>
         </div>
       </div>
     </div>
