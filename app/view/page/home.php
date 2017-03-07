@@ -209,7 +209,7 @@
         <div class="quoter text-center active" id="quoter-2" data-target="#quote-2">
           <img class="center-block imgr" src="/assets/images/hp/Kate_photo.png" alt="Kate McAlpine">
           <span class="quoter-name">Kate McAlpine</span>
-          <span class="quoter-role">Lead Strategist,<br />Caucus for Children’s Rights (Tanzania)</span>
+          <span class="quoter-role">Lead Strategist,<br />Community for Children’s Rights (Tanzania)</span>
         </div>
         <div class="quoter text-center" id="quoter-3" data-target="#quote-3">
           <img class="center-block imgr" src="/assets/images/hp/Sanne_photo.png" alt="Sanne van den Berg">
