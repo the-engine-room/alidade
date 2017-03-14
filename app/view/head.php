@@ -24,6 +24,21 @@
           <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
           <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
+
+<!-- Twitter and Open Graph cards -->
+            <meta name="twitter:card" content="summary_large_image">
+            <meta name="twitter:site" content="@EngnRoom">
+            <meta name="twitter:creator" content="@thomwithoutanh">
+            <meta name="twitter:title" content="Alidade: an interactive tool that explains what to look for when using technology for social change.">
+            <meta name="twitter:description" content="Choosing technology is hard. Alidade can help. Use Alidade to create a plan for finding technology tools that suit your social change project.">
+            <meta name="twitter:image" content="https://alidade.tech/assets/images/alidade-social-card.png">
+
+            <meta property="og:url" content="https://alidade.tech" />
+            <meta property="og:type" content="website" />
+            <meta property="og:title"              content="Alidade: an interactive tool that explains what to look for when using technology for social change." />
+            <meta property="og:description"        content="Choosing technology is hard. Alidade can help. Use Alidade to create a plan for finding technology tools that suit your social change project." />
+            <meta property="og:image" content="https://alidade.tech/assets/images/alidade-social-card.png" />
+<!-- End Twitter and Open Graph cards -->
 <!-- Piwik -->
 <script type="text/javascript">
   var _paq = _paq || [];
