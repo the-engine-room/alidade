@@ -47,11 +47,15 @@
           <h2>So what?</h2>
           <p>Through learning by doing, many organisations were starting to gain valuable knowledge about how to choose tools well.</p>
           <p>However, this learning was hampered by a lack of user research or trialling, difficulties accessing relevant advice from peers, advisers or technical partners, and limited awareness of their own knowledge gaps.</p>
-          <p>We identified a few key steps that could help address these problems. We created Alidade to guide activists and organisations through these steps. We hope that it can help them make better decisions in future. </p>
           <div class="row icon-wrap">
-            <div class="col-md-5 col-sm-5 col-xs-12"><a href="" class="btn btn-lg btn-block btn-alidade"><i class="fa  fa-file-pdf-o"></i> Read summary</a> </div>
+            <div class="col-md-5 col-sm-5 col-xs-12"><a href="http://alidade.tech/public/assets/Exec-summary%20-%20Tool–Selection-Research-Report.pdf" class="btn btn-lg btn-block btn-alidade"><i class="fa  fa-file-pdf-o"></i> Read summary</a> </div>
             <div class="col-md-2 col-sm-2 col-xs-12"><span class="btn btn-lg btn-block">or</span></div>
-            <div class="col-md-5 col-sm-5 col-xs-12"><a href="" class="btn btn-lg  btn-block btn-alidade"><i class="fa fa-file-pdf-o"></i> Read full report</a></div>
+            <div class="col-md-5 col-sm-5 col-xs-12"><a href="http://alidade.tech/public/assets/Full-report%20-%20Tool–Selection-Research-Report.pdf" class="btn btn-lg  btn-block btn-alidade"><i class="fa fa-file-pdf-o"></i> Read full report</a></div>
+          </div>
+          <p>We found some steps that organisations could take to help address these problems.</p>
+          <p>So, we created Alidade, an interactive tool that can guide activists and organisations through them.</p>
+          <div class="row icon-wrap">
+            <div class="col-md-5 col-sm-5 col-xs-12"><a href="http://alidade.tech" class="btn btn-lg btn-block btn-alidade"> Try Alidade</a> </div>
           </div>
           <p>Short on time? Start with our <a href="/page/six-rules-for-choosing-technology">Six rules for choosing technology</a>.
 
@@ -72,6 +76,7 @@
           <p>Lastly, we would like to thank the participants in Kenya and South Africa that contributed to the study. Kenya-based participants include MapKibera Trust, Thamani Gems, The Slumcode Group, Africa’s Voices, Amnesty International (Kenya office), Society for International Development (Kenya Dialogues Project), and Transparency International Kenya (Uwajibikaji Pamoja).</p>
           <h3>Alidade development</h3>
           <p>We would also like to thank organisations in South Africa and Kenya that invested time in piloting and testing the tool, providing useful feedback that aided its development.</p>
+          <p>We would also like to thank people and organisations that participated in user testing of the second iteration of the tool. These included Seember Nyager - Public Private Development Centre (Nigeria), Jenni Sawyer - Simavi (Tanzania), Kate McAlpine - Caucus for Children’s Rights (Tanzania), Ernesto Peralta - Borde Politico (Mexico), Claire Launay - Transparencia Colombia, Ana Harumi - Causa Natura (Mexico), Maria Jaraquemada - Espacio Publico (Chile), Vanja Karth - Democratic Governance and Rights Unit (South Africa), Sekar Ratnaningtyas - Transparency Indonesia; and Brian Byakuma - Rural Movement Initiative (Uganda).</p>
         </div>
 
 
