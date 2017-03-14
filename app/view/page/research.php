@@ -63,7 +63,7 @@
           <p>Alidade is based on a research project conducted in Kenya and South Africa over 2015-2016. </p>
           <p>The project had three elements:</p>
           <ol>
-            <li>On online survey of 304 Kenyan and South African civil society organisations’ approach to using digital technologies. </li>
+            <li>An online survey of 304 Kenyan and South African civil society organisations’ approach to using digital technologies. </li>
             <li>Semi-structured interviews with 38 Kenyan and South African organisations that had recently chosen a tool for a transparency and accountability project, or were about to choose one.</li>
             <li>Creation and testing of Alidade, an online framework to help organisations make more effective tool choices (then known as the Tool Selection Assistant) with four organisations over a three-month period.</li>
           </ol>
