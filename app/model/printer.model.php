@@ -33,10 +33,12 @@
             $answer = explode('##break##', $thisSlide->answer);
             $content .= ' <h4>Who is your target audience</h4>
                           <p>' . $answer[0] . '</p>
-                          <h4>What tools your audience already uses</h4>
+                          <h4>WHY WOULD THEY WANT TO USE YOUR TOOL</h4>
                           <p>' . $answer[1] . '</p>
+                          <h4>What tools your audience already uses</h4>
+                          <p>' . $answer[2] . '</p>
                           <h4>What might prevent them from adopting a new tool?</h4>
-                          <p>' . $answer[2] . '</p>';
+                          <p>' . $answer[3] . '</p>';
           break;
           case 2;
             $content .=     '<h2>2. Understand The Tech</h2><p>Finding and comparing the technology tools that are available.</p>';
