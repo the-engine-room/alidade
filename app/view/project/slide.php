@@ -43,7 +43,7 @@
                         <p>This is a very important part of the process. If you think deeply now about your users, you will be more likely to choose a tool that is a great fit for everyone.</p>
                         <p>You will need to do different kinds of research depending on whether your users are inside or outside your organisation.</p>
 
-                        <div class="13-buttons <?php echo (isset($extra) ? 'hide' : ''); ?>">
+                        <div class="13-buttons <?php echo (isset($extra) && $extra != 'no' ? 'hide' : ''); ?>">
                             <p>Choose one of the following options:</p>
                             <a href="#" class="btn btn-alidade btn-lg picker" data-target="#pick-1">People in our organisation</a> or <a href="#" class="btn btn-alidade btn-lg picker" data-target="#pick-2">People outside our organisation</a>
                         </div>
@@ -59,7 +59,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row <?php echo ((isset($extra) && $extra == '#pick-2') ? 'hide' : ''); ?> picks" id="pick-1">
+                <div class="row <?php echo ((isset($extra) && $extra != 'no') ? 'hide' : ''); ?> picks" id="pick-1">
                     <div class="col-md-7">
                         <h3>We only need people in our organisation to use the tool.</h3>
                         <p><small>Wait! I changed my mind. <a href="#" class="picker" data-target="#pick-2">We want people outside our organisation to use the tool.</a></small></p>
