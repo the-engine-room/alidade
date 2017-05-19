@@ -297,7 +297,7 @@
           </div>
           <div class="col-md-4 col-xs-6">
             <img src="/assets/images/hp/Tin_photo.png" alt="Tin Geber" class="img-responsive center-block imgr">
-            <p class="text-center"><strong><a href="https://theengineroom.org/people/tin-geber/">Tin Geber</a></strong><br />Tech Lead</p>
+            <p class="text-center"><strong><a href="https://tin.fyi">Tin Geber</a></strong><br />Tech Lead</p>
           </div>
         </div>
         <div class="row">
