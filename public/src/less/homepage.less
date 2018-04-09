@@ -6,7 +6,7 @@
 	 opacity: 0;
 	 position: fixed;
 
-	 h1 {
+	 .SiteTitle {
 		 line-height: 80px;
 		 margin: 0px;
 		 color: white;
@@ -15,17 +15,83 @@
 	 a.btn-alidade {
 		 margin-top: 17px;
 	 }
- }
+	}
+	
+.TechIcons {
+	position: relative;
+	top: -60px;
+}
+
+.slide-content {
+	position: relative;
+	z-index: 2;
+}
 
 .animation {
 	background: #292639;
 	background-size: auto;
 	color: white;
+	overflow: hidden; 
+	
+	.ProjectPaper {
+		display: none;
+	}
 
-	.background { position: fixed; left: 45%; top: 80px;  }
+	.background { 
+		position: fixed;
+		left: 35%;
 
-/** testing **/
-// .row { border-top: 1px solid red; }
+		
+		top: 50%;
+		transform: scale(0.75) translate(0,-70%);
+		z-index: 1;
+		
+		@media screen and (min-width: 1400px){
+			transform: scale(0.9) translate(-40px,-55%);
+		}
+		
+		@media screen and (min-width: 1200px), (max-height: 1000px){
+			left: 45%;
+			transform: scale(0.75) translate(-50px,-70%);
+		}
+
+		.logo {
+			height: 344px;
+			width: 302px;
+			opacity: 1;
+			position: absolute;
+			left: 0;
+			bottom: 180px;
+			transform: translate(40%,50%);
+
+			&.pouff {
+				opacity: 0;
+			}
+		}
+		
+		.app-icon-holder {
+			margin-top: 100px;
+		}
+
+		.app-icon {
+			width: 70px;
+			height: 70px;
+			position: absolute;
+			overflow: hidden;
+			transform: scale(1.3);
+
+			&#app-icon-msg {
+				left: 420px; top: 240px;
+			}
+			&#app-icon-map {
+				left: 320px; top: 170px;
+			}
+			&#app-icon-dbm {
+				left: 520px; top: 310px;
+			}
+		}
+
+	}
 
 	.contents {
 		.transition(all 2s ease 0.5s);
@@ -35,11 +101,6 @@
 			opacity: 1;
 			padding-top: 60px;
 		}
-		&.ninjad {
-			opacity: 0.1;
-			padding-top: 25%;
-			margin-top: 25%;
-		}
 
 	}
 
@@ -48,68 +109,124 @@
 		font-weight: 400;
 		font-family: 'Oswald', sans-serif;
 	}
-	p { font-size: 20px; line-height: 36px;
+
+
+
+	p, .SectionList {
+		font-size: 20px; line-height: 36px;
+		list-style: none;
 		.checkmark {
 			margin-right: 20px;
 		}
 	}
- 	#intro {
-		min-height: 100vh;
 
-		h1 {
-			font-size: 72px;
-			margin-top: 80px;
-			line-height: 78px;
-			&:first-line {
-				font-size: 58px;
+	.CTA {
+		font-size: 30px;
+	}
+
+	.CTAdesc {
+		font-family: "Lato", sans-serif;
+		font-size: 20px;
+		line-height: 1.3;
+		margin-top: 20px;
+	}
+
+	.SectionList {
+		li {
+			font-family: "Lato", sans-serif;
+			position: relative;
+			&:after {
+				content: '';
+				background-image: url(/assets/images/hp/checkmark.png);
+				position: absolute;
+				top: 12px;
+				left: 0;
+				transform: translate(-200%,0);
+				width: 18px;
+				height: 14px;
 			}
-	 	}
-		h3 {
-			font-size: 30px;
-			line-height: 48px;
-			margin-top: 40px;
-		}
-		h4 {
-			font-size: 20px;
-			line-height: 30px;
-			margin-bottom: 70px;
-			margin-top: 30px;
 		}
 	}
 
-	#slide-2 {
-		h1 { font-size: 42px; }
-		min-height: 100vh;
+
+	h1 {
+		font-size: 58px;
+
+		span {
+			display: block;
+			font-size: 72px;
+			line-height: 78px;
+		}
+
 	}
+	
+	.h3 {
+		font-size: 30px;
+		line-height: 48px;
+		margin-top: 40px;
+		font-weight: normal;
+	}
+
+	.h4 {
+		font-size: 20px;
+		line-height: 30px;
+		margin-bottom: 70px;
+		margin-top: 30px;
+		font-weight: normal;
+	}
+
+
+	.SectionTitle { font-size: 46px; line-height: 1.3; font-weight: normal; margin-bottom: 30px; }
 
 	#slide-3 {
-		h1 { font-size: 42px; }
-		min-height: 100vh;
-
-		svg {
-			width: 208px;
-			height: 309px;
-			margin-top: 40px; float: left; clear: none;
-			#step1icon { opacity: 0; }
-			#step2icon,  #arrow1 { opacity: 0; }
-			#step3icon,  #arrow2 { opacity: 0; }
-		}
-		.text-steps {
-			margin-top: 40px;
+		.icon {
+			display: inline-block;
+			vertical-align: middle;
 			position: relative;
-			float: left;
-			clear: none;
+
+			.arrow {
+				position: absolute;
+			}
+		}
+
+		.text-steps {
+			margin: 40px 0;
+
 			.text-step {
-				height: 103px;
+
 				opacity: 0;
-				&.text-step-1 { margin-left: -35px; }
-				&.text-step-2 { margin-left: 53px; }
-				&.text-step-3 { margin-left: 0px; margin-top: 24px;  }
+				margin-bottom: 20px;
+
+				&.text-step-1 {
+					.arrow {
+						top: 40%;
+						left: 100%;
+					}
+					.number {
+						margin-left: 80px;
+					}
+				}
+				
+				&.text-step-2 { 
+					margin-left: 120px;
+					.arrow {
+						top: 92%;
+						left: -15px;
+					}
+				}
+
+				&.text-step-3 {
+					margin-left: 70px;
+					margin-top: 45px;
+				}
+
 				.number, .text {
 					font-size: 20px;
 					font-family: 'Oswald', sans-serif;
 					display: inline-block;
+					vertical-align: middle;
 				}
+
 				.number {
 					width: 36px;
 					height: 36px;
@@ -126,65 +243,19 @@
 		}
 
 	}
-	#slide-4 {
-		h1 { font-size: 42px; }
-		min-height: 100vh;
-	}
 
 
 	.alidade-container {
-		position: fixed;
-		left: 50%;
-		top: 0;
-		width: 50%;
-		height: 100vh;
 
-		#animate-logo-1 {
-			height: 344px;
-			width: 302px;
-			background: url('/assets/images/hp/alidade.png') no-repeat center center;
-			.transition(all 2s ease 0);
-			opacity: 1;
-			position: absolute;
-			left: 0;
-			top: 430px;
-			&.pouff {
-				opacity: 0;
-			}
-		}
 		#spyglass-animate {
-			background: url('/assets/images/hp/alidade_magnifying-glass.png') no-repeat center center;
-			.transition(all 3s ease 0);
 			opacity: 0;
 			position: absolute;
-			left: 0;
-			top: 10%;
+			left: 20%;
+			top: 60px;
 			width: 630px;
 			height: 630px;
 			&.showtime {
 				opacity: 1;
-			}
-		}
-		.app-icon {
-			width: 70px;
-			height: 70px;
-			position: absolute;
-			background-size: 75% 75%;
-			overflow: hidden;
-			&#app-icon-msg {
-				background: url('/assets/images/hp/tech1.svg') no-repeat center center;
-				left: 220px; top: 240px;
-				background-size: 75% 75%;
-			}
-			&#app-icon-map {
-				background: url('/assets/images/hp/tech2.svg') no-repeat center center;
-				left: 320px; top: 310px;
-				background-size: 75% 75%;
-			}
-			&#app-icon-dbm {
-				background: url('/assets/images/hp/tech3.svg') no-repeat center center;
-				left: 420px; top: 380px;
-				background-size: 75% 75%;
 			}
 		}
 
@@ -194,58 +265,98 @@
 			position: absolute;
 			opacity: 0;
 			background: #EBE7E3;
-			top: calc(100vh + 200px);
 			box-shadow: 0 5px 15px 0 #2D2B3C;
 			-ms-transform: rotate(-8deg); /* IE 9 */
 	 		-webkit-transform: rotate(-8deg); /* Chrome, Safari, Opera */
-	 		transform: rotate(-8deg);
+			transform: rotate(-8deg);
+			transform-origin: center center;
+			overflow: hidden;
+			padding: 12px;
 
 			.checkrow {
 				width: 100%;
-				height: 37px;
 				opacity: 0;
-				background: url(/assets/images/hp/check-row.png) no-repeat center top;
-				-ms-transform: rotate(8deg); /* IE 9 */
-		 		-webkit-transform: rotate(8deg); /* Chrome, Safari, Opera */
-		 		transform: rotate(8deg);
+				margin-bottom: 20px;
+				
 				&.sideways {
-					margin-left: 40px;
+					transform: translateX(40px);
+				}
+
+				svg {
+					display: inline-block;
+					vertical-align: middle;
+					-ms-transform: rotate(8deg); /* IE 9 */
+					-webkit-transform: rotate(8deg); /* Chrome, Safari, Opera */
+					transform: rotate(8deg);
+				}
+
+				.BarHolder {
+					display: inline-block;
+					vertical-align: middle;
+				}
+
+				.bar {
+					display: block;
+					width: 82px;
+					height: 7px;
+					border-radius: 9px;
+					background-color: #716f82;
+					margin-bottom: 3px;
+					margin-top: 3px;
+
+					&:nth-child(odd){
+						width: 102px;
+					}
 				}
 			}
 
-			&#paper-1 { left: 40px;  }
-			&#paper-2 { left: 230px;
+			&#paper-1 { left: 200px;  }
+			&#paper-2 {
+				left: 390px;
 
 				.paper-contents {
-					padding: 30px;
-					.transition(all 2s ease 0.5s);
 
-					&.showtime {
-						display: block;
-						opacity: 1;
+					.PaperTitle {
+						-ms-transform: rotate(7.5deg) translateY(-20px); /* IE 9 */
+						-webkit-transform: rotate(7.5deg) translateY(-20px); /* Chrome, Safari, Opera */
+						transform: rotate(7.5deg) translateY(-20px);
+						height: 30px; 
+
+						svg {
+							width: 100%;
+							position: absolute;
+						}
 					}
-					&.ninjad {
-						opacity: 0;
+
+					opacity: 0;
+					position: absolute;
+					left: 15px;
+					top: 0;
+					width: 80%;
+					transform: translateY(30px);
+
+					svg {
+						width: 40px;
+						display: inline-block;
+						vertical-align: middle;
 					}
-					img { float: left; margin-right: 25px; }
-					h2 { color: #343244; font-size: 36px; margin-top: 0px; margin-bottom: 30px;  }
+
 					.paragraph {
-						margin: 5px auto;
-						float: left;
 						clear: none;
 						display: inline-block;
 						width: 100%;
 						&.paragraph-fl {
-							width: 72%;
+							width: 62%;
+							vertical-align: middle;
 						}
 					}
 					.line {
 						width: 100%;
 						background: #716F82;
-						height: 10px;
-						margin: 6px 0px;
-						.border-radius(5px);
-						&.line-lg { height: 18px; .border-radius(9px); }
+						height: 5px;
+						margin: 2px 0px;
+						.border-radius(8px);
+						&.line-lg { height: 8px; .border-radius(10px); }
 						&.line-sh-1 { width: 75%; }
 						&.line-sh-2 { width: 55%; }
 						&.line-sh-3 { width: 30%; }
@@ -253,12 +364,13 @@
 
 				}
 			}
-			&#paper-3 { left: 420px; }
+			&#paper-3 { left: 580px; }
 
 		}
 
 	}
 }
+
 
 .lnk {
 	color: @btn;
@@ -273,7 +385,11 @@
 	}
 }
 .box-1 {
-	padding: 60px 15px;
+	padding: 140px 15px 60px 15px;
+	background-color: #EBE7E3;
+	p {
+		color: @text;
+	}
 	h2 { font-family: "Lato", sans-serif;
 		a { color: @text;}
 	}
@@ -284,7 +400,7 @@
 	padding-top: 110px;
 	padding-bottom: 90px;
 	color: white;
-	.quotes { }
+
 	.quote {
 		font-size: 24px;
 		font-family: "Oswald", sans-serif;
