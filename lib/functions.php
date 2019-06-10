@@ -245,7 +245,7 @@
         return $string;
       }
       else {
-        return $string; 
+        return $string;
       }
     }
 
@@ -339,3 +339,23 @@
             echo '<link type="tex/css" rel="stylesheet" href="' . $css . '">';
         }
     }
+
+
+    /** Print Language Selector **/
+    function languageSelector(){
+      global $languages;
+      $ls  = '<nav class="language-selection">';
+      $ls .= '<ul class="lang-selector">';
+      foreach($languages as $l){
+        $ls .= '<li><a href="/lang/index/' . $l . '" rel="nofollow">' . $l . '</a></li>';
+      }
+      $ls .= '</ul>';
+      $ls .= '</nav>';
+      echo $ls;
+    }
+
+
+    /* <ul>
+      <li><a href="/lang/en">EN</a></li>
+      <li><a href="/lang/es">EN</a></li>
+    </ul> */

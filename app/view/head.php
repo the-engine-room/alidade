@@ -56,7 +56,7 @@
 <!-- End Piwik Code -->
     </head>
     <body class="<?php echo (isset($bodyClass) ? $bodyClass : ''); ?>">
-
+      
         <?php /*
         <div class="wrap">
 

@@ -1,3 +1,4 @@
+
 <div class="container-fluid" id="homepage-header">
     <div class="row">
         <div class="col-md-6">
@@ -8,7 +9,6 @@
         </div>
     </div>
 </div>
-
 <div class="animation">
 
 
@@ -27,6 +27,9 @@
                             Built on in-depth research in Kenya and South Africa.<br />
                             Designed for activists and social change organisations everywhere.
                         </h3>
+
+
+
                         </div>
 
                         <div class="background">
@@ -157,6 +160,7 @@
                                 <div class="col-md-10">
                                     <a href="/project/slide/1.0" class="btn btn-alidade btn-lg btn-block CTA">Start Alidade</a>
                                     <p class="CTAdesc">Complete this interactive guide and get a planning document to share with colleagues, technical developers or donors.
+                                    <?php if(MULTILANG) { languageSelector(); } ?>
                                     </p>
                                 </div>
                             </div>
@@ -198,7 +202,7 @@
                                 <li>Interactive questions to help structure your thinking</li>
                                 <li>Real-life examples and useful resources</li>
                             </ul>
-                        
+
                             <div class="text-steps">
                                 <div class="text-step text-step-1">
                                     <div class="icon">
@@ -248,7 +252,7 @@
             </div>
         </div>
         <div class="section fp-auto-height fp-normal-scroll">
-        
+
             <div class="container-fluid box-1">
                 <div class="row">
                     <div class="col-md-6  col-sm-12 col-xs-12">
@@ -489,7 +493,7 @@
                     </div>
                 </div>
             </div>
-        
+
         </div>
     </div>
 
