@@ -39,21 +39,23 @@
             <meta property="og:description"        content="Choosing technology is hard. Alidade can help. Use Alidade to create a plan for finding technology tools that suit your social change project." />
             <meta property="og:image" content="https://alidade.tech/assets/images/alidade-social-card.png" />
 <!-- End Twitter and Open Graph cards -->
-<!-- Piwik -->
+        
+<!-- Matomo -->
 <script type="text/javascript">
-  var _paq = _paq || [];
+  var _paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
   _paq.push(['trackPageView']);
   _paq.push(['enableLinkTracking']);
   (function() {
     var u="//www.theengineroom.org/piwik/";
-    _paq.push(['setTrackerUrl', u+'piwik.php']);
-    _paq.push(['setSiteId', 9]);
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '11']);
     var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
   })();
 </script>
-<noscript><p><img src="//www.theengineroom.org/piwik/piwik.php?idsite=9" style="border:0;" alt="" /></p></noscript>
-<!-- End Piwik Code -->
+<!-- End Matomo Code -->
+
     </head>
     <body class="<?php echo (isset($bodyClass) ? $bodyClass : ''); ?>">
 
