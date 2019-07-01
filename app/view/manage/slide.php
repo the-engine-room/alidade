@@ -4,7 +4,8 @@
         <div class="col-md-9">
             <h1>Edit "<?php echo $slide->title; ?>"</h1>
 
-            <form class="/manage/slide/<?php echo $slide->step . '/' . $slide->position; ?>" method="post" id="slide-form">
+            <form class="/manage/slide/<?php echo $slide->step . '/' . $slide->position . ($manage_language != 'en' ? '/'.$manage_language : ''); ?>" method="post" id="slide-form">
+                <input id="language" name="language" type="hidden" value="<?php echo $manage_language; ?>">
                 <input id="step" name="step" type="hidden" value="<?php echo $slide->step; ?>">
                 <input id="position" name="position" type="hidden" value="<?php echo $slide->position; ?>">
         

@@ -102,7 +102,7 @@
 				</ul>
 			</div>
 			<?php } else { ?>
-			<a href="#" data-toggle="modal" data-target="#user-forms" class="btn btn-alidade btn-lg pull-right">Register or Login to save progress</a>
+			<a href="#" data-toggle="modal" data-target="#user-forms" class="btn btn-alidade btn-lg pull-right"><?php t("Register or Login to save progress"); ?></a>
 		<?php } ?>
     <?php if(MULTILANG) { languageSelector(); } ?>
 		</div>

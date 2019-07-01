@@ -24,7 +24,8 @@
             
             $this->set('title', 'Manage contents of the TSA');
             $this->set('pages', $Pages->findAll());
-            $this->set('slides', $SlideList->getList());
+            $this->set('slides_en', $SlideList->getList('en'));
+            $this->set('slides_es', $SlideList->getList('es'));
         }
         
         
@@ -64,21 +65,20 @@
         
         
         /** edit slide contents **/
-        public function slide($step, $position){
+        public function slide($step, $position, $language = 'en'){
             $this->set('mdEditor', true);
             $css = array('/components/summernote/dist/summernote.css');
-           $js = array('/components/summernote/dist/summernote.js'); // hacked version
+            $js = array('/components/summernote/dist/summernote.js'); // hacked version
             $this->set('js', $js);
             $this->set('css', $css);
-            
+            $this->set('manage_language', $language);
             if(isset($_POST) && !empty($_POST)) {
-                $slide = $SlideList->getSlide($step, $position);
-                
-                $update = $SlideList->update($_POST, $slide->idslide_list);    
+                $slide = $SlideList->getSlide($step, $position, $language);
+                $update = $SlideList->update($_POST, $slide->idslide_list, $language);
             }
             
             $SlideList = new Slidelist;
-            $slide = $SlideList->getSlide($step, $position);
+            $slide = $SlideList->getSlide($step, $position, $language);
             
             $this->set('slide', $slide);
         }

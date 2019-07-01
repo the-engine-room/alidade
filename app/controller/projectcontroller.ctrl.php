@@ -18,9 +18,7 @@
 
                 if(isset($_POST['title'])){
 
-
                     $ProjectHash = md5( $_SESSION[APPNAME]['USR'] . time() . $_SESSION[APPNAME][SESSIONKEY]);
-
                     $data['user'] = $user->id;
                     $data['hash'] = $ProjectHash;
                     $data['title'] = $_POST['title'];
@@ -43,7 +41,7 @@
 
         /** urls are in the form of /project/slide/1.2 **/
         public function slide($cur){
-
+            $lang = $_COOKIE['ALIDADE-LANG'];
             $Auth = new Auth($url);
             if(!$Auth->isLoggedIn()){
                 //header('Location: /user/login');
@@ -51,13 +49,11 @@
             }
 
             else {
-
                 $user = $Auth->getProfile();
                 $this->set('user', $user);
                 $this->set('userRole', $user->role);
                 $this->set('multiSlides', $this->multiSlides);
                 $this->set('inProcess', true);
-
 
                 if(!isset($_SESSION['plan']) || $cur === '1.1'){
                     $_SESSION['plan'] = array();
@@ -65,14 +61,13 @@
                 }
 
                 $position = explode('.', $cur);
-
                 $step_no    = (int)$position[0];
                 $slide_no   = (int)$position[1];
 
                 $Slide = new Slide;
                 $Slidelist = new Slidelist;
 
-                $slidelist = $Slidelist->getList();
+                $slidelist = $Slidelist->getList($lang);
 
                 $slideIndex = array();
                 foreach($slidelist as $s){
@@ -203,16 +198,11 @@
                                                        'slide'  => $slide['slide'],
                                                        'project'=> $slide['project']
                                                        ));
-
-
-
                         $Slide->update($slide, $toUpdate[0]->idslides);
 
                         /** add a filter to sort out exiting pages **/
                         if(isset($_POST['edit']) && $_POST['edit'] === 'true'){
-
                             $this->set('edit', true);
-                            //header('Location: /user/projects/?cd=2');
                         }
 
                     }

@@ -19,7 +19,9 @@
     require_once(ROOT . DS . 'config' . DS . 'local.php');
     require_once(ROOT . DS . 'config' . DS . 'definitions.php');
     require_once(ROOT . DS . 'lib' . DS . 'functions.php');
+
     /** Add include for language lib **/
     require_once(ROOT . DS . 'lang' . DS . $lang . '.php');
+
     /** Run the App **/
     require_once(ROOT . DS . 'lib' . DS . 'main.php');

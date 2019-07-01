@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- DUMMY INDEX! NOT NEEDED -->
 <html lang="en">
   <head>
     <meta charset="utf-8">

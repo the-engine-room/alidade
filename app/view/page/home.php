@@ -5,7 +5,7 @@
             <p class="SiteTitle">Alidade</p>
         </div>
         <div class="col-md-3 col-md-offset-3">
-            <a href="/project/slide/1.0" class="btn btn-alidade btn-lg btn-block">Start Alidade</a>
+            <a href="/project/slide/1.0" class="btn btn-alidade btn-lg btn-block"><?php t('Start Alidade'); ?></a>
         </div>
     </div>
 </div>
@@ -19,13 +19,13 @@
                     <div class="col-md-7">
                         <div class="slide-content">
                         <h1>
-                            Choosing technology is hard.
-                            <span>Alidade can help.</span>
+                            <?php t('Choosing technology is hard.'); ?>
+                            <span><?php t('Alidade can help.'); ?></span>
                         </h1>
-                        <h2 class="h3">Use Alidade to create a plan for finding technology tools that suit your social change project.</h2>
+                        <h2 class="h3"><?php t('Use Alidade to create a plan for finding technology tools that suit your social change project.'); ?></h2>
                         <h3 class="h4">
-                            Built on in-depth research in Kenya and South Africa.<br />
-                            Designed for activists and social change organisations everywhere.
+                            <?php t('Built on in-depth research in Kenya and South Africa.'); ?><br />
+                            <?php t('Designed for activists and social change organisations everywhere.'); ?>
                         </h3>
 
 
@@ -158,8 +158,8 @@
                         <div class="slide-content">
                             <div class="row">
                                 <div class="col-md-10">
-                                    <a href="/project/slide/1.0" class="btn btn-alidade btn-lg btn-block CTA">Start Alidade</a>
-                                    <p class="CTAdesc">Complete this interactive guide and get a planning document to share with colleagues, technical developers or donors.
+                                    <a href="/project/slide/1.0" class="btn btn-alidade btn-lg btn-block CTA"><?php t('Start Alidade'); ?></a>
+                                    <p class="CTAdesc"><?php t('Complete this interactive guide and get a planning document to share with colleagues, technical developers or donors.'); ?>
                                     <?php if(MULTILANG) { languageSelector(); } ?>
                                     </p>
                                 </div>
@@ -175,13 +175,13 @@
                 <div class="row" id="slide-2">
                     <div class="col-md-7">
                         <div class="slide-content">
-                            <p class="SectionTitle">There are lots of tech options to choose from.</p>
+                            <p class="SectionTitle"><?php t('There are lots of tech options to choose from.'); ?></p>
                             <ul class="SectionList">
                                 <li>
-                                    Which options are best for your project?
+                                    <?php t('Which options are best for your project?'); ?>
                                 </li>
                                 <li>
-                                    How do you know if you’re asking the right questions?
+                                    <?php t('How do you know if you’re asking the right questions?'); ?>
                                 </li>
                             </ul>
                         </div>
@@ -196,11 +196,11 @@
                     <div class="col-md-7">
                         <div class="contents">
                             <div class="slide-content">
-                            <p class="SectionTitle">Alidade helps you plot a path to the right choice.</p>
+                            <p class="SectionTitle"><?php t('Alidade helps you plot a path to the right choice.'); ?></p>
 
                             <ul class="SectionList">
-                                <li>Interactive questions to help structure your thinking</li>
-                                <li>Real-life examples and useful resources</li>
+                                <li><?php t('Interactive questions to help structure your thinking'); ?></li>
+                                <li><?php t('Real-life examples and useful resources'); ?></li>
                             </ul>
 
                             <div class="text-steps">
@@ -210,7 +210,7 @@
                                         <div class="arrow"><?php echo file_get_contents(ROOT . DS . "/public/assets/svg/arrow1.svg"); ?></div>
                                     </div>
                                     <div class="number">1</div>
-                                    <div class="text">Understand your needs</div>
+                                    <div class="text"><?php t('Understand your needs'); ?></div>
                                 </div>
                                 <div class="text-step text-step-2">
                                     <div class="icon">
@@ -218,12 +218,12 @@
                                         <div class="arrow"><?php echo file_get_contents(ROOT . DS . "/public/assets/svg/arrow2.svg"); ?></div>
                                     </div>
                                     <div class="number">2</div>
-                                    <div class="text">Understand the tech</div>
+                                    <div class="text"><?php t('Understand the tech'); ?></div>
                                 </div>
                                 <div class="text-step text-step-3">
                                     <div class="icon"><?php echo file_get_contents(ROOT . DS . "/public/assets/svg/step3.svg"); ?></div>
                                     <div class="number">3</div>
-                                    <div class="text">Plan a trial of the tool with your users</div>
+                                    <div class="text"><?php t('Plan a trial of the tool with your users'); ?></div>
                                 </div>
                             </div>
                             </div>
@@ -239,10 +239,10 @@
                     <div class="col-md-7">
                         <div class="contents">
                             <div class="slide-content">
-                                <p class="SectionTitle">Get a detailed technology strategy plan for your project</p>
+                                <p class="SectionTitle"><?php t('Get a detailed technology strategy plan for your project'); ?></p>
                                 <ul class="SectionList">
-                                    <li>Export as a personalised PDF</li>
-                                    <li>Ready to share with collegues, technology partners and donors</li>
+                                    <li><?php t('Export as a personalised PDF'); ?></li>
+                                    <li><?php t('Ready to share with collegues, technology partners and donors'); ?></li>
                                 </ul>
                                 <img src="/assets/images/hp/ProjectPaper.png" class="ProjectPaper" alt="">
                             </div>
@@ -257,15 +257,15 @@
                 <div class="row">
                     <div class="col-md-6  col-sm-12 col-xs-12">
                         <h2>
-                            <a href="/page/six-rules-for-choosing-technology">Read our six-rule summary for choosing tech</a>
+                            <a href="/page/six-rules-for-choosing-technology"><?php t('Read our six-rule summary for choosing tech'); ?></a>
                         </h2>
-                        <p>Based on our research, six tips and six questions to lead you to a better choice.</p>
+                        <p><?php t('Based on our research, six tips and six questions to lead you to a better choice.'); ?></p>
                     </div>
                     <div class="col-md-6 col-sm-12 col-xs-12">
                         <h2>
-                            <a href="/page/research">Read about the research Alidade was built on</a>
+                            <a href="/page/research"><?php t('Read about the research Alidade was built on'); ?></a>
                         </h2>
-                        <p>Result of a 2-year research project with activists in Kenya and South Africa.</p>
+                        <p><?php t('Result of a 2-year research project with activists in Kenya and South Africa.'); ?></p>
                     </div>
                 </div>
             </div>
@@ -275,20 +275,13 @@
                     <div class="col-md-10 col-md-offset-1 col-xs-12">
                         <div class="quotes clearfix">
                             <div id="quote-1" class="quote hidden">
-                                I used it to choose video and audio recording tools for citizen journalists in various parts of South Africa... The tool
-                                focused me on the importance of trying tools out, and I found the focus on understanding users really
-                                helpful. It worked really well for people like me, who have some familiarity with the tech, but not with
-                                thinking through the tech choices.
+                                <?php t('I used it to choose video and audio recording tools for citizen journalists in various parts of South Africa... The tool focused me on the importance of trying tools out, and I found the focus on understanding users really helpful. It worked really well for people like me, who have some familiarity with the tech, but not with thinking through the tech choices.'); ?>
                             </div>
                             <div id="quote-2" class="quote show">
-                                We used Alidade to help us decide how to develop an information scorecard for child protection planning. I'd definitely recommend
-                                it to other organisations - I'm not sure we would have been able to choose the right tool without it.
-                                It means putting in some hard work, but it is well worth it if you want to make a smart decision.
+                                <?php t("We used Alidade to help us decide how to develop an information scorecard for child protection planning. I'd definitely recommend it to other organisations - I'm not sure we would have been able to choose the right tool without it. It means putting in some hard work, but it is well worth it if you want to make a smart decision."); ?>
                             </div>
                             <div id="quote-3" class="quote hidden">
-                                I see the tool as a good test for seeing how serious a grantee is about working on a problem using tech. It helps those without
-                                tech knowledge to simplify their path through the forest of tech options out there, and brings those
-                                with tech expertise back to what it should really be all about: content.
+                                <?php t('I see the tool as a good test for seeing how serious a grantee is about working on a problem using tech. It helps those without tech knowledge to simplify their path through the forest of tech options out there, and brings those with tech expertise back to what it should really be all about: content.'); ?>
                             </div>
                             <hr class="pointer" />
                             <div class="point"></div>
@@ -323,11 +316,8 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <h2 class=" text-center">Who made this</h2>
-                                    <p class="text-left">In 2015-16, The Engine Room, Pawa254 and the Network Society Lab conducted an 18-month research project
-                                        into how Kenyan and South African organisations choose digital technology tools for transparency
-                                        and accountability projects. To make the findings as practical as possible, we created Alidade.
-                                        <br /> The project was supported by Making All Voices Count.</p>
+                                    <h2 class=" text-center"><?php t('Who made this'); ?></h2>
+                                    <p class="text-left"><?php t('In 2015-16, The Engine Room, Pawa254 and the Network Society Lab conducted an 18-month research project into how Kenyan and South African organisations choose digital technology tools for transparency and accountability projects. To make the findings as practical as possible, we created Alidade.'); ?> <br /> <?php t('The project was supported by Making All Voices Count.'); ?></p>
                                 </div>
                             </div>
                             <div class="row">
@@ -342,11 +332,7 @@
                                             <img src="/assets/images/hp/Tom_photo.png" alt="Tom Walker - The Engine Room" class="img-responsive center-block imgr">
                                         </div>
                                         <div class="col-md-12 col-xs-12">
-                                            <p>
-                                                <strong>Tom Walker</strong> is a research lead at
-                                                <strong>The Engine Room</strong>, an international organisation that helps activists, organisations
-                                                and other social change agents make the most of technology and data to increase their
-                                                impact.</p>
+                                            <p><?php t('<strong>Tom Walker</strong> is a research lead at <strong>The Engine Room</strong>, an international organisation that helps activists, organisations and other social change agents make the most of technology and data to increase their impact.'); ?></p>
                                         </div>
                                     </div>
                                 </div>
@@ -361,11 +347,7 @@
                                             <img src="/assets/images/hp/Indra_photo.png" alt="Indra de Lanerolle - Network Society Lab" class="img-responsive center-block imgr">
                                         </div>
                                         <div class="col-md-12 col-xs-12">
-                                            <p>
-                                                <strong>Indra de Lanerolle</strong> leads
-                                                <strong>The Network Society Project</strong>, which conducts research on the Internet and its
-                                                effects on society in South Africa and other African countries. It is based at the Journalism
-                                                and Media programme at the University of Witwatersrand.</p>
+                                            <p><?php t('<strong>Indra de Lanerolle</strong> leads <strong>The Network Society Project</strong>, which conducts research on the Internet and its effects on society in South Africa and other African countries. It is based at the Journalism and Media programme at the University of Witwatersrand.'); ?></p>
                                         </div>
                                     </div>
                                 </div>
@@ -380,9 +362,7 @@
                                             <img src="/assets/images/hp/Sasha_photo.png" alt="Tom Walker - The Engine Room" class="img-responsive center-block imgr">
                                         </div>
                                         <div class="col-md-12 col-xs-12">
-                                            <p>
-                                                <strong>Sasha Kinney</strong> provides research and support for creative activism, civic tech,
-                                                citizen journalism, grassroots organizing and social movements in Kenya.</p>
+                                            <p><?php t('<strong>Sasha Kinney</strong> provides research and support for creative activism, civic tech, citizen journalism, grassroots organizing and social movements in Kenya.'); ?></p>
                                         </div>
                                     </div>
                                 </div>
@@ -390,7 +370,7 @@
                             <div class="row">
                                 <div class="col-md-12 text-center">
                                     <a href="#" class="lnk lnk-lg">
-                                        <strong>Learn more about the research behind Alidade</strong>
+                                        <strong><?php t('Learn more about the research behind Alidade'); ?></strong>
                                     </a>
                                 </div>
                             </div>
@@ -405,7 +385,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <h2 class=" text-center">Creators of Alidade</h2>
+                                    <h2 class=" text-center"><?php t('Creators of Alidade'); ?></h2>
                                 </div>
                             </div>
                             <div class="row">
@@ -415,7 +395,7 @@
                                         <strong>
                                             <a href="https://level73.it/">Alan Zard</a>
                                         </strong>
-                                        <br />Web Dev</p>
+                                        <br /><?php t('Web Dev'); ?></p>
                                 </div>
                                 <div class="col-md-4 col-xs-6">
                                     <img src="/assets/images/hp/Ivana_photo.png" alt="Ivana Bugarinovic" class="img-responsive center-block imgr">
@@ -423,7 +403,7 @@
                                         <strong>
                                             <a href="https://dribbble.com/helexa">Ivana Bugarinovic</a>
                                         </strong>
-                                        <br />Illustration</p>
+                                        <br /><?php t('Illustration'); ?></p>
                                 </div>
                                 <div class="col-md-4 col-xs-6">
                                     <img src="/assets/images/hp/Maya_photo.png" alt="Maya Richman" class="img-responsive center-block imgr">
@@ -431,7 +411,7 @@
                                         <strong>
                                             <a href="https://theengineroom.org/people/maya-richman/">Maya Richman</a>
                                         </strong>
-                                        <br />Web Ops</p>
+                                        <br /><?php t('Web Ops'); ?></p>
                                 </div>
                                 <div class="col-md-4 col-xs-6">
                                     <img src="/assets/images/hp/Ozren_photo.png" alt="Ozren Muic" class="img-responsive center-block imgr">
@@ -439,7 +419,7 @@
                                         <strong>
                                             <a href="http://ozrenmuic.from.hr/">Ozren Muic</a>
                                         </strong>
-                                        <br />UX UI Design</p>
+                                        <br /><?php t('UX UI Design'); ?></p>
                                 </div>
                                 <div class="col-md-4 col-xs-6">
                                     <img src="/assets/images/hp/Ruth_photo.png" alt="Ruth Miller" class="img-responsive center-block imgr">
@@ -447,7 +427,7 @@
                                         <strong>
                                             <a href="http://ruthmiller.net/">Ruth Miller</a>
                                         </strong>
-                                        <br />UX Research</p>
+                                        <br /><?php t('UX Research'); ?></p>
                                 </div>
                                 <div class="col-md-4 col-xs-6">
                                     <img src="/assets/images/hp/Tin_photo.png" alt="Tin Geber" class="img-responsive center-block imgr">
@@ -455,12 +435,12 @@
                                         <strong>
                                             <a href="https://tin.fyi">Tin Geber</a>
                                         </strong>
-                                        <br />Tech Lead</p>
+                                        <br /><?php t('Tech Lead'); ?></p>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
-                                    <h2 class=" text-center">Special thanks to contributors</h2>
+                                    <h2 class=" text-center"><?php ('Special thanks to contributors'); ?></h2>
                                 </div>
                             </div>
                             <div class="row">

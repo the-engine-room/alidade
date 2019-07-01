@@ -344,18 +344,31 @@
     /** Print Language Selector **/
     function languageSelector(){
       global $languages;
+      global $lang;
+
       $ls  = '<nav class="language-selection">';
       $ls .= '<ul class="lang-selector">';
       foreach($languages as $l){
-        $ls .= '<li><a href="/lang/index/' . $l . '" rel="nofollow">' . $l . '</a></li>';
+        $ls .= '<li><a href="/lang/index/' . $l . '" rel="nofollow"' . ($lang==$l ? ' class="active-lang"' : '') . '>' . $l . '</a></li>';
       }
       $ls .= '</ul>';
       $ls .= '</nav>';
       echo $ls;
     }
 
-
-    /* <ul>
-      <li><a href="/lang/en">EN</a></li>
-      <li><a href="/lang/es">EN</a></li>
-    </ul> */
+    /** Translate strings from lang files **/
+    function t($key, $print = true){
+        global $translations;
+        $inner_key = strtolower($key);
+        if(key_exists($inner_key, $translations)){
+            if($print){
+                echo $translations[$inner_key];
+            }
+            else {
+                return $translations[$inner_key];
+            }
+        }
+        else {
+            echo $key;
+        }
+    }

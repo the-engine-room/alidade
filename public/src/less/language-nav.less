@@ -5,7 +5,7 @@
   float: left ;
 }
 nav.language-selection {
-  .pull-right;
+  //.pull-right;
   margin: 20px 10px;
 }
 
@@ -19,13 +19,21 @@ nav.language-selection {
   li {
     float: left;
     clear: none;
-    padding: 10px;
+    /*padding: 10px;
     &:not(:last-child) {
       border-right: 1px solid white;
     }
+    */
+
     a {
       color: white;
       text-transform: uppercase;
+      padding: 10px;
+      &.active-lang {
+        background: white;
+        color: #292639;
+
+      }
     }
   }
 }

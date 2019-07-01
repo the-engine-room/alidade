@@ -217,6 +217,8 @@
                     $step = $_POST['step'];
                     $position = $_POST['position'];
 
+                    $language = $_POST['language'];
+
                     $slide = $SlideList->find(array('step' => $step, 'position' => $position));
                     $slide = $slide[0];
 
@@ -224,7 +226,7 @@
                     $description = $_POST['description'];
 
 
-                    $update = $SlideList->update(array('title' => $title, 'description' => $description), $slide->idslide_list );
+                    $update = $SlideList->update(array('title' => $title, 'description' => $description), $slide->idslide_list, $language );
                     if($update){
                         $response['code'] = 'success';
                         $response['icon'] = 'tick';

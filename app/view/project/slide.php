@@ -359,7 +359,7 @@
                                 }
                                 elseif(!is_null($nextSlide) && !empty($nextSlide)) {
                                 ?>
-                                <button type="submit" class="btn btn-alidade btn-lg">NEXT: <?php echo $slideMenu[$nextSlide]; ?></button>
+                                <button type="submit" class="btn btn-alidade btn-lg"><?php t("NEXT:"); ?> <?php echo $slideMenu[$nextSlide]; ?></button>
                                 <?php
                                     }
                                 }

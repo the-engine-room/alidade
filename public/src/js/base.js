@@ -372,7 +372,8 @@ $(document).ready(function(){
             'title'         : theForm.children().children('#title').val(),
             'description'   : $('.textarea').summernote('code'),
             'step'          : theForm.children('#step').val(),
-            'position'      : theForm.children('#position').val()
+            'position'      : theForm.children('#position').val(),
+            'language'      : theForm.children('#language').val()
         }
 
         $.post(
